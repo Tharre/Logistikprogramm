@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Main-Class: Logistik.Start
+Application-Name: Logistik
+Permissions: all-permissions
+Codebase: http://logistik.htl-hl.ac.at/*
+Trusted-Library: true
+Application-Library-Allowable-Codebase: *
+Caller-Allowable-Codebase: *

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="scr"/>
+	<classpathentry kind="lib" path="C:/Users/Stefanie/Schule/Diplomarbeit/Unser Programm/rt.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/Users/Stefanie/Schule/Diplomarbeit/Unser Programm/poi-2.5.1-final-20040804.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Stefanie/Schule/Diplomarbeit/Unser Programm/mail.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Stefanie/Schule/Diplomarbeit/Unser Programm/iText.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Stefanie/Schule/Diplomarbeit/Unser Programm/mysql.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

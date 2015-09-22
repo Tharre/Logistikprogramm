@@ -1,0 +1,14 @@
+#Fat Jar Configuration File
+#Fri Sep 05 00:11:33 CEST 2014
+onejar.license.required=true
+manifest.classpath=
+manifest.removesigners=true
+onejar.checkbox=false
+jarname=Logistik_fat.jar
+manifest.mergeall=true
+manifest.mainclass=Logistik.Start
+manifest.file=Budget_Manifest.MF
+jarname.isextern=false
+onejar.expand=
+excludes=
+includes=
