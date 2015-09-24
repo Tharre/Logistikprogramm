@@ -159,7 +159,7 @@ public class AnzTabelleA extends JTable {
 								} else if (status == 3) {
 									r.add("abgeschickt");
 								} else if (status == 15) {
-									r.add("gelöscht");
+									r.add("gelÃ¶scht");
 								} else if (status == 4) {
 									r.add("teilweise falsch/nicht geliefert");
 								} else if (status == 6) {

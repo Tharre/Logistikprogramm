@@ -72,9 +72,9 @@ public class Rechnung extends JPanel implements ActionListener {
 	/** RadioButton, wenn nach der externen Nummer gesucht werden soll **/
 	private JRadioButton externeNummer = new JRadioButton("externe Nummer");
 	private JRadioButton bhBeleg = new JRadioButton("BH- Beleg");
-	/** Button um den Pfad, wo die Rechnungen liegen zu ändern **/
+	/** Button um den Pfad, wo die Rechnungen liegen zu Ã¤ndern **/
 	private JButton pfadEingeben = new JButton(
-			"Ort, wo Rechnungen abgespeichert sind, ändern");
+			"Ort, wo Rechnungen abgespeichert sind, Ã¤ndern");
 
 	private Connection con;
 	private Connection conL;
@@ -197,7 +197,7 @@ public class Rechnung extends JPanel implements ActionListener {
 				istZahl = true;
 			} catch (NumberFormatException e1) {
 				JOptionPane.showMessageDialog(this,
-						"Sie müssen eine Zahl eingeben");
+						"Sie mÃ¼ssen eine Zahl eingeben");
 				istZahl = false;
 			}
 			if (istZahl) {

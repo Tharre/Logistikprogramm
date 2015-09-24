@@ -107,7 +107,7 @@ public class DatenUpdate {
 
 			stmt.executeUpdate(query);
 			
-		} catch (SQLException ex) // mögliche Fehler während der DB-Sitzung
+		} catch (SQLException ex) // mÃ¶gliche Fehler wÃ¤hrend der DB-Sitzung
 		// ausgeben
 		{
 			ex.printStackTrace();
@@ -137,7 +137,7 @@ public class DatenUpdate {
 
 			stmt.executeUpdate(query);
 			
-		} catch (SQLException ex) // mögliche Fehler während der DB-Sitzung
+		} catch (SQLException ex) // mÃ¶gliche Fehler wÃ¤hrend der DB-Sitzung
 		// ausgeben
 		{
 			ex.printStackTrace();
@@ -179,7 +179,7 @@ public class DatenUpdate {
 
 			stmt.executeUpdate(query);
 
-		} catch (SQLException ex) // mögliche Fehler während der DB-Sitzung
+		} catch (SQLException ex) // mÃ¶gliche Fehler wÃ¤hrend der DB-Sitzung
 		// ausgeben
 		{
 			System.out.println("SQL-Exception: " + ex.getMessage());
@@ -234,7 +234,7 @@ public class DatenUpdate {
 
 			stmt.executeUpdate(query);
 			
-		} catch (SQLException ex) // mögliche Fehler während der DB-Sitzung
+		} catch (SQLException ex) // mÃ¶gliche Fehler wÃ¤hrend der DB-Sitzung
 		// ausgeben
 		{
 			System.out.println("SQL-Exception: " + ex.getMessage());
@@ -265,7 +265,7 @@ public class DatenUpdate {
 			stmt.executeUpdate(query);
 
 
-		} catch (SQLException ex) // mögliche Fehler während der DB-Sitzung
+		} catch (SQLException ex) // mÃ¶gliche Fehler wÃ¤hrend der DB-Sitzung
 		// ausgeben
 		{
 			System.out.println("SQL-Exception: " + ex.getMessage());
@@ -374,7 +374,7 @@ public class DatenUpdate {
 
 			}
 
-		} catch (SQLException ex) // mögliche Fehler während der DB-Sitzung
+		} catch (SQLException ex) // mÃ¶gliche Fehler wÃ¤hrend der DB-Sitzung
 		// ausgeben
 		{
 			System.out.println("SQL-Exception: " + ex.getMessage());
@@ -536,7 +536,7 @@ public class DatenUpdate {
 		}
 		if (keinFehler)
 			JOptionPane.showMessageDialog(null,
-					"Die Datensätze wurden gelöscht!");
+					"Die DatensÃ¤tze wurden gelÃ¶scht!");
 
 	}
 

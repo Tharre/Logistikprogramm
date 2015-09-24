@@ -35,13 +35,13 @@ public class Diagramm extends JPanel implements ActionListener {
 	private Vector<String> legendeV = new Vector<String>();
 	/**
 	 * gibt an, ob eine Abfrage nach dem Status (true) oder nach Abteilungen
-	 * (false) get‰tigt wurde
+	 * (false) get√§tigt wurde
 	 **/
 	private boolean status;
 	/** Objekt von der Klasse Legende **/
 	private Legende legendeNeu;
 
-	private JButton sonderbudget = new JButton("Sonderbudget w‰hlen");
+	private JButton sonderbudget = new JButton("Sonderbudget w√§hlen");
 	private JPanel hilf = new JPanel();
 
 	private JComboBox namen = new JComboBox();
@@ -111,7 +111,7 @@ public class Diagramm extends JPanel implements ActionListener {
 
 		}
 
-		hilf.add(new JLabel("Bitte w‰hlen Sie ein Sonderbudget aus."));
+		hilf.add(new JLabel("Bitte w√§hlen Sie ein Sonderbudget aus."));
 		hilf.add(namen);
 		hilf.add(sonderbudget);
 

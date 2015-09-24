@@ -15,11 +15,11 @@ public class AnzRechteB {
 		/* 1 */rechte.add("User einer Usergruppe zuweisen");
 		/* 2 */rechte.add("Usergruppen anzeigen");
 		/* 3 */rechte.add("Usergruppen bearbeiten");
-		/* 4 */rechte.add("Usergruppen löschen");
+		/* 4 */rechte.add("Usergruppen lÃ¶schen");
 
 		/* 5 */rechte.add("neue Firma");
 		/* 6 */rechte.add("alle Firmen");
-		/* 7 */rechte.add("Firma löschen");
+		/* 7 */rechte.add("Firma lÃ¶schen");
 		/* 8 */rechte.add("Firma bearbeiten");
 
 		/* 9 */rechte.add("qry Usergruppe");
@@ -35,21 +35,21 @@ public class AnzRechteB {
 		/* 18 */rechte.add("Bestellungen: alle");
 		/* 19 */rechte.add("Bestellungen: nicht abgeschickt");
 		/* 20 */rechte.add("Bestellungen: abgeschickt");
-		/* 21 */rechte.add("Bestellungen: ausständig");
+		/* 21 */rechte.add("Bestellungen: ausstÃ¤ndig");
 		/* 22 */rechte.add("Bestellungen: fertig");
 		/* 23 */rechte.add("Bestellungen: fehlerhaft");
 
 		/* 24 */rechte.add("alle Materialien");
-		/* 25 */rechte.add("Material löschen");
+		/* 25 */rechte.add("Material lÃ¶schen");
 		/* 26 */rechte.add("neues Material");
 		/* 27 */rechte.add("Firma Material zuweisen");
-		/* 28 */rechte.add("Firma Material löschen");
+		/* 28 */rechte.add("Firma Material lÃ¶schen");
 		/* 29 */rechte.add("Material bearbeiten");
 		/* 30 */rechte.add("Firma-Material bearbeiten");
 
 		/* 31 */rechte.add("alle Inventurgruppen");
 		/* 32 */rechte.add("neue Inventurgruppe");
-		/* 33 */rechte.add("Inventurgruppe löschen");
+		/* 33 */rechte.add("Inventurgruppe lÃ¶schen");
 
 		/* 34 */rechte.add("neue Banf");
 		/* 35 */rechte.add("Banf: alle");
@@ -59,21 +59,21 @@ public class AnzRechteB {
 
 		/* 39 */rechte.add("alle Bundesgruppen");
 		/* 40 */rechte.add("neue Bundesgruppe");
-		/* 41 */rechte.add("Bundesgruppe löschen");
+		/* 41 */rechte.add("Bundesgruppe lÃ¶schen");
 
 		/* 42 */rechte.add("DB leeren");
 		/* 43 */rechte.add("DB exportieren");
 		/* 44 */rechte.add("DB importieren");
 
 		/* 45 */rechte.add("Budget");
-		/* 46 */rechte.add("Abteilungen als Kostenstellen auswählen");
+		/* 46 */rechte.add("Abteilungen als Kostenstellen auswÃ¤hlen");
 
 		/* 47 */rechte.add("Lieferung");
-		/* 48 */rechte.add("Aushändigung");
+		/* 48 */rechte.add("AushÃ¤ndigung");
 		/* 49 */rechte.add("Zubuchen");
-		/* 50 */rechte.add("Zurück zu Firma");
+		/* 50 */rechte.add("ZurÃ¼ck zu Firma");
 		/* 51 */rechte.add("Korrektur");
-		/* 52 */rechte.add("Mehrfachänderung");
+		/* 52 */rechte.add("MehrfachÃ¤nderung");
 	}
 
 	public String[] getRechte() {

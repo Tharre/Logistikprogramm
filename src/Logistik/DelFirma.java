@@ -8,8 +8,8 @@ import java.util.Date;
 
 /**
  * Alle Firmen werden aufgelistet am Ende jeder Zeile ist eine Checkbox, in der
- * man auswählen kann, ob ein Datensatz gelöscht werden soll bei Bestätigung wir
- * düberprüft, ob Firma schon verwendet wird -> keine Löschung
+ * man auswÃ¤hlen kann, ob ein Datensatz gelÃ¶scht werden soll bei BestÃ¤tigung wir
+ * dÃ¼berprÃ¼ft, ob Firma schon verwendet wird -> keine LÃ¶schung
  */
 public class DelFirma extends LayoutMainPanel implements ActionListener {
 	public AnzTabelleA df;
@@ -17,7 +17,7 @@ public class DelFirma extends LayoutMainPanel implements ActionListener {
 
 	public DelFirma(UserImport user) {
 		super(user);
-		del = new JButton("Löschen");
+		del = new JButton("LÃ¶schen");
 		del.addActionListener(this);
 		activate();
 	}
@@ -36,7 +36,7 @@ public class DelFirma extends LayoutMainPanel implements ActionListener {
 				"ort", "strasse", "mail", "staat", "kundennr",
 				"sachbearbeiter", "telefon", "fax", "homepage", "uid",
 				"kondition", "umsNr", "araNr", "kreditorennummer",
-				"einkaeufergruppe", "löschen" };
+				"einkaeufergruppe", "lÃ¶schen" };
 		Class[] classes = { Integer.class, String.class, Date.class,
 				String.class, String.class, String.class, String.class,
 				String.class, String.class, String.class, String.class,
@@ -56,15 +56,15 @@ public class DelFirma extends LayoutMainPanel implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == del) {
 			int i = JOptionPane.showConfirmDialog(null,
-					"Wollen Sie die Firmen löschen?", "löschen",
+					"Wollen Sie die Firmen lÃ¶schen?", "lÃ¶schen",
 					JOptionPane.YES_NO_OPTION);
 			if (i == 0) {
 
-				Object[] hakDelFirm = df.getKlicked("id", "löschen");
+				Object[] hakDelFirm = df.getKlicked("id", "lÃ¶schen");
 
 				for (int j = 0; j < hakDelFirm.length; j++) {
 					try {
-						// PRÜFVORGANG
+						// PRÃœFVORGANG
 
 						String sql1 = "SELECT b.firma FROM banf b,firma f WHERE b.firma="
 								+ hakDelFirm[j] + " LIMIT 1";
@@ -73,7 +73,7 @@ public class DelFirma extends LayoutMainPanel implements ActionListener {
 							JOptionPane
 									.showMessageDialog(
 											null,
-											"Mindestens eine der ausgewählten Firmen wird in BANFs verwendet und kann nicht gelöscht werden!");
+											"Mindestens eine der ausgewÃ¤hlten Firmen wird in BANFs verwendet und kann nicht gelÃ¶scht werden!");
 							rs1.close();
 							return;
 						}
@@ -85,13 +85,13 @@ public class DelFirma extends LayoutMainPanel implements ActionListener {
 							JOptionPane
 									.showMessageDialog(
 											null,
-											"Mindestens eine der ausgewählten Firmen ist einem Material zugeordnet und kann nicht gelöscht werden!");
+											"Mindestens eine der ausgewÃ¤hlten Firmen ist einem Material zugeordnet und kann nicht gelÃ¶scht werden!");
 							rs2.close();
 							return;
 						}
 						rs2.close();
 
-						// LÖSCHVORGANG
+						// LÃ–SCHVORGANG
 
 						String sql = "DELETE FROM firma WHERE id = "
 								+ hakDelFirm[j] + "";
@@ -101,8 +101,8 @@ public class DelFirma extends LayoutMainPanel implements ActionListener {
 					}
 				}
 
-				// zurückspringen
-				JOptionPane.showMessageDialog(null, "Daten gelöscht");
+				// zurÃ¼ckspringen
+				JOptionPane.showMessageDialog(null, "Daten gelÃ¶scht");
 			}
 
 		}// if

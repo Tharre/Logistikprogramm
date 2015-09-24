@@ -8,13 +8,13 @@ import javax.swing.*;
 
 /**
  * Hier findet der Bestellablauf statt mit CardLayout wird der Prozess
- * abgewickelt es werden angehakte Datensätze übernommen und in neue Klassen
- * übernommen je nach Fortschritt wird die zuständige Klasse aufgerufen
+ * abgewickelt es werden angehakte DatensÃ¤tze Ã¼bernommen und in neue Klassen
+ * Ã¼bernommen je nach Fortschritt wird die zustÃ¤ndige Klasse aufgerufen
  */
 public class NewBestellung extends LayoutMainPanel implements ActionListener {
 	/**JOptionPane.showMessageDialog(null,
-							"Sie müssen etwas anhaken!");
-	 * Laoyut für den Bestellablauf
+							"Sie mÃ¼ssen etwas anhaken!");
+	 * Laoyut fÃ¼r den Bestellablauf
 	 */
 	public CardLayout layout;
 
@@ -24,7 +24,7 @@ public class NewBestellung extends LayoutMainPanel implements ActionListener {
 	public JPanel centerp;
 
 	/**
-	 * Zähler für den Prozessablauf
+	 * ZÃ¤hler fÃ¼r den Prozessablauf
 	 */
 	public int z = 1;
 
@@ -34,7 +34,7 @@ public class NewBestellung extends LayoutMainPanel implements ActionListener {
 	public JButton next = new JButton("weiter");
 
 	/**
-	 * Button zum Zuürückspringen zur Startseite
+	 * Button zum ZuÃ¼rÃ¼ckspringen zur Startseite
 	 */
 	public JButton begin = new JButton("zum Start");
 
@@ -104,7 +104,7 @@ public class NewBestellung extends LayoutMainPanel implements ActionListener {
 				hakBanfCheck = a.aba.getKlicked("Firma", "bearbeiten");
 				if (hakBanfCheck.length == 0) {
 					JOptionPane.showMessageDialog(null,
-							"Sie müssen etwas anhaken!");
+							"Sie mÃ¼ssen etwas anhaken!");
 					return;
 				}
 
@@ -119,7 +119,7 @@ public class NewBestellung extends LayoutMainPanel implements ActionListener {
 					hakBanf = a.aba.getKlicked("ID", "bearbeiten");
 					if (hakBanf.length == 0) {
 						JOptionPane.showMessageDialog(null,
-								"Sie müssen etwas anhaken!");
+								"Sie mÃ¼ssen etwas anhaken!");
 						return;
 					}
 
@@ -133,7 +133,7 @@ public class NewBestellung extends LayoutMainPanel implements ActionListener {
 				String aktion = "nix";
 				if (b.del.isSelected()) {
 					int i = JOptionPane.showConfirmDialog(null,
-							"Wollen Sie die Daten löschen?", "löschen",
+							"Wollen Sie die Daten lÃ¶schen?", "lÃ¶schen",
 							JOptionPane.YES_NO_OPTION);
 
 					if (i == 0) {
@@ -143,7 +143,7 @@ public class NewBestellung extends LayoutMainPanel implements ActionListener {
 								.getKlicked("Banfpos-nr", "bearbeiten");
 						if (hakDelPos.length == 0) {
 							JOptionPane.showMessageDialog(null,
-									"Sie müssen etwas anhaken!");
+									"Sie mÃ¼ssen etwas anhaken!");
 							return;
 						}
 
@@ -165,7 +165,7 @@ public class NewBestellung extends LayoutMainPanel implements ActionListener {
 					hakBestPos = b.abp.getKlicked("Banfpos-nr", "bearbeiten");
 					if (hakBestPos.length == 0) {
 						JOptionPane.showMessageDialog(null,
-								"Sie müssen etwas anhaken!");
+								"Sie mÃ¼ssen etwas anhaken!");
 						return;
 					}
 
@@ -177,7 +177,7 @@ public class NewBestellung extends LayoutMainPanel implements ActionListener {
 
 				if (aktion.equals("nix")) {
 					JOptionPane.showMessageDialog(null,
-							"löschen oder bestellen anklicken!");
+							"lÃ¶schen oder bestellen anklicken!");
 					z--;
 				}
 

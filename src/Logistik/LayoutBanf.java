@@ -5,7 +5,7 @@ import java.util.Vector;
 import javax.swing.*;
 
 /**
- * Klasse zum Darstellen von tabellen‰hnlichen Strukturen in JPanels
+ * Klasse zum Darstellen von tabellen√§hnlichen Strukturen in JPanels
  */
 
 public class LayoutBanf implements LayoutManager {

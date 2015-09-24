@@ -6,8 +6,8 @@ import java.awt.event.*;
 
 /**
  * Klasse zum Bearbeiten von Materialien In einem SelectInput kann das
- * gewünschte Material ausgewählt werden. Nach dem Klick auf den "OK"-Button
- * werden die Daten in die Eingabemaske übernommen Nach dem Klick auf den
+ * gewÃ¼nschte Material ausgewÃ¤hlt werden. Nach dem Klick auf den "OK"-Button
+ * werden die Daten in die Eingabemaske Ã¼bernommen Nach dem Klick auf den
  * speichern Button werden die neuen Daten in die DB gespeichert
  */
 
@@ -38,7 +38,7 @@ public class EditMaterial extends LayoutMainPanel implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == ok) {
 			if (firma.getValue().equals("")) {
-				new MessageError("Bitte ein Material auswählen!");
+				new MessageError("Bitte ein Material auswÃ¤hlen!");
 				return;
 			}
 			mid.setEdit(firma.getValue());

@@ -1,7 +1,7 @@
 package Logistik;
 
 /**
- * Das Verwaltungsmenü für Bestellanforderungen (BANFs) im Midpanel überprüfen
+ * Das VerwaltungsmenÃ¼ fÃ¼r Bestellanforderungen (BANFs) im Midpanel Ã¼berprÃ¼fen
  * der Rechte. Je nachdem wird der Button angezeigt oder nicht
  */
 

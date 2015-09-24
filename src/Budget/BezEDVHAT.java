@@ -105,7 +105,7 @@ public class BezEDVHAT extends JFrame implements ActionListener, KeyListener {
 			if (prozentEDV > 100 || prozentEDV < 0 || prozentHAT > 100
 					|| prozentHAT < 0) {
 				JOptionPane.showMessageDialog(null,
-						"Sie müssen eine Zahl zwischen 0 und 100 eingeben!");
+						"Sie mÃ¼ssen eine Zahl zwischen 0 und 100 eingeben!");
 				keinFehler = false;
 
 			}
@@ -152,7 +152,7 @@ public class BezEDVHAT extends JFrame implements ActionListener, KeyListener {
 		if (prozentEDV > 100 || prozentEDV < 0 || prozentHAT > 100
 				|| prozentHAT < 0) {
 			JOptionPane.showMessageDialog(null,
-					"Sie müssen eine Zahl zwischen 0 und 100 eingeben!");
+					"Sie mÃ¼ssen eine Zahl zwischen 0 und 100 eingeben!");
 			keinFehler = false;
 
 		}

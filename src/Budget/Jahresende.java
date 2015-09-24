@@ -77,7 +77,7 @@ public class Jahresende extends JPanel {
 	/**
 	 * Die Methode erzeugeMeldung, erzeugt zuerst ein Dialogfenster um zu
 	 * fragen, ob man sich wirklich sicher ist, dass man ein neues Jahr beginnen
-	 * möchte
+	 * mÃ¶chte
 	 **/
 	public void erzeugeMeldung() {
 		hilf = JOptionPane.showConfirmDialog(this, "Sind Sie sicher",
@@ -123,7 +123,7 @@ public class Jahresende extends JPanel {
 	}
 	
 	/**
-	 *geplant und ausgegeben werden in der aktuellen DB gelöscht in: UT3, UT8, Sonderbudget, LMB 
+	 *geplant und ausgegeben werden in der aktuellen DB gelÃ¶scht in: UT3, UT8, Sonderbudget, LMB 
 	 */
 	public void betraegeLoeschen()
 	{
@@ -143,7 +143,7 @@ public class Jahresende extends JPanel {
 		{
 			
 			JOptionPane.showMessageDialog(null,
-			"Fehler beim löschen der ausgegebenen und geplanten Beträge!");
+			"Fehler beim lÃ¶schen der ausgegebenen und geplanten BetrÃ¤ge!");
 			
 			e.printStackTrace();
 		}

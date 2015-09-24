@@ -68,7 +68,7 @@ public class BezLTAnteil extends JFrame implements ActionListener {
 		aa = new BezAbteilungsanteile(con, conL);
 
 		ok.addActionListener(this);
-		ok.setToolTipText("Ändern des Lebensmittelanteiles");
+		ok.setToolTipText("Ã„ndern des Lebensmittelanteiles");
 
 		setLayout(new GridLayout(2, 2));
 		add(new JLabel("LT- Anteil in Prozent:"));
@@ -91,7 +91,7 @@ public class BezLTAnteil extends JFrame implements ActionListener {
 			keinFehler = true;
 			if (prozent > 100 || prozent < 0) {
 				JOptionPane.showMessageDialog(null,
-						"Sie müssen eine Zahl zwischen 0 und 100 eingeben.");
+						"Sie mÃ¼ssen eine Zahl zwischen 0 und 100 eingeben.");
 				keinFehler = false;
 
 			}

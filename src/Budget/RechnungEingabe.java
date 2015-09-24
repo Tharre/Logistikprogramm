@@ -118,9 +118,9 @@ public class RechnungEingabe extends JFrame implements ActionListener {
 	/** wenn die Rechnung zweckgebunden ist **/
 	private JRadioButton zweckgebunden = new JRadioButton("zweckgebunden");
 	/** wenn die Rechnung teilrechtsfaehig ist **/
-	private JRadioButton teilrechtsfaehig = new JRadioButton("Teilrechtsfähig");
+	private JRadioButton teilrechtsfaehig = new JRadioButton("TeilrechtsfÃ¤hig");
 	/** wenn die Rechnung regulaer ist **/
-	private JRadioButton regulaer = new JRadioButton("Regulär");
+	private JRadioButton regulaer = new JRadioButton("RegulÃ¤r");
 	/** den Zahlbetrag ausrechnen **/
 	private JButton zahlbetrag = new JButton("Zahlbetrag ausrechnen");
 	/** die Rechnung speichern **/
@@ -179,7 +179,7 @@ public class RechnungEingabe extends JFrame implements ActionListener {
 	private Vector<Integer> angeklickt = new Vector<Integer>();
 	/**
 	 * true; wenn die Bestellung nun fertig bezahlt ist; false: wenn noch
-	 * BestPos ausständig sind
+	 * BestPos ausstÃ¤ndig sind
 	 **/
 	private boolean fertigBez;
 	private boolean teilGesamt;
@@ -568,7 +568,7 @@ public class RechnungEingabe extends JFrame implements ActionListener {
 
 		fields[0].setText(wNummer);
 		fields[0].setEditable(false);
-		fields[1].setText("€ " + bestellbetrag);
+		fields[1].setText("Â€ " + bestellbetrag);
 		fields[1].setEditable(false);
 		fields[7].setText("-" + runde(summeSonderabzuege));
 		fields[7].setEditable(false);
@@ -596,7 +596,7 @@ public class RechnungEingabe extends JFrame implements ActionListener {
 			add(new JLabel(""));
 
 		}
-		fields[1].setText("€ " + bestellbetrag);
+		fields[1].setText("Â€ " + bestellbetrag);
 
 		add(labels[8] = new JLabel(hinweise[8]));
 		add(fields[8] = new JTextField());
@@ -641,7 +641,7 @@ public class RechnungEingabe extends JFrame implements ActionListener {
 
 		fields[0].setText(wNummer);
 		fields[0].setEditable(false);
-		fields[1].setText("€ " + bestellbetrag);
+		fields[1].setText("Â€ " + bestellbetrag);
 		fields[1].setEditable(false);
 		fields[7].setText("-" + runde(summeSonderabzuege));
 		fields[7].setEditable(false);
@@ -716,7 +716,7 @@ public class RechnungEingabe extends JFrame implements ActionListener {
 				JOptionPane
 						.showMessageDialog(
 								this,
-								"Bitte beachten Sie die Länge Ihrer Eingaben. Die externe und interne Nummer dürfen nicht größer als 20 Zeichen lang sein und die Inventarnummer und die Buchhaltungsbelegnummer dürfen nicht länger als 15 Zeichen lang sein");
+								"Bitte beachten Sie die LÃ¤nge Ihrer Eingaben. Die externe und interne Nummer dÃ¼rfen nicht grÃ¶ÃŸer als 20 Zeichen lang sein und die Inventarnummer und die Buchhaltungsbelegnummer dÃ¼rfen nicht lÃ¤nger als 15 Zeichen lang sein");
 
 			if (mitAnteil) {
 				berechneAnteile(werte, welcheKostenstelle, preisZuZahlen,
@@ -764,7 +764,7 @@ public class RechnungEingabe extends JFrame implements ActionListener {
 			} catch (NumberFormatException e1) {
 				JOptionPane
 						.showMessageDialog(this,
-								"Bitte geben Sie für den Rechnungsbetrag nur Zahlen ein");
+								"Bitte geben Sie fÃ¼r den Rechnungsbetrag nur Zahlen ein");
 				fehler = true;
 
 			}
@@ -1006,7 +1006,7 @@ public class RechnungEingabe extends JFrame implements ActionListener {
 	 * datenZuRechnung.get(0);
 	 * 
 	 * stmt.executeUpdate(query); JOptionPane.showMessageDialog(this,
-	 * "Die Rechnung wurde erfoglreich verändert.");
+	 * "Die Rechnung wurde erfoglreich verÃ¤ndert.");
 	 * 
 	 * abbuchen();
 	 * 

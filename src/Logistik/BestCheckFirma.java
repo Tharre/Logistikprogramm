@@ -1,11 +1,11 @@
 package Logistik;
 
 /**
- * Überprüfung ob nur 1 Firma beim Bestellablauf gewählt wurde
+ * ÃœberprÃ¼fung ob nur 1 Firma beim Bestellablauf gewÃ¤hlt wurde
  */
 public class BestCheckFirma {
 	/**
-	 * Hilfsvariable zum Speichern, ob nur eiene Firma gewählt wurde
+	 * Hilfsvariable zum Speichern, ob nur eiene Firma gewÃ¤hlt wurde
 	 */
 	public Boolean eine;
 

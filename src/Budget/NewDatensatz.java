@@ -97,7 +97,7 @@ public class NewDatensatz extends JFrame implements ActionListener, KeyListener 
 	/** JComboBox Hauptkostenstelle **/
 	private JComboBox hauptkostenstelle = new JComboBox();
 	/**
-	 * Combobox fuer die Abteilungen, die man beim Anlegen eines auswählen kann
+	 * Combobox fuer die Abteilungen, die man beim Anlegen eines auswÃ¤hlen kann
 	 **/
 	private JComboBox projekt = new JComboBox();
 
@@ -198,7 +198,7 @@ public class NewDatensatz extends JFrame implements ActionListener, KeyListener 
 			erstelleLayoutFuerUT8Kostenstelle();
 		}
 
-		// Button Speichern wird hinzugefügt ist
+		// Button Speichern wird hinzugefÃ¼gt ist
 		add(btnSpeichern);
 		add(btnNeueEingabe);
 
@@ -467,7 +467,7 @@ public class NewDatensatz extends JFrame implements ActionListener, KeyListener 
 		}// end if(buttonOk3)
 
 		// wenn der Button Neue Eingabe gedrueckt wird, wird alles wieder
-		// zurückgesetzt
+		// zurÃ¼ckgesetzt
 		if (e.getSource() == btnNeueEingabe) {
 			buttonOK.setEnabled(true);
 			buttonOK2.setEnabled(false);
@@ -733,7 +733,7 @@ public class NewDatensatz extends JFrame implements ActionListener, KeyListener 
 			} catch (NumberFormatException e1) {
 				JOptionPane
 						.showMessageDialog(this,
-								"Sie muessen eine Zahl für das geplante Budget eingeben!");
+								"Sie muessen eine Zahl fÃ¼r das geplante Budget eingeben!");
 				return false;
 			}
 		}
@@ -835,7 +835,7 @@ public class NewDatensatz extends JFrame implements ActionListener, KeyListener 
 				nummer = Integer.parseInt(eingaben[0].getText());
 			} catch (NumberFormatException e) {
 				JOptionPane.showMessageDialog(this,
-						"Sie müssen eine Zahl bei dem Feld Nummer eingeben.");
+						"Sie mÃ¼ssen eine Zahl bei dem Feld Nummer eingeben.");
 				return false;
 			}
 		}
@@ -951,7 +951,7 @@ public class NewDatensatz extends JFrame implements ActionListener, KeyListener 
 			}// end if(buttonOk3)
 
 			// wenn der Button Neue Eingabe gedrueckt wird, wird alles wieder
-			// zurückgesetzt
+			// zurÃ¼ckgesetzt
 			if (k.getSource() == btnNeueEingabe) {
 				buttonOK.setEnabled(true);
 				buttonOK2.setEnabled(false);

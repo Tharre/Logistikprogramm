@@ -3,7 +3,7 @@ package Budget;
 import java.sql.*;
 
 /**
- *In der Klasse Datenbankverbindung werden die für dieses Programm notwendigen
+ *In der Klasse Datenbankverbindung werden die fÃ¼r dieses Programm notwendigen
  * Treiber geladen. Ausserdem werden die Verbindungen zur Logistik- und zur
  * Budget-Datenbank hergestellt.
  *<p>
@@ -20,9 +20,9 @@ public class DBVerbindung {
 	private String dbName;
 	/** Name des Servers+Portnummer+Tabellenname **/
 	private String con_str;
-	/** Username für den DB-Login **/
+	/** Username fÃ¼r den DB-Login **/
 	private String user;
-	/** Passwort für den DB-Login **/
+	/** Passwort fÃ¼r den DB-Login **/
 	private String pwt;
 
 	/**
@@ -36,7 +36,7 @@ public class DBVerbindung {
 	 */
 	static {
 		try {
-			Class.forName("com.mysql.jdbc.Driver"); // Datenbranktreiber für
+			Class.forName("com.mysql.jdbc.Driver"); // Datenbranktreiber fÃ¼r
 			// mysql laden
 		} catch (ClassNotFoundException ex) // Falls Datenbanktreiber nicht
 		// gefunden werden konnte

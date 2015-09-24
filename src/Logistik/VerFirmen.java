@@ -1,7 +1,7 @@
 package Logistik;
 
 /**
- * Das Verwaltungsmenü für Firmen im Midpanel überprüfen der Rechte. Je nachdem
+ * Das VerwaltungsmenÃ¼ fÃ¼r Firmen im Midpanel Ã¼berprÃ¼fen der Rechte. Je nachdem
  * wird der Button angezeigt oder nicht
  */
 
@@ -20,13 +20,13 @@ public class VerFirmen extends LayoutMidPanel {
 			addNaviButton("Firma bearbeiten");
 			addShowPanel(new EditFirma(user), "Firma bearbeiten");
 		}
-		if (user.hasRecht(Logistik.rechte.getRechtId("Mehrfachänderung"))) {
-			addNaviButton("Mehrfachänderung");
-			addShowPanel(new MehrfachaenderungFirma(user), "Mehrfachänderung");
+		if (user.hasRecht(Logistik.rechte.getRechtId("MehrfachÃ¤nderung"))) {
+			addNaviButton("MehrfachÃ¤nderung");
+			addShowPanel(new MehrfachaenderungFirma(user), "MehrfachÃ¤nderung");
 		}
-		if (user.hasRecht(Logistik.rechte.getRechtId("Firma löschen"))) {
-			addNaviButton("Firma löschen");
-			addShowPanel(new DelFirma(user), "Firma löschen");
+		if (user.hasRecht(Logistik.rechte.getRechtId("Firma lÃ¶schen"))) {
+			addNaviButton("Firma lÃ¶schen");
+			addShowPanel(new DelFirma(user), "Firma lÃ¶schen");
 		}
 	}
 }

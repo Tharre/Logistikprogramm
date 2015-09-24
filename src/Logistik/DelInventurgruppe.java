@@ -6,8 +6,8 @@ import java.awt.*;
 import java.awt.event.*;
 
 /**
- * Klasse zum Löschen von Inventurgruppen Listet alle Inventurgruppen auf +
- * Checkbox Nach dem Klick auf den Löschen-Button werden die angehakten gelöscht
+ * Klasse zum LÃ¶schen von Inventurgruppen Listet alle Inventurgruppen auf +
+ * Checkbox Nach dem Klick auf den LÃ¶schen-Button werden die angehakten gelÃ¶scht
  */
 
 public class DelInventurgruppe extends LayoutMainPanel implements
@@ -17,7 +17,7 @@ public class DelInventurgruppe extends LayoutMainPanel implements
 
 	public DelInventurgruppe(UserImport user) {
 		super(user);
-		del = new JButton("Löschen");
+		del = new JButton("LÃ¶schen");
 		del.addActionListener(this);
 		activate();
 	}
@@ -28,7 +28,7 @@ public class DelInventurgruppe extends LayoutMainPanel implements
 		String qry = "SELECT * FROM inventurgruppe ORDER BY bezeichnung";
 		ResultSet rs = con.mysql_query(qry);
 		String[] spalten = { "id", "bezeichnung" };
-		String[] spalten2 = { "id", "bezeichnung", "löschen" };
+		String[] spalten2 = { "id", "bezeichnung", "lÃ¶schen" };
 		Class[] classes = { Integer.class, String.class, Boolean.class };
 		df = new AnzTabelleA(spalten, spalten2, classes, rs, 1);
 		removeMall();
@@ -42,19 +42,19 @@ public class DelInventurgruppe extends LayoutMainPanel implements
 
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == del) {
-			Object[] hakDelFirm = df.getKlicked("id", "löschen");
+			Object[] hakDelFirm = df.getKlicked("id", "lÃ¶schen");
 			if (hakDelFirm.length == 0) {
-				new MessageError("Mindestens eine Inventurgruppe auswählen!");
+				new MessageError("Mindestens eine Inventurgruppe auswÃ¤hlen!");
 				return;
 			}
 			int i = JOptionPane.showConfirmDialog(null,
-					"Wollen Sie die Inventurgruppe(n) löschen?", "löschen",
+					"Wollen Sie die Inventurgruppe(n) lÃ¶schen?", "lÃ¶schen",
 					JOptionPane.YES_NO_OPTION);
 			if (i == 0) {
 
 				for (int j = 0; j < hakDelFirm.length; j++) {
 					try {
-						// PRÜFVORGANG
+						// PRÃœFVORGANG
 
 						String sql1 = "SELECT inventurgruppe FROM material WHERE inventurgruppe="
 								+ hakDelFirm[j] + " LIMIT 1";
@@ -63,13 +63,13 @@ public class DelInventurgruppe extends LayoutMainPanel implements
 							JOptionPane
 									.showMessageDialog(
 											null,
-											"Mindestens eine der ausgewählten Inventurgruppen wird in den Materialien verwendet und kann nicht gelöscht werden!");
+											"Mindestens eine der ausgewÃ¤hlten Inventurgruppen wird in den Materialien verwendet und kann nicht gelÃ¶scht werden!");
 							rs1.close();
 							return;
 						}
 						rs1.close();
 
-						// LÖSCHVORGANG
+						// LÃ–SCHVORGANG
 
 						String sql = "DELETE FROM inventurgruppe WHERE id = "
 								+ hakDelFirm[j] + "";
@@ -79,8 +79,8 @@ public class DelInventurgruppe extends LayoutMainPanel implements
 					}
 				}
 
-				// zurückspringen
-				JOptionPane.showMessageDialog(null, "Daten gelöscht");
+				// zurÃ¼ckspringen
+				JOptionPane.showMessageDialog(null, "Daten gelÃ¶scht");
 			}
 		}// if
 		activate();

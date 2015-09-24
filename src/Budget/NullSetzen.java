@@ -74,7 +74,7 @@ public class NullSetzen extends JPanel {
 			System.out.println("SQL-Exception: " + ex.getMessage());
 			System.out.println("SQL-State: " + ex.getSQLState());
 			System.out.println("SQL-ErrorCode: " + ex.getErrorCode());
-			System.out.println("Daten der Tabelle konnte nicht gelöscht werden");
+			System.out.println("Daten der Tabelle konnte nicht gelÃ¶scht werden");
 		}
 	}
 }

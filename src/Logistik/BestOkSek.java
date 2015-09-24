@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.sql.*;
 
 /**
- * wenn Sekretärin eine Bestellung erstellt Zuerst Statusänderung in BANF,
+ * wenn SekretÃ¤rin eine Bestellung erstellt Zuerst StatusÃ¤nderung in BANF,
  * danach Speichern in der Datenbank und Mail an Mayer
  */
 public class BestOkSek extends JPanel {
@@ -121,7 +121,7 @@ public class BestOkSek extends JPanel {
 			e.getMessage();
 		}
 
-		// BANFÄNDERUNG
+		// BANFÃ„NDERUNG
 
 		for (int j = 0; j < best.length; j++) {
 			try {
@@ -234,7 +234,7 @@ public class BestOkSek extends JPanel {
 
 		}// for
 
-		// MAIL AN mayer: neue Bestellung (von Sekretärin)
+		// MAIL AN mayer: neue Bestellung (von SekretÃ¤rin)
 
 		IMAP.sendMail(user.getMail(),
 				new String[] { "leopold.mayer@htl-hl.ac.at" },

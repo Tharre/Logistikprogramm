@@ -135,7 +135,7 @@ public class MaterialExport extends LayoutMainPanel implements ActionListener {
 		namen.add("Bezeichnung");
 		namen.add("BundesNr");
 		namen.add("Inventurgruppe");
-		namen.add("Stück");
+		namen.add("StÃ¼ck");
 		namen.add("Preis exkl");
 		namen.add("MWSt");
 		namen.add("Einheit");

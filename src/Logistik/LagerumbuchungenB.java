@@ -8,7 +8,7 @@ import java.awt.event.*;
 
 /*
  * Das Fenster zeigt alle Materialien an die auf die Auswahl zutreffen.
- * Auswahl der Materialien für die Buchungen durchgeführt werden sollen.
+ * Auswahl der Materialien fÃ¼r die Buchungen durchgefÃ¼hrt werden sollen.
  */
 public class LagerumbuchungenB extends JDialog implements ActionListener {
 	public final static int ZUBUCHEN = 0;
@@ -50,7 +50,7 @@ public class LagerumbuchungenB extends JDialog implements ActionListener {
 					"Erstellungsdatum", "inventurgruppe", "stueck",
 					"meldebestand" };
 			String[] spaltennamen = { "ID", "Bezeichnung", "Bundesnr",
-					"Erstellungsdatum", "Inventurgruppe", "Stück",
+					"Erstellungsdatum", "Inventurgruppe", "StÃ¼ck",
 					"Meldebestand" };
 			Class[] classes = { Integer.class, String.class, String.class,
 					java.util.Date.class, String.class, Integer.class,
@@ -63,7 +63,7 @@ public class LagerumbuchungenB extends JDialog implements ActionListener {
 			String[] spalten = { "ID", "Bezeichnung", "Inventurgruppe",
 					"stueck" };
 			String[] spaltennamen = { "ID", "Bezeichnung", "Inventurgruppe",
-					"Stück", "Auswahl" };
+					"StÃ¼ck", "Auswahl" };
 			Class[] classes = { Integer.class, String.class, String.class,
 					Double.class, Boolean.class };
 			sc = new JScrollPane(table = new AnzTabelleA(spalten,

@@ -6,7 +6,7 @@ import javax.swing.*;
 import java.sql.*;
 
 /**
- * Anzeige aller verfügbaren Bestellanforderungen beim Betsellablauf Farbliche
+ * Anzeige aller verfÃ¼gbaren Bestellanforderungen beim Betsellablauf Farbliche
  * Kennzeichnung der Stati
  */
 public class AnzBanf extends JPanel {

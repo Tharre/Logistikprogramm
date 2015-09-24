@@ -7,8 +7,8 @@ import java.awt.event.*;
 
 /**
  * Alle Materialien werden aufgelistet am Ende jeder Zeile ist eine Checkbox, in
- * der man auswählen kann, ob ein Datensatz gelöscht werden soll bei Bestätigung
- * wir düberprüft, ob Material schon verwendet wird -> keine Löschung
+ * der man auswÃ¤hlen kann, ob ein Datensatz gelÃ¶scht werden soll bei BestÃ¤tigung
+ * wir dÃ¼berprÃ¼ft, ob Material schon verwendet wird -> keine LÃ¶schung
  */
 
 public class DelMaterial extends LayoutMainPanel implements ActionListener {
@@ -17,7 +17,7 @@ public class DelMaterial extends LayoutMainPanel implements ActionListener {
 
 	public DelMaterial(UserImport user) {
 		super(user);
-		del = new JButton("Löschen");
+		del = new JButton("LÃ¶schen");
 
 		del.addActionListener(this);
 	}
@@ -31,8 +31,8 @@ public class DelMaterial extends LayoutMainPanel implements ActionListener {
 				"inventurgruppe.bezeichnung", "stueck", "preisExkl", "einheit",
 				"artNr", "firmenname", "ort" };
 		String[] spaltenT = { "ID", "Bezeichnung", "BundesNr",
-				"Inventurgruppe", "Stück", "Preis exkl", "Einheit",
-				"ArtikelNr", "Firma", "Ort", "löschen" };
+				"Inventurgruppe", "StÃ¼ck", "Preis exkl", "Einheit",
+				"ArtikelNr", "Firma", "Ort", "lÃ¶schen" };
 		Class[] classes = { Integer.class, String.class, String.class,
 				String.class, Integer.class, String.class, String.class,
 				String.class, String.class, String.class, Boolean.class };
@@ -47,15 +47,15 @@ public class DelMaterial extends LayoutMainPanel implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == del) {
 			int i = JOptionPane.showConfirmDialog(null,
-					"Wollen Sie die Materialien löschen?", "löschen",
+					"Wollen Sie die Materialien lÃ¶schen?", "lÃ¶schen",
 					JOptionPane.YES_NO_OPTION);
 			if (i == 0) {
 
-				Object[] hakDelMat = df.getKlicked("ID", "löschen");
+				Object[] hakDelMat = df.getKlicked("ID", "lÃ¶schen");
 
 				for (int j = 0; j < hakDelMat.length; j++) {
 					try {
-						// PRÜFVORGANG
+						// PRÃœFVORGANG
 
 						String sql1 = "SELECT bp.bezeichnung FROM banfpos bp,material f WHERE bp.bezeichnung="
 								+ hakDelMat[j] + " LIMIT 1";
@@ -64,13 +64,13 @@ public class DelMaterial extends LayoutMainPanel implements ActionListener {
 							JOptionPane
 									.showMessageDialog(
 											null,
-											"Mindestens eine der ausgewählten Materialien wird in BANFs verwendet und kann nicht gelöscht werden!");
+											"Mindestens eine der ausgewÃ¤hlten Materialien wird in BANFs verwendet und kann nicht gelÃ¶scht werden!");
 							rs1.close();
 							return;
 						}
 						rs1.close();
 
-						// LÖSCHVORGANG
+						// LÃ–SCHVORGANG
 
 						String delFM = "DELETE FROM firma_material WHERE material = "
 								+ hakDelMat[j];
@@ -84,7 +84,7 @@ public class DelMaterial extends LayoutMainPanel implements ActionListener {
 					}
 				}
 
-				JOptionPane.showMessageDialog(null, "Daten gelöscht");
+				JOptionPane.showMessageDialog(null, "Daten gelÃ¶scht");
 			}
 
 		}// if

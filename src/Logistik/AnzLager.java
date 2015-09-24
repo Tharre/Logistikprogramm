@@ -8,8 +8,8 @@ import java.util.Date;
 import java.util.Vector;
 
 /*
- * Zeigt die Details der ausgewählten, noch nicht gelieferten Bestellungen an
- * und ermöglicht die Auswahl der der Stati der Bestellpositionen.
+ * Zeigt die Details der ausgewÃ¤hlten, noch nicht gelieferten Bestellungen an
+ * und ermÃ¶glicht die Auswahl der der Stati der Bestellpositionen.
  */
 public class AnzLager extends JFrame implements ActionListener {
 	public Object[] hak;
@@ -118,8 +118,8 @@ public class AnzLager extends JFrame implements ActionListener {
 					kat[i].setValueAt("richtig geliefert", x, 4);
 					detR[x].setColor(Color.GREEN);
 				}
-				if (s.equals("15") || s.equals("gelöscht")) {
-					kat[i].setValueAt("gelöscht", x, 4);
+				if (s.equals("15") || s.equals("gelÃ¶scht")) {
+					kat[i].setValueAt("gelÃ¶scht", x, 4);
 					detR[x].setColor(new Color(151, 217, 236));
 				}
 
@@ -139,8 +139,8 @@ public class AnzLager extends JFrame implements ActionListener {
 				if (sb.equals("4") || sb.equals("komplett bezahlt")) {
 					kat[i].setValueAt("komplett bezahlt", x, 5);
 				}
-				if (s.equals("15") || s.equals("gelöscht")) {
-					kat[i].setValueAt("gelöscht", x, 5);
+				if (s.equals("15") || s.equals("gelÃ¶scht")) {
+					kat[i].setValueAt("gelÃ¶scht", x, 5);
 				}
 			}
 			alle[i][1].add(sc1[i]);
@@ -158,7 +158,7 @@ public class AnzLager extends JFrame implements ActionListener {
 					"MWSt", "Preis Inkl", "Preis gesamt", "Einheit", "Name",
 					"Status Lieferung", "Status Bezahlung", "geliefert",
 					"abweichend geliefert", "Rest kommt nicht mehr",
-					"nicht lieferbar", "Stück geliefert", "Kommentar" };
+					"nicht lieferbar", "StÃ¼ck geliefert", "Kommentar" };
 			Class[] klass2 = { Integer.class, String.class, Double.class,
 					String.class, String.class, String.class, String.class,
 					String.class, String.class, Integer.class, Integer.class,
@@ -220,7 +220,7 @@ public class AnzLager extends JFrame implements ActionListener {
 			// c.add(alle[i][0]);
 			center.add(alle[i][0]);
 
-		}// für jede Bestellung
+		}// fÃ¼r jede Bestellung
 		/*
 		 * JPanel p = new JPanel(); p.add(speichern); c.add(p);
 		 */
@@ -234,7 +234,7 @@ public class AnzLager extends JFrame implements ActionListener {
 
 			speichern.setEnabled(false);
 			liefern = new Object[pat.length][4][];
-			// liefern.length = Anzahl der ausgewählten ausständigen
+			// liefern.length = Anzahl der ausgewÃ¤hlten ausstÃ¤ndigen
 			// Bestellungen
 
 			for (int i = 0; i < pat.length; i++) {
@@ -394,13 +394,13 @@ public class AnzLager extends JFrame implements ActionListener {
 							JOptionPane
 									.showMessageDialog(
 											this,
-											"Die Stückzahl muss eine positive Zahl sein!",
+											"Die StÃ¼ckzahl muss eine positive Zahl sein!",
 											"Fehlermeldung",
 											JOptionPane.ERROR_MESSAGE);
 							break;
 						}
 
-						// Anzahl gelieferte Menge überprüfen
+						// Anzahl gelieferte Menge Ã¼berprÃ¼fen
 						double geliefert = 0;
 						double menge = 0;
 						String queryMenge = "SELECT menge,geliefert from bestpos where id="
@@ -418,15 +418,15 @@ public class AnzLager extends JFrame implements ActionListener {
 
 						if (s > (menge - geliefert)) {
 							JOptionPane.showMessageDialog(this,
-									"Die eingegebene Stückzahl ist zu groß! Es können nicht mehr als "
+									"Die eingegebene StÃ¼ckzahl ist zu groÃŸ! Es kÃ¶nnen nicht mehr als "
 											+ (menge - geliefert)
-											+ " Stück eingegeben werden!",
+											+ " StÃ¼ck eingegeben werden!",
 									"Fehlermeldung", JOptionPane.ERROR_MESSAGE);
 							s = 0;
 							break;
 						} else if (s < 0) {
 							JOptionPane.showMessageDialog(this,
-									"Die Stückzahl muss positiv sein!",
+									"Die StÃ¼ckzahl muss positiv sein!",
 									"Fehlermeldung", JOptionPane.ERROR_MESSAGE);
 							s = 0;
 							break;
@@ -633,7 +633,7 @@ public class AnzLager extends JFrame implements ActionListener {
 		String queryOben;
 		String kostenstelle = "";
 		String tabelle;
-		/** Stückpreis inkl. MWSt **/
+		/** StÃ¼ckpreis inkl. MWSt **/
 		double preisInkl = 0;
 		double preis = 0;
 		/** Bestellmenge einer Bestellposition **/

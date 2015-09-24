@@ -45,7 +45,7 @@ public class RechnungAnzeige extends JFrame implements ActionListener {
 			"Buchhaltungsbelege", "Sonderabzug", "Skonto", "Zahlart","Zahlbetrag",
 			"Rechnungsstatus" };
 	/** Button um das PDF zu oeffnen **/
-	private JButton pdfoeffnen = new JButton("PDF öffnen");
+	private JButton pdfoeffnen = new JButton("PDF Ã¶ffnen");
 	/** Vector mit den Daten der Rechnung **/
 	private Vector daten;
 	
@@ -135,7 +135,7 @@ public class RechnungAnzeige extends JFrame implements ActionListener {
 			}
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
-			JOptionPane.showMessageDialog(null, "Fehler", "Fehler beim Öffnen der Textdatei 'PfadRechnungen.txt'!", JOptionPane.ERROR_MESSAGE);
+			JOptionPane.showMessageDialog(null, "Fehler", "Fehler beim Ã–ffnen der Textdatei 'PfadRechnungen.txt'!", JOptionPane.ERROR_MESSAGE);
 
 		}
 

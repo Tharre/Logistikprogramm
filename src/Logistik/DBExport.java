@@ -14,12 +14,12 @@ import javax.swing.filechooser.FileFilter;
 public class DBExport extends LayoutMainPanel implements ActionListener {
 
 	/**
-	 * Button zum Durchführen des Exports
+	 * Button zum DurchfÃ¼hren des Exports
 	 */
 	public JButton exportB = new JButton("exportieren");
 
 	/**
-	 * Überschrift
+	 * Ãœberschrift
 	 */
 	private JLabel titel = new JLabel("DATENBANK EXPORTIEREN");
 
@@ -513,7 +513,7 @@ public class DBExport extends LayoutMainPanel implements ActionListener {
 				bw.close();
 
 				JOptionPane.showMessageDialog(null,
-						"Exportvorgang erfolgreich durchgeführt!");
+						"Exportvorgang erfolgreich durchgefÃ¼hrt!");
 
 			} catch (Exception ex) {
 				ex.getMessage();

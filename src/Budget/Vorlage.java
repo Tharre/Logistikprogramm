@@ -38,7 +38,7 @@ public class Vorlage extends JPanel implements ActionListener {
 	/** Untertabellen anzeigen **/
 	private JButton mehr = new JButton("mehr");
 	/** zurueck zur oberen Tabelle **/
-	private JButton zurueck = new JButton("zurück");
+	private JButton zurueck = new JButton("zurÃ¼ck");
 	/** zeigt Details zu den Projekten an **/
 	private JButton details = new JButton("Details");
 	/** das Hauptbudget bearbeiten **/
@@ -46,16 +46,16 @@ public class Vorlage extends JPanel implements ActionListener {
 	/** die Tabellen aktualisieren **/
 	private JButton aktualisieren = new JButton("Aktualisiern");
 	/** Datensatz aendern **/
-	private JButton aendern = new JButton("Ändern");
+	private JButton aendern = new JButton("Ã„ndern");
 	/** Datensatz loeschen **/
-	private JButton loeschen = new JButton("Löschen");
+	private JButton loeschen = new JButton("LÃ¶schen");
 	/** die Anteile fuer die Projekte anzeigen **/
 	private JButton anteil = new JButton("Anteile");
 	/** den LT- Anteil eingeben **/
 	private JButton ltanteil = new JButton("LT- Anteil");
 	/** den EDV- HAT Anteil eingeben **/
 	private JButton edvHat = new JButton("EDV- HAT Anteil");
-	private JButton buchungen = new JButton("Aushändigungen");
+	private JButton buchungen = new JButton("AushÃ¤ndigungen");
 
 	// Panels
 	/** Panel, in dem die Tabellen sind **/
@@ -114,10 +114,10 @@ public class Vorlage extends JPanel implements ActionListener {
 	// String[]
 	/** Spaltennamen des LMB Hauptbudgets **/
 	private String[] spalteLMB = { "Nummer", "Name", "geplant", "ausgegeben",
-			"gesperrt", "verfügbar" };
+			"gesperrt", "verfÃ¼gbar" };
 	/** Spaltennamen des UT3 Hauptbudgets **/
 	private String[] spalteUT3 = { "Nummer", "Name", "EDV_HAT_Anteil",
-			"geplant", "ausgegeben", "gesperrt", "verfügbar" };
+			"geplant", "ausgegeben", "gesperrt", "verfÃ¼gbar" };
 	/**
 	 * es werden die benoetigten Spalten aus dem spaltennmane[][]
 	 * herausgespeichert
@@ -128,7 +128,7 @@ public class Vorlage extends JPanel implements ActionListener {
 			"sonderbudget", "hauptbereichut8", "bereichut8",
 			"hauptkostenstelleut8", "kostenstelleut8", "lmb" };
 	/** Spaltennamen fuer die Tabelle der Anteile vom Projekt **/
-	private String[] spaltenAnteil = { "Budget", "Betrag in €", "Prozent" };
+	private String[] spaltenAnteil = { "Budget", "Betrag in Â€", "Prozent" };
 	/** Namen der Buttons **/
 	private String[] namenFuerButtons = { "Neue Abteilung anlegen",
 			"Neues Projekt anlegen", "Neue Abteilung anlegen",
@@ -139,7 +139,7 @@ public class Vorlage extends JPanel implements ActionListener {
 	private String[] spaltenDetailsProjekt = { "BanfID", "Antragsteller",
 			"Kostenstelle", "Status Lieferung", "Datum", "Firma" };
 	private String[] spaltenBuchungenProjekt = { "BuchungsID", "User",
-			"Datum", "Gesamtpreis", "Stück", "Material", "Firma" };
+			"Datum", "Gesamtpreis", "StÃ¼ck", "Material", "Firma" };
 
 	// String[][]
 	/**
@@ -150,23 +150,23 @@ public class Vorlage extends JPanel implements ActionListener {
 	 **/
 	private String[][] spaltennamen = {
 			{ "Nummer", "Name", "EDV_HAT_Anteil", "fest geplant/Projektnr.",
-					"geplant", "ausgegeben", "gesperrt", "verfügbar" },
+					"geplant", "ausgegeben", "gesperrt", "verfÃ¼gbar" },
 			{ "Nummer", "Name", "Lehrer", "Kurzz", "Klasse", "Datum",
 					"Teilnehmer", "Abteilung" },
 			{ "Nummer", "Name", "fest geplant/Projektnr.", "geplant",
-					"ausgegeben", "gesperrt", "verfügbar" },
+					"ausgegeben", "gesperrt", "verfÃ¼gbar" },
 			{ "Nummer", "Name", "geplant", "ausgegeben", "gesperrt",
-					"verfügbar" },
+					"verfÃ¼gbar" },
 			{ "Nummer", "Name", "geplant", "ausgegeben", "gesperrt",
-					"verfügbar" },
+					"verfÃ¼gbar" },
 			{ "Nummer", "Name", "geplant", "ausgegeben", "gesperrt",
-					"verfügbar" },
+					"verfÃ¼gbar" },
 			{ "Nummer", "Name", "geplant", "ausgegeben", "gesperrt",
-					"verfügbar" },
+					"verfÃ¼gbar" },
 			{ "Nummer", "Name", "Raumnummer", "Kurzbezeichnung", "geplant",
-					"ausgegeben", "gesperrt", "verfügbar" },
+					"ausgegeben", "gesperrt", "verfÃ¼gbar" },
 			{ "Nummer", "Name", "fest geplant/Projektnr.", "geplant",
-					"ausgegeben", "gesperrt", "verfügbar" } };
+					"ausgegeben", "gesperrt", "verfÃ¼gbar" } };
 
 	// ScrollPanes
 	/** ScrollPane fuer die Tabelle **/
@@ -226,7 +226,7 @@ public class Vorlage extends JPanel implements ActionListener {
 	private JLabel hat;
 	/** Datum **/
 	private Date datum;
-	/** Jahreszahl, wird für Bezeichnung des Budgets LMB1_x verwendet **/
+	/** Jahreszahl, wird fÃ¼r Bezeichnung des Budgets LMB1_x verwendet **/
 	private int jahreszahl;
 
 	/**
@@ -314,16 +314,16 @@ public class Vorlage extends JPanel implements ActionListener {
 		bearbeiten
 				.setToolTipText("Bearbeiten des geplanten Betrages (von dem markierten Eintrag)");
 		mehr.setToolTipText("Untertabellen anzeigen");
-		zurueck.setToolTipText("zurück zur Übertabelle");
+		zurueck.setToolTipText("zurÃ¼ck zur Ãœbertabelle");
 		details.setToolTipText("Banfs zu einem bestimmten Projekt");
 		aktualisieren.setToolTipText("Aktualisieren");
 		bearbeitenHB.setToolTipText("Bearbeiten des Hauptbudgets");
-		aendern.setToolTipText("Ändern des markierten Eintrages");
-		loeschen.setToolTipText("Löschen des markierten Eintrages");
+		aendern.setToolTipText("Ã„ndern des markierten Eintrages");
+		loeschen.setToolTipText("LÃ¶schen des markierten Eintrages");
 		anteil.setToolTipText("Budget-Anteile des Projektes");
 		ltanteil.setToolTipText("Anteil der Abteilung Lebensmitteltechnologie");
 		edvHat.setToolTipText("EDV- HAT- Anteil");
-		buchungen.setToolTipText("Aushändigungen aus Zentrallager");
+		buchungen.setToolTipText("AushÃ¤ndigungen aus Zentrallager");
 
 		// dem Panel die Buttons adden
 		if (kennnummer != 2) {
@@ -643,7 +643,7 @@ public class Vorlage extends JPanel implements ActionListener {
 			if (markiert) {
 				SwingUtilities.invokeLater(new Runnable() {
 					public void run() {
-						maske2 = new EditBudget("geplantes Budget ändern",
+						maske2 = new EditBudget("geplantes Budget Ã¤ndern",
 								kennnummer, zeilennummer, con, conL, nummern);
 						maske2.pack();
 						maske2.setLocationRelativeTo(null);
@@ -696,7 +696,7 @@ public class Vorlage extends JPanel implements ActionListener {
 					SwingUtilities.invokeLater(new Runnable() {
 						public void run() {
 
-							fenster = new AnzAbfrage("Aushändigungen Zentrallager",
+							fenster = new AnzAbfrage("AushÃ¤ndigungen Zentrallager",
 									spaltenBuchungenProjekt, daten, con, conL);
 							fenster.setSize(1100, 500);
 							fenster.setLocationRelativeTo(null);
@@ -856,7 +856,7 @@ public class Vorlage extends JPanel implements ActionListener {
 				SwingUtilities.invokeLater(new Runnable() {
 					public void run() {
 
-						maske2 = new EditBudget("geplantes Budget ändern",
+						maske2 = new EditBudget("geplantes Budget Ã¤ndern",
 								kennnummer, zeilennummer, con, conL, nummern);
 						maske2.pack();
 
@@ -872,7 +872,7 @@ public class Vorlage extends JPanel implements ActionListener {
 				SwingUtilities.invokeLater(new Runnable() {
 					public void run() {
 
-						maske2 = new EditBudget("geplantes Budget ändern",
+						maske2 = new EditBudget("geplantes Budget Ã¤ndern",
 								kennnummer, zeilennummer, con, conL, nummern);
 						maske2.pack();
 
@@ -896,7 +896,7 @@ public class Vorlage extends JPanel implements ActionListener {
 			int kennung = 0;
 
 			int hilf = JOptionPane.showConfirmDialog(this,
-					"Sind Sie sicher, dass sie den Datensatz löschen möchten?",
+					"Sind Sie sicher, dass sie den Datensatz lÃ¶schen mÃ¶chten?",
 					"WARNUNG", JOptionPane.YES_NO_OPTION,
 					JOptionPane.QUESTION_MESSAGE);
 
@@ -1112,7 +1112,7 @@ public class Vorlage extends JPanel implements ActionListener {
 	 *            Tabelle, die aktualisiert werden soll
 	 * 
 	 * @param data
-	 *            neuen Daten für die Tabelle
+	 *            neuen Daten fÃ¼r die Tabelle
 	 */
 
 	public void aktualisiere(Tabelle table, Vector data) {

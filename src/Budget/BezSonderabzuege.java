@@ -118,7 +118,7 @@ public class BezSonderabzuege extends JFrame implements ActionListener {
 	private String budget;
 	/** W- Nummer **/
 	private String wNummer;
-	/** true; wenn die Bestellung nun fertig bezahlt ist; false: wenn noch BestPos ausständig sind**/
+	/** true; wenn die Bestellung nun fertig bezahlt ist; false: wenn noch BestPos ausstÃ¤ndig sind**/
 	private boolean fertigBez;
 
 	/**
@@ -126,7 +126,7 @@ public class BezSonderabzuege extends JFrame implements ActionListener {
 	 * ist
 	 * 
 	 * @param zeilen
-	 *            anzahl der ausgewählten Bestellpositionen
+	 *            anzahl der ausgewÃ¤hlten Bestellpositionen
 	 * @param banfIds
 	 *            die Banf IDs
 	 * @param preisGes
@@ -139,7 +139,7 @@ public class BezSonderabzuege extends JFrame implements ActionListener {
 	 *            Connection zur Logistikdatenbank
 	 * @param istGesamt
 	 *            ein Boolean; true: alle Bestellpositionen sollen bezahlt
-	 *            werden; false: es bleiben unbezahlte Bestellpositionen über
+	 *            werden; false: es bleiben unbezahlte Bestellpositionen Ã¼ber
 	 * @param budget
 	 *            mit welchem Budget wird die Bestellung bezahlt
 	 * @param gibtRechnung
@@ -160,7 +160,7 @@ public class BezSonderabzuege extends JFrame implements ActionListener {
 			boolean gibtRechnung, Vector<String> kostenstelle,
 			Vector<Integer> bestposIds, Vector<Integer> angeklickt,
 			Vector<String> materialV,Vector<Double> nettoStueck, boolean fertigBez, Vector<Double> menge) {
-		super("Sonderabzüge");
+		super("SonderabzÃ¼ge");
 
 		this.bestID = bestID;
 		this.con = con;
@@ -187,7 +187,7 @@ public class BezSonderabzuege extends JFrame implements ActionListener {
 	 * gibt
 	 * 
 	 * @param zeilen
-	 *            anzahl der ausgewählten Bestellpositionen
+	 *            anzahl der ausgewÃ¤hlten Bestellpositionen
 	 * @param banfIds
 	 *            die Banf IDs
 	 * @param preisGes
@@ -200,7 +200,7 @@ public class BezSonderabzuege extends JFrame implements ActionListener {
 	 *            Connection zur Logistikdatenbank
 	 * @param istGesamt
 	 *            ein Boolean; true: alle Bestellpositionen sollen bezahlt
-	 *            werden; false: es bleiben unbezahlte Bestellpositionen über
+	 *            werden; false: es bleiben unbezahlte Bestellpositionen Ã¼ber
 	 * @param budget
 	 *            mit welchem Budget wird die Bestellung bezahlt
 	 * @param gibtRechnung
@@ -318,10 +318,10 @@ public class BezSonderabzuege extends JFrame implements ActionListener {
 			links11.add(new JLabel("" + bestID));
 			links1.add(new JLabel("" + banfIds.get(i)));
 			materialP.add(new JLabel("" + materialV.get(i),JLabel.CENTER));
-			links.add(new JLabel("" + preisGes.get(i) + " €", JLabel.CENTER));
+			links.add(new JLabel("" + preisGes.get(i) + " Â€", JLabel.CENTER));
 			rechts.add(field[i]);
 			nettopreisP.add(fieldNetto[i]);
-			nettoStueckPreisP.add(new JLabel(""+nettoStueck.get(i)+"€",JLabel.CENTER));
+			nettoStueckPreisP.add(new JLabel(""+nettoStueck.get(i)+"Â€",JLabel.CENTER));
 			
 		}
 	
@@ -427,7 +427,7 @@ public class BezSonderabzuege extends JFrame implements ActionListener {
 				hilf = JOptionPane
 						.showConfirmDialog(
 								this,
-								"Wollen Sie eine neue Rechnung anlegen <JA>, oder wollen Sie eine bestehende Rechnung ändern <NEIN>?",
+								"Wollen Sie eine neue Rechnung anlegen <JA>, oder wollen Sie eine bestehende Rechnung Ã¤ndern <NEIN>?",
 								"WARNUNG", JOptionPane.YES_NO_OPTION,
 								JOptionPane.QUESTION_MESSAGE);
 				dispose();

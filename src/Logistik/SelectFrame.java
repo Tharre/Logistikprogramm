@@ -129,7 +129,7 @@ public class SelectFrame extends JDialog implements ActionListener {
 			p.add(new JLabel(data[i]), "");
 			final int z = i;
 			JButton btn = LayoutButtonCreator.createButton("ok.gif",
-					"ausw‰hlen");
+					"ausw√§hlen");
 			p.add(btn, "");
 			btn.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
@@ -195,7 +195,7 @@ public class SelectFrame extends JDialog implements ActionListener {
 				}
 				final String tx = s3;
 				JButton btn = LayoutButtonCreator.createButton("ok.gif",
-						"ausw‰hlen");
+						"ausw√§hlen");
 				// JButton btn = new JButton("");
 				p.add(btn, "");
 				r.add(btn);

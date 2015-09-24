@@ -11,8 +11,8 @@ import java.util.Vector;
 import Budget.DatenImport;
 
 /**
- * neues Fenster für Detialansicht bei Bestellungen verwendetes Layout:
- * BanfLayout Anzeige aller ausgewählten Bestellungen in Detailansicht
+ * neues Fenster fÃ¼r Detialansicht bei Bestellungen verwendetes Layout:
+ * BanfLayout Anzeige aller ausgewÃ¤hlten Bestellungen in Detailansicht
  */
 public class AnzBestDetailNeu extends JFrame implements ActionListener {
 	/**
@@ -186,8 +186,8 @@ public class AnzBestDetailNeu extends JFrame implements ActionListener {
 					status.setBackground(Color.GREEN);
 				}
 
-				if (s.equals("15") || s.equals("gelöscht")) {
-					status.setText("gelöscht");
+				if (s.equals("15") || s.equals("gelÃ¶scht")) {
+					status.setText("gelÃ¶scht");
 					status.setBackground(new Color(151, 217, 236));
 				}
 
@@ -345,8 +345,8 @@ public class AnzBestDetailNeu extends JFrame implements ActionListener {
 						statusp.setBackground(Color.GREEN);
 					}
 
-					if (s.equals("15") || s.equals("gelöscht")) {
-						statusp.setText("gelöscht");
+					if (s.equals("15") || s.equals("gelÃ¶scht")) {
+						statusp.setText("gelÃ¶scht");
 						statusp.setBackground(new Color(151, 217, 236));
 					}
 
@@ -394,7 +394,7 @@ public class AnzBestDetailNeu extends JFrame implements ActionListener {
 				rs1.close();
 				rs2.close();
 
-			}// für jede Bestellung
+			}// fÃ¼r jede Bestellung
 		} catch (Exception ex) {
 
 			ex.getMessage();

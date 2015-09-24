@@ -10,13 +10,13 @@ import java.sql.*;
 
 public class NewFirma extends LayoutMainPanel implements ActionListener {
 	/**
-	 * Textfelder für die Eingabe
+	 * Textfelder fÃ¼r die Eingabe
 	 */
 	private Input name, plz, ort, str, mail, staat, knr, sachbearbeiter,
 			telefon, fax, homepage, uid, kondition, date, ums, ara,
 			kreditorennr, einkaeufergr;
 	/**
-	 * Button zum Speichern/Löschen
+	 * Button zum Speichern/LÃ¶schen
 	 */
 	private JButton save, clear;
 	private LayoutForm f;
@@ -50,7 +50,7 @@ public class NewFirma extends LayoutMainPanel implements ActionListener {
 		einkaeufergr = new Input(15, "einkaeufergr");
 
 		save = new JButton("Speichern");
-		clear = new JButton("Löschen");
+		clear = new JButton("LÃ¶schen");
 		f.addHiddenInput(date);
 		f.addRight(new JLabel("Firmenname:"));
 		f.addLeftInput(name);
@@ -61,7 +61,7 @@ public class NewFirma extends LayoutMainPanel implements ActionListener {
 		f.addRight(new JLabel("Ort:"));
 		f.addLeftInput(ort);
 		f.br();
-		f.addRight(new JLabel("Straße/Hausnummer:"));
+		f.addRight(new JLabel("StraÃŸe/Hausnummer:"));
 		f.addLeftInput(str);
 		f.br();
 		f.addRight(new JLabel("Mailadresse:"));
@@ -101,7 +101,7 @@ public class NewFirma extends LayoutMainPanel implements ActionListener {
 		/*
 		 * f.addRight(new JLabel("Kreditorennummer:"));
 		 * f.addLeftInput(kreditorennr); f.br(); f.addRight(new
-		 * JLabel("Einkäufergruppe:")); f.addLeftInput(einkaeufergr); f.br();
+		 * JLabel("EinkÃ¤ufergruppe:")); f.addLeftInput(einkaeufergr); f.br();
 		 */
 		f.addRight(save);
 		f.addLeft(clear);
@@ -209,10 +209,10 @@ public class NewFirma extends LayoutMainPanel implements ActionListener {
 				+ ", einkaeufergruppe=" + einkaeufergr.getValue()
 				+ " WHERE id=" + edit + ";";
 		if (con.mysql_update(qry) == -1) {
-			new MessageError("Fehler beim Ändern der Firma!");
+			new MessageError("Fehler beim Ã„ndern der Firma!");
 			return;
 		}
 		f.clear();
-		new MessageSucess("Firmendaten geändert!");
+		new MessageSucess("Firmendaten geÃ¤ndert!");
 	}
 }

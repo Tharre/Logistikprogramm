@@ -55,7 +55,7 @@ public class UserUsergroup extends LayoutMainPanel implements ActionListener {
 
 	public void save() {
 		if (i.getValue().equals("") || fs.getValue().equals("")) {
-			new MessageError("Bitte alle Felder ausfüllen!");
+			new MessageError("Bitte alle Felder ausfÃ¼llen!");
 			return;
 		}
 		String qry = "SELECT cn FROM user WHERE cn LIKE '" + i.getValue()

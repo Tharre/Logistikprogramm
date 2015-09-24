@@ -10,7 +10,7 @@ import java.util.Date;
 //import javax.mail.internet.*;
 
 /**
- * Bestellung zusammenfügen. Eingegeben werden muss nur mehr das Budget und der
+ * Bestellung zusammenfÃ¼gen. Eingegeben werden muss nur mehr das Budget und der
  * Kommentar Alle anderen Daten werden aus der Datenbank ausgelesen und
  * angezeigt. Die W-Nummer wird berechnet
  */
@@ -182,7 +182,7 @@ public class AnzBest extends JPanel {
 			JLabel mengeT = new JLabel("Menge");
 			mengeT.setFont(new Font("Arial", Font.BOLD, 13));
 			untenBest.add(mengeT, "10%");
-			JLabel preisT = new JLabel("Preis/Stück");
+			JLabel preisT = new JLabel("Preis/StÃ¼ck");
 			preisT.setFont(new Font("Arial", Font.BOLD, 13));
 			untenBest.add(preisT, "11%");
 			JLabel preisGesT = new JLabel("Gesamtpreis");

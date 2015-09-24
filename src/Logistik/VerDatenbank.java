@@ -1,7 +1,7 @@
 package Logistik;
 
 /**
- * Das Verwaltungsmenü für Datenbank im Midpanel überprüfen der Rechte. Je
+ * Das VerwaltungsmenÃ¼ fÃ¼r Datenbank im Midpanel Ã¼berprÃ¼fen der Rechte. Je
  * nachdem wird der Button angezeigt oder nicht
  */
 public class VerDatenbank extends LayoutMidPanel {

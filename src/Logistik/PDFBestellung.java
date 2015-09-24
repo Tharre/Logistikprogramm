@@ -21,7 +21,7 @@ public class PDFBestellung extends JFrame {
 	private int l = 0;
 
 	/**
-	 * Checkobox-Array für die Auswahl von Bestellungen
+	 * Checkobox-Array fÃ¼r die Auswahl von Bestellungen
 	 */
 	private JCheckBox[] bestellen;
 

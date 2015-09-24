@@ -10,7 +10,7 @@ import java.sql.*;
  * 
  * Einfaches Eingabefeld
  * 
- * Es kann der Datentyp und eventuelle Überprüfungsmerkmale festgelegt werden
+ * Es kann der Datentyp und eventuelle ÃœberprÃ¼fungsmerkmale festgelegt werden
  */
 
 public class Input extends JTextField
@@ -78,7 +78,7 @@ public class Input extends JTextField
 
 				{
 
-					new MessageError("Bitte alle Felder gültig ausfüllen!");
+					new MessageError("Bitte alle Felder gÃ¼ltig ausfÃ¼llen!");
 
 					return false;
 
@@ -91,7 +91,7 @@ public class Input extends JTextField
 
 		{
 
-			new MessageError("Bitte alle Felder ausfüllen!");
+			new MessageError("Bitte alle Felder ausfÃ¼llen!");
 
 			return false;
 

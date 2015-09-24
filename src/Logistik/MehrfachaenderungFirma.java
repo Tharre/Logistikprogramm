@@ -41,9 +41,9 @@ public class MehrfachaenderungFirma extends LayoutMainPanel implements ActionLis
 				"sachbearbeiter", "uid",
 				"kondition" , "umsNr", "araNr","kreditorennummer","einkaeufergruppe"};
 		String[] spalten2 = { "ID", "Firmenname", "PLZ",
-				"Ort", "Straﬂe", "Staat", "Kundennr.",
+				"Ort", "Stra√üe", "Staat", "Kundennr.",
 				"Sachbearbeiter", "UID",
-				"Kondition" , "UMS-Nr.", "ARA-Nr.", "Kreditorennr.","Eink‰ufergr.","Firma bearbeiten"};
+				"Kondition" , "UMS-Nr.", "ARA-Nr.", "Kreditorennr.","Eink√§ufergr.","Firma bearbeiten"};
 		Class[] classes = { Integer.class, JTextField.class, 
 				JTextField.class, JTextField.class, JTextField.class, JTextField.class,
 				JTextField.class, JTextField.class, JTextField.class, JTextField.class,
@@ -62,7 +62,7 @@ public class MehrfachaenderungFirma extends LayoutMainPanel implements ActionLis
 		Object[] firmenname = anzeige.getKlicked("Firmenname", "Firma bearbeiten");
 		Object[] plz = anzeige.getKlicked("PLZ", "Firma bearbeiten");
 		Object[] ort = anzeige.getKlicked("Ort", "Firma bearbeiten");
-		Object[] strasse = anzeige.getKlicked("Straﬂe", "Firma bearbeiten");
+		Object[] strasse = anzeige.getKlicked("Stra√üe", "Firma bearbeiten");
 		Object[] staat = anzeige.getKlicked("Staat", "Firma bearbeiten");
 		Object[] kundennr = anzeige.getKlicked("Kundennr.", "Firma bearbeiten");
 		Object[] sachbearbeiter = anzeige.getKlicked("Sachbearbeiter", "Firma bearbeiten");
@@ -71,10 +71,10 @@ public class MehrfachaenderungFirma extends LayoutMainPanel implements ActionLis
 		Object[] umsnr = anzeige.getKlicked("UMS-Nr.", "Firma bearbeiten");
 		Object[] aranr = anzeige.getKlicked("ARA-Nr.", "Firma bearbeiten");
 		Object[] kreditorennr = anzeige.getKlicked("Kreditorennr.", "Firma bearbeiten");
-		Object[] einkaeufergr = anzeige.getKlicked("Eink‰ufergr.", "Firma bearbeiten");
+		Object[] einkaeufergr = anzeige.getKlicked("Eink√§ufergr.", "Firma bearbeiten");
 		
 		if (gewaehlt.length == 0) {
-			JOptionPane.showMessageDialog(this, "Es wurde nichts ausgew‰hlt!");
+			JOptionPane.showMessageDialog(this, "Es wurde nichts ausgew√§hlt!");
 		} else {
 			int[] id = new int[gewaehlt.length];
 			String[] firmennameS = new String[firmenname.length];
@@ -115,7 +115,7 @@ public class MehrfachaenderungFirma extends LayoutMainPanel implements ActionLis
 			}
 
 			JOptionPane.showMessageDialog(this,
-					"ƒnderung(en) gespeichert!");
+					"√Ñnderung(en) gespeichert!");
 		}
 
 	}

@@ -56,7 +56,7 @@ public class Anmeldung extends JFrame implements ActionListener, KeyListener {
 		bg.add(aktuell);
 		bg.add(alt);
 
-		add(new JLabel("Mit welchen Daten möchten Sie arbeiten?"),
+		add(new JLabel("Mit welchen Daten mÃ¶chten Sie arbeiten?"),
 				BorderLayout.NORTH);
 
 		panel.setLayout(new GridLayout());

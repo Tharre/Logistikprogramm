@@ -6,8 +6,8 @@ import java.awt.event.*;
 
 /**
  * Klasse zum Bearbeiten von Usergruppen In einem SelectInput kann die
- * gewünschte Usergruppe ausgewählt werden. Nach dem Klick auf den "OK"-Button
- * werden die Daten in die Eingabemaske übernommen Nach dem Klick auf den
+ * gewÃ¼nschte Usergruppe ausgewÃ¤hlt werden. Nach dem Klick auf den "OK"-Button
+ * werden die Daten in die Eingabemaske Ã¼bernommen Nach dem Klick auf den
  * speichern Button werden die neuen Daten in die DB gespeichert
  */
 
@@ -39,7 +39,7 @@ public class EditUsergruppe extends LayoutMainPanel implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == ok) {
 			if (ug.getValue().equals("")) {
-				new MessageError("Bitte eine Usergruppe auswählen!");
+				new MessageError("Bitte eine Usergruppe auswÃ¤hlen!");
 				return;
 			}
 			mid.setEdit(ug.getValue());

@@ -96,7 +96,7 @@ public class RechnungAussuchen extends JFrame implements ActionListener {
 	private Vector<Integer> angeklickt = new Vector<Integer>();
 	/** Daten der Tabelle **/
 	private Vector daten = new Vector();
-	/** true; wenn die Bestellung nun fertig bezahlt ist; false: wenn noch BestPos ausst‰ndig sind**/
+	/** true; wenn die Bestellung nun fertig bezahlt ist; false: wenn noch BestPos ausst√§ndig sind**/
 	/** Menge, die bezahlt werden kann: geliefert - bezahlt aus DB**/
 	private Vector<Double> menge = new Vector<Double>();
 	private boolean fertigBez;

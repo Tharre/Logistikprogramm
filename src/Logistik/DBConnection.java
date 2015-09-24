@@ -4,7 +4,7 @@ import java.sql.*;
 
 /**
  * Verwaltet die Verbindung mit der Datenbank Baut die Verbindung auf, stellt
- * die Anfragen an die Datenbank und schließt die Verbindung wieder
+ * die Anfragen an die Datenbank und schlieÃŸt die Verbindung wieder
  */
 
 public class DBConnection {

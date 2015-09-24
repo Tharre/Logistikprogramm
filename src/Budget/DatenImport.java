@@ -216,7 +216,7 @@ public class DatenImport {
 			stmt.close();
 
 		}// end try
-		catch (SQLException ex) // mögliche Fehler während der DB-Sitzung
+		catch (SQLException ex) // mÃ¶gliche Fehler wÃ¤hrend der DB-Sitzung
 		// ausgeben
 		{
 			System.out.println("SQL-Exception: " + ex.getMessage());
@@ -264,7 +264,7 @@ public class DatenImport {
 
 	/**
 	 * Es werden Daten aus der Budget-Datenbank ausgelesen; man kann eine
-	 * where-klausl für den SQL-Befehl mitschicken
+	 * where-klausl fÃ¼r den SQL-Befehl mitschicken
 	 * 
 	 * @param tabelle
 	 *            Name der Tabelle
@@ -388,7 +388,7 @@ public class DatenImport {
 			stmt.close();
 
 		}// end try
-		catch (SQLException ex) // mögliche Fehler während der DB-Sitzung
+		catch (SQLException ex) // mÃ¶gliche Fehler wÃ¤hrend der DB-Sitzung
 		// ausgeben
 		{
 			ex.printStackTrace();
@@ -638,7 +638,7 @@ public class DatenImport {
 			}
 
 		}// end try
-		catch (SQLException ex) // mögliche Fehler während der DB-Sitzung
+		catch (SQLException ex) // mÃ¶gliche Fehler wÃ¤hrend der DB-Sitzung
 		// ausgeben
 		{
 			System.out.println("SQL-Exception: " + ex.getMessage());
@@ -699,7 +699,7 @@ public class DatenImport {
 						.parseInt(row2.get(i).toString())));
 			}
 
-		} catch (SQLException ex) // mögliche Fehler während der DB-Sitzung
+		} catch (SQLException ex) // mÃ¶gliche Fehler wÃ¤hrend der DB-Sitzung
 		// ausgeben
 		{
 			System.out.println("SQL-Exception: " + ex.getMessage());
@@ -750,7 +750,7 @@ public class DatenImport {
 						.parseInt(row2.get(i).toString())));
 			}
 
-		} catch (SQLException ex) // mögliche Fehler während der DB-Sitzung
+		} catch (SQLException ex) // mÃ¶gliche Fehler wÃ¤hrend der DB-Sitzung
 		// ausgeben
 		{
 			System.out.println("SQL-Exception: " + ex.getMessage());
@@ -807,7 +807,7 @@ public class DatenImport {
 						.parseInt(row2.get(i).toString())));
 			}
 
-		} catch (SQLException ex) // mögliche Fehler während der DB-Sitzung
+		} catch (SQLException ex) // mÃ¶gliche Fehler wÃ¤hrend der DB-Sitzung
 		// ausgeben
 		{
 			System.out.println("SQL-Exception: " + ex.getMessage());
@@ -1171,11 +1171,11 @@ public class DatenImport {
 
 			for (int i = 0; i < daten.size(); i++) {
 				if (Integer.parseInt(status.get(i).toString()) != 15) {
-					((Vector) daten.get(i)).add("€ "
+					((Vector) daten.get(i)).add("Â€ "
 							+ runde(summeBestellung(Integer.parseInt(row3
 									.get(i).toString()), 0)));
 				} else
-					((Vector) daten.get(i)).add("€ -");
+					((Vector) daten.get(i)).add("Â€ -");
 
 			}
 
@@ -1210,12 +1210,12 @@ public class DatenImport {
 					best = summeBestellung(Integer.parseInt(row3.get(i)
 							.toString()), 0);
 					dif = (rech - best);
-					((Vector) daten.get(i)).add("€ " + runde(rech));
-					((Vector) daten.get(i)).add("€ " + runde(dif));
+					((Vector) daten.get(i)).add("Â€ " + runde(rech));
+					((Vector) daten.get(i)).add("Â€ " + runde(dif));
 					rech = 0;
 				} else {
-					((Vector) daten.get(i)).add("€ -");
-					((Vector) daten.get(i)).add("€ -");
+					((Vector) daten.get(i)).add("Â€ -");
+					((Vector) daten.get(i)).add("Â€ -");
 
 				}
 				yes = false;
@@ -1238,7 +1238,7 @@ public class DatenImport {
 	 * @param bestNr
 	 *            die BestellID der Bestellung
 	 * @param status
-	 *            Status der Bestellung; bei gelöschten wird keine Summe
+	 *            Status der Bestellung; bei gelÃ¶schten wird keine Summe
 	 *            berechnet
 	 * @return
 	 */
@@ -1254,7 +1254,7 @@ public class DatenImport {
 			rs = stmt.executeQuery(query);
 
 			while (rs.next()) {
-				if (status != 15)// nicht gelöscht
+				if (status != 15)// nicht gelÃ¶scht
 					summe += (rs.getDouble("bp.preisInkl"))
 							* (rs.getInt("bp.menge"));
 			}
@@ -1577,7 +1577,7 @@ public class DatenImport {
 				row = new Vector();
 				row2.add(rs.getInt("bezeichnung"));
 				row.add(rs.getString("menge"));
-				row.add(rs.getString("preisGesamt") + " €");
+				row.add(rs.getString("preisGesamt") + " Â€");
 				daten.add(row);
 			}
 
@@ -2397,7 +2397,7 @@ public class DatenImport {
 	 *            Kennnummer der Tabelle
 	 * @param nummer
 	 *            0: man will den Namen aendern; 1: man will die Raumnummer
-	 *            aendern; 2: man will die Kurzbezeichnung ändern; 3: man will
+	 *            aendern; 2: man will die Kurzbezeichnung Ã¤ndern; 3: man will
 	 *            die nummerSelbst
 	 * @return den aktuellen Namen / Raumnummer aus der Datenbank
 	 */
@@ -2812,7 +2812,7 @@ public class DatenImport {
 		else if (nummer == 6)
 			return "komplett - Teile nicht lieferbar";
 		else if (nummer == 15)
-			return "gelöscht";
+			return "gelÃ¶scht";
 		else
 			return "richtig geliefert";
 
@@ -3003,7 +3003,7 @@ public class DatenImport {
 				}
 
 				row.add(getArtikelzuId(artikelnummer.get(i)));
-				row.add(runde(summe.get(i)) + " €");
+				row.add(runde(summe.get(i)) + " Â€");
 				row.add(menge.get(i));
 
 				daten.add(row);
@@ -3136,7 +3136,7 @@ public class DatenImport {
 				}
 
 				row.add(getFirmennameZurID(firmennummer.get(i)));
-				row.add(runde(summe.get(i)) + " €");
+				row.add(runde(summe.get(i)) + " Â€");
 				row.add(menge.get(i));
 
 				daten.add(row);
@@ -3292,11 +3292,11 @@ public class DatenImport {
 
 			for (int i = 0; i < daten.size(); i++) {
 				if (Integer.parseInt(status.get(i).toString()) != 15) {
-					((Vector) daten.get(i)).add("€ "
+					((Vector) daten.get(i)).add("Â€ "
 							+ runde(summeBestellung(Integer.parseInt(row3
 									.get(i).toString()), 0)));
 				} else
-					((Vector) daten.get(i)).add("€ -");
+					((Vector) daten.get(i)).add("Â€ -");
 
 			}
 
@@ -3331,12 +3331,12 @@ public class DatenImport {
 					best = summeBestellung(Integer.parseInt(row3.get(i)
 							.toString()), 0);
 					dif = (rech - best);
-					((Vector) daten.get(i)).add("€ " + runde(rech));
-					((Vector) daten.get(i)).add("€ " + runde(dif));
+					((Vector) daten.get(i)).add("Â€ " + runde(rech));
+					((Vector) daten.get(i)).add("Â€ " + runde(dif));
 					rech = 0;
 				} else {
-					((Vector) daten.get(i)).add("€ -");
-					((Vector) daten.get(i)).add("€ -");
+					((Vector) daten.get(i)).add("Â€ -");
+					((Vector) daten.get(i)).add("Â€ -");
 
 				}
 				yes = false;
@@ -3847,7 +3847,7 @@ public class DatenImport {
 	}
 
 	/**
-	 * Man kann sämtliche Daten, die vom Typ String sind, mit Hilfe der
+	 * Man kann sÃ¤mtliche Daten, die vom Typ String sind, mit Hilfe der
 	 * Zeilennummer auslesen
 	 * 
 	 * @param nummer

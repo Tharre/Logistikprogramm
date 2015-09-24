@@ -7,7 +7,7 @@ import javax.mail.internet.*;
 import javax.activation.*;
 
 /**
- * Baut eine Verbindung mit dem email-Server auf Kann überprüfen, ob der User
+ * Baut eine Verbindung mit dem email-Server auf Kann Ã¼berprÃ¼fen, ob der User
  * mit diesem Passwort existiert Kann zum Senden von emails verwendet werden
  */
 

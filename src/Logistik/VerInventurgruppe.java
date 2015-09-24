@@ -1,7 +1,7 @@
 package Logistik;
 
 /**
- * Das Verwaltungsmenü für Inventurgruppen im Midpanel überprüfen der Rechte. Je
+ * Das VerwaltungsmenÃ¼ fÃ¼r Inventurgruppen im Midpanel Ã¼berprÃ¼fen der Rechte. Je
  * nachdem wird der Button angezeigt oder nicht
  */
 
@@ -22,9 +22,9 @@ public class VerInventurgruppe extends LayoutMidPanel {
 			addShowPanelScroll(new EditInventurgruppe(user),
 					"Inventurgruppe bearbeiten");
 		}
-		if (user.hasRecht(Logistik.rechte.getRechtId("Inventurgruppe löschen"))) {
-			addNaviButton("Inventurgruppe löschen");
-			addShowPanelScroll(new DelInventurgruppe(user), "Inventurgruppe löschen");
+		if (user.hasRecht(Logistik.rechte.getRechtId("Inventurgruppe lÃ¶schen"))) {
+			addNaviButton("Inventurgruppe lÃ¶schen");
+			addShowPanelScroll(new DelInventurgruppe(user), "Inventurgruppe lÃ¶schen");
 		}		
 	}
 }

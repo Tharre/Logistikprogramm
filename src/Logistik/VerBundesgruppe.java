@@ -1,7 +1,7 @@
 package Logistik;
 
 /**
- * Das Verwaltungsmenü für Bundesnummern im Midpanel überprüfen der Rechte. Je
+ * Das VerwaltungsmenÃ¼ fÃ¼r Bundesnummern im Midpanel Ã¼berprÃ¼fen der Rechte. Je
  * nachdem wird der Button angezeigt oder nicht
  */
 public class VerBundesgruppe extends LayoutMidPanel {
@@ -21,10 +21,10 @@ public class VerBundesgruppe extends LayoutMidPanel {
 			addShowPanelScroll(new EditBundesgruppe(user),
 					"Bundesgruppe bearbeiten");
 		}
-		if (user.hasRecht(Logistik.rechte.getRechtId("Bundesgruppe löschen"))) {
-			addNaviButton("Bundesgruppe löschen");
+		if (user.hasRecht(Logistik.rechte.getRechtId("Bundesgruppe lÃ¶schen"))) {
+			addNaviButton("Bundesgruppe lÃ¶schen");
 			addShowPanelScroll(new DelBundesgruppe(user),
-					"Bundesgruppe löschen");
+					"Bundesgruppe lÃ¶schen");
 		}
 	}
 }

@@ -6,9 +6,9 @@ import java.awt.*;
 import java.awt.event.*;
 
 /**
- * Klasse zum Löschen von Firma-Material-Verbindungen Listet alle
+ * Klasse zum LÃ¶schen von Firma-Material-Verbindungen Listet alle
  * Firma-Material-Verbindungen auf + Checkbox Nach dem Klick auf den
- * Löschen-Button werden die angehakten gelöscht
+ * LÃ¶schen-Button werden die angehakten gelÃ¶scht
  */
 
 public class DelFirmaMaterial extends LayoutMainPanel implements ActionListener {
@@ -17,7 +17,7 @@ public class DelFirmaMaterial extends LayoutMainPanel implements ActionListener 
 
 	public DelFirmaMaterial(UserImport user) {
 		super(user);
-		del = new JButton("Löschen");
+		del = new JButton("LÃ¶schen");
 		del.addActionListener(this);
 		activate();
 	}
@@ -30,7 +30,7 @@ public class DelFirmaMaterial extends LayoutMainPanel implements ActionListener 
 		String[] spalten = { "id", "fm.firma", "f.firmenname", "fm.material",
 				"m.bezeichnung" };
 		String[] spalten2 = { "id", "firmenid", "firmenname", "materialid",
-				"materialname", "löschen" };
+				"materialname", "lÃ¶schen" };
 		Class[] classes = { Integer.class, Integer.class, String.class,
 				Integer.class, String.class, Boolean.class };
 		df = new AnzTabelleA(spalten, spalten2, classes, rs, 1);
@@ -48,15 +48,15 @@ public class DelFirmaMaterial extends LayoutMainPanel implements ActionListener 
 			int i = JOptionPane
 					.showConfirmDialog(
 							null,
-							"Wollen Sie die Firmen-Material-Verbindung löschen?\nDies kann zu Fehlfunktionen in der BANF führen! (Sollte diese Verbindung dort verwendet werden)",
-							"löschen", JOptionPane.YES_NO_OPTION);
+							"Wollen Sie die Firmen-Material-Verbindung lÃ¶schen?\nDies kann zu Fehlfunktionen in der BANF fÃ¼hren! (Sollte diese Verbindung dort verwendet werden)",
+							"lÃ¶schen", JOptionPane.YES_NO_OPTION);
 			if (i == 0) {
 
-				Object[] hakDelFirm = df.getKlicked("id", "löschen");
+				Object[] hakDelFirm = df.getKlicked("id", "lÃ¶schen");
 
 				for (int j = 0; j < hakDelFirm.length; j++) {
 					try {
-						// LÖSCHVORGANG
+						// LÃ–SCHVORGANG
 
 						String sql = "DELETE FROM firma_material WHERE id = "
 								+ hakDelFirm[j] + "";
@@ -66,8 +66,8 @@ public class DelFirmaMaterial extends LayoutMainPanel implements ActionListener 
 					}
 				}
 
-				// zurückspringen
-				JOptionPane.showMessageDialog(null, "Daten gelöscht");
+				// zurÃ¼ckspringen
+				JOptionPane.showMessageDialog(null, "Daten gelÃ¶scht");
 			}
 
 		}// if

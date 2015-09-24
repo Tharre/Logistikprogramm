@@ -70,7 +70,7 @@ public class EditDatensatz extends JFrame implements ActionListener, KeyListener
 	public EditDatensatz(Connection con, Connection conL, int zeilennummer,
 			int kennnummer) {
 
-		super("Datensatz ‰ndern");
+		super("Datensatz √§ndern");
 
 		this.kennnummer = kennnummer;
 		this.zeilennummer = zeilennummer;
@@ -78,7 +78,7 @@ public class EditDatensatz extends JFrame implements ActionListener, KeyListener
 		speichern.addActionListener(this);
 		speichern.addKeyListener(this);
 
-		speichern.setToolTipText("Speichern der ƒnderung");
+		speichern.setToolTipText("Speichern der √Ñnderung");
 
 		du = new DatenUpdate(con, conL);
 		di = new DatenImport(con, conL);
@@ -185,7 +185,7 @@ public class EditDatensatz extends JFrame implements ActionListener, KeyListener
 							.getText(), kennnummer, "Kurzbezeichn");
 
 					// JOptionPane.showMessageDialog(null,
-					// "Die Daten wurden ge‰ndert.");
+					// "Die Daten wurden ge√§ndert.");
 					dispose();
 				}
 			}
@@ -276,7 +276,7 @@ public class EditDatensatz extends JFrame implements ActionListener, KeyListener
 							kennnummer, "nummerSelbst");
 
 					JOptionPane.showMessageDialog(null,
-							"Die Daten wurden ge‰ndert.");
+							"Die Daten wurden ge√§ndert.");
 					dispose();
 				}
 
@@ -327,7 +327,7 @@ public class EditDatensatz extends JFrame implements ActionListener, KeyListener
 							kennnummer, "Name");
 
 					JOptionPane.showMessageDialog(null,
-							"Die Daten wurden ge‰ndert.");
+							"Die Daten wurden ge√§ndert.");
 					dispose();
 				}
 
@@ -356,7 +356,7 @@ public class EditDatensatz extends JFrame implements ActionListener, KeyListener
 
 		{
 			JOptionPane.showMessageDialog(null,
-					"Bitte beachten Sie die L‰nge Ihrer Eingabe");
+					"Bitte beachten Sie die L√§nge Ihrer Eingabe");
 
 			return false;
 		}
@@ -423,7 +423,7 @@ public class EditDatensatz extends JFrame implements ActionListener, KeyListener
 	public boolean ueberpruefeEingabe(String name) {
 		if (name.length() == 0 || name.length() > 50) {
 			JOptionPane.showMessageDialog(null,
-					"Bitte beachten Sie die L‰nge Ihrer Eingabe");
+					"Bitte beachten Sie die L√§nge Ihrer Eingabe");
 
 			return false;
 		}
@@ -470,7 +470,7 @@ public class EditDatensatz extends JFrame implements ActionListener, KeyListener
 					du.aendereDatensatz(zeilennummer, tfKurzbezeichnung
 							.getText(), kennnummer, "Kurzbezeichn");
 					JOptionPane.showMessageDialog(null,
-							"Die Daten wurden ge‰ndert.");
+							"Die Daten wurden ge√§ndert.");
 					dispose();
 				}
 
@@ -507,7 +507,7 @@ public class EditDatensatz extends JFrame implements ActionListener, KeyListener
 							kennnummer, "nummerSelbst");
 
 					JOptionPane.showMessageDialog(null,
-							"Die Daten wurden ge‰ndert.");
+							"Die Daten wurden ge√§ndert.");
 					dispose();
 				}
 
@@ -553,7 +553,7 @@ public class EditDatensatz extends JFrame implements ActionListener, KeyListener
 							kennnummer, "Name");
 
 					JOptionPane.showMessageDialog(null,
-							"Die Daten wurden ge‰ndert.");
+							"Die Daten wurden ge√§ndert.");
 					dispose();
 				}
 

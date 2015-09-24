@@ -6,8 +6,8 @@ import java.awt.event.*;
 
 /**
  * Klasse zum Bearbeiten von Firma-Material-Verbindungen In einem SelectInput
- * kann die gewünschte Firma-Material-Verbindung ausgewählt werden. Nach dem
- * Klick auf den "OK"-Button werden die Daten in die Eingabemaske übernommen
+ * kann die gewÃ¼nschte Firma-Material-Verbindung ausgewÃ¤hlt werden. Nach dem
+ * Klick auf den "OK"-Button werden die Daten in die Eingabemaske Ã¼bernommen
  * Nach dem Klick auf den speichern Button werden die neuen Daten in die DB
  * gespeichert
  */
@@ -41,7 +41,7 @@ public class EditFirmaMaterial extends LayoutMainPanel implements ActionListener
 		if (e.getSource() == ok) {
 			if (firma.getValue().equals("")) {
 				new MessageError(
-						"Bitte eine Firmen-Material-Beziehung auswählen!");
+						"Bitte eine Firmen-Material-Beziehung auswÃ¤hlen!");
 				return;
 			}
 			mid.setEdit(firma.getValue());

@@ -13,7 +13,7 @@ import javax.swing.border.EtchedBorder;
 import javax.swing.border.LineBorder;
 
 /**
- *Es wird die Legende erstellt für das Diagramm bei den Abfragen UT8-, UT3-,
+ *Es wird die Legende erstellt fÃ¼r das Diagramm bei den Abfragen UT8-, UT3-,
  * LMB1- und LMB2- nach Status und die Abfragen UT3-, LMB1- und LMB2- nach
  * Abteilungen
  *<p>

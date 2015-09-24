@@ -63,7 +63,7 @@ public class TabelleButtons extends JPanel implements ItemListener {
 
 	// sonstiges
 	/**
-	 * ein Checkboxarray, dessen Groeﬂe davon abhaengt, wie viele
+	 * ein Checkboxarray, dessen Groe√üe davon abhaengt, wie viele
 	 * Bestellpositionen es zu der Bestellung gibt
 	 **/
 	private JCheckBox check[];
@@ -114,7 +114,7 @@ public class TabelleButtons extends JPanel implements ItemListener {
 		check = new JCheckBox[anzahl];
 
 		// Checkboxes anklickbar oder unanklickbar setzen
-		// und einf¸gen
+		// und einf√ºgen
 		for (int i = 0; i < anzahl; i++) {
 			anzahlZuBezahlen++;
 			check[i] = new JCheckBox();

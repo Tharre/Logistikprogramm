@@ -7,7 +7,7 @@ import java.sql.*;
 
 /*
  * Zum bearbeiten von Firma-Material-Beziehungen
- * Die Daten werden von EditFirmaMaterial übergeben und in die Eingabefelder übernommen
+ * Die Daten werden von EditFirmaMaterial Ã¼bergeben und in die Eingabefelder Ã¼bernommen
  */
 
 public class NewEditFirmaMaterial extends LayoutMainPanel implements
@@ -125,6 +125,6 @@ public class NewEditFirmaMaterial extends LayoutMainPanel implements
 
 		con.mysql_update(insMat);
 		clear();
-		new MessageSucess("Firma-Material-Beziehung geändert!");
+		new MessageSucess("Firma-Material-Beziehung geÃ¤ndert!");
 	}
 }

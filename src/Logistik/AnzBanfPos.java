@@ -6,22 +6,22 @@ import javax.swing.*;
 import java.sql.*;
 
 /**
- * Ansicht beim Betsellablauf Alle ausgewählten BanfPositionen werden angezeigt.
- * Diese können per RadioButton abgewiesen/bestellt werden
+ * Ansicht beim Betsellablauf Alle ausgewÃ¤hlten BanfPositionen werden angezeigt.
+ * Diese kÃ¶nnen per RadioButton abgewiesen/bestellt werden
  */
 public class AnzBanfPos extends JPanel implements ActionListener {
 	/**
-	 * RadioButton fürs Abweisen von BANFPositionen
+	 * RadioButton fÃ¼rs Abweisen von BANFPositionen
 	 */
-	public JRadioButton del = new JRadioButton("löschen");
+	public JRadioButton del = new JRadioButton("lÃ¶schen");
 
 	/**
-	 * RadioButton fürs Bestellen von BANFPositionen
+	 * RadioButton fÃ¼rs Bestellen von BANFPositionen
 	 */
 	public JRadioButton bestellen = new JRadioButton("bestellen");
 
 	/**
-	 * Buttongroupo für abweisen/bestellen
+	 * Buttongroupo fÃ¼r abweisen/bestellen
 	 */
 	public ButtonGroup bg = new ButtonGroup();
 

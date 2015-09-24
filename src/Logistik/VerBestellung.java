@@ -1,7 +1,7 @@
 package Logistik;
 
 /**
- * Das Verwaltungsmenü für Bestellungen im Midpanel überprüfen der Rechte. Je
+ * Das VerwaltungsmenÃ¼ fÃ¼r Bestellungen im Midpanel Ã¼berprÃ¼fen der Rechte. Je
  * nachdem wird der Button angezeigt oder nicht
  */
 public class VerBestellung extends LayoutMidPanel {
@@ -32,9 +32,9 @@ public class VerBestellung extends LayoutMidPanel {
 			addShowPanel(new AnzBestAlle("abgeschickt", user), "abgeschickt");
 		}
 		if (user.hasRecht(Logistik.rechte
-				.getRechtId("Bestellungen: ausständig"))) {
-			addNaviButton("ausständig");
-			addShowPanel(new AnzBestAlle("ausständig", user), "ausständig");
+				.getRechtId("Bestellungen: ausstÃ¤ndig"))) {
+			addNaviButton("ausstÃ¤ndig");
+			addShowPanel(new AnzBestAlle("ausstÃ¤ndig", user), "ausstÃ¤ndig");
 		}
 		if (user.hasRecht(Logistik.rechte.getRechtId("Bestellungen: alle"))) {
 			addNaviButton("komplett geliefert");

@@ -5,7 +5,7 @@ import java.awt.*;
 import java.net.*;
 
 /**
- * Panel welches die wichtigsten Methoden und das Layout des Menus zur Verfügung
+ * Panel welches die wichtigsten Methoden und das Layout des Menus zur VerfÃ¼gung
  * stellt
  */
 

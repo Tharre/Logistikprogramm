@@ -17,12 +17,12 @@ import javax.swing.filechooser.FileFilter;
 public class DBExport extends JFrame implements ActionListener {
 
 	/**
-	 * Button zum Durchführen des Exports
+	 * Button zum DurchfÃ¼hren des Exports
 	 */
 	public JButton exportB = new JButton("exportieren");
 
 	/**
-	 * Überschrift
+	 * Ãœberschrift
 	 */
 	private JLabel titel = new JLabel("Budget-Datenbank exportieren",
 			JLabel.CENTER);
@@ -369,7 +369,7 @@ public class DBExport extends JFrame implements ActionListener {
 				
 
 				JOptionPane.showMessageDialog(null,
-						"Exportvorgang erfolgreich durchgeführt!");
+						"Exportvorgang erfolgreich durchgefÃ¼hrt!");
 				dispose();
 
 				if (kennung == 1)// Aufruf der Klasse von Jahresende

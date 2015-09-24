@@ -87,14 +87,14 @@ public class BezAnteile extends JFrame implements ActionListener {
 	private JTextField[][] text;
 	/** Button weiter **/
 	private JButton weiter = new JButton("weiter");
-	/** true; wenn die Bestellung nun fertig bezahlt ist; false: wenn noch BestPos ausst‰ndig sind**/
+	/** true; wenn die Bestellung nun fertig bezahlt ist; false: wenn noch BestPos ausst√§ndig sind**/
 	private boolean fertigBez;
 
 	/**
 	 * Konstruktor
 	 * 
 	 * @param zeilen
-	 *            Anzahl der ausgew‰hlten Bestellpositionen
+	 *            Anzahl der ausgew√§hlten Bestellpositionen
 	 * @param banfIds
 	 *            Banf IDs
 	 * @param preisGes
@@ -334,7 +334,7 @@ public class BezAnteile extends JFrame implements ActionListener {
 
 					if (werte[i][k] < 0) {
 						JOptionPane.showMessageDialog(this,
-								"Sie d¸rfen keine negativen Zahlen eingeben.");
+								"Sie d√ºrfen keine negativen Zahlen eingeben.");
 						return false;
 
 					}
@@ -343,19 +343,19 @@ public class BezAnteile extends JFrame implements ActionListener {
 
 				} catch (NumberFormatException e) {
 					JOptionPane.showMessageDialog(this,
-							"Sie d¸rfen nur Zahlen eingeben");
+							"Sie d√ºrfen nur Zahlen eingeben");
 					return false;
 				}
 			}
 
 			if (summe < 100) {
 				JOptionPane.showMessageDialog(this,
-						"Sie m¸ssen 100% insgesamt vergeben.");
+						"Sie m√ºssen 100% insgesamt vergeben.");
 				return false;
 			}
 			if (summe > 100) {
 				JOptionPane.showMessageDialog(this,
-						"Sie d¸rfen nicht mehr als 100% insgesamt vergeben.");
+						"Sie d√ºrfen nicht mehr als 100% insgesamt vergeben.");
 				return false;
 			}
 		}

@@ -6,7 +6,7 @@ import java.awt.event.*;
 
 /**
  * Klasse zum Erzeugen von Firma-Material-Verbindungen In der Eingabemaske
- * können die Daten eingegeben werden Nach dem Klick auf den speichern Button
+ * kÃ¶nnen die Daten eingegeben werden Nach dem Klick auf den speichern Button
  * werden die Daten in die DB gespeichert
  */
 
@@ -21,7 +21,7 @@ public class FirmaMaterial extends LayoutMainPanel implements ActionListener {
 		super(user);
 		f = new LayoutForm();
 		save = new JButton("Speichern");
-		del = new JButton("Löschen");
+		del = new JButton("LÃ¶schen");
 		Input fi = new Input(20, "");
 		Input mat = new Input(20, "");
 		firma = new SelectInput(con, fi, "firma", new String[] { "id",

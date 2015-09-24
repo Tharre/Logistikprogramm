@@ -7,7 +7,7 @@ import java.awt.*;
 /**
  * Klasse zum Erstellen von Formularen In einem Formular kann die Ausrichtung
  * (links,mittig,rechts) festgelegt werden. Die Klasse stellt auch eine Methode
- * zum überprüfen der Daten und zum leeren des Formulars bereit
+ * zum Ã¼berprÃ¼fen der Daten und zum leeren des Formulars bereit
  */
 
 public class LayoutForm extends JPanel {

@@ -13,15 +13,15 @@ import java.sql.*;
 public class NewInventurgruppe extends LayoutMainPanel implements
 		ActionListener {
 	/**
-	 * Textfelder für die Eingabe
+	 * Textfelder fÃ¼r die Eingabe
 	 */
 	private Input bezeichnung, uebergr;
 	/**
-	 * Textfelder für die Eingabe mit Hilfefenstern
+	 * Textfelder fÃ¼r die Eingabe mit Hilfefenstern
 	 */
 	private SelectInputLevel ueber;
 	/**
-	 * Button zum Speichern/Löschen
+	 * Button zum Speichern/LÃ¶schen
 	 */
 	private JButton save, clear;
 	private LayoutForm f;
@@ -36,7 +36,7 @@ public class NewInventurgruppe extends LayoutMainPanel implements
 		bezeichnung.setKey(true);
 		uebergr = new Input(20, "Uebergruppe");
 		save = new JButton("Speichern");
-		clear = new JButton("Löschen");
+		clear = new JButton("LÃ¶schen");
 
 		String[] invgrupHeads = { "id", "bezeichnung", "uebergruppe" };
 		ueber = new SelectInputLevel(con, uebergr, "inventurgruppe",

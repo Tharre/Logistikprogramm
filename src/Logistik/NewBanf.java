@@ -11,7 +11,7 @@ import java.sql.*;
 import java.io.*;
 
 /**
- * Klasse zum Erstellen von Bestellanforderungen Als erstes müssen Kostenstelle
+ * Klasse zum Erstellen von Bestellanforderungen Als erstes mÃ¼ssen Kostenstelle
  * und Firma angegeben werden Danach werden die Bestellpositionen erstellt Nach
  * dem Klicken des Speichern-Buttons werden die Daten in die Datenbank
  * gespeichert
@@ -39,7 +39,7 @@ public class NewBanf extends LayoutMainPanel implements ActionListener {
 		lbl.setBackground(new Color(200, 200, 200));
 		lbl.setOpaque(true);
 		p.add(lbl, "20%");
-		lbl = new JLabel("Werkstätte/Bereich", JLabel.CENTER);
+		lbl = new JLabel("WerkstÃ¤tte/Bereich", JLabel.CENTER);
 		lbl.setBackground(new Color(200, 200, 200));
 		lbl.setOpaque(true);
 		p.add(lbl, "30%");
@@ -98,7 +98,7 @@ public class NewBanf extends LayoutMainPanel implements ActionListener {
 		Input ges = new Input(10, "");
 		ges.setEditable(false);
 		ges.setText("0");
-		LayoutNaviButton clear = LayoutButtonCreator.createButton("del.gif", "löschen");
+		LayoutNaviButton clear = LayoutButtonCreator.createButton("del.gif", "lÃ¶schen");
 		Input mate = new Input(10, "");
 		JTextField[] fi = new JTextField[] { mate, bestNr, einheit, preisExkl,
 				mwst, preisInkl };
@@ -338,7 +338,7 @@ public class NewBanf extends LayoutMainPanel implements ActionListener {
 			}
 		}
 		if (!b) {
-			new MessageError("Bitte alle Zeilen korrekt ausfüllen!");
+			new MessageError("Bitte alle Zeilen korrekt ausfÃ¼llen!");
 		}
 		return b;
 	}
@@ -364,7 +364,7 @@ public class NewBanf extends LayoutMainPanel implements ActionListener {
 
 	public void checkHead() {
 		if (ws.getValue().equals("")) {
-			new MessageError("Bitte alle Felder ausfüllen!");
+			new MessageError("Bitte alle Felder ausfÃ¼llen!");
 			return;
 		}
 		if (firma.checkText()) {
@@ -372,7 +372,7 @@ public class NewBanf extends LayoutMainPanel implements ActionListener {
 			firma.setEnabled(false);
 			startCenter();
 		} else {
-			new MessageError("Bitte alle Felder ausfüllen!");
+			new MessageError("Bitte alle Felder ausfÃ¼llen!");
 		}
 	}
 

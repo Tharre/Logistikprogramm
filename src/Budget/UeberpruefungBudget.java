@@ -5,7 +5,7 @@ import java.util.Vector;
 
 /**
  *Hier wird ueberprueft, ob der geplante Wert, den man an einem Budget aendern
- * moechte, groeﬂer ist als der Betrag, der zur Verfuegung steht
+ * moechte, groe√üer ist als der Betrag, der zur Verfuegung steht
  *<p>
  * Title: Ueberpruefung
  * 
@@ -68,7 +68,7 @@ public class UeberpruefungBudget {
 	}
 
 	/**
-	 * prueft, ob der Betrag nicht groeﬂer ist, als der verfuegbare Betrag; wird
+	 * prueft, ob der Betrag nicht groe√üer ist, als der verfuegbare Betrag; wird
 	 * aufgerufen, wenn ein neues Budget angelegt wird
 	 * 
 	 * @param budget
@@ -102,7 +102,7 @@ public class UeberpruefungBudget {
 	}
 
 	/**
-	 * prueft, ob der neu eingegeben Betrag nicht groeﬂer ist, als der
+	 * prueft, ob der neu eingegeben Betrag nicht groe√üer ist, als der
 	 * verfuegbare Betrag; wird nur fuer LMB verwendet
 	 * 
 	 * @param budget
@@ -133,7 +133,7 @@ public class UeberpruefungBudget {
 	}
 
 	/**
-	 * prueft, ob der neu eingegeben Betrag nicht groeﬂer ist, als der
+	 * prueft, ob der neu eingegeben Betrag nicht groe√üer ist, als der
 	 * verfuegbare Betrag; wird aufgerufen, wenn ein geplanter Betrag geaendert
 	 * wird
 	 * 
@@ -226,11 +226,11 @@ public class UeberpruefungBudget {
 				summe += rs.getDouble("geplant");
 			}
 
-			rs.close(); // Offene Variablen, abfragen und Connention schlieﬂen
-			stmt.close(); // Befehl schlieﬂen
+			rs.close(); // Offene Variablen, abfragen und Connention schlie√üen
+			stmt.close(); // Befehl schlie√üen
 
 		}// end try
-		catch (SQLException ex) // mˆgliche Fehler w‰hrend der DB-Sitzung
+		catch (SQLException ex) // m√∂gliche Fehler w√§hrend der DB-Sitzung
 		// ausgeben
 		{
 			System.out.println("SQL-Exception: " + ex.getMessage());
@@ -268,11 +268,11 @@ public class UeberpruefungBudget {
 				summe = rs.getDouble("geplant");
 			}
 
-			rs.close(); // Offene Variablen, abfragen und Connention schlieﬂen
-			stmt.close(); // Befehl schlieﬂen
+			rs.close(); // Offene Variablen, abfragen und Connention schlie√üen
+			stmt.close(); // Befehl schlie√üen
 
 		}// end try
-		catch (SQLException ex) // mˆgliche Fehler w‰hrend der DB-Sitzung
+		catch (SQLException ex) // m√∂gliche Fehler w√§hrend der DB-Sitzung
 		// ausgeben
 		{
 			System.out.println("SQL-Exception: " + ex.getMessage());
@@ -301,11 +301,11 @@ public class UeberpruefungBudget {
 				geplant = rs.getDouble("geplant");
 			}
 
-			rs.close(); // Offene Variablen, abfragen und Connention schlieﬂen
-			stmt.close(); // Befehl schlieﬂen
+			rs.close(); // Offene Variablen, abfragen und Connention schlie√üen
+			stmt.close(); // Befehl schlie√üen
 
 		}// end try
-		catch (SQLException ex) // mˆgliche Fehler w‰hrend der DB-Sitzung
+		catch (SQLException ex) // m√∂gliche Fehler w√§hrend der DB-Sitzung
 		// ausgeben
 		{
 			System.out.println("SQL-Exception: " + ex.getMessage());
@@ -333,11 +333,11 @@ public class UeberpruefungBudget {
 				geplant = rs.getDouble("geplant");
 			}
 
-			rs.close(); // Offene Variablen, abfragen und Connention schlieﬂen
-			stmt.close(); // Befehl schlieﬂen
+			rs.close(); // Offene Variablen, abfragen und Connention schlie√üen
+			stmt.close(); // Befehl schlie√üen
 
 		}// end try
-		catch (SQLException ex) // mˆgliche Fehler w‰hrend der DB-Sitzung
+		catch (SQLException ex) // m√∂gliche Fehler w√§hrend der DB-Sitzung
 		// ausgeben
 		{
 			System.out.println("SQL-Exception: " + ex.getMessage());
@@ -375,11 +375,11 @@ public class UeberpruefungBudget {
 				aktuellGeplantes = rs.getDouble("geplant");
 			}
 
-			rs.close(); // Offene Variablen, abfragen und Connention schlieﬂen
-			stmt.close(); // Befehl schlieﬂen
+			rs.close(); // Offene Variablen, abfragen und Connention schlie√üen
+			stmt.close(); // Befehl schlie√üen
 
 		}// end try
-		catch (SQLException ex) // mˆgliche Fehler w‰hrend der DB-Sitzung
+		catch (SQLException ex) // m√∂gliche Fehler w√§hrend der DB-Sitzung
 		// ausgeben
 		{
 			System.out.println("SQL-Exception: " + ex.getMessage());
@@ -407,11 +407,11 @@ public class UeberpruefungBudget {
 				summe += rs.getDouble("geplant");
 			}
 
-			rs.close(); // Offene Variablen, abfragen und Connention schlieﬂen
-			stmt.close(); // Befehl schlieﬂen
+			rs.close(); // Offene Variablen, abfragen und Connention schlie√üen
+			stmt.close(); // Befehl schlie√üen
 
 		}// end try
-		catch (SQLException ex) // mˆgliche Fehler w‰hrend der DB-Sitzung
+		catch (SQLException ex) // m√∂gliche Fehler w√§hrend der DB-Sitzung
 		// ausgeben
 		{
 			System.out.println("SQL-Exception: " + ex.getMessage());

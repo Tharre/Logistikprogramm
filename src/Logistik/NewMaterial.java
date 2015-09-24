@@ -13,20 +13,20 @@ import java.sql.*;
 
 public class NewMaterial extends LayoutMainPanel implements ActionListener {
 	/**
-	 * Textfelder für die Eingabe
+	 * Textfelder fÃ¼r die Eingabe
 	 */
 	private Input lagerort, bezeichnung, bundesnr, inventurgruppe, firma,
 			preisExkl, mwst, artNr, date, meldebestand, fixkosten;
 	/**
-	 * Textfelder für die Eingabe mit Hilfefenstern
+	 * Textfelder fÃ¼r die Eingabe mit Hilfefenstern
 	 */
 	private SelectInput firm, einheit;
 	/**
-	 * Textfelder für die Eingabe mit Hilfefenstern (hierarchisch geordnet)
+	 * Textfelder fÃ¼r die Eingabe mit Hilfefenstern (hierarchisch geordnet)
 	 */
 	private SelectInputLevel invgruppe, bundesgr;
 	/**
-	 * Button zum Speichern/Löschen
+	 * Button zum Speichern/LÃ¶schen
 	 */
 	private JButton save, clear;
 	private LayoutForm f;
@@ -69,7 +69,7 @@ public class NewMaterial extends LayoutMainPanel implements ActionListener {
 		fixkosten = new Input(20, "fixkosten");
 
 		save = new JButton("Speichern");
-		clear = new JButton("Löschen");
+		clear = new JButton("LÃ¶schen");
 
 		String[] firmaHeads = { "id", "firmenname", "plz", "ort",
 				"sachbearbeiter" };
@@ -85,7 +85,7 @@ public class NewMaterial extends LayoutMainPanel implements ActionListener {
 				invgrupHeads, "id", "bezeichnung", "uebergruppe");
 
 		info = new JLabel(
-				"Sie müssen mit Hilfe der Tabulator-Tast alle Felder verlassen haben!");
+				"Sie mÃ¼ssen mit Hilfe der Tabulator-Tast alle Felder verlassen haben!");
 
 		btn.addActionListener(this);
 		ueberpruefe.add(btn);
@@ -236,12 +236,12 @@ public class NewMaterial extends LayoutMainPanel implements ActionListener {
 
 				JOptionPane.showMessageDialog(this,
 						"Die Materialdaten wurden erfolgreich gespeichert.");
-				new MessageSucess("Neues Material hinzugefügt");
+				new MessageSucess("Neues Material hinzugefÃ¼gt");
 
 			}
 
 			else
-				new MessageError("Alle Felder müssen ausgefüllt werden!");
+				new MessageError("Alle Felder mÃ¼ssen ausgefÃ¼llt werden!");
 
 			String sqlNewMat = "SELECT id FROM material ORDER BY id DESC LIMIT 1";
 			rs = con.mysql_query(sqlNewMat);
@@ -264,7 +264,7 @@ public class NewMaterial extends LayoutMainPanel implements ActionListener {
 
 			con.mysql_update(insMatFirm);
 
-			//new SuccessMessage("Neues Material hinzugefügt");
+			//new SuccessMessage("Neues Material hinzugefÃ¼gt");
 			rs.close();
 
 		} catch (Exception e) {

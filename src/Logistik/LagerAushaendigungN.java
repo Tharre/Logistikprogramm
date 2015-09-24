@@ -86,7 +86,7 @@ public class LagerAushaendigungN extends LayoutMainPanel implements ActionListen
 
 		p.add(lbl, "20%");
 
-		lbl = new JLabel("Werkstätte/Bereich", JLabel.CENTER);
+		lbl = new JLabel("WerkstÃ¤tte/Bereich", JLabel.CENTER);
 
 		lbl.setBackground(new Color(200, 200, 200));
 
@@ -182,7 +182,7 @@ public class LagerAushaendigungN extends LayoutMainPanel implements ActionListen
 		firma.setEditable(false);
 		Input abbuchstk = new Input(10, 10, Input.NUMBER, "");
 		LayoutNaviButton clear = LayoutButtonCreator.createButton("del.gif",
-				"löschen");
+				"lÃ¶schen");
 		JTextField[] fi = new JTextField[] { mfId, id, mate, lagerst, einheit,
 				preisInkl, firma };
 		SelectInput mat = new SelectInput(con, mate, fi);
@@ -434,7 +434,7 @@ public class LagerAushaendigungN extends LayoutMainPanel implements ActionListen
 
 			kstIstLeer = true;
 
-			new MessageError("Bitte wählen Sie eine Kostenstelle aus!");
+			new MessageError("Bitte wÃ¤hlen Sie eine Kostenstelle aus!");
 
 			return;
 
@@ -444,7 +444,7 @@ public class LagerAushaendigungN extends LayoutMainPanel implements ActionListen
 
 			antrIstLeer = true;
 
-			new MessageError("Bitte wählen Sie einen Antragssteller aus!");
+			new MessageError("Bitte wÃ¤hlen Sie einen Antragssteller aus!");
 
 			return;
 
@@ -581,13 +581,13 @@ public class LagerAushaendigungN extends LayoutMainPanel implements ActionListen
 
 			if (st > lagerstk) {
 				stueckOK = false;
-				JOptionPane.showMessageDialog(null, "Es können max. "
+				JOptionPane.showMessageDialog(null, "Es kÃ¶nnen max. "
 
 				+ lagerstk
 
-				+ " Stück ausgehändigt werden!\n Es sind nur mehr "
+				+ " StÃ¼ck ausgehÃ¤ndigt werden!\n Es sind nur mehr "
 
-				+ lagerstk + " Stück im Lager!");
+				+ lagerstk + " StÃ¼ck im Lager!");
 
 				return;
 			}
@@ -597,7 +597,7 @@ public class LagerAushaendigungN extends LayoutMainPanel implements ActionListen
 
 				JOptionPane.showMessageDialog(null,
 
-				"Die Stückzahl darf nicht kleiner, gleich 0 sein!");
+				"Die StÃ¼ckzahl darf nicht kleiner, gleich 0 sein!");
 
 				return;
 
@@ -736,7 +736,7 @@ public class LagerAushaendigungN extends LayoutMainPanel implements ActionListen
 
 					JOptionPane.showMessageDialog(null,
 
-					"Bitte füllen Sie das Feld \"abzubuchende Stück\" aus");
+					"Bitte fÃ¼llen Sie das Feld \"abzubuchende StÃ¼ck\" aus");
 
 				}
 
@@ -783,7 +783,7 @@ public class LagerAushaendigungN extends LayoutMainPanel implements ActionListen
 		} else //Fenster geschlossen, speichern=-1
 		{
 			
-			JOptionPane.showMessageDialog(null, "Sie haben nichts ausgewählt!");
+			JOptionPane.showMessageDialog(null, "Sie haben nichts ausgewÃ¤hlt!");
 			ueberpruefeSelbstBestellt();
 		}
 		return bestellt;

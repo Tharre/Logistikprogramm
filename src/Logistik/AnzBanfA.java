@@ -165,8 +165,8 @@ public class AnzBanfA extends LayoutMainPanel implements ActionListener {
 		 * } if (s.equals("3") || s.equals("nicht bestellt")) {
 		 * det.setValueAt("nicht bestellt", i, 4);
 		 * 
-		 * } if (s.equals("15") || s.equals("gelöscht")) {
-		 * det.setValueAt("gelöscht", i, 4);
+		 * } if (s.equals("15") || s.equals("gelÃ¶scht")) {
+		 * det.setValueAt("gelÃ¶scht", i, 4);
 		 * 
 		 * }
 		 * 

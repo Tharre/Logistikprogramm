@@ -216,7 +216,7 @@ public class Tabelle extends JPanel {
 			setText(value.toString());
 			// normale schriftart
 			setFont(new Font("SansSerif", Font.BOLD, 12));
-			// der standard rahmen für spaltenköpfe
+			// der standard rahmen fÃ¼r spaltenkÃ¶pfe
 			setBorder(UIManager.getBorder("TableHeader.cellBorder"));
 			// text zentiriert darstellen
 			setHorizontalAlignment(SwingConstants.CENTER);

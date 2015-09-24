@@ -27,9 +27,9 @@ import javax.swing.SwingUtilities;
 import javax.swing.JTextField;
 
 /**
- * Mit der Klasse AbfrageExportExcel können Exceldateien erstellt und
- * überschrieben werden. Diese Funktion wird für den Export von einzelnen
- * Abfragen und für den Export aller Budget-Tabellen verwendet.
+ * Mit der Klasse AbfrageExportExcel kÃ¶nnen Exceldateien erstellt und
+ * Ã¼berschrieben werden. Diese Funktion wird fÃ¼r den Export von einzelnen
+ * Abfragen und fÃ¼r den Export aller Budget-Tabellen verwendet.
  * <p>
  * Title: AbfrageExportExcel
  * 
@@ -49,7 +49,7 @@ public class AbfrageExportExcel extends JFrame implements ActionListener {
 	/** Reihe im Excel Sheet **/
 	private HSSFRow row;
 	/**
-	 * Excel Sheets, zugehörig zu einem Workbook; pro Tabelle wird 1 Sheet
+	 * Excel Sheets, zugehÃ¶rig zu einem Workbook; pro Tabelle wird 1 Sheet
 	 * erstellt
 	 **/
 	private HSSFSheet sheet;
@@ -63,9 +63,9 @@ public class AbfrageExportExcel extends JFrame implements ActionListener {
 			"Bitte geben Sie den Namen der Datei an. Bsp.: test.xls");
 
 	// TextField
-	/** Eingabefeld für den Pfad, wo die Datei gespeichert werden soll **/
+	/** Eingabefeld fÃ¼r den Pfad, wo die Datei gespeichert werden soll **/
 	private JTextField eingabefeld = new JTextField();
-	/** Eingabefeld für den Namen der Exceldatei **/
+	/** Eingabefeld fÃ¼r den Namen der Exceldatei **/
 	private JTextField eingabefeldName = new JTextField();
 
 	// Button
@@ -97,11 +97,11 @@ public class AbfrageExportExcel extends JFrame implements ActionListener {
 	private Vector sonderbudget = new Vector();
 	/** Daten der Tabelle rechnung **/
 	private Vector rechnungen = new Vector();
-	/** die einzelnen Spaltenüberschriften **/
+	/** die einzelnen SpaltenÃ¼berschriften **/
 	private Vector tabelleUeberschrift = new Vector();
-	/** alle Spaltenüberschriften - nach Sheet sortiert - gesammelt **/
+	/** alle SpaltenÃ¼berschriften - nach Sheet sortiert - gesammelt **/
 	private Vector ueberschrift = new Vector();
-	/** Hilfsvector für einen einzelnen Datensatz **/
+	/** Hilfsvector fÃ¼r einen einzelnen Datensatz **/
 	private Vector zeile;
 	/** Daten, die exportiert werden sollen **/
 	private Vector daten = new Vector();
@@ -198,7 +198,7 @@ public class AbfrageExportExcel extends JFrame implements ActionListener {
 	}
 
 	/**
-	 * speichert alle Spaltenüberschriften - sortiert nach Sheet/Tabelle - auf
+	 * speichert alle SpaltenÃ¼berschriften - sortiert nach Sheet/Tabelle - auf
 	 * einen Vector
 	 */
 	public void erstelleUeberschriften() {
@@ -212,7 +212,7 @@ public class AbfrageExportExcel extends JFrame implements ActionListener {
 		tabelleUeberschrift.add("geplant");
 		tabelleUeberschrift.add("ausgegeben");
 		tabelleUeberschrift.add("gesperrt");
-		tabelleUeberschrift.add("verfügbar");
+		tabelleUeberschrift.add("verfÃ¼gbar");
 
 		ueberschrift.add(tabelleUeberschrift);
 
@@ -223,7 +223,7 @@ public class AbfrageExportExcel extends JFrame implements ActionListener {
 		tabelleUeberschrift.add("geplant");
 		tabelleUeberschrift.add("ausgegeben");
 		tabelleUeberschrift.add("gesperrt");
-		tabelleUeberschrift.add("verfügbar");
+		tabelleUeberschrift.add("verfÃ¼gbar");
 
 		ueberschrift.add(tabelleUeberschrift);
 
@@ -234,7 +234,7 @@ public class AbfrageExportExcel extends JFrame implements ActionListener {
 		tabelleUeberschrift.add("geplant");
 		tabelleUeberschrift.add("ausgegeben");
 		tabelleUeberschrift.add("gesperrt");
-		tabelleUeberschrift.add("verfügbar");
+		tabelleUeberschrift.add("verfÃ¼gbar");
 
 		ueberschrift.add(tabelleUeberschrift);
 
@@ -245,7 +245,7 @@ public class AbfrageExportExcel extends JFrame implements ActionListener {
 		tabelleUeberschrift.add("geplant");
 		tabelleUeberschrift.add("ausgegeben");
 		tabelleUeberschrift.add("gesperrt");
-		tabelleUeberschrift.add("verfügbar");
+		tabelleUeberschrift.add("verfÃ¼gbar");
 
 		ueberschrift.add(tabelleUeberschrift);
 
@@ -258,7 +258,7 @@ public class AbfrageExportExcel extends JFrame implements ActionListener {
 		tabelleUeberschrift.add("geplant");
 		tabelleUeberschrift.add("ausgegeben");
 		tabelleUeberschrift.add("gesperrt");
-		tabelleUeberschrift.add("verfügbar");
+		tabelleUeberschrift.add("verfÃ¼gbar");
 
 		ueberschrift.add(tabelleUeberschrift);
 
@@ -270,7 +270,7 @@ public class AbfrageExportExcel extends JFrame implements ActionListener {
 		tabelleUeberschrift.add("geplant");
 		tabelleUeberschrift.add("ausgegeben");
 		tabelleUeberschrift.add("gesperrt");
-		tabelleUeberschrift.add("verfügbar");
+		tabelleUeberschrift.add("verfÃ¼gbar");
 
 		ueberschrift.add(tabelleUeberschrift);
 
@@ -282,7 +282,7 @@ public class AbfrageExportExcel extends JFrame implements ActionListener {
 		tabelleUeberschrift.add("geplant");
 		tabelleUeberschrift.add("ausgegeben");
 		tabelleUeberschrift.add("gesperrt");
-		tabelleUeberschrift.add("verfügbar");
+		tabelleUeberschrift.add("verfÃ¼gbar");
 
 		ueberschrift.add(tabelleUeberschrift);
 
@@ -293,7 +293,7 @@ public class AbfrageExportExcel extends JFrame implements ActionListener {
 		tabelleUeberschrift.add("geplant");
 		tabelleUeberschrift.add("ausgegeben");
 		tabelleUeberschrift.add("gesperrt");
-		tabelleUeberschrift.add("verfügbar");
+		tabelleUeberschrift.add("verfÃ¼gbar");
 
 		ueberschrift.add(tabelleUeberschrift);
 
@@ -336,7 +336,7 @@ public class AbfrageExportExcel extends JFrame implements ActionListener {
 	 * 
 	 * @param spalten
 	 *            Namen der Spalten
-	 * @return tabelleUeberschrift Vector mit den Spaltenüberschriften
+	 * @return tabelleUeberschrift Vector mit den SpaltenÃ¼berschriften
 	 */
 	public Vector erstelleUberschriftausArray(String[] spalten) {
 		tabelleUeberschrift.clear();
@@ -406,7 +406,7 @@ public class AbfrageExportExcel extends JFrame implements ActionListener {
 	public Laden load;
 
 	public void actionPerformed(ActionEvent e) {
-		// Exportieren von allen Daten in ausgewählten Tabellen (siehe Methode
+		// Exportieren von allen Daten in ausgewÃ¤hlten Tabellen (siehe Methode
 		// "leseDatenAus")
 		if (e.getSource() == erstelle && daten.size() == 0) {
 			outputFile = eingabefeld.getText() + "/"

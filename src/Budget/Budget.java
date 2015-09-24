@@ -63,7 +63,7 @@ public class Budget extends JFrame implements ActionListener {
 	 * Bezahlung
 	 */
 	private JPanel pControls;
-	/** beinhaltet die Karten f¸r das CardLayout */
+	/** beinhaltet die Karten f√ºr das CardLayout */
 	private JPanel pCenter;
 
 	// --------------------------------Buttons-----------------------
@@ -186,11 +186,11 @@ public class Budget extends JFrame implements ActionListener {
 	private JMenuItem banfHauptkst;
 	/** Der auswaehlbare Menueeintrag Banf Auflistung nach Kostenstelle **/
 	private JMenuItem banfKst;
-	/** Der auswaehlbare Menueeintrag Auswertung nach Abteilung - betragsmaeﬂig **/
+	/** Der auswaehlbare Menueeintrag Auswertung nach Abteilung - betragsmae√üig **/
 	private JMenuItem auswertungAbtBetrag;
 	/**
 	 * Der auswaehlbare Menueeintrag Auswertung nach Abteilung -
-	 * verhaeltnismaeﬂig
+	 * verhaeltnismae√üig
 	 **/
 	private JMenuItem auswertungAbtVerh;
 	/** Der auswaehlbare Menueeintrag Umsatz Je Firma **/
@@ -261,9 +261,9 @@ public class Budget extends JFrame implements ActionListener {
 	private BudgetAbfragen ab;
 	/** fuer die Abfrage: Banf Auflistung nach Lehrern **/
 	private BudgetAbfragen ab2;
-	/** fuer die Abfrage: Auswertung nach Abteilung - betragsmaeﬂig **/
+	/** fuer die Abfrage: Auswertung nach Abteilung - betragsmae√üig **/
 	private BudgetAbfragen ab3;
-	/** fuer die Abfrage: Auswertung nach Abteilung - verhaeltnismaeﬂig **/
+	/** fuer die Abfrage: Auswertung nach Abteilung - verhaeltnismae√üig **/
 	private BudgetAbfragen ab4;
 	/** fuer die Abfrage: Umsatz je Firma **/
 	private BudgetAbfragen ab5;
@@ -277,7 +277,7 @@ public class Budget extends JFrame implements ActionListener {
 	private BudgetAbfragen ab9;
 	/** fuer die Abfrage: Bestellungen nach Kostenstelle **/
 	private BudgetAbfragen ab10;
-	/** fuer die Abfrage: ‹bersicht Bestellungen - Sonderbudgets **/
+	/** fuer die Abfrage: √úbersicht Bestellungen - Sonderbudgets **/
 	private BudgetAbfragen ab11;
 	/** fuer die Abfrage: ABC-Analyse nach Artikeln **/
 	private BudgetAbfragen ab12;
@@ -325,7 +325,7 @@ public class Budget extends JFrame implements ActionListener {
 
 	private Runnable runnable;
 
-	/** Jahreszahl f¸r die Bezeichnung des LMB1_x **/
+	/** Jahreszahl f√ºr die Bezeichnung des LMB1_x **/
 	private int jahreszahl;
 
 	/**
@@ -425,7 +425,7 @@ public class Budget extends JFrame implements ActionListener {
 			}
 		});
 
-		// Men¸leiste definieren
+		// Men√ºleiste definieren
 		menuBar = new JMenuBar();
 		menuBar.add(createFileMenu());
 		menuBar.add(createHelpMenu());
@@ -455,10 +455,10 @@ public class Budget extends JFrame implements ActionListener {
 		pCenter.add("Card17", diagramm5);
 		pCenter.add("Card18", diagramm6);
 		pCenter.add("Card19", diagramm7);
-		pCenter.add("Card20", ab);// ‹bersicht Bestellungen
+		pCenter.add("Card20", ab);// √úbersicht Bestellungen
 		pCenter.add("Card21", ab2);// Banf Auflistung nach Lehrern
-		pCenter.add("Card23", ab3);// Auswertung nach Abteilung - betragsm‰ﬂig
-		pCenter.add("Card24", ab4);// verh‰ltnism‰ﬂig
+		pCenter.add("Card23", ab3);// Auswertung nach Abteilung - betragsm√§√üig
+		pCenter.add("Card24", ab4);// verh√§ltnism√§√üig
 		pCenter.add("Card25", ab5);// Umsatz je Firma
 		pCenter.add("Card26", ab6);// gekaufte Artikel je Firma
 		pCenter.add("Card22", ab7);// Bestellungen nach Haubtbereich
@@ -484,7 +484,7 @@ public class Budget extends JFrame implements ActionListener {
 		btnBezahlung = new JButton("Bezahlung");
 		btnLmb2 = new JButton("LMB2");
 
-		// Button dem ActionListener hinzuf¸gen
+		// Button dem ActionListener hinzuf√ºgen
 		btnUt8.addActionListener(this);
 		btnUt3.addActionListener(this);
 		btnLmb.addActionListener(this);
@@ -502,7 +502,7 @@ public class Budget extends JFrame implements ActionListener {
 		btnBezahlung.setToolTipText("Bezahlung der Bestellungen");
 		btnLmb2.setToolTipText("LMB2");
 
-		// Buttons dem pControls - Panel hinzuf¸gen
+		// Buttons dem pControls - Panel hinzuf√ºgen
 		pControls = new JPanel();
 		pControls.setLayout(new FlowLayout());
 		pControls.add(btnUt8);
@@ -519,7 +519,7 @@ public class Budget extends JFrame implements ActionListener {
 		pTop.add(pControls);
 		pTop.add(pNamensLeiste);
 
-		// Alles dem Container hinzuf¸gen
+		// Alles dem Container hinzuf√ºgen
 		c.add(pTop, BorderLayout.NORTH);
 		c.add(pCenter, BorderLayout.CENTER);
 
@@ -645,37 +645,37 @@ public class Budget extends JFrame implements ActionListener {
 			card.show(pCenter, "Card19");
 			pNamensLeiste.aendereName("Aktueller Stand - Sonderbudgets");
 
-		} else if (e.getActionCommand().equals("‹bersicht UT8")) {
+		} else if (e.getActionCommand().equals("√úbersicht UT8")) {
 
 			Thread thread = new Thread(runnable);
 			thread.start();
 
 			ab.anzeigen(2);
 			card.show(pCenter, "Card20");
-			pNamensLeiste.aendereName("‹bersicht Bestellungen - UT8");
-		} else if (e.getActionCommand().equals("‹bersicht UT3")) {
+			pNamensLeiste.aendereName("√úbersicht Bestellungen - UT8");
+		} else if (e.getActionCommand().equals("√úbersicht UT3")) {
 			ab.anzeigen(3);
 			card.show(pCenter, "Card20");
-			pNamensLeiste.aendereName("‹bersicht Bestellungen - UT3");
-		} else if (e.getActionCommand().equals("‹bersicht LMB1")) {
+			pNamensLeiste.aendereName("√úbersicht Bestellungen - UT3");
+		} else if (e.getActionCommand().equals("√úbersicht LMB1")) {
 			ab.anzeigen(4);
 			card.show(pCenter, "Card20");
-			pNamensLeiste.aendereName("‹bersicht Bestellungen - LMB1");
-		} else if (e.getActionCommand().equals("‹bersicht LMB2")) {
+			pNamensLeiste.aendereName("√úbersicht Bestellungen - LMB1");
+		} else if (e.getActionCommand().equals("√úbersicht LMB2")) {
 			ab.anzeigen(5);
 			card.show(pCenter, "Card20");
-			pNamensLeiste.aendereName("‹bersicht Bestellungen - LMB2");
-		} else if (e.getActionCommand().equals("‹bersicht Sonderbudgets alle")) {
+			pNamensLeiste.aendereName("√úbersicht Bestellungen - LMB2");
+		} else if (e.getActionCommand().equals("√úbersicht Sonderbudgets alle")) {
 			ab.anzeigen(6);
 			card.show(pCenter, "Card20");
 			pNamensLeiste
-					.aendereName("‹bersicht Bestellungen - Sonderbudgets alle");
+					.aendereName("√úbersicht Bestellungen - Sonderbudgets alle");
 
-		} else if (e.getActionCommand().equals("‹bersicht Sonderbudgets")) {
+		} else if (e.getActionCommand().equals("√úbersicht Sonderbudgets")) {
 			ab11.anzeigen(18);
 
 			card.show(pCenter, "Card34");
-			pNamensLeiste.aendereName("‹bersicht Bestellungen - Sonderbudgets");
+			pNamensLeiste.aendereName("√úbersicht Bestellungen - Sonderbudgets");
 
 		} else if (e.getActionCommand().equals("BANF Auflistung nach Lehrer")) {
 			ab2.anzeigen(7);
@@ -708,18 +708,18 @@ public class Budget extends JFrame implements ActionListener {
 			pNamensLeiste.aendereName("Kostenstelle");
 
 		} else if (e.getActionCommand().equals(
-				"Auswertung nach Abteilung - betragsm‰ﬂig")) {
+				"Auswertung nach Abteilung - betragsm√§√üig")) {
 			ab3.anzeigen(9);
 			card.show(pCenter, "Card23");
 			pNamensLeiste
-					.aendereName("Auswertung nach Abteilung - betragsm‰ﬂig");
+					.aendereName("Auswertung nach Abteilung - betragsm√§√üig");
 
 		} else if (e.getActionCommand().equals(
-				"Auswertung nach Abteilung - verh‰ltnism‰ﬂig")) {
+				"Auswertung nach Abteilung - verh√§ltnism√§√üig")) {
 			ab4.anzeigen(10);
 			card.show(pCenter, "Card24");
 			pNamensLeiste
-					.aendereName("Auswertung nach Abteilung - verh‰ltnism‰ﬂig");
+					.aendereName("Auswertung nach Abteilung - verh√§ltnism√§√üig");
 
 		} else if (e.getActionCommand().equals("Umsatz je Firma")) {
 			ab5.anzeigen(11);
@@ -759,20 +759,20 @@ public class Budget extends JFrame implements ActionListener {
 
 			pNamensLeiste.aendereName("Alle Rechnungen anzeigen");
 
-		} else if (e.getActionCommand().equals("Rechnung lˆschen")) {
+		} else if (e.getActionCommand().equals("Rechnung l√∂schen")) {
 
 			rL.anzeigenRechnungen();
 			card.show(pCenter, "Card36");
 
-			pNamensLeiste.aendereName("Rechnung lˆschen");
+			pNamensLeiste.aendereName("Rechnung l√∂schen");
 		}
 
-		else if (e.getActionCommand().equals("Buchungen lˆschen")) {
+		else if (e.getActionCommand().equals("Buchungen l√∂schen")) {
 
 			bL.anzeigenBuchungen();
 			card.show(pCenter, "Card37");
 
-			pNamensLeiste.aendereName("Buchungen lˆschen");
+			pNamensLeiste.aendereName("Buchungen l√∂schen");
 		}
 
 		else if (e.getActionCommand().equals("Rechnung korrigieren")) {
@@ -955,22 +955,22 @@ public class Budget extends JFrame implements ActionListener {
 	}
 
 	/**
-	 * Das Auswahlmenue "Men¸" mit den einzelnen Submenues wird erzeugt
+	 * Das Auswahlmenue "Men√º" mit den einzelnen Submenues wird erzeugt
 	 * 
-	 * @return das komplette Men¸ vom Typ "JMenu" wird zurueck gegeben
+	 * @return das komplette Men√º vom Typ "JMenu" wird zurueck gegeben
 	 */
 	public JMenu createFileMenu() {
-		datei = new JMenu("Men¸");
-		datei.setMnemonic('M'); // Tastenk¸rzel (Alt-M) zum ÷ffnen des Men¸s
+		datei = new JMenu("Men√º");
+		datei.setMnemonic('M'); // Tastenk√ºrzel (Alt-M) zum √ñffnen des Men√ºs
 
 		bezahlung = new JMenuItem("Bezahlung", 'z');
 		setCtrlAccelerator(bezahlung, 'Z'); // Tastenkombination Strg+Z (auch
-		// bei geschlossenem Men¸)
+		// bei geschlossenem Men√º)
 		bezahlung.addActionListener(this);
 		datei.add(bezahlung);
 
 		abfragen = new JMenu("Abfragen");
-		abfragen.setMnemonic('A'); // Tastenk¸rzel (Alt-A) - Alt muss gedrueckt
+		abfragen.setMnemonic('A'); // Tastenk√ºrzel (Alt-A) - Alt muss gedrueckt
 		// gehalten werden
 
 		// Submenue
@@ -1033,32 +1033,32 @@ public class Budget extends JFrame implements ActionListener {
 		mISonder.addActionListener(this);
 		abfrage1.add(mISonder);
 
-		abfrage2 = new JMenu("‹bersicht Bestellungen");
+		abfrage2 = new JMenu("√úbersicht Bestellungen");
 		abfragen.add(abfrage2);
 
 		// Submenue
 
-		uebersichtUt8 = new JMenuItem("‹bersicht UT8");
+		uebersichtUt8 = new JMenuItem("√úbersicht UT8");
 		uebersichtUt8.addActionListener(this);
 		abfrage2.add(uebersichtUt8);
 
-		uebersichtUt3 = new JMenuItem("‹bersicht UT3");
+		uebersichtUt3 = new JMenuItem("√úbersicht UT3");
 		uebersichtUt3.addActionListener(this);
 		abfrage2.add(uebersichtUt3);
 
-		uebersichtLmb1 = new JMenuItem("‹bersicht LMB1");
+		uebersichtLmb1 = new JMenuItem("√úbersicht LMB1");
 		uebersichtLmb1.addActionListener(this);
 		abfrage2.add(uebersichtLmb1);
 
-		uebersichtLmb2 = new JMenuItem("‹bersicht LMB2");
+		uebersichtLmb2 = new JMenuItem("√úbersicht LMB2");
 		uebersichtLmb2.addActionListener(this);
 		abfrage2.add(uebersichtLmb2);
 
-		uebersichtSonderAlle = new JMenuItem("‹bersicht Sonderbudgets alle");
+		uebersichtSonderAlle = new JMenuItem("√úbersicht Sonderbudgets alle");
 		uebersichtSonderAlle.addActionListener(this);
 		abfrage2.add(uebersichtSonderAlle);
 
-		uebersichtSonder = new JMenuItem("‹bersicht Sonderbudgets");
+		uebersichtSonder = new JMenuItem("√úbersicht Sonderbudgets");
 		uebersichtSonder.addActionListener(this);
 		abfrage2.add(uebersichtSonder);
 
@@ -1094,14 +1094,14 @@ public class Budget extends JFrame implements ActionListener {
 		// End Submenue
 
 		auswertungAbtBetrag = new JMenuItem(
-				"Auswertung nach Abteilung - betragsm‰ﬂig");
+				"Auswertung nach Abteilung - betragsm√§√üig");
 		auswertungAbtBetrag.addActionListener(this);
 		setCtrlAccelerator(auswertungAbtBetrag, '3'); // Tastenkombination
 		// Strg+3
 		abfragen.add(auswertungAbtBetrag);
 
 		auswertungAbtVerh = new JMenuItem(
-				"Auswertung nach Abteilung - verh‰ltnism‰ﬂig");
+				"Auswertung nach Abteilung - verh√§ltnism√§√üig");
 		auswertungAbtVerh.addActionListener(this);
 		setCtrlAccelerator(auswertungAbtVerh, '4'); // Tastenkombination Strg+4
 		abfragen.add(auswertungAbtVerh);
@@ -1168,7 +1168,7 @@ public class Budget extends JFrame implements ActionListener {
 
 		// End Submenue
 
-		buchungenLoeschen = new JMenuItem("Buchungen lˆschen");
+		buchungenLoeschen = new JMenuItem("Buchungen l√∂schen");
 		buchungenLoeschen.addActionListener(this);
 		setCtrlAccelerator(buchungenLoeschen, 'L'); // Tastenkombination Strg+8
 		datei.add(buchungenLoeschen);
@@ -1197,7 +1197,7 @@ public class Budget extends JFrame implements ActionListener {
 	/**
 	 * Das Auswahlmenue "Hilfe" wird erzeugt
 	 * 
-	 * @return Das komplette Menue vom Typ "JMenu" wird zur¸ck gegeben
+	 * @return Das komplette Menue vom Typ "JMenu" wird zur√ºck gegeben
 	 */
 	public JMenu createHelpMenu() {
 		hilfe = new JMenu("Hilfe");
@@ -1223,7 +1223,7 @@ public class Budget extends JFrame implements ActionListener {
 		setCtrlAccelerator(rechnungAendern, 'A'); // Tastenkombination Strg+A
 		rechnung.add(rechnungAendern);
 
-		rechnungenLoeschen = new JMenuItem("Rechnung lˆschen");
+		rechnungenLoeschen = new JMenuItem("Rechnung l√∂schen");
 		rechnungenLoeschen.addActionListener(this);
 		setCtrlAccelerator(rechnungenLoeschen, '0'); // Tastenkombination Strg+0
 		rechnung.add(rechnungenLoeschen);
@@ -1246,7 +1246,7 @@ public class Budget extends JFrame implements ActionListener {
 		datenbank = new JMenu("Datenbank");
 
 		dbExportieren = new JMenuItem("Budget-Datenbank exportieren", 'S');
-		setCtrlAccelerator(dbExportieren, 'S'); // Tastenkombination Strg+S f¸r
+		setCtrlAccelerator(dbExportieren, 'S'); // Tastenkombination Strg+S f√ºr
 		// Save
 		dbExportieren.addActionListener(this);
 		datenbank.add(dbExportieren);
@@ -1276,7 +1276,7 @@ public class Budget extends JFrame implements ActionListener {
 	 * @param mi
 	 *            das JMenuItem, das ausgefuehrt werden soll
 	 * @param acc
-	 *            dr¸ckt man Strg + diese Taste, wird das JMenuItem ausgefuehrt
+	 *            dr√ºckt man Strg + diese Taste, wird das JMenuItem ausgefuehrt
 	 */
 	public void setCtrlAccelerator(JMenuItem mi, char acc) {
 		KeyStroke ks = KeyStroke.getKeyStroke(acc, Event.CTRL_MASK);

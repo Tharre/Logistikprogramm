@@ -30,9 +30,9 @@ public class AnzFirmen extends LayoutMainPanel {
 				"sachbearbeiter", "telefon", "fax", "homepage", "uid",
 				"kondition" , "umsNr", "araNr","kreditorennummer","einkaeufergruppe"};
 		String[] spalten2 = { "Firmen-ID","Firmenname", "Erstellungsdatum", "PLZ",
-				"Ort", "Straﬂe", "Mail", "Staat", "Kundennr.",
+				"Ort", "Stra√üe", "Mail", "Staat", "Kundennr.",
 				"Sachbearbeiter", "Telefon", "Fax", "Homepage", "UID",
-				"Kondition" , "UMS-Nr.", "ARA-Nr.","Kreditorennr.","Eink‰ufergr."};
+				"Kondition" , "UMS-Nr.", "ARA-Nr.","Kreditorennr.","Eink√§ufergr."};
 		Class[] classes = { Integer.class, String.class, Date.class,
 				String.class, String.class, String.class, String.class,
 				String.class, String.class, String.class, String.class,

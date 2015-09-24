@@ -1,7 +1,7 @@
 package Logistik;
 
 /**
- * Das Verwaltungsmenü für User im Midpanel überprüfen der Rechte. Je nachdem
+ * Das VerwaltungsmenÃ¼ fÃ¼r User im Midpanel Ã¼berprÃ¼fen der Rechte. Je nachdem
  * wird der Button angezeigt oder nicht
  */
 
@@ -28,9 +28,9 @@ public class VerUser extends LayoutMidPanel {
 			addShowPanelScroll(new UserUsergroup(user),
 					"User einer Usergruppe zuweisen");
 		}
-		if (user.hasRecht(Logistik.rechte.getRechtId("Usergruppen löschen"))) {
-			addNaviButton("Usergruppe löschen");
-			addShowPanelScroll(new DelUsergruppe(user), "Usergruppe löschen");
+		if (user.hasRecht(Logistik.rechte.getRechtId("Usergruppen lÃ¶schen"))) {
+			addNaviButton("Usergruppe lÃ¶schen");
+			addShowPanelScroll(new DelUsergruppe(user), "Usergruppe lÃ¶schen");
 		}
 
 	}

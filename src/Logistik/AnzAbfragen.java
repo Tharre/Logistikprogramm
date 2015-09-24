@@ -9,7 +9,7 @@ import java.text.DecimalFormat;
 import java.util.*;
 
 /*
- * Zeigt die Abfragen je nach dem gew‰hlten Typ an.
+ * Zeigt die Abfragen je nach dem gew√§hlten Typ an.
  * Der Typ wird beim Erzeugen des Objects festgelegt und
  * beschreibt in welchen Tabellen die Abfragen erfolgen.
  */
@@ -131,7 +131,7 @@ public class AnzAbfragen extends LayoutMainPanel implements ActionListener {
 			m5 = new JButton("Material suchen");
 			m7 = new JButton("Materialien zusammengefasst nach Bundesgruppen");
 
-			m9 = new JButton("grˆﬂter / kleinster Preis f¸r Material X");
+			m9 = new JButton("gr√∂√üter / kleinster Preis f√ºr Material X");
 			m11 = new JButton("Material mit Inventurgruppe suchen");
 
 			addM(new JLabel("\n"));
@@ -142,7 +142,7 @@ public class AnzAbfragen extends LayoutMainPanel implements ActionListener {
 			addM(m5);
 			addM(m7);
 			addM(m9);
-			// addM(m11); /*gelˆscht, weil gleich wie m4*/
+			// addM(m11); /*gel√∂scht, weil gleich wie m4*/
 
 			m1.addActionListener(this);
 			m2.addActionListener(this);
@@ -158,7 +158,7 @@ public class AnzAbfragen extends LayoutMainPanel implements ActionListener {
 			mf1 = new JButton("Welches Material hat die Artikelnummer X?");
 			mf2 = new JButton("Welches Material hat Preis zwischen X und Y?");
 			mf3 = new JButton(
-					"Welche Materialien kˆnnen bei der Firma X bestellt werden?");
+					"Welche Materialien k√∂nnen bei der Firma X bestellt werden?");
 			mf4 = new JButton(
 					"Bei welchen Firmen kann man Material X bestellen?");
 			addM(new JLabel("\n"));
@@ -174,17 +174,17 @@ public class AnzAbfragen extends LayoutMainPanel implements ActionListener {
 		if (typ == "lager") {
 			l1 = new JButton(
 					"Welche Materialien hat der User X ab- und zugebucht?");
-			// l2 = new JButton("Artikel wertm‰ﬂig anzeigen");
+			// l2 = new JButton("Artikel wertm√§√üig anzeigen");
 			l4 = new JButton(
-					"Ausgeh‰ndigte Materialien nach Material zusammengefasst");
+					"Ausgeh√§ndigte Materialien nach Material zusammengefasst");
 			l3 = new JButton(
-					"Ausgeh‰ndigte Materialien nach Kostenstellen zusammengefasst");
+					"Ausgeh√§ndigte Materialien nach Kostenstellen zusammengefasst");
 			//l7 = new JButton("Bestellungen nach Kostenstellen zusammengefasst");
-			l5 = new JButton("Buchungen f¸r Kostenstelle X");
+			l5 = new JButton("Buchungen f√ºr Kostenstelle X");
 			m10 = new JButton(
 					"Welche Materialien haben den Meldebestand unterschritten?");
 			m8 = new JButton("Welche Materialien sind nicht im Lager?");
-			f10 = new JButton("Zur¸ck an Firmen");
+			f10 = new JButton("Zur√ºck an Firmen");
 			m12 = new JButton("Inventur");
 			l6 = new JButton("Von wem wurde ein bestimmter Artikel abgefasst?");
 
@@ -222,7 +222,7 @@ public class AnzAbfragen extends LayoutMainPanel implements ActionListener {
 		if (e.getSource() == r2) {
 			String a = "Usergruppe eingeben";
 			String[] headss = { "name", "id" };
-			// Frame,Angezeigter Text, Titel, ver‰nderbare Spalte, angezeigte
+			// Frame,Angezeigter Text, Titel, ver√§nderbare Spalte, angezeigte
 			// Spalte, Tabelle, conection
 			InputFrame in = new InputFrame(null, a, "Usergruppe", headss, "id",
 					"name", "usergroup", con, false);
@@ -249,7 +249,7 @@ public class AnzAbfragen extends LayoutMainPanel implements ActionListener {
 		if (e.getSource() == ug2 || e.getSource() == u3) {
 			String a = "Usergruppe eingeben";
 			String[] headss = { "name", "id" };
-			// Frame,Angezeigter Text, Titel, ver‰nderbare Spalte, angezeigte
+			// Frame,Angezeigter Text, Titel, ver√§nderbare Spalte, angezeigte
 			// Spalte, Tabelle, conection
 			InputFrame in = new InputFrame(null, a, "Usergruppe", headss, "id",
 					"name", "usergroup", con, false);
@@ -260,7 +260,7 @@ public class AnzAbfragen extends LayoutMainPanel implements ActionListener {
 		if (e.getSource() == ug3) {
 			String a = "User eingeben";
 			String[] headss = { "name", "cn" };
-			// Frame,Angezeigter Text, Titel, ver‰nderbare Spalte, angezeigte
+			// Frame,Angezeigter Text, Titel, ver√§nderbare Spalte, angezeigte
 			// Spalte, Tabelle, conection
 			InputFrame in = new InputFrame(null, a, "User", headss, "cn", "cn",
 					"ldap_user", con, false);
@@ -277,7 +277,7 @@ public class AnzAbfragen extends LayoutMainPanel implements ActionListener {
 		if (e.getSource() == u2) {
 			String a = "User eingeben";
 			String[] headss = { "name", "cn" };
-			// Frame,Angezeigter Text, Titel, ver‰nderbare Spalte, angezeigte
+			// Frame,Angezeigter Text, Titel, ver√§nderbare Spalte, angezeigte
 			// Spalte, Tabelle, conection
 			InputFrame in = new InputFrame(null, a, "User", headss, "cn", "cn",
 					"ldap_user", con, false);
@@ -302,7 +302,7 @@ public class AnzAbfragen extends LayoutMainPanel implements ActionListener {
 		if (e.getSource() == fa) {
 			String a = "Firmenname/ID eingeben";
 			String[] headss = { "id", "firmenname", "plz", "ort" };
-			// Frame,Angezeigter Text, Tabellennamen, ver‰nderbare Spalte,
+			// Frame,Angezeigter Text, Tabellennamen, ver√§nderbare Spalte,
 			// angezeigte Spalte, Tabelle, conection
 			InputFrame in = new InputFrame(null, a, "Firma", headss, "id",
 					"firmenname", "firma", con, false);
@@ -329,7 +329,7 @@ public class AnzAbfragen extends LayoutMainPanel implements ActionListener {
 		if (e.getSource() == f5) {
 			String a = "Firmenname/ID eingeben";
 			String[] headss = { "id", "firmenname" };
-			// Frame,Angezeigter Text, Tabellennamen, ver‰nderbare Spalte,
+			// Frame,Angezeigter Text, Tabellennamen, ver√§nderbare Spalte,
 			// angezeigte Spalte, Tabelle, conection
 			InputFrame in = new InputFrame(null, a, "Firma", headss, "id",
 					"firmenname", "firma", con, false);
@@ -346,7 +346,7 @@ public class AnzAbfragen extends LayoutMainPanel implements ActionListener {
 		if (e.getSource() == f7) {
 			String a = "Firmenname/ID eingeben";
 			String[] headss = { "id", "firmenname" };
-			// Frame,Angezeigter Text, Tabellennamen, ver‰nderbare Spalte,
+			// Frame,Angezeigter Text, Tabellennamen, ver√§nderbare Spalte,
 			// angezeigte Spalte, Tabelle, conection
 			InputFrame in = new InputFrame(null, a, "Firma", headss, "id",
 					"firmenname", "firma", con, false);
@@ -370,7 +370,7 @@ public class AnzAbfragen extends LayoutMainPanel implements ActionListener {
 		if (e.getSource() == f10) {
 			String a = "Firmenname/ID eingeben";
 			String[] headss = { "id", "firmenname", "plz", "ort" };
-			// Frame,Angezeigter Text, Tabellennamen, ver‰nderbare Spalte,
+			// Frame,Angezeigter Text, Tabellennamen, ver√§nderbare Spalte,
 			// angezeigte Spalte, Tabelle, conection
 			InputFrame in = new InputFrame(null, a, "Firma", headss, "id",
 					"firmenname", "firma", con, false);
@@ -401,7 +401,7 @@ public class AnzAbfragen extends LayoutMainPanel implements ActionListener {
 								 * Abfrage: Welches Material hat die
 								 * Bundesnummer x
 								 */
-			String a = "Bundesgruppe w‰hlen";
+			String a = "Bundesgruppe w√§hlen";
 			InputFrame in = new InputFrame(null, a, "Bundesgruppe", con, 1);
 			String g = in.getWert();
 			if (g != null) {
@@ -412,7 +412,7 @@ public class AnzAbfragen extends LayoutMainPanel implements ActionListener {
 								 * Abfrage: Welche Materialien sind in der
 								 * Inventurgruppe x
 								 */
-			String a = "Inventurgruppe w‰hlen";
+			String a = "Inventurgruppe w√§hlen";
 			InputFrame in = new InputFrame(null, a, "Inventurgruppe", con);
 			String g = in.getWert();
 			if (g != null) {
@@ -424,7 +424,7 @@ public class AnzAbfragen extends LayoutMainPanel implements ActionListener {
 			String a = "Material/ID eingeben";
 			String[] headss = { "id", "bezeichnung", "bundesnr",
 					"inventurgruppe", "stueck" };
-			// Frame,Angezeigter Text, Tabellennamen, ver‰nderbare Spalte,
+			// Frame,Angezeigter Text, Tabellennamen, ver√§nderbare Spalte,
 			// angezeigte Spalte, Tabelle, conection
 			InputFrame in = new InputFrame(null, a, "Material", headss, "id",
 					"bezeichnung", "material", con, false);
@@ -445,7 +445,7 @@ public class AnzAbfragen extends LayoutMainPanel implements ActionListener {
 		if (e.getSource() == m9) {
 			String a = "Material/ID eingeben";
 			String[] headss = { "id", "bezeichnung" };
-			// Frame,Angezeigter Text, Tabellennamen, ver‰nderbare Spalte,
+			// Frame,Angezeigter Text, Tabellennamen, ver√§nderbare Spalte,
 			// angezeigte Spalte, Tabelle, conection
 			InputFrame in = new InputFrame(null, a, "Material", headss, "id",
 					"bezeichnung", "material", con, true);
@@ -480,7 +480,7 @@ public class AnzAbfragen extends LayoutMainPanel implements ActionListener {
 		if (e.getSource() == mf3) {
 			String a = "Firmenname/ID eingeben";
 			String[] headss = { "id", "firmenname" };
-			// Frame,Angezeigter Text, Tabellennamen, ver‰nderbare Spalte,
+			// Frame,Angezeigter Text, Tabellennamen, ver√§nderbare Spalte,
 			// angezeigte Spalte, Tabelle, conection
 			InputFrame in = new InputFrame(null, a, "Firma", headss, "id",
 					"firmenname", "firma", con, false);
@@ -493,7 +493,7 @@ public class AnzAbfragen extends LayoutMainPanel implements ActionListener {
 		if (e.getSource() == mf4) {
 			String a = "Material/ID eingeben";
 			String[] headss = { "id", "bezeichnung" };
-			// Frame,Angezeigter Text, Tabellennamen, ver‰nderbare Spalte,
+			// Frame,Angezeigter Text, Tabellennamen, ver√§nderbare Spalte,
 			// angezeigte Spalte, Tabelle, conection
 			InputFrame in = new InputFrame(null, a, "Material", headss, "id",
 					"bezeichnung", "material", con, false);
@@ -509,7 +509,7 @@ public class AnzAbfragen extends LayoutMainPanel implements ActionListener {
 								 */
 			String a = "User eingeben";
 			String[] headss = { "name", "cn" };
-			// Frame,Angezeigter Text, Titel, ver‰nderbare Spalte, angezeigte
+			// Frame,Angezeigter Text, Titel, ver√§nderbare Spalte, angezeigte
 			// Spalte, Tabelle, conection
 			InputFrame in = new InputFrame(null, a, "User", headss, "cn", "cn",
 					"ldap_user", con, false);
@@ -531,7 +531,7 @@ public class AnzAbfragen extends LayoutMainPanel implements ActionListener {
 			l4();
 		}// if
 		if (e.getSource() == l5) {
-			String a = "Kostenstelle w‰hlen";
+			String a = "Kostenstelle w√§hlen";
 			InputFrame in = new InputFrame(null, a, "Kostenstelle", con, user);
 			String g = in.getKst();
 			if (g != null) {
@@ -541,7 +541,7 @@ public class AnzAbfragen extends LayoutMainPanel implements ActionListener {
 		if (e.getSource() == l6) {
 			String a = "Artikel eingeben";
 			String[] headss = { "id", "bezeichnung" };
-			// Frame,Angezeigter Text, Tabellennamen, ver‰nderbare Spalte,
+			// Frame,Angezeigter Text, Tabellennamen, ver√§nderbare Spalte,
 			// angezeigte Spalte, Tabelle, conection
 			InputFrame in = new InputFrame(null, a, "Material", headss, "id",
 					"bezeichnung", "material", con, false);
@@ -554,7 +554,7 @@ public class AnzAbfragen extends LayoutMainPanel implements ActionListener {
 		if (e.getSource() == b1) {
 			String a = "User eingeben";
 			String[] headss = { "name", "cn" };
-			// Frame,Angezeigter Text, Titel, ver‰nderbare Spalte, angezeigte
+			// Frame,Angezeigter Text, Titel, ver√§nderbare Spalte, angezeigte
 			// Spalte, Tabelle, conection
 			InputFrame in = new InputFrame(null, a, "User", headss, "cn", "cn",
 					"ldap_user", con, false);
@@ -822,7 +822,7 @@ public class AnzAbfragen extends LayoutMainPanel implements ActionListener {
 	private String[] spalten2 = { "Bezeichnung", "Bundesnr", "Inventurgruppe",
 			"Stueck", "preis", "ges" };
 	private String[] spaltennamen2 = { "Bezeichnung", "Bundesnr",
-			"Inventurgruppe", "St¸ck", "PreisInkl/Stk", "Gesamtpreis" };
+			"Inventurgruppe", "St√ºck", "PreisInkl/Stk", "Gesamtpreis" };
 	Class[] classes2 = { String.class, String.class, String.class,
 			Integer.class, Integer.class, Integer.class };
 	ResultSet rs2;
@@ -898,7 +898,7 @@ public class AnzAbfragen extends LayoutMainPanel implements ActionListener {
 		String[] spalten = { "ID", "Bezeichnung", "Bundesnr", "inventurgruppe",
 				"Erstellungsdatum", "stueck", "meldebestand", "einheit" };
 		String[] spaltennamen = { "ID", "Bezeichnung", "Bundesnr",
-				"Inventurgruppe", "Erstellungsdatum", "St¸ck", "Meldebestand",
+				"Inventurgruppe", "Erstellungsdatum", "St√ºck", "Meldebestand",
 				"Einheit" };
 		Class[] classes = { Integer.class, String.class, String.class,
 				String.class, java.util.Date.class, Double.class, Double.class,
@@ -913,7 +913,7 @@ public class AnzAbfragen extends LayoutMainPanel implements ActionListener {
 		String[] spalten = { "ID", "Bezeichnung", "Bundesnr", "Inventurgruppe",
 				"Stueck" };
 		String[] spaltennamen = { "ID", "Bezeichnung", "Bundesnr",
-				"Inventurgruppe", "St¸ck" };
+				"Inventurgruppe", "St√ºck" };
 		Class[] classes = { Integer.class, String.class, String.class,
 				String.class, Integer.class };
 		new AnzTabelleB(spalten, spaltennamen, classes, rs);
@@ -924,7 +924,7 @@ public class AnzAbfragen extends LayoutMainPanel implements ActionListener {
 		ResultSet rs = con.mysql_query(query);
 		String[] spalten = { "ID", "Bezeichnung", "Inventurgruppe", "Stueck" };
 		String[] spaltennamen = { "ID", "Bezeichnung", "Inventurgruppe",
-				"St¸ck" };
+				"St√ºck" };
 		Class[] classes = { Integer.class, String.class, String.class,
 				Integer.class };
 		new AnzTabelleB(spalten, spaltennamen, classes, rs);
@@ -936,7 +936,7 @@ public class AnzAbfragen extends LayoutMainPanel implements ActionListener {
 		String[] spalten = { "ID", "Bezeichnung", "Inventurgruppe", "Stueck",
 				"meldebestand" };
 		String[] spaltennamen = { "ID", "Bezeichnung", "Inventurgruppe",
-				"St¸ck", "Meldebestand" };
+				"St√ºck", "Meldebestand" };
 		Class[] classes = { Integer.class, String.class, String.class,
 				Integer.class, Integer.class };
 		new AnzTabelleB(spalten, spaltennamen, classes, rs);
@@ -956,7 +956,7 @@ public class AnzAbfragen extends LayoutMainPanel implements ActionListener {
 	}
 
 	public void m11() {
-		String a = "Inventurgruppe w‰hlen";
+		String a = "Inventurgruppe w√§hlen";
 		InputFrame in = new InputFrame(null, a, "Inventurgruppe", con);
 		String s = in.getWert();
 
@@ -1045,7 +1045,7 @@ public class AnzAbfragen extends LayoutMainPanel implements ActionListener {
 		new AnzTabelleB(spalten, spaltennamen, classes, rs);
 	}
 
-	/* Abfrage: Artikel wertm‰ﬂig anzeigen */
+	/* Abfrage: Artikel wertm√§√üig anzeigen */
 	public void l2() {
 		String query = "SELECT m.bezeichnung, round(sum(-stk),3) as stueck, round((sum(-stk)*max(fm.preisExkl)*(1+fm.mwst/100)),3) as ges FROM buchungen bu , firma_material fm, material m Where bu.material=fm.material AND m.id=bu.material Group by bu.material ORDER BY ges DESC";
 
@@ -1063,11 +1063,11 @@ public class AnzAbfragen extends LayoutMainPanel implements ActionListener {
 	 * 
 	 * ResultSet rs = con.mysql_query(query); String[] spalten = {
 	 * "Bezeichnung", "stueck"}; String[] spaltennamen = { "Bezeichnung",
-	 * "St¸ck"}; Class[] classes = { String.class, Integer.class}; new
+	 * "St√ºck"}; Class[] classes = { String.class, Integer.class}; new
 	 * AnzTabelleB(spalten, spaltennamen, classes, rs); }
 	 */
 
-	/** ausgeh‰ndigte Materialien nach Material zusammengefasst **/
+	/** ausgeh√§ndigte Materialien nach Material zusammengefasst **/
 	public void l4() {
 		String query = "SELECT m.bezeichnung,f.firmenname, sum(-bu.stk) as stueck,fm.einheit, round((fm.preisExkl)*(1+fm.mwst/100),3) as preiseinheit, round((fm.preisExkl)*(1+fm.mwst/100)*sum(-bu.stk),3) as preisgesamt FROM buchungen bu, material m, firma_material fm,firma f Where m.id=bu.material and m.id=fm.material and f.id=fm.firma Group by fm.id";
 
@@ -1081,7 +1081,7 @@ public class AnzAbfragen extends LayoutMainPanel implements ActionListener {
 		new AnzTabelleB(spalten, spaltennamen, classes, rs);
 	}
 
-	/** ausgeh‰ndigte Materialien nach Kostenstellen zusammengefasst **/
+	/** ausgeh√§ndigte Materialien nach Kostenstellen zusammengefasst **/
 	public void l3() {
 		String query = "SELECT bu.kst, m.bezeichnung, f.firmenname, sum(-bu.stk) as stueck,fm.einheit, round((fm.preisExkl)*(1+fm.mwst/100),3) as preiseinheit, round((fm.preisExkl)*sum(-bu.stk)*(1+fm.mwst/100),3) as preisgesamt FROM buchungen bu, material m, firma_material fm, firma f WHERE m.id=bu.material AND m.id=fm.material AND f.id=fm.firma Group By fm.id, kst ORDER BY kst";
 		ResultSet rs = con.mysql_query(query);
@@ -1099,7 +1099,7 @@ public class AnzAbfragen extends LayoutMainPanel implements ActionListener {
 		String query = "SELECT b.kst, m.bezeichnung as material, m.id, sum(-stk) as stueck,round(max(fm.preisExkl)*(1+fm.mwst/100),3) as Euro, round((max(fm.preisExkl)*sum(-stk)*(1+fm.mwst/100)),3) as ges FROM buchungen b, material m, firma_material fm WHERE m.id=b.material AND m.id=fm.material Group By material, kst ORDER BY kst";
 		ResultSet rs = con.mysql_query(query);
 		String[] spalten = { "kst", "material", "stueck", "euro", "ges" };
-		String[] spaltennamen = { "Kostenstelle", "Bezeichnung", "St¸ck",
+		String[] spaltennamen = { "Kostenstelle", "Bezeichnung", "St√ºck",
 				"Euro/Stk", "Euro ges." };
 		Class[] classes = { String.class, String.class, Integer.class,
 				Integer.class, Integer.class };
@@ -1117,8 +1117,8 @@ public class AnzAbfragen extends LayoutMainPanel implements ActionListener {
 		
 		String[] spalten = { "material", "stk", "preisInkl",
 				"gesamtpreis", "user", "datum"};
-		String[] spaltennamen = { "Material", "St¸ck",
-				"St¸ckpreis inkl.", "Preis gesamt", "User", "Datum"};
+		String[] spaltennamen = { "Material", "St√ºck",
+				"St√ºckpreis inkl.", "Preis gesamt", "User", "Datum"};
 		Class[] classes = { String.class, Double.class,
 				Double.class, Double.class, String.class, java.util.Date.class};
 		ResultSet rs;

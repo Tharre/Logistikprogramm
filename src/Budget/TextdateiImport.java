@@ -18,7 +18,7 @@ import javax.swing.filechooser.FileFilter;
 public class TextdateiImport extends JFrame implements ActionListener {
 
 	/**
-	 * Button zum Durchführen des Imports
+	 * Button zum DurchfÃ¼hren des Imports
 	 */
 	public JButton importB = new JButton("importieren");
 	private Connection con;
@@ -30,7 +30,7 @@ public class TextdateiImport extends JFrame implements ActionListener {
 	private Jahresende je;
 
 	/**
-	 * Überschrift
+	 * Ãœberschrift
 	 */
 	private JLabel titel = new JLabel("DATENBANK IMPORTIEREN");
 
@@ -57,8 +57,8 @@ public class TextdateiImport extends JFrame implements ActionListener {
 
 				fc.setFileSelectionMode(JFileChooser.FILES_ONLY);
 				fc.setSelectedFile(new File(""));
-				fc.setDialogTitle("Öffnen");
-				fc.setApproveButtonText("Öffnen");
+				fc.setDialogTitle("Ã–ffnen");
+				fc.setApproveButtonText("Ã–ffnen");
 				fc.setFileFilter(new FileFilter() {
 					@Override
 					public boolean accept(File f) {
@@ -102,7 +102,7 @@ public class TextdateiImport extends JFrame implements ActionListener {
 
 
 				JOptionPane.showMessageDialog(null,
-						"Importvorgang erfolgreich durchgeführt!");
+						"Importvorgang erfolgreich durchgefÃ¼hrt!");
 				dispose();
 				
 				if(kennung==1)

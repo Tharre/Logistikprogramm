@@ -14,7 +14,7 @@ import javax.swing.JTextField;
 public class RechnungLoeschen extends JPanel implements ActionListener {
 
 	private JLabel hinweis = new JLabel(
-			"Welche Rechnungen möchten Sie löschen?");
+			"Welche Rechnungen mÃ¶chten Sie lÃ¶schen?");
 	private JLabel von = new JLabel("Von welchen Datum");
 	private JLabel bis = new JLabel("bis zu welchem Datum");
 	private JTextField vonTagTF = new JTextField("TT");
@@ -23,10 +23,10 @@ public class RechnungLoeschen extends JPanel implements ActionListener {
 	private JTextField bisMonatTF = new JTextField("MM");
 	private JTextField vonJahrTF = new JTextField("JJJJ");
 	private JTextField bisJahrTF = new JTextField("JJJJ");
-	private JButton btn = new JButton("Buchungen löschen");
-	private JButton btnR = new JButton("Rechnungen löschen");
+	private JButton btn = new JButton("Buchungen lÃ¶schen");
+	private JButton btnR = new JButton("Rechnungen lÃ¶schen");
 	private JLabel hinweisBuchung = new JLabel(
-			"Welche Buchungen möchten Sie löschen?");
+			"Welche Buchungen mÃ¶chten Sie lÃ¶schen?");
 	private JLabel wNummer = new JLabel("W- Nummer");
 	private JTextField wNummerTF = new JTextField();
 	int vonTag = 0;
@@ -99,14 +99,14 @@ public class RechnungLoeschen extends JPanel implements ActionListener {
 					bisJahr);
 
 			JOptionPane.showMessageDialog(this,
-					"Die Buchungen wurden gelöscht.");
+					"Die Buchungen wurden gelÃ¶scht.");
 
 		}
 
 		if (e.getSource() == btnR) {
 
 			du.loescheRechnung(wNummerTF.getText());
-			JOptionPane.showMessageDialog(this, "Die Rechnung wurde gelöscht.");
+			JOptionPane.showMessageDialog(this, "Die Rechnung wurde gelÃ¶scht.");
 
 		}
 	}

@@ -44,7 +44,7 @@ public class AnzBestAlle extends LayoutMainPanel implements ActionListener {
 	public AnzTabelleA det;
 
 	/**
-	 * Wert, der die Zust‰ndigkeit speichert
+	 * Wert, der die Zust√§ndigkeit speichert
 	 */
 	public int zustaendig = 0;
 
@@ -95,8 +95,8 @@ public class AnzBestAlle extends LayoutMainPanel implements ActionListener {
 			bts.add(anzeigen);
 		}// if
 
-		if (typ == "ausst‰ndig") {
-			start4 = new JButton("Abfrage \"ausst‰ndig\" starten");
+		if (typ == "ausst√§ndig") {
+			start4 = new JButton("Abfrage \"ausst√§ndig\" starten");
 			addM(start4, BorderLayout.NORTH);
 			start4.addActionListener(this);
 			
@@ -375,7 +375,7 @@ public class AnzBestAlle extends LayoutMainPanel implements ActionListener {
 			case 1:
 				AnzBestDetail am = new AnzBestDetail(user, hakDet);
 				break;
-			case 2:// Lieferung ausst‰ndig
+			case 2:// Lieferung ausst√§ndig
 				AnzLager al = new AnzLager(con, hakDet, user.getConnectionKst());
 				break;
 			case 0:
@@ -399,7 +399,7 @@ public class AnzBestAlle extends LayoutMainPanel implements ActionListener {
 			if (refWhat.equals("abgeschickt")) {
 				start3.doClick();
 			}
-			if (refWhat.equals("ausst‰ndig")) {
+			if (refWhat.equals("ausst√§ndig")) {
 				start4.doClick();
 			}
 			if (refWhat.equals("fertig")) {

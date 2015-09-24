@@ -32,7 +32,7 @@ public class Namensleiste extends JPanel {
 		u = this.getClass().getResource("navipanel.gif");
 		image = new ImageIcon(u).getImage();
 
-		add(nameL); // Label hinzufügen
+		add(nameL); // Label hinzufÃ¼gen
 
 	}
 

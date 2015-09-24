@@ -7,7 +7,7 @@ import java.util.regex.*;
 
 /*
  * Ein Fenster zum Einlesen aller Daten.
- * Beinhaltet ein Auswahlfeld um um die Daten auswählen zu können.
+ * Beinhaltet ein Auswahlfeld um um die Daten auswÃ¤hlen zu kÃ¶nnen.
  */
 public class InputFrame implements ActionListener, WindowListener {
 	private JDialog dialog;

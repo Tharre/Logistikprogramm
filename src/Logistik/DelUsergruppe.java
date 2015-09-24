@@ -6,8 +6,8 @@ import java.awt.*;
 import java.awt.event.*;
 
 /**
- * Klasse zum Löschen von Usergruppen Listet alle Usergruppen auf + Checkbox
- * Nach dem Klick auf den Löschen-Button werden die angehakten gelöscht
+ * Klasse zum LÃ¶schen von Usergruppen Listet alle Usergruppen auf + Checkbox
+ * Nach dem Klick auf den LÃ¶schen-Button werden die angehakten gelÃ¶scht
  */
 
 public class DelUsergruppe extends LayoutMainPanel implements ActionListener {
@@ -16,7 +16,7 @@ public class DelUsergruppe extends LayoutMainPanel implements ActionListener {
 
 	public DelUsergruppe(UserImport user) {
 		super(user);
-		del = new JButton("Löschen");
+		del = new JButton("LÃ¶schen");
 		del.addActionListener(this);
 		activate();
 	}
@@ -27,7 +27,7 @@ public class DelUsergruppe extends LayoutMainPanel implements ActionListener {
 		String qry = "SELECT * FROM usergroup ORDER BY name";
 		ResultSet rs = con.mysql_query(qry);
 		String[] spalten = { "id", "name" };
-		String[] spalten2 = { "Usergruppen-ID", "Name", "Löschen" };
+		String[] spalten2 = { "Usergruppen-ID", "Name", "LÃ¶schen" };
 		Class[] classes = { Integer.class, String.class, Boolean.class };
 		df = new AnzTabelleA(spalten, spalten2, classes, rs, 1);
 		removeMall();
@@ -41,19 +41,19 @@ public class DelUsergruppe extends LayoutMainPanel implements ActionListener {
 
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == del) {
-			Object[] hakDelFirm = df.getKlicked("id", "löschen");
+			Object[] hakDelFirm = df.getKlicked("id", "lÃ¶schen");
 			if (hakDelFirm.length == 0) {
-				new MessageError("Mindestens eine Inventurgruppe auswählen!");
+				new MessageError("Mindestens eine Inventurgruppe auswÃ¤hlen!");
 				return;
 			}
 			int i = JOptionPane.showConfirmDialog(null,
-					"Wollen Sie die Usergruppe(n) löschen?", "löschen",
+					"Wollen Sie die Usergruppe(n) lÃ¶schen?", "lÃ¶schen",
 					JOptionPane.YES_NO_OPTION);
 			if (i == 0) {
 
 				for (int j = 0; j < hakDelFirm.length; j++) {
 					try {
-						// PRÜFVORGANG
+						// PRÃœFVORGANG
 
 						String sql1 = "SELECT usergroup FROM rechte WHERE usergroup="
 								+ hakDelFirm[j] + " LIMIT 1";
@@ -62,13 +62,13 @@ public class DelUsergruppe extends LayoutMainPanel implements ActionListener {
 							JOptionPane
 									.showMessageDialog(
 											null,
-											"Mindestens eine der ausgewählten Usergruppen wird in den Rechten verwendet und kann nicht gelöscht werden!");
+											"Mindestens eine der ausgewÃ¤hlten Usergruppen wird in den Rechten verwendet und kann nicht gelÃ¶scht werden!");
 							rs1.close();
 							return;
 						}
 						rs1.close();
 
-						// LÖSCHVORGANG
+						// LÃ–SCHVORGANG
 
 						String sql = "DELETE FROM usergroup WHERE id = "
 								+ hakDelFirm[j] + "";
@@ -78,8 +78,8 @@ public class DelUsergruppe extends LayoutMainPanel implements ActionListener {
 					}
 				}
 
-				// zurückspringen
-				JOptionPane.showMessageDialog(null, "Daten gelöscht");
+				// zurÃ¼ckspringen
+				JOptionPane.showMessageDialog(null, "Daten gelÃ¶scht");
 			}
 		}// if
 		activate();

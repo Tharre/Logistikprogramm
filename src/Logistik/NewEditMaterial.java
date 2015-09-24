@@ -8,7 +8,7 @@ import java.sql.*;
 
 /**
  * Klasse zum Bearbeiten von Materialien Die Daten werden von EditMaterial
- * übergeben und in die Eingabefelder übernommen
+ * Ã¼bergeben und in die Eingabefelder Ã¼bernommen
  */
 
 public class NewEditMaterial extends LayoutMainPanel implements ActionListener {
@@ -49,7 +49,7 @@ public class NewEditMaterial extends LayoutMainPanel implements ActionListener {
 		fixkosten = new Input(5, "fixkosten");
 
 		info1 = new JLabel(
-				"Zählt das Material nicht zu den Fixkosten - bitte das Feld leer lassen!");
+				"ZÃ¤hlt das Material nicht zu den Fixkosten - bitte das Feld leer lassen!");
 
 		f.addRight(new JLabel("Bezeichnung:"));
 		f.addLeftInput(bezeichnung);

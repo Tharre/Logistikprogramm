@@ -12,15 +12,15 @@ import java.sql.*;
 
 public class NewBundesgruppe extends LayoutMainPanel implements ActionListener {
 	/**
-	 * Textfelder für die Eingabe
+	 * Textfelder fÃ¼r die Eingabe
 	 */
 	private Input bezeichnung, uebergr, nr;
 	/**
-	 * Textfelder für die Eingabe mit Hilfefenstern
+	 * Textfelder fÃ¼r die Eingabe mit Hilfefenstern
 	 */
 	private SelectInputLevel ueber;
 	/**
-	 * Button zum Speichern/Löschen
+	 * Button zum Speichern/LÃ¶schen
 	 */
 	private JButton save, clear;
 	private LayoutForm f;
@@ -37,7 +37,7 @@ public class NewBundesgruppe extends LayoutMainPanel implements ActionListener {
 		bezeichnung.setKey(true);
 		uebergr = new Input(20, "Uebergruppe");
 		save = new JButton("Speichern");
-		clear = new JButton("Löschen");
+		clear = new JButton("LÃ¶schen");
 		nr = new Input(10, "");
 
 		String[] bundesgrupHeads = { "nr", "id", "bezeichnung", "uebergruppe" };

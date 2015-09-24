@@ -14,7 +14,7 @@ import javax.swing.JTextField;
 
 public class RechnungKorrigieren extends JFrame implements ActionListener {
 
-	private JButton speichern = new JButton("Änderung speichern");
+	private JButton speichern = new JButton("Ã„nderung speichern");
 	private JButton zahlbetragBerechnen = new JButton("Zahlbetrag berechnen");
 	private JButton skontoBerechnen = new JButton("Skonto berechnen");
 	private String[] namen = { "W-Nummer", "Bestellbetrag", "Rechnungsbetrag",
@@ -81,7 +81,7 @@ public class RechnungKorrigieren extends JFrame implements ActionListener {
 								.parseDouble(felder[7].getText()));
 			} catch (NumberFormatException e1) {
 				JOptionPane.showMessageDialog(null,
-						"Sie dürfen in manchen Zeilen nur Zahlen eingeben.");
+						"Sie dÃ¼rfen in manchen Zeilen nur Zahlen eingeben.");
 			}
 
 			if (ok)

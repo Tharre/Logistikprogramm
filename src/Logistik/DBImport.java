@@ -13,12 +13,12 @@ import javax.swing.filechooser.FileFilter;
 public class DBImport extends LayoutMainPanel implements ActionListener {
 
 	/**
-	 * Button zum Durchführen des Imports
+	 * Button zum DurchfÃ¼hren des Imports
 	 */
 	public JButton importB = new JButton("importieren");
 
 	/**
-	 * Überschrift
+	 * Ãœberschrift
 	 */
 	private JLabel titel = new JLabel("DATENBANK IMPORTIEREN");
 
@@ -44,8 +44,8 @@ public class DBImport extends LayoutMainPanel implements ActionListener {
 
 				fc.setFileSelectionMode(JFileChooser.FILES_ONLY);
 				fc.setSelectedFile(new File(""));
-				fc.setDialogTitle("Öffnen");
-				fc.setApproveButtonText("Öffnen");
+				fc.setDialogTitle("Ã–ffnen");
+				fc.setApproveButtonText("Ã–ffnen");
 				fc.setFileFilter(new FileFilter() {
 					@Override
 					public boolean accept(File f) {
@@ -86,7 +86,7 @@ public class DBImport extends LayoutMainPanel implements ActionListener {
 				br.close();
 
 				JOptionPane.showMessageDialog(null,
-						"Importvorgang erfolgreich durchgeführt!");
+						"Importvorgang erfolgreich durchgefÃ¼hrt!");
 
 			} catch (Exception ex) {
 				ex.getMessage();

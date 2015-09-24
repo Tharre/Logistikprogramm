@@ -194,7 +194,7 @@ public class EditBudget extends JFrame implements ActionListener {
 					JOptionPane
 							.showMessageDialog(
 									this,
-									"Der Betrag ist zu hoch! Sie können nicht mehr Geld verplanen, als Ihnen für dieses Budget zusteht.");
+									"Der Betrag ist zu hoch! Sie kÃ¶nnen nicht mehr Geld verplanen, als Ihnen fÃ¼r dieses Budget zusteht.");
 					txtGeplantesBudget.setText(null);
 				}
 

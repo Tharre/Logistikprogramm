@@ -2,7 +2,7 @@ package Logistik;
 
 /*
  * Zeigt die Abfragetypen an.
- * Erzeugt ein AnzeigeAbfragen-Object und gibt den gew‰hlten Typ mit.
+ * Erzeugt ein AnzeigeAbfragen-Object und gibt den gew√§hlten Typ mit.
  */
 public class Abfragen extends LayoutMidPanel {
 

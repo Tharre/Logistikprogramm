@@ -4,8 +4,8 @@ import javax.swing.*;
 import java.sql.*;
 
 /**
- * Abweisen von Bestellanforderungspositionen die Abweisung wurde bestätigt und
- * wird durchgeführt dazu werden zustzlich die Stati der BANF+Position geändert
+ * Abweisen von Bestellanforderungspositionen die Abweisung wurde bestÃ¤tigt und
+ * wird durchgefÃ¼hrt dazu werden zustzlich die Stati der BANF+Position geÃ¤ndert
  */
 public class DelPos extends JPanel {
 
@@ -126,7 +126,7 @@ public class DelPos extends JPanel {
 
 		}// for
 
-		JOptionPane.showMessageDialog(null, "Datensaetze gelöscht!");
+		JOptionPane.showMessageDialog(null, "Datensaetze gelÃ¶scht!");
 
 	}
 }

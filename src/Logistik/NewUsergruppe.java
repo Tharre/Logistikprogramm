@@ -6,26 +6,26 @@ import java.util.*;
 import java.sql.*;
 
 /**
- * Hier kann man Usergruppen erstellen Name wird eingegeben Danach können mit
- * Checkboxen Rechte ausgewählt werden
+ * Hier kann man Usergruppen erstellen Name wird eingegeben Danach kÃ¶nnen mit
+ * Checkboxen Rechte ausgewÃ¤hlt werden
  */
 
 public class NewUsergruppe extends LayoutMainPanel implements ActionListener {
 	/**
-	 * Textfeld für Eingabe
+	 * Textfeld fÃ¼r Eingabe
 	 */
 	private Input name;
 	/**
-	 * Button zum Speichern/Löschen
+	 * Button zum Speichern/LÃ¶schen
 	 */
 	private JButton save, clear;
 	/**
-	 * Button für Auswahl aller/keiner Rechte
+	 * Button fÃ¼r Auswahl aller/keiner Rechte
 	 */
 	private JButton alle, keine;
 	private LayoutForm f;
 	/**
-	 * CkeckBox-Array für die Auswahl von Rechten
+	 * CkeckBox-Array fÃ¼r die Auswahl von Rechten
 	 */
 	private JCheckBox[] boxen;
 	private String edit;
@@ -36,9 +36,9 @@ public class NewUsergruppe extends LayoutMainPanel implements ActionListener {
 		f = new LayoutForm();
 		name = new Input(15, "name");
 		save = new JButton("Speichern");
-		alle = new JButton("Alle auswählen");
-		keine = new JButton("Alle abwählen");
-		clear = new JButton("Löschen");
+		alle = new JButton("Alle auswÃ¤hlen");
+		keine = new JButton("Alle abwÃ¤hlen");
+		clear = new JButton("LÃ¶schen");
 		String[] rechte = Logistik.rechte.getRechte();
 		boxen = new JCheckBox[rechte.length];
 		f.addRight(new JLabel("Name"));
@@ -160,7 +160,7 @@ public class NewUsergruppe extends LayoutMainPanel implements ActionListener {
 		String qry = "UPDATE usergroup SET name=" + name.getValue()
 				+ " WHERE id=" + edit + ";";
 		if (con.mysql_update(qry) == -1) {
-			new MessageError("Fehler beim Ändern der Usergruppe!");
+			new MessageError("Fehler beim Ã„ndern der Usergruppe!");
 			return;
 		}
 		try {

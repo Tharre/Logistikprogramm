@@ -9,7 +9,7 @@ import java.awt.event.*;
  * Fenster, welches beim Klicken des Auswahlbuttons bei SelectInputLevels
  * angezeigt wird Beinhaltet die Daten einer Tabelle und einen Auswahlbutton in
  * hierarchischer Form Beim Klicken des Auswahlbuttons werden die Daten der
- * gewählten Reihe ins SelectInput übernommen
+ * gewÃ¤hlten Reihe ins SelectInput Ã¼bernommen
  */
 
 public class SelectFrameLevel extends JDialog {
@@ -71,7 +71,7 @@ public class SelectFrameLevel extends JDialog {
 			final int bgId=rs.getInt("id");
 		
 
-			JButton btn = LayoutButtonCreator.createButton("ok.gif", "auswählen");
+			JButton btn = LayoutButtonCreator.createButton("ok.gif", "auswÃ¤hlen");
 			btn.setVisible(vis);
 			btn.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {

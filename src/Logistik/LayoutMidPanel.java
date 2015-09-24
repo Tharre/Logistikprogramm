@@ -9,8 +9,8 @@ import java.sql.ResultSet;
 import java.util.*;
 
 /**
- * Panel welches die wichtigsten Methoden und das Layout der Übermenus zur
- * Verfügung stellt
+ * Panel welches die wichtigsten Methoden und das Layout der Ãœbermenus zur
+ * VerfÃ¼gung stellt
  */
 
 public class LayoutMidPanel extends JPanel implements ActionListener {

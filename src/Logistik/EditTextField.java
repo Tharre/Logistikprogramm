@@ -11,7 +11,7 @@ class EditTextField extends JTextField implements TableCellEditor {
 
 	private List listeners = new ArrayList();
 
-	// Möglicherweise möchte jemand über Ereignisse des Editors
+	// MÃ¶glicherweise mÃ¶chte jemand Ã¼ber Ereignisse des Editors
 	// informiert werden
 	public void addCellEditorListener(CellEditorListener l) {
 		listeners.add(l);
@@ -22,12 +22,12 @@ class EditTextField extends JTextField implements TableCellEditor {
 		listeners.remove(l);
 	}
 
-	// Gibt den aktuellen Wert des Editors zurück.
+	// Gibt den aktuellen Wert des Editors zurÃ¼ck.
 	public Object getCellEditorValue() {
 		return new JTextField(getText());
 	}
 
-	// Gibt eine Component zurück, welche auf dem JTable dargestellt wird,
+	// Gibt eine Component zurÃ¼ck, welche auf dem JTable dargestellt wird,
 	// und mit der der Benutzer interagieren kann.
 	public Component getTableCellEditorComponent(JTable table, Object value,
 			boolean isSelected, int row, int column) {
@@ -44,7 +44,7 @@ class EditTextField extends JTextField implements TableCellEditor {
 
 	// Gibt an, ob die Editor-Component selektiert werden muss, um
 	// sie zu benutzen. Diese Editor soll immer selektiert werden,
-	// deshalb wird hier true zurückgegeben
+	// deshalb wird hier true zurÃ¼ckgegeben
 	public boolean shouldSelectCell(EventObject anEvent) {
 		return true;
 	}
@@ -54,8 +54,8 @@ class EditTextField extends JTextField implements TableCellEditor {
 		fireEditingCanceled();
 	}
 
-	// Stoppt das editieren der Zelle, sofern möglich.
-	// Da der JSpinner immer einen gültigen Wert anzeigt, kann auch
+	// Stoppt das editieren der Zelle, sofern mÃ¶glich.
+	// Da der JSpinner immer einen gÃ¼ltigen Wert anzeigt, kann auch
 	// jederzeit gestoppt werden (return-Wert = true)
 	public boolean stopCellEditing() {
 		fireEditingStopped();

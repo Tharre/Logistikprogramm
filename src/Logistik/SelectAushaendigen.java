@@ -16,9 +16,9 @@ import Budget.DatenImport;
  * 
  * angezeigt wird Beinhaltet die Daten einer Tabelle und einen Auswahlbutton
  * 
- * Beim Klicken des Auswahlbuttons werden die Daten der gewählten Reihe ins
+ * Beim Klicken des Auswahlbuttons werden die Daten der gewÃ¤hlten Reihe ins
  * 
- * SelectInput übernommen
+ * SelectInput Ã¼bernommen
  */
 
 public class SelectAushaendigen extends JDialog implements ActionListener {
@@ -29,7 +29,7 @@ public class SelectAushaendigen extends JDialog implements ActionListener {
 
 	private DBConnection con;
 
-	private JButton btn = new JButton("Material wählen");
+	private JButton btn = new JButton("Material wÃ¤hlen");
 
 	private AnzTabelleA anzeige;
 
@@ -102,7 +102,7 @@ public class SelectAushaendigen extends JDialog implements ActionListener {
 			String[] spaltenT = { "Material-Firmen ID", "Material ID",
 					"Bezeichnung",
 
-					"Inventurgruppe", "Stück", "Einheit", "Preis",
+					"Inventurgruppe", "StÃ¼ck", "Einheit", "Preis",
 
 					"ArtikelNr", "Firma", "Auswahl" };
 
@@ -145,7 +145,7 @@ public class SelectAushaendigen extends JDialog implements ActionListener {
 
 		Object[] bezeichnung = anzeige.getKlicked("Bezeichnung", "Auswahl");
 
-		Object[] lagerstk = anzeige.getKlicked("Stück", "Auswahl");
+		Object[] lagerstk = anzeige.getKlicked("StÃ¼ck", "Auswahl");
 
 		Object[] einheit = anzeige.getKlicked("Einheit", "Auswahl");
 
@@ -159,7 +159,7 @@ public class SelectAushaendigen extends JDialog implements ActionListener {
 
 		{
 
-			JOptionPane.showMessageDialog(this, "Es wurde nichts ausgewählt!");
+			JOptionPane.showMessageDialog(this, "Es wurde nichts ausgewÃ¤hlt!");
 
 		}
 
@@ -168,7 +168,7 @@ public class SelectAushaendigen extends JDialog implements ActionListener {
 		{
 
 			JOptionPane.showMessageDialog(this,
-					"Es kann nur ein Material ausgewählt werden!");
+					"Es kann nur ein Material ausgewÃ¤hlt werden!");
 
 		}
 

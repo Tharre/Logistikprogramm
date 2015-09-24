@@ -13,8 +13,8 @@ import java.awt.event.*;
 /**
  * Fenster, welches beim Klicken des Auswahlbuttons bei SelectInputs in der Banf
  * angezeigt wird Beinhaltet die Daten einer Tabelle und einen Auswahlbutton
- * Beim Klicken des Auswahlbuttons werden die Daten der gewählten Reihe ins
- * SelectInput übernommen
+ * Beim Klicken des Auswahlbuttons werden die Daten der gewÃ¤hlten Reihe ins
+ * SelectInput Ã¼bernommen
  */
 
 public class SelectFrameBanf extends JDialog {
@@ -88,7 +88,7 @@ public class SelectFrameBanf extends JDialog {
 				}
 
 				JButton btn = LayoutButtonCreator.createButton("ok.gif",
-						"auswählen");
+						"auswÃ¤hlen");
 				r.add(btn);
 				rows.add(r);
 

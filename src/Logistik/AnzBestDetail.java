@@ -10,9 +10,9 @@ import java.io.*;
 import javax.swing.filechooser.FileFilter;
 
 /**
- * neues Fenster für Detialansicht bei Bestellungen, welche die WL abschicken
- * kann verwendetes Layout: BanfLayout Anzeige aller ausgewählten Bestellungen
- * in Detailansicht Jede Bestellung kann bestellt -> an Firma senden Änderungen
+ * neues Fenster fÃ¼r Detialansicht bei Bestellungen, welche die WL abschicken
+ * kann verwendetes Layout: BanfLayout Anzeige aller ausgewÃ¤hlten Bestellungen
+ * in Detailansicht Jede Bestellung kann bestellt -> an Firma senden Ã„nderungen
  * in Datenbank Mail an Firma, Lager wird gesendet PDF wird erstellt und kann
  * ausgedruckt werden Betrag wird im Budgetprogramm gesperrt
  */
@@ -58,7 +58,7 @@ public class AnzBestDetail extends JFrame implements ActionListener {
 	private DBConnection conb;
 
 	/**
-	 * Checkobox-Array für die Auswahl von Bestellungen
+	 * Checkobox-Array fÃ¼r die Auswahl von Bestellungen
 	 */
 	public JCheckBox[] bestellen;
 
@@ -199,8 +199,8 @@ public class AnzBestDetail extends JFrame implements ActionListener {
 					status.setText("richtig geliefert");
 					status.setBackground(Color.GREEN);
 				}
-				if (s.equals("15") || s.equals("gelöscht")) {
-					status.setText("gelöscht");
+				if (s.equals("15") || s.equals("gelÃ¶scht")) {
+					status.setText("gelÃ¶scht");
 					status.setBackground(new Color(151, 217, 236));
 				}
 
@@ -227,8 +227,8 @@ public class AnzBestDetail extends JFrame implements ActionListener {
 					statusb.setBackground(Color.GREEN);
 				}
 
-				if (s.equals("15") || s.equals("gelöscht")) {
-					statusb.setText("gelöscht");
+				if (s.equals("15") || s.equals("gelÃ¶scht")) {
+					statusb.setText("gelÃ¶scht");
 					statusb.setBackground(new Color(151, 217, 236));
 				}
 
@@ -365,7 +365,7 @@ public class AnzBestDetail extends JFrame implements ActionListener {
 				eineBest[i].add(einPos[i], BorderLayout.CENTER);
 				all.add(eineBest[i]);
 
-			}// für jede Bestellung
+			}// fÃ¼r jede Bestellung
 
 		} catch (Exception ex) {
 			ex.getMessage();
@@ -405,7 +405,7 @@ public class AnzBestDetail extends JFrame implements ActionListener {
 			for (int i = 0; i < l; i++) {
 				if (bestellen[i].isSelected()) {
 
-					// in DB ändern
+					// in DB Ã¤ndern
 					try {
 						String sql = "UPDATE bestellung SET status=3 WHERE bestId = "
 								+ bestellenID[i];
@@ -679,7 +679,7 @@ public class AnzBestDetail extends JFrame implements ActionListener {
 			ex.getMessage();
 		}
 
-		// BEMERKUNG HINZUFÜGEN
+		// BEMERKUNG HINZUFÃœGEN
 	}
 
 	/**
@@ -982,7 +982,7 @@ public class AnzBestDetail extends JFrame implements ActionListener {
 
 	/**
 	 * Wird aufgerufen, wenn die Kostenstelle kein Projekt ist; Es wird
-	 * ueberprueft, ob der gesperrte Betrag groeßer als der verfuegbare ist
+	 * ueberprueft, ob der gesperrte Betrag groeÃŸer als der verfuegbare ist
 	 * 
 	 * @param budget
 	 *            aus welcher Tabelle sollen die Daten ausgelesen werden
@@ -1047,7 +1047,7 @@ public class AnzBestDetail extends JFrame implements ActionListener {
 	/**
 	 * Wird aufgerufen von der Methode betragSperren1, also wenn die
 	 * Kostenstelle ein Projekt ist; Es wird ueberprueft, ob der gesperrte
-	 * Betrag groeßer als der verfuegbare ist
+	 * Betrag groeÃŸer als der verfuegbare ist
 	 * 
 	 * @param nummer
 	 *            gibt an, welches budget gewaehlt wurde: 1=LMB1, 2=LMB2, 3=UT3,

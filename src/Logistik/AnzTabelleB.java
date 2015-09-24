@@ -10,7 +10,7 @@ import javax.swing.filechooser.FileFilter;
 
 /*
  * Fenster, welches die Abfrageergebnisse in einer Tabelle anzeigt
- * und eine exportfunktion in Excel ermöglicht
+ * und eine exportfunktion in Excel ermÃ¶glicht
  */
 public class AnzTabelleB extends JFrame implements ActionListener {
 	public JTable table;

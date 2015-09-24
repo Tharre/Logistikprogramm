@@ -1,7 +1,7 @@
 package Logistik;
 
 /**
- * Das Verwaltungsmenü für Materialien im Midpanel überprüfen der Rechte. Je
+ * Das VerwaltungsmenÃ¼ fÃ¼r Materialien im Midpanel Ã¼berprÃ¼fen der Rechte. Je
  * nachdem wird der Button angezeigt oder nicht
  */
 
@@ -24,9 +24,9 @@ public class VerMaterial extends LayoutMidPanel {
 			addNaviButton("Material bearbeiten");
 			addShowPanel(new EditMaterial(user), "Material bearbeiten");
 		}
-		if (user.hasRecht(Logistik.rechte.getRechtId("Mehrfachänderung"))) {
-			addNaviButton("Mehrfachänderung");
-			addShowPanel(new MehrfachaenderungMaterial(user), "Mehrfachänderung");
+		if (user.hasRecht(Logistik.rechte.getRechtId("MehrfachÃ¤nderung"))) {
+			addNaviButton("MehrfachÃ¤nderung");
+			addShowPanel(new MehrfachaenderungMaterial(user), "MehrfachÃ¤nderung");
 
 		}
 		if (user.hasRecht(Logistik.rechte
@@ -40,13 +40,13 @@ public class VerMaterial extends LayoutMidPanel {
 			addNaviButton("Firma Material zuweisen");
 			addShowPanel(new FirmaMaterial(user), "Firma Material zuweisen");
 		}
-		if (user.hasRecht(Logistik.rechte.getRechtId("Material löschen"))) {
-			addNaviButton("Material löschen");
-			addShowPanel(new DelMaterial(user), "Material löschen");
+		if (user.hasRecht(Logistik.rechte.getRechtId("Material lÃ¶schen"))) {
+			addNaviButton("Material lÃ¶schen");
+			addShowPanel(new DelMaterial(user), "Material lÃ¶schen");
 		}
-		if (user.hasRecht(Logistik.rechte.getRechtId("Firma Material löschen"))) {
-			addNaviButton("Firma Material löschen");
-			addShowPanel(new DelFirmaMaterial(user), "Firma Material löschen");
+		if (user.hasRecht(Logistik.rechte.getRechtId("Firma Material lÃ¶schen"))) {
+			addNaviButton("Firma Material lÃ¶schen");
+			addShowPanel(new DelFirmaMaterial(user), "Firma Material lÃ¶schen");
 		}
 	}
 }

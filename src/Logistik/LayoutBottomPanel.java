@@ -8,7 +8,7 @@ import java.awt.event.ActionListener;
 import java.net.*;
 
 /**
- * Panel für die Anzeige des angemeldeten Benutzers und Anmeldezeitpunkt
+ * Panel fÃ¼r die Anzeige des angemeldeten Benutzers und Anmeldezeitpunkt
  */
 
 public class LayoutBottomPanel extends JPanel implements ActionListener {
@@ -45,7 +45,7 @@ public class LayoutBottomPanel extends JPanel implements ActionListener {
 		Dimension d = new Dimension(bg2.getIconWidth(), bg2.getIconHeight());
 		osten.setLayout(new BorderLayout());
 
-		// Rechte für Ldap-Aktualisierung
+		// Rechte fÃ¼r Ldap-Aktualisierung
 		String ldapCn = user.getCn();
 		if (ldapCn.equals("Mayer")) {
 			URL u3 = this.getClass().getResource("ldap.gif");

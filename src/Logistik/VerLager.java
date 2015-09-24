@@ -1,7 +1,7 @@
 package Logistik;
 
 /*
- * Zeigt das Lagerverwaltungsmen¸ an.
+ * Zeigt das Lagerverwaltungsmen√º an.
  */
 public class VerLager extends LayoutMidPanel {
 	public VerLager(UserImport user) {
@@ -9,19 +9,19 @@ public class VerLager extends LayoutMidPanel {
 
 		if (user.hasRecht(Logistik.rechte.getRechtId("Lieferung"))) {
 			addNaviButton("Lieferung");
-			addShowPanel(new AnzBestAlle("ausst‰ndig", user), "Lieferung");
+			addShowPanel(new AnzBestAlle("ausst√§ndig", user), "Lieferung");
 		}
 
-		if (user.hasRecht(Logistik.rechte.getRechtId("Aush‰ndigung"))) {
-			addNaviButton("Aush‰ndigung1");
+		if (user.hasRecht(Logistik.rechte.getRechtId("Aush√§ndigung"))) {
+			addNaviButton("Aush√§ndigung1");
 			addShowPanel(new LagerumbuchungenA(user, LagerumbuchungenA.AUSHAENDIGEN),
-					"Aush‰ndigung1");
+					"Aush√§ndigung1");
 		}
 
-		if (user.hasRecht(Logistik.rechte.getRechtId("Aush‰ndigung"))) {
-			addNaviButton("Aush‰ndigungN");
+		if (user.hasRecht(Logistik.rechte.getRechtId("Aush√§ndigung"))) {
+			addNaviButton("Aush√§ndigungN");
 			addShowPanel(new LagerumbuchungenA(user,
-					LagerumbuchungenA.MEHREREAUSHAENDIGEN), "Aush‰ndigungN");
+					LagerumbuchungenA.MEHREREAUSHAENDIGEN), "Aush√§ndigungN");
 		}
 
 		if (user.hasRecht(Logistik.rechte.getRechtId("Zubuchen"))) {
@@ -30,10 +30,10 @@ public class VerLager extends LayoutMidPanel {
 					"Zubuchen");
 		}
 
-		if (user.hasRecht(Logistik.rechte.getRechtId("Zur¸ck zu Firma"))) {
-			addNaviButton("Zur¸ck zu Firma");
+		if (user.hasRecht(Logistik.rechte.getRechtId("Zur√ºck zu Firma"))) {
+			addNaviButton("Zur√ºck zu Firma");
 			addShowPanel(new LagerumbuchungenA(user, LagerumbuchungenA.FIRMA),
-					"Zur¸ck zu Firma");
+					"Zur√ºck zu Firma");
 		}
 
 		if (user.hasRecht(Logistik.rechte.getRechtId("Korrektur"))) {

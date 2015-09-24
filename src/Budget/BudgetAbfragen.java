@@ -10,7 +10,7 @@ import java.util.GregorianCalendar;
 import java.util.Vector;
 
 /**
- *In der Klasse Abfragen werden die Abfragen für das Budget-Programm definiert
+ *In der Klasse Abfragen werden die Abfragen fÃ¼r das Budget-Programm definiert
  *<p>
  * Title: Abfragen
  * 
@@ -175,17 +175,17 @@ public class BudgetAbfragen extends JPanel implements ActionListener {
 	// Datum
 	/** aktuelles Datum **/
 	private Date heute;
-	/** von diesem Datum soll Abfrage durchgeführt werden **/
+	/** von diesem Datum soll Abfrage durchgefÃ¼hrt werden **/
 	private long von;
-	/** bis zu diesem Datum soll Abfrage durchgeführt werden **/
+	/** bis zu diesem Datum soll Abfrage durchgefÃ¼hrt werden **/
 	private long bis;
-	/** Hilfsvariabe zur Berechnung des Startdatums für eine Zeitperiode **/
+	/** Hilfsvariabe zur Berechnung des Startdatums fÃ¼r eine Zeitperiode **/
 	private Date datumV;
-	/** Hilfsvariabe zur Berechnung des Enddatums für eine Zeitperiode **/
+	/** Hilfsvariabe zur Berechnung des Enddatums fÃ¼r eine Zeitperiode **/
 	private Date datumB;
-	/** Hilfsvariabe zur Berechnung des Startdatums für eine Zeitperiode **/
+	/** Hilfsvariabe zur Berechnung des Startdatums fÃ¼r eine Zeitperiode **/
 	private long vonD;
-	/** Hilfsvariabe zur Berechnung des Enddatums für eine Zeitperiode **/
+	/** Hilfsvariabe zur Berechnung des Enddatums fÃ¼r eine Zeitperiode **/
 	private long bisD;
 	/** Hilfsvariable zur Ermittlung der aktuellen Jahreszahl **/
 	public Calendar cal;
@@ -200,7 +200,7 @@ public class BudgetAbfragen extends JPanel implements ActionListener {
 	 * @param conL
 	 *            Connection zur Logistik-DB
 	 * @param aktuell
-	 *            prüft ob mit der aktuellen DB oder der Test-DB gearbeitet wird
+	 *            prÃ¼ft ob mit der aktuellen DB oder der Test-DB gearbeitet wird
 	 */
 	public BudgetAbfragen(Connection con, Connection conL, boolean aktuell) {
 		this.con = con;
@@ -239,19 +239,19 @@ public class BudgetAbfragen extends JPanel implements ActionListener {
 	 */
 	public void anzeigen(int kennnummer) {
 
-		if (kennnummer == 2) /* Übersicht Bestellungen UT8 */
+		if (kennnummer == 2) /* Ãœbersicht Bestellungen UT8 */
 		{
 			uebersichtBestellungen(1);
-		} else if (kennnummer == 3) /* Übersicht Bestellungen UT3 */
+		} else if (kennnummer == 3) /* Ãœbersicht Bestellungen UT3 */
 		{
 			uebersichtBestellungen(2);
-		} else if (kennnummer == 4) /* Übersicht Bestellungen LMB1 */
+		} else if (kennnummer == 4) /* Ãœbersicht Bestellungen LMB1 */
 		{
 			uebersichtBestellungen(3);
-		} else if (kennnummer == 5) /* Übersicht Bestellungen LMB2 */
+		} else if (kennnummer == 5) /* Ãœbersicht Bestellungen LMB2 */
 		{
 			uebersichtBestellungen(4);
-		} else if (kennnummer == 6) /* Übersicht Bestellungen Sonderbudgets */
+		} else if (kennnummer == 6) /* Ãœbersicht Bestellungen Sonderbudgets */
 		{
 			uebersichtBestellungen(5);
 		} else if (kennnummer == 7) /* BANF Auflistung nach Lehrer */
@@ -261,13 +261,13 @@ public class BudgetAbfragen extends JPanel implements ActionListener {
 		{
 			banfsNachHauptbereich();
 
-		} else if (kennnummer == 9) /* Auswertung nach Abteilung - betragsmäßig */
+		} else if (kennnummer == 9) /* Auswertung nach Abteilung - betragsmÃ¤ÃŸig */
 		{
 			auswertungNachAbteilungBetrag();
 
 		} else if (kennnummer == 10) /*
 									 * Auswertung nach Abteilung -
-									 * verhältnismäßig
+									 * verhÃ¤ltnismÃ¤ÃŸig
 									 */
 		{
 			auswertungNachAbteilungVerhaeltnis();
@@ -322,7 +322,7 @@ public class BudgetAbfragen extends JPanel implements ActionListener {
 	 * sowie ein Button Details, der die Banfs zu einer Bestellung anzeigt
 	 * 
 	 * @param kennung
-	 *            gibt an, welches Budget ausgewählt wurde; 1=UT8, 2=UT3,
+	 *            gibt an, welches Budget ausgewÃ¤hlt wurde; 1=UT8, 2=UT3,
 	 *            3=LMB1, 4=LMB2, 5=Sonderbudget
 	 */
 	public void uebersichtBestellungen(int kennung) {
@@ -397,7 +397,7 @@ public class BudgetAbfragen extends JPanel implements ActionListener {
 		for (int i = 0; i < daten.size(); i++) {
 			Vector reihe = new Vector();
 			reihe = (Vector) daten.get(i);
-			if (reihe.get(5).toString().equals("gelöscht"))
+			if (reihe.get(5).toString().equals("gelÃ¶scht"))
 				status = 15;
 			else
 				status = 0;
@@ -407,7 +407,7 @@ public class BudgetAbfragen extends JPanel implements ActionListener {
 		}
 
 		pUnten.setLayout(new GridLayout(1, 3));
-		JLabel lSumme = new JLabel("Summe aller Bestellungen: € " + summe);
+		JLabel lSumme = new JLabel("Summe aller Bestellungen: Â€ " + summe);
 		lSumme.setFont(new Font("Arial", Font.BOLD, 15));
 
 		pUnten.add(lSumme);
@@ -469,7 +469,7 @@ public class BudgetAbfragen extends JPanel implements ActionListener {
 		pHilf.removeAll();
 		revalidate();
 		repaint();
-		pHilf.add(new JLabel("Bitte wählen Sie einen Hauptbereich aus."));
+		pHilf.add(new JLabel("Bitte wÃ¤hlen Sie einen Hauptbereich aus."));
 		pHilf.add(cbNamen);
 		pHilf.add(btnBanfSuchen);
 
@@ -480,7 +480,7 @@ public class BudgetAbfragen extends JPanel implements ActionListener {
 
 	/**
 	 * Auswertung, welche Abteilung wie viel vom Budget verwendet hat
-	 * (betragsmäßig)
+	 * (betragsmÃ¤ÃŸig)
 	 */
 	public void auswertungNachAbteilungBetrag() {
 		daten.clear();
@@ -519,7 +519,7 @@ public class BudgetAbfragen extends JPanel implements ActionListener {
 
 	/**
 	 * Auswertung, welche Abteilung wie viel vom Budget verwendet hat
-	 * (verhältnismäßig)
+	 * (verhÃ¤ltnismÃ¤ÃŸig)
 	 */
 	public void auswertungNachAbteilungVerhaeltnis() {
 		daten.clear();
@@ -700,7 +700,7 @@ public class BudgetAbfragen extends JPanel implements ActionListener {
 		pHilf.removeAll();
 		revalidate();
 		repaint();
-		pHilf.add(new JLabel("Bitte wählen Sie einen Bereich aus."));
+		pHilf.add(new JLabel("Bitte wÃ¤hlen Sie einen Bereich aus."));
 		pHilf.add(cbNamen);
 		pHilf.add(btnBanfSuchen);
 
@@ -722,7 +722,7 @@ public class BudgetAbfragen extends JPanel implements ActionListener {
 		pHilf.removeAll();
 		revalidate();
 		repaint();
-		pHilf.add(new JLabel("Bitte wählen Sie eine Hauptkostenstelle aus."));
+		pHilf.add(new JLabel("Bitte wÃ¤hlen Sie eine Hauptkostenstelle aus."));
 		pHilf.add(cbNamen);
 		pHilf.add(btnBanfSuchen);
 
@@ -753,7 +753,7 @@ public class BudgetAbfragen extends JPanel implements ActionListener {
 		pHilf.removeAll();
 		revalidate();
 		repaint();
-		pHilf.add(new JLabel("Bitte wählen Sie eine Kostenstelle aus."));
+		pHilf.add(new JLabel("Bitte wÃ¤hlen Sie eine Kostenstelle aus."));
 		pHilf.add(cbNamen);
 		pHilf.add(btnBanfSuchen);
 
@@ -777,7 +777,7 @@ public class BudgetAbfragen extends JPanel implements ActionListener {
 
 		if (cbNamen.getItemCount() == 0)
 			btnSonderbudgetBestellung.setEnabled(false);
-		pHilf.add(new JLabel("Bitte wählen Sie ein Sonderbudget aus."));
+		pHilf.add(new JLabel("Bitte wÃ¤hlen Sie ein Sonderbudget aus."));
 		pHilf.add(cbNamen);
 		pHilf.add(btnSonderbudgetBestellung);
 
@@ -1001,7 +1001,7 @@ public class BudgetAbfragen extends JPanel implements ActionListener {
 			sGewaehlt = (cbFirmen.getSelectedItem()).toString();
 			umsatz = runde(di.getUmsatzJeFirma(sGewaehlt, von / 1000,
 					bis / 1000));
-			lblUmsatzHinweis.setText("Der Umsatz beträgt: " + umsatz);
+			lblUmsatzHinweis.setText("Der Umsatz betrÃ¤gt: " + umsatz);
 			lblUmsatzHinweis.setFont(new Font("SansSerif", Font.BOLD, 15));
 			repaint();
 

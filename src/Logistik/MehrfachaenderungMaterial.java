@@ -38,7 +38,7 @@ public class MehrfachaenderungMaterial extends LayoutMainPanel implements Action
 		String[] spaltenDB = { "firma_material.id", "material.bezeichnung",
 				"bundesnr.bezeichnung", "stueck", "preisExkl", "einheit",
 				"artNr", "firmenname", "plz", "ort", "sachbearbeiter", "fixkosten" };
-		String[] spaltenT = { "Fir-Mat ID", "Bezeichnung", "BundesNr", "Stück",
+		String[] spaltenT = { "Fir-Mat ID", "Bezeichnung", "BundesNr", "StÃ¼ck",
 				"Preis exkl", "Einheit", "ArtikelNr", "Firma", "PLZ", "Ort",
 				"Sachbearbeiter", "Fixkosten", "Material bearbeiten" };
 		Class[] classes = { Integer.class, JTextField.class, String.class,
@@ -61,10 +61,10 @@ public class MehrfachaenderungMaterial extends LayoutMainPanel implements Action
 		Object[] bez = anzeige.getKlicked("Bezeichnung", "Material bearbeiten");
 		Object[] artNr = anzeige.getKlicked("ArtikelNr", "Material bearbeiten");
 		Object[] fixkosten = anzeige.getKlicked("Fixkosten", "Material bearbeiten");
-		Object[] stueck = anzeige.getKlicked("Stück", "Material bearbeiten");
+		Object[] stueck = anzeige.getKlicked("StÃ¼ck", "Material bearbeiten");
 
 		if (gewaehlt.length == 0) {
-			JOptionPane.showMessageDialog(this, "Es wurde nichts ausgewählt!");
+			JOptionPane.showMessageDialog(this, "Es wurde nichts ausgewÃ¤hlt!");
 		} else {
 			int[] id = new int[gewaehlt.length];
 			double[] preisA = new double[preis.length];
@@ -109,7 +109,7 @@ public class MehrfachaenderungMaterial extends LayoutMainPanel implements Action
 			}
 
 			JOptionPane.showMessageDialog(this,
-					"Änderung(en) gespeichert!");
+					"Ã„nderung(en) gespeichert!");
 		}
 
 	}

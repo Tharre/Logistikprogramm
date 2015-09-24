@@ -9,8 +9,8 @@ import java.sql.*;
 import java.awt.event.*;
 
 /**
- * neues Fenster für Detialansicht bei Bestellanforderungen verwendetes Layout:
- * BanfLayout Anzeige aller ausgewählten Bestellanforderungen in Detailansicht
+ * neues Fenster fÃ¼r Detialansicht bei Bestellanforderungen verwendetes Layout:
+ * BanfLayout Anzeige aller ausgewÃ¤hlten Bestellanforderungen in Detailansicht
  */
 public class AnzBanfDetail extends JFrame implements ActionListener {
 	/**
@@ -253,7 +253,7 @@ public class AnzBanfDetail extends JFrame implements ActionListener {
 				rs1.close();
 				rs2.close();
 
-			}// für jede Banf
+			}// fÃ¼r jede Banf
 
 		} catch (Exception ex) {
 			System.out.println("ERROR anzBanfDet: " + ex.getMessage());

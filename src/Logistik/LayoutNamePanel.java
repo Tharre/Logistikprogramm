@@ -5,7 +5,7 @@ import java.awt.*;
 import java.net.*;
 
 /**
- * Zeigt das aktuelle Übermenu an
+ * Zeigt das aktuelle Ãœbermenu an
  */
 
 public class LayoutNamePanel extends JPanel {

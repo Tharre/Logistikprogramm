@@ -231,7 +231,7 @@ public class PDFMaker extends PdfPageEventHelper {
 				border.setBorderColor(Color.BLACK);
 				t
 						.addCell(makeCell(
-								"Im Waren- und Dienstleistungsverkehr mit Bundesdienststellen sind die Vertragspartnerinnen oder Vertragspartner zur Ausstellung und Übermittlung von e-Rechnungen verpflichtet. Diese Regelung ist als Vertragsbedingung bindend.",
+								"Im Waren- und Dienstleistungsverkehr mit Bundesdienststellen sind die Vertragspartnerinnen oder Vertragspartner zur Ausstellung und Ãœbermittlung von e-Rechnungen verpflichtet. Diese Regelung ist als Vertragsbedingung bindend.",
 								Element.ALIGN_LEFT, Element.ALIGN_LEFT,
 								tableFont, leading, 2f, border, true, true));
 				doc.add(t);

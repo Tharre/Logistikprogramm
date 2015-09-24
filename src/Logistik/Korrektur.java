@@ -6,8 +6,8 @@ import java.sql.*;
 import java.awt.event.*;
 
 /*
- * Zeigt die gewählten Materialien an
- * und ermöglicht die eingabe des korrigierten Lagerstandes.
+ * Zeigt die gewÃ¤hlten Materialien an
+ * und ermÃ¶glicht die eingabe des korrigierten Lagerstandes.
  */
 public class Korrektur extends JFrame implements ActionListener {
 	private AnzTabelleA table;
@@ -50,7 +50,7 @@ public class Korrektur extends JFrame implements ActionListener {
 		rs = con.mysql_query(query);
 		String[] spalten = { "ID", "Bezeichnung", "Inventurgruppe", "stueck" };
 		String[] spaltennamen = { "ID", "Bezeichnung", "Inventurgruppe",
-				"Stück" };
+				"StÃ¼ck" };
 		Class[] classes = { Integer.class, String.class, String.class,
 				JTextField.class };
 		JScrollPane sc = new JScrollPane(table = new AnzTabelleA(spalten,
@@ -67,7 +67,7 @@ public class Korrektur extends JFrame implements ActionListener {
 		if (e.getSource() == speichern) {
 			Boolean isZahl = true;
 
-			stueck = table.getEingabe("Stück");
+			stueck = table.getEingabe("StÃ¼ck");
 			stk = new double[stueck.length];
 			pos = table.getEingabe("ID");
 			for (int i = 0; i < stueck.length && isZahl; i++) {
@@ -77,7 +77,7 @@ public class Korrektur extends JFrame implements ActionListener {
 				} catch (NumberFormatException ex) {
 					isZahl = false;
 					JOptionPane.showMessageDialog(null, "Bitte bei Material "
-							+ pos[i] + " eine Stückzahl eingeben!",
+							+ pos[i] + " eine StÃ¼ckzahl eingeben!",
 							"keine Zahl", JOptionPane.ERROR_MESSAGE);
 				}// fehlermeldung
 			}

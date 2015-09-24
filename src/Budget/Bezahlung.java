@@ -150,7 +150,7 @@ public class Bezahlung extends JPanel implements ActionListener {
 
 	/**
 	 * true; wenn die Bestellung nun fertig bezahlt ist; false: wenn noch
-	 * BestPos ausständig sind
+	 * BestPos ausstÃ¤ndig sind
 	 **/
 	private boolean fertigBez;
 
@@ -186,7 +186,7 @@ public class Bezahlung extends JPanel implements ActionListener {
 
 	/**
 	 * wird aufgerufen, wenn man eine Bestellung zahlen will; zeigt alle
-	 * Bestellpositionen an, die zu dieser Bestellung gehören
+	 * Bestellpositionen an, die zu dieser Bestellung gehÃ¶ren
 	 * 
 	 * @param zeilennummer
 	 *            die ID der Bestellung, die man bezahlen will
@@ -404,7 +404,7 @@ public class Bezahlung extends JPanel implements ActionListener {
 					materialV.add(geklicktMaterial[i].toString());
 				}
 
-				// Prüfung ob alle bezahlbaren BestPos angeklickt wurden
+				// PrÃ¼fung ob alle bezahlbaren BestPos angeklickt wurden
 				// (Teil-/Gesamtrechnung)
 				if ((anzBestPos
 						- (nichtLieferbar + komplettBez + bestPosIDs.length) == 0)&&(abweichend==0)) {

@@ -6,7 +6,7 @@ import java.awt.event.*;
 import java.sql.*;
 
 /*
- * Auswahl der Aush‰ndigungs-, R¸ckgabemˆglichkeiten bzw. R¸cksendung an Firma
+ * Auswahl der Aush√§ndigungs-, R√ºckgabem√∂glichkeiten bzw. R√ºcksendung an Firma
  * jeweils nach Material oder Inventurgruppe
  */
 public class LagerumbuchungenA extends LayoutMainPanel implements ActionListener {
@@ -31,13 +31,13 @@ public class LagerumbuchungenA extends LayoutMainPanel implements ActionListener
 		setLayoutM(new FlowLayout());
 		if (typ == AUSHAENDIGEN)/* Aushaendigen1 */{
 
-			text = new JLabel("Material an User Aush‰ndigen");
+			text = new JLabel("Material an User Aush√§ndigen");
 			JPanel panelOben = new JPanel();
 			panelOben.add(text);
 			pan.add(panelOben);
 			pan.add(new JLabel("\n"));
-			anUser = new JButton("Material ausw‰hlen");
-			anUserI = new JButton("Inventurgruppe ausw‰hlen");
+			anUser = new JButton("Material ausw√§hlen");
+			anUserI = new JButton("Inventurgruppe ausw√§hlen");
 			buttons.add(anUser);
 			buttons.add(anUserI);
 			pan.add(buttons);
@@ -56,7 +56,7 @@ public class LagerumbuchungenA extends LayoutMainPanel implements ActionListener
 			panelOben.add(text);
 			pan.add(panelOben);
 			pan.add(new JLabel("\n"));
-			korrektur = new JButton("Material ausw‰hlen");
+			korrektur = new JButton("Material ausw√§hlen");
 			buttons.add(korrektur);
 			pan.add(buttons);
 			addM(pan);
@@ -70,8 +70,8 @@ public class LagerumbuchungenA extends LayoutMainPanel implements ActionListener
 			panelOben.add(text);
 			pan.add(panelOben);
 			pan.add(new JLabel("\n"));
-			vonUser = new JButton("Material ausw‰hlen");
-			vonUserI = new JButton("Inventurgruppe ausw‰hlen");
+			vonUser = new JButton("Material ausw√§hlen");
+			vonUserI = new JButton("Inventurgruppe ausw√§hlen");
 			buttons.add(vonUser);
 			buttons.add(vonUserI);
 			pan.add(buttons);
@@ -79,13 +79,13 @@ public class LagerumbuchungenA extends LayoutMainPanel implements ActionListener
 			vonUser.addActionListener(this);
 			vonUserI.addActionListener(this);
 		} else if (typ == FIRMA) {
-			text = new JLabel("Material an Frima zur¸ck senden");
+			text = new JLabel("Material an Frima zur√ºck senden");
 			JPanel panelOben = new JPanel();
 			panelOben.add(text);
 			pan.add(panelOben);
 			pan.add(new JLabel("\n"));
-			anFirma = new JButton("Material ausw‰hlen");
-			anFirmaI = new JButton("Inventurgruppe ausw‰hlen");
+			anFirma = new JButton("Material ausw√§hlen");
+			anFirmaI = new JButton("Inventurgruppe ausw√§hlen");
 			addM(buttons, BorderLayout.CENTER);
 			buttons.add(anFirma);
 			buttons.add(anFirmaI);
@@ -107,7 +107,7 @@ public class LagerumbuchungenA extends LayoutMainPanel implements ActionListener
 
 			String a = "Material eingeben!";
 			String[] headss = { "ID", "Bezeichnung" };
-			// Frame,Angezeigter Text, Titel, ver‰nderbare Spalte, angezeigte
+			// Frame,Angezeigter Text, Titel, ver√§nderbare Spalte, angezeigte
 			// Spalte, Tabelle, conection
 
 			int unterscheidungKorrekturAnUserVonUser;
@@ -117,7 +117,7 @@ public class LagerumbuchungenA extends LayoutMainPanel implements ActionListener
 			} else if (e.getSource() == vonUser) {
 				unterscheidungKorrekturAnUserVonUser = -3; // Zubuchen
 			} else if (e.getSource() == anFirma)
-				unterscheidungKorrekturAnUserVonUser = -5; // Zur¸ck an Firma
+				unterscheidungKorrekturAnUserVonUser = -5; // Zur√ºck an Firma
 			else
 				unterscheidungKorrekturAnUserVonUser = -1; // LagerumbuchungenC
 
@@ -170,7 +170,7 @@ public class LagerumbuchungenA extends LayoutMainPanel implements ActionListener
 		if (e.getSource() == vonUserI || e.getSource() == anUserI
 				|| e.getSource() == anFirmaI) {
 
-			String a = "Inventurgruppe w‰hlen!";
+			String a = "Inventurgruppe w√§hlen!";
 			new InputFrame(null, a, "InvGruppe!", con);
 			s = InputFrame.getWert();
 			query = "SELECT m.id, m.bezeichnung, i.bezeichnung as inventurgruppe, m.stueck  FROM material m, inventurgruppe i  WHERE m.inventurgruppe=i.id AND i.bezeichnung LIKE \""

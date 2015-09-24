@@ -7,8 +7,8 @@ import java.sql.*;
 import java.awt.event.*;
 
 /*
- * Das Fenster zeigt die Materialdaten, welche für die Buchungenen beim Aushaendigen 
- * von Material wichtig sind, an und ermöglicht alle wichtigen Eingaben mit Hilfe von Auswahlmöglichkeiten.
+ * Das Fenster zeigt die Materialdaten, welche fÃ¼r die Buchungenen beim Aushaendigen 
+ * von Material wichtig sind, an und ermÃ¶glicht alle wichtigen Eingaben mit Hilfe von AuswahlmÃ¶glichkeiten.
  * Wird bei Aushaendigen1 aufgerufen. Ist das Fenster "Material buchen".
  */
 public class LagerumbuchungenC extends JDialog implements ActionListener {
@@ -21,7 +21,7 @@ public class LagerumbuchungenC extends JDialog implements ActionListener {
 
 	// JLabel
 	/**
-	 * Überschiften: ID, Bezeichnung, Inventurgruppe, Bundesnummer, Firma,
+	 * Ãœberschiften: ID, Bezeichnung, Inventurgruppe, Bundesnummer, Firma,
 	 * Lagerstk, Meldebestand, Einheit, Lagerort
 	 **/
 	private JLabel lMatIdTitle, lMatBezTitle, lMatInvGrTitle,
@@ -29,18 +29,18 @@ public class LagerumbuchungenC extends JDialog implements ActionListener {
 			lMeldebestandTitle, lEinheitTitle, lLagerortTitle, lLehrerTitle,
 			lKstTitle, lStkTitle;
 	/**
-	 * Label für die Daten id, bezeichnung, inventurgruppe, bundesnummer,
+	 * Label fÃ¼r die Daten id, bezeichnung, inventurgruppe, bundesnummer,
 	 * firmenname, lagerstk, meldebestand, einheit, lagerort
 	 **/
 	private JLabel lMatId, lMatBez, lMatInvGr, lMatBundesnr, lFirmenname,
 			lLagerstk, lMeldebestand, lEinheit, lLagerort;
 
 	// Eingabefelder
-	/** Feld für den Lehrer, der das Material holt **/
+	/** Feld fÃ¼r den Lehrer, der das Material holt **/
 	private Input lehrer;
-	/** Feld für Kostenstelle, zu der das Material geht **/
+	/** Feld fÃ¼r Kostenstelle, zu der das Material geht **/
 	private Input kst;
-	/** Feld für Anzahl, wie viel Stück ausgehändigt werden **/
+	/** Feld fÃ¼r Anzahl, wie viel StÃ¼ck ausgehÃ¤ndigt werden **/
 	private Input stk;
 
 	// Fragezeichen neben den Eingabefeldern
@@ -49,7 +49,7 @@ public class LagerumbuchungenC extends JDialog implements ActionListener {
 	/** Fragezeichen, bei dem eine Liste mit allen Kostenstellen erscheint **/
 	private SelectInput kstSI;
 
-	/** um die Überschriften schöner zu gliedern **/
+	/** um die Ãœberschriften schÃ¶ner zu gliedern **/
 	private String zeilenfueller = "        ";
 
 	// Daten
@@ -69,7 +69,7 @@ public class LagerumbuchungenC extends JDialog implements ActionListener {
 	/** Meldebestand **/
 	private int meldebestand;
 
-	/** Stückanzahl auf Lager **/
+	/** StÃ¼ckanzahl auf Lager **/
 	private double lagerstk;
 
 	/** Preis - um gesperrt/ausgegeben umzubuchen **/
@@ -209,7 +209,7 @@ public class LagerumbuchungenC extends JDialog implements ActionListener {
 		lFirmennameTitle = new JLabel("Firma");
 		lFirmenname = new JLabel(firmenname);
 		lKstTitle = new JLabel("Kostenstelle");
-		lStkTitle = new JLabel("Stück");
+		lStkTitle = new JLabel("StÃ¼ck");
 		
 		stk = new Input(10, "stkI");
 		lehrer = new Input(100, "lehrerI");
@@ -224,7 +224,7 @@ public class LagerumbuchungenC extends JDialog implements ActionListener {
 		kstSI = new SelectInput(conb, kst, "werkstaette", new String[] {
 				"Bereichsnr", "Bereichsname" }, null, "", user);
 
-		// Panels füllen
+		// Panels fÃ¼llen
 		pButtons = new JPanel();
 		pButtons.add(bSpeichern);
 		pButtons.add(bAbbrechen);
@@ -398,7 +398,7 @@ public class LagerumbuchungenC extends JDialog implements ActionListener {
 
 				JOptionPane.showMessageDialog(null,
 
-				"Die Stückzahl darf nicht kleiner 0 sein!");
+				"Die StÃ¼ckzahl darf nicht kleiner 0 sein!");
 
 				return;
 
@@ -428,13 +428,13 @@ public class LagerumbuchungenC extends JDialog implements ActionListener {
 
 						JOptionPane.showMessageDialog(null,
 
-						"Es können max. "
+						"Es kÃ¶nnen max. "
 
 						+ lagerstk
 
-						+ " Stück ausgehändigt werden!\n Es sind nur mehr "
+						+ " StÃ¼ck ausgehÃ¤ndigt werden!\n Es sind nur mehr "
 
-						+ lagerstk + " Stück im Lager!");
+						+ lagerstk + " StÃ¼ck im Lager!");
 
 						return;
 
@@ -739,7 +739,7 @@ public class LagerumbuchungenC extends JDialog implements ActionListener {
 
 				JOptionPane.showMessageDialog(null,
 
-				"Bei Abbuchungsstück keine Zahl eingegeben!");
+				"Bei AbbuchungsstÃ¼ck keine Zahl eingegeben!");
 
 			}
 
@@ -762,7 +762,7 @@ public class LagerumbuchungenC extends JDialog implements ActionListener {
 		} else // Fenster geschlossen, speichern=-1
 		{
 
-			JOptionPane.showMessageDialog(null, "Sie haben nichts ausgewählt!");
+			JOptionPane.showMessageDialog(null, "Sie haben nichts ausgewÃ¤hlt!");
 			ueberpruefeSelbstBestellt();
 		}
 

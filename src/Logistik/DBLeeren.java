@@ -8,18 +8,18 @@ import java.util.Date;
 import java.sql.*;
 
 /**
- * Mit RadioButton, Button und ConfirmDialog muss bestätigt werden, ob Daten
- * wirklich gelöscht werden sollen Es werden nur BANF, BANFPositionen,
- * Bestellungen, Bestellpositionen aus dem Vorjahr gelöscht
+ * Mit RadioButton, Button und ConfirmDialog muss bestÃ¤tigt werden, ob Daten
+ * wirklich gelÃ¶scht werden sollen Es werden nur BANF, BANFPositionen,
+ * Bestellungen, Bestellpositionen aus dem Vorjahr gelÃ¶scht
  */
 public class DBLeeren extends LayoutMainPanel implements ActionListener {
 	/**
-	 * RadioButton für Bestätigung des Löschvorgangs
+	 * RadioButton fÃ¼r BestÃ¤tigung des LÃ¶schvorgangs
 	 */
 	public JRadioButton leerenRB = new JRadioButton();
 
 	/**
-	 * Button für Bestätigung des Löschvorgangs
+	 * Button fÃ¼r BestÃ¤tigung des LÃ¶schvorgangs
 	 */
 	public JButton leerenB = new JButton("leeren");
 	JTextField tag = new JTextField("TT");
@@ -46,7 +46,7 @@ public class DBLeeren extends LayoutMainPanel implements ActionListener {
 	private int status;
 
 	/**
-	 * Überschrift
+	 * Ãœberschrift
 	 */
 	private JLabel titel = new JLabel("DATENBANK LEEREN");
 
@@ -85,7 +85,7 @@ public class DBLeeren extends LayoutMainPanel implements ActionListener {
 
 		mitte
 				.add(new JLabel(
-						"Nach welchen Kriterium möchten Sie eine oder mehrere Bestellung(en) löschen?"));
+						"Nach welchen Kriterium mÃ¶chten Sie eine oder mehrere Bestellung(en) lÃ¶schen?"));
 		mitte.add(new JLabel(""));
 
 		mitte.add(datum);
@@ -125,7 +125,7 @@ public class DBLeeren extends LayoutMainPanel implements ActionListener {
 
 				} catch (NumberFormatException nfe) {
 					JOptionPane.showMessageDialog(null,
-							"Sie dürfen nur Zahlen eintragen");
+							"Sie dÃ¼rfen nur Zahlen eintragen");
 
 				}
 			}
@@ -139,7 +139,7 @@ public class DBLeeren extends LayoutMainPanel implements ActionListener {
 					kennzahl = 2;
 				} catch (NumberFormatException nfe) {
 					JOptionPane.showMessageDialog(null,
-							"Sie dürfen nur Zahlen eintragen");
+							"Sie dÃ¼rfen nur Zahlen eintragen");
 
 				}
 			}
@@ -164,21 +164,21 @@ public class DBLeeren extends LayoutMainPanel implements ActionListener {
 						.showConfirmDialog(
 								null,
 								"Wollen Sie die Bestellung, Bestellpositionen, Banfs, Banfposition mit der BestellID "
-										+ bestID + " löschen?", "DB leeren",
+										+ bestID + " lÃ¶schen?", "DB leeren",
 								JOptionPane.YES_NO_OPTION);
 			} else {
 				sure = JOptionPane
 						.showConfirmDialog(
 								null,
 								"Wollen Sie die Bestellung, Bestellpositionen, Banfs, Banfposition mit der W-Nummer "
-										+ wNummerS + " löschen?", "DB leeren",
+										+ wNummerS + " lÃ¶schen?", "DB leeren",
 								JOptionPane.YES_NO_OPTION);
 
 			}
 
 			if (sure == 1) {
 				JOptionPane
-						.showMessageDialog(null, "Löschvorgang abgebrochen!");
+						.showMessageDialog(null, "LÃ¶schvorgang abgebrochen!");
 				return;
 			}
 			if (sure == 0) {
@@ -271,7 +271,7 @@ public class DBLeeren extends LayoutMainPanel implements ActionListener {
 					}
 
 					JOptionPane.showMessageDialog(null,
-							"Löschvorgang erfolgreich durchgeführt!");
+							"LÃ¶schvorgang erfolgreich durchgefÃ¼hrt!");
 				}
 
 			}

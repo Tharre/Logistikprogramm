@@ -6,8 +6,8 @@ import java.awt.event.*;
 
 /**
  * Klasse zum Bearbeiten von Firmendaten In einem SelectInput kann die
- * gewünschte Firma ausgewählt werden. Nach dem Klick auf den "OK"-Button werden
- * die Daten in die Eingabemaske übernommen Nach dem Klick auf den speichern
+ * gewÃ¼nschte Firma ausgewÃ¤hlt werden. Nach dem Klick auf den "OK"-Button werden
+ * die Daten in die Eingabemaske Ã¼bernommen Nach dem Klick auf den speichern
  * Button werden die neuen Daten in die DB gespeichert
  */
 
@@ -39,7 +39,7 @@ public class EditFirma extends LayoutMainPanel implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == ok) {
 			if (firma.getValue().equals("")) {
-				new MessageError("Bitte eine Firma auswählen!");
+				new MessageError("Bitte eine Firma auswÃ¤hlen!");
 				return;
 			}
 			mid.setFirma(firma.getValue());

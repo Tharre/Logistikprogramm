@@ -20,7 +20,7 @@ public class DiagrammPanel extends JPanel {
 	private double[] grad;
 
 	// sonstiges
-	/** Farbenarray für das Diagramm **/
+	/** Farbenarray fÃ¼r das Diagramm **/
 	private Color[] farben;
 	/** Zufall **/
 	private Random r;
@@ -162,7 +162,7 @@ public class DiagrammPanel extends JPanel {
 	 * Hilfswert(Multiplikative) um die Grad der einzelnen Sektoren zu berechnen
 	 **/
 	private void berechneMultiplikative() {
-		mulitplikative = gradKreis / summeDerWerte; // 360° dividiert durch die
+		mulitplikative = gradKreis / summeDerWerte; // 360Â° dividiert durch die
 		// Summer der aller Werte
 	}
 
@@ -197,7 +197,7 @@ public class DiagrammPanel extends JPanel {
 	}
 
 	/**
-	 * Gibt das Farben-Array mit den Zufallsfarben zurück
+	 * Gibt das Farben-Array mit den Zufallsfarben zurÃ¼ck
 	 * 
 	 * @return Ein Farben-Array
 	 */
