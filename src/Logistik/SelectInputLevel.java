@@ -47,7 +47,7 @@ public class SelectInputLevel extends JPanel implements ActionListener,
 		this.text = text;
 		this.con = con;
 		this.uber = uber;
-		btn = LayoutButtonCreator.createButton("help.gif", "suchen");
+		btn = LayoutButtonCreator.createButton("res/help.gif", "suchen");
 		add(input, BorderLayout.CENTER);
 		add(btn, BorderLayout.EAST);
 		input.addFocusListener(this);

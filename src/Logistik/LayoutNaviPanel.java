@@ -14,7 +14,7 @@ public class LayoutNaviPanel extends JPanel {
 
 	public LayoutNaviPanel() {
 		g = new ButtonGroup();
-		URL u = this.getClass().getResource("navipanel.gif");
+		URL u = this.getClass().getResource("res/navipanel.gif");
 		bg = new ImageIcon(u).getImage();
 		setPreferredSize(new Dimension(1, 30));
 	}

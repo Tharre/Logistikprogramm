@@ -33,22 +33,22 @@ public class LayoutMainPanel extends JPanel {
 		con = user.getConnection();
 		conB = user.getConnectionKst();
 		setLayout(new BorderLayout());
-		URL url = this.getClass().getResource("u.gif");
+		URL url = this.getClass().getResource("res/u.gif");
 		u = new ImageIcon(url).getImage();
-		url = this.getClass().getResource("d.gif");
+		url = this.getClass().getResource("res/d.gif");
 		d = new ImageIcon(url).getImage();
-		url = this.getClass().getResource("l.gif");
+		url = this.getClass().getResource("res/l.gif");
 		l = new ImageIcon(url).getImage();
-		url = this.getClass().getResource("r.gif");
+		url = this.getClass().getResource("res/r.gif");
 		r = new ImageIcon(url).getImage();
 
-		url = this.getClass().getResource("ul.gif");
+		url = this.getClass().getResource("res/ul.gif");
 		ul = new ImageIcon(url).getImage();
-		url = this.getClass().getResource("ur.gif");
+		url = this.getClass().getResource("res/ur.gif");
 		ur = new ImageIcon(url).getImage();
-		url = this.getClass().getResource("dl.gif");
+		url = this.getClass().getResource("res/dl.gif");
 		dl = new ImageIcon(url).getImage();
-		url = this.getClass().getResource("dr.gif");
+		url = this.getClass().getResource("res/dr.gif");
 		dr = new ImageIcon(url).getImage();
 
 		setBackground(new Color(200, 200, 200));

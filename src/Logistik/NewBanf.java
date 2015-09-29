@@ -68,7 +68,7 @@ public class NewBanf extends LayoutMainPanel implements ActionListener {
 		date.setBackground(new Color(230, 230, 230));
 		date.setOpaque(true);
 		p.add(date, "");
-		ok = LayoutButtonCreator.createButton("ok.gif", "ok");
+		ok = LayoutButtonCreator.createButton("res/ok.gif", "ok");
 		p.add(ok, "");
 		ok.addActionListener(this);
 		addM(p, BorderLayout.NORTH);
@@ -98,7 +98,7 @@ public class NewBanf extends LayoutMainPanel implements ActionListener {
 		Input ges = new Input(10, "");
 		ges.setEditable(false);
 		ges.setText("0");
-		LayoutNaviButton clear = LayoutButtonCreator.createButton("del.gif", "löschen");
+		LayoutNaviButton clear = LayoutButtonCreator.createButton("res/del.gif", "löschen");
 		Input mate = new Input(10, "");
 		JTextField[] fi = new JTextField[] { mate, bestNr, einheit, preisExkl,
 				mwst, preisInkl };

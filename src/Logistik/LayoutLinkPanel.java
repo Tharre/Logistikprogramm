@@ -24,7 +24,7 @@ public class LayoutLinkPanel extends JPanel implements ActionListener, Runnable 
 		setLayout(new FlowLayout(FlowLayout.LEFT));
 		setPreferredSize(new Dimension(1, height));
 
-		u = this.getClass().getResource("jakob.gif");
+		u = this.getClass().getResource("res/jakob.gif");
 		heads = new Image[1];
 		heads[0] = new ImageIcon(u).getImage();
 

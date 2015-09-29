@@ -69,7 +69,7 @@ public class SelectInput extends JPanel implements ActionListener,
 			input.setFocusable(false);
 		}
 
-		btn = LayoutButtonCreator.createButton("help.gif", "suchen");
+		btn = LayoutButtonCreator.createButton("res/help.gif", "suchen");
 		add(input, BorderLayout.CENTER);
 		add(btn, BorderLayout.EAST);
 		input.addFocusListener(this);
@@ -109,7 +109,7 @@ public class SelectInput extends JPanel implements ActionListener,
 			input.setFocusable(false);
 		}
 
-		btn = LayoutButtonCreator.createButton("help.gif", "suchen");
+		btn = LayoutButtonCreator.createButton("res/help.gif", "suchen");
 		add(input, BorderLayout.CENTER);
 		add(btn, BorderLayout.EAST);
 		input.addFocusListener(this);
@@ -143,7 +143,7 @@ public class SelectInput extends JPanel implements ActionListener,
 
 		input.setEditable(false);
 		input.setFocusable(false);
-		btn = LayoutButtonCreator.createButton("help.gif", "suchen");
+		btn = LayoutButtonCreator.createButton("res/help.gif", "suchen");
 		add(input, BorderLayout.CENTER);
 		add(btn, BorderLayout.EAST);
 		input.addFocusListener(this);
@@ -194,7 +194,7 @@ public class SelectInput extends JPanel implements ActionListener,
 		}
 
 		aush1 = true;
-		btn = LayoutButtonCreator.createButton("help.gif", "suchen");
+		btn = LayoutButtonCreator.createButton("res/help.gif", "suchen");
 		add(input, BorderLayout.CENTER);
 		add(btn, BorderLayout.EAST);
 		input.addFocusListener(this);
@@ -217,7 +217,7 @@ public class SelectInput extends JPanel implements ActionListener,
 		this.heads = heads;
 		this.data = data;
 
-		btn1 = LayoutButtonCreator.createButton("help.gif", "suchen");
+		btn1 = LayoutButtonCreator.createButton("res/help.gif", "suchen");
 		add(input, BorderLayout.CENTER);
 		add(btn1, BorderLayout.EAST);
 		input.addFocusListener(this);
@@ -243,7 +243,7 @@ public class SelectInput extends JPanel implements ActionListener,
 		this.firma = firma;
 		hilf2 = -2;
 
-		btn = LayoutButtonCreator.createButton("help.gif", "suchen");
+		btn = LayoutButtonCreator.createButton("res/help.gif", "suchen");
 		add(input, BorderLayout.CENTER);
 		add(btn, BorderLayout.EAST);
 		input.addFocusListener(this);
@@ -267,7 +267,7 @@ public class SelectInput extends JPanel implements ActionListener,
 		hilf2 = -4;
 
 		aush1 = false;
-		btn = LayoutButtonCreator.createButton("help.gif", "suchen");
+		btn = LayoutButtonCreator.createButton("res/help.gif", "suchen");
 		add(input, BorderLayout.CENTER);
 		add(btn, BorderLayout.EAST);
 

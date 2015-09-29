@@ -71,7 +71,7 @@ public class SelectFrameLevel extends JDialog {
 			final int bgId=rs.getInt("id");
 		
 
-			JButton btn = LayoutButtonCreator.createButton("ok.gif", "auswählen");
+			JButton btn = LayoutButtonCreator.createButton("res/ok.gif", "auswählen");
 			btn.setVisible(vis);
 			btn.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {

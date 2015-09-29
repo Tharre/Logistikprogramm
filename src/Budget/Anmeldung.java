@@ -86,7 +86,7 @@ public class Anmeldung extends JFrame implements ActionListener, KeyListener {
 			
 			SwingUtilities.invokeLater(new Runnable() {
 				public void run() {
-					URL u = this.getClass().getResource("1cent.jpg");
+					URL u = this.getClass().getResource("res/1cent.jpg");
 					Image image = new ImageIcon(u).getImage();
 
 					if (alt.isSelected()) {
@@ -115,7 +115,7 @@ public class Anmeldung extends JFrame implements ActionListener, KeyListener {
 	 public void keyPressed(KeyEvent k) {
 
 		if (k.getKeyCode() == 10) {
-			URL u = this.getClass().getResource("1cent.jpg");
+			URL u = this.getClass().getResource("res/1cent.jpg");
 			Image image = new ImageIcon(u).getImage();
 
 			if (alt.isSelected()) {
