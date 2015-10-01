@@ -35,8 +35,6 @@ import javax.swing.SwingUtilities;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
-import com.sun.jmx.snmp.tasks.Task;
-
 /**
  *In der Klasse Budget wird das Menue erstellt und die Karten erstellt, die im
  * mittleren Panel angezeigt werden

@@ -1,0 +1,25 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+sourceSets {
+    main {
+        java {
+            srcDir 'src/'
+        }
+        resources {
+            srcDir 'res/'
+        }
+    }
+}
+
+buildDir = 'out/'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.eclipse.birt.runtime.3_7_1:com.lowagie.text:2.1.7'
+    compile 'javax.mail:javax.mail-api:1.5.4'
+    compile 'org.apache.poi:poi:3.13'
+}
