@@ -22,7 +22,7 @@ public class DBConnection {
 			ex.getMessage();
 		}
 
-		String con_str = "//logistik.htl-hl.ac.at:3306/" + dbName;
+		String con_str = "//127.0.0.1:3306/" + dbName;
 		url = "jdbc:mysql:" + con_str;
 		connect();
 	}

@@ -27,7 +27,7 @@ public class UserImport {
 		datum = new Date();
 		jahr = datum.getYear() + 1900;
 
-		conKst = new DBConnection("budget2", "budget2009", "cafelatte");
+		conKst = new DBConnection("budget2", "root", "test");
 
 		setBase(s);
 		setMail(getMail());

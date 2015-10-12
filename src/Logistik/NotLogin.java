@@ -23,7 +23,7 @@ public class NotLogin extends JFrame implements ActionListener {
 		super(title);
 
 		this.login = login;
-		con = new DBConnection("logistik_2", "logistik1", "4ahwii");
+		con = new DBConnection("logistik_2", "root", "test");
 		setLayout(new GridLayout(3, 1));
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);

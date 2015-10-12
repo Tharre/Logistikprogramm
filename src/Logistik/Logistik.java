@@ -131,7 +131,7 @@ public class Logistik extends JFrame {
 
 	public static void main(String[] args) {
 		new Logistik("Logistik", new UserImport(".STAREK.VISITORS.HTBL",
-				new DBConnection("logistik_2", "logistik1", "4ahwii"), null));
+				new DBConnection("logistik_2", "root", "test"), null));
 	}
 
 	public String getBundesnr(String id) {

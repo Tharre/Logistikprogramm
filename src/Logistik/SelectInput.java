@@ -302,8 +302,8 @@ public class SelectInput extends JPanel implements ActionListener,
 			String query;
 			Vector<Integer> usergroup = new Vector<Integer>();
 			boolean fertig = false;
-			DBConnection conb = new DBConnection("logistik_2", "logistik1",
-					"4ahwii");
+			DBConnection conb = new DBConnection("logistik_2", "root",
+					"test");
 
 			query = "SELECT * from rechte where recht=45";
 			ResultSet rs = conb.mysql_query(query);

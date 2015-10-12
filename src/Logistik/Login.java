@@ -25,7 +25,7 @@ public class Login extends JFrame implements ActionListener, KeyListener {
 		this.st = st;
 		setSize(400, 200);
 		LoginPanel p = new LoginPanel();
-		con = new DBConnection("logistik_2", "logistik1", "4ahwii");
+		con = new DBConnection("logistik_2", "root", "test");
 		p.setLayout(new GridLayout(3, 1));
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);

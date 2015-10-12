@@ -55,8 +55,8 @@ public class DBVerbindung {
 	 */
 	public Connection verbindeDatenbankAktuell() {
 		dbName = "budget2";
-		user = "budget2009";
-		pwt = "cafelatte";
+		user = "root";
+		pwt = "test";
 		con = verbindeDatenbank(dbName, user, pwt);
 		return con;
 	}// verbindeDatenbankAktuell
@@ -69,8 +69,8 @@ public class DBVerbindung {
 	 */
 	public Connection verbindeDatenbankAlt() {
 		dbName = "budget1";
-		user = "budget2009";
-		pwt = "cafelatte";
+		user = "root";
+		pwt = "test";
 		con = verbindeDatenbank(dbName, user, pwt);
 		return con;
 	}// verbindeDatenbankAlt
@@ -83,8 +83,8 @@ public class DBVerbindung {
 	 */
 	public Connection verbindeDatenbankLogistik() {
 		dbName = "logistik_2";
-		user = "logistik1";
-		pwt = "4ahwii";
+		user = "root";
+		pwt = "test";
 		con = verbindeDatenbank(dbName, user, pwt);
 		return con;
 	}// verbindeDatenbankLogistik
@@ -97,7 +97,7 @@ public class DBVerbindung {
 	 * @return con Connection zur Datenbank
 	 */
 	public Connection verbindeDatenbank(String dbName, String user, String pwt) {
-		con_str = "//logistik.htl-hl.ac.at:3306/" + dbName;
+		con_str = "//127.0.0.1:3306/" + dbName;
 		url = "jdbc:mysql:" + con_str;
 
 		try {

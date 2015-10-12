@@ -644,10 +644,10 @@ public class AnzLager extends JFrame implements ActionListener {
 		int jahr = datum.getYear() + 1900;
 
 		/*
-		 * if (jahr % 2 == 0) conb = new DBConnection("budget2", "budget2009",
-		 * "cafelatte"); else
+		 * if (jahr % 2 == 0) conb = new DBConnection("budget2", "root",
+		 * "test"); else
 		 */
-		conb = new DBConnection("budget2", "budget2009", "cafelatte");
+		conb = new DBConnection("budget2", "root", "test");
 
 		String query = "select * from banf b, banfpos bfp, bestpos bp, bestellung best where"
 				+ " bp.id="

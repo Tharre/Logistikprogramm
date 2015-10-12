@@ -19,7 +19,7 @@ public class LayoutBottomPanel extends JPanel implements ActionListener {
 	private Logistik logistikFrame;
 	private JPanel osten;
 	// private DBConnection con = new
-	// DBConnection("logistik_2","logistik1","4ahwii");
+	// DBConnection("logistik_2","root","test");
 	private DBConnection con;
 
 	public LayoutBottomPanel(String image, int height, UserImport user,
