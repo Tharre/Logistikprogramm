@@ -25,7 +25,7 @@ public class EditFirmaMaterial extends LayoutMainPanel implements ActionListener
 				new String[] { "id", "firmenname", "bezeichnung" }, "id", "id",
 				user, -2);
 		firma.setTextEnabled(false);
-		ok = LayoutButtonCreator.createButton("res/ok.gif", "ok");
+		ok = LayoutButtonCreator.createButton("../ok.gif", "ok");
 		ok.addActionListener(this);
 		head.add(new JLabel("Firma-Material Beziehung:"));
 		head.add(firma);

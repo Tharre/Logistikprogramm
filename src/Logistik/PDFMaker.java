@@ -29,11 +29,11 @@ public class PDFMaker extends PdfPageEventHelper {
 	public String budget;
 
 	public PDFMaker(String path, String budget) {
-		URL url = this.getClass().getResource("res/logo.gif");
+		URL url = this.getClass().getResource("../logo.gif");
 		htlLogo = new ImageIcon(url).getImage();
-		url = this.getClass().getResource("res/UMay.gif");
+		url = this.getClass().getResource("../UMay.gif");
 		uMayI = new ImageIcon(url).getImage();
-		url = this.getClass().getResource("res/UntStiedl.jpg");
+		url = this.getClass().getResource("../UntStiedl.jpg");
 		uHamI = new ImageIcon(url).getImage();
 		this.budget= budget;
 

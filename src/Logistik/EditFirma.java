@@ -23,7 +23,7 @@ public class EditFirma extends LayoutMainPanel implements ActionListener {
 		firma = new SelectInput(con, new Input(16, ""), "firma", new String[] {
 				"id", "firmenname" }, "id", "firmenname", user);
 		firma.setTextEnabled(false);
-		ok = LayoutButtonCreator.createButton("res/ok.gif", "ok");
+		ok = LayoutButtonCreator.createButton("../ok.gif", "ok");
 		ok.addActionListener(this);
 		head.add(new JLabel("Firma:"));
 		head.add(firma);

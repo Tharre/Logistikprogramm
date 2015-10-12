@@ -22,7 +22,7 @@ public class Welcome extends LayoutMainPanel {
 		private Image img;
 
 		public BildPanel() {
-			URL url = this.getClass().getResource("res/blüte.jpg");
+			URL url = this.getClass().getResource("../blüte.jpg");
 			img = new ImageIcon(url).getImage();
 			JLabel l = new JLabel("Hallo " + user.getName() + "!",
 					SwingConstants.LEFT);

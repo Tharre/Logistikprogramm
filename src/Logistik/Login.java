@@ -47,7 +47,7 @@ public class Login extends JFrame implements ActionListener, KeyListener {
 		passwort.setBorder(BorderFactory.createTitledBorder("Passwort"));
 
 		/*
-		 * URL u2= this.getClass().getResource("res/not-login.gif"); icon= new
+		 * URL u2= this.getClass().getResource("../not-login.gif"); icon= new
 		 * ImageIcon(u2); Dimension d = new Dimension(icon.getIconWidth(),
 		 * icon.getIconHeight());
 		 */
@@ -138,7 +138,7 @@ System.out.println("1");
 		private Image bg;
 
 		public LoginPanel() {
-			URL u = this.getClass().getResource("res/Login_bg.gif");
+			URL u = this.getClass().getResource("../Login_bg.gif");
 			bg = new ImageIcon(u).getImage();
 		}
 

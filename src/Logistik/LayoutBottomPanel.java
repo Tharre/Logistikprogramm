@@ -36,7 +36,7 @@ public class LayoutBottomPanel extends JPanel implements ActionListener {
 				+ user.getLoginTimeString(), SwingConstants.CENTER);
 		name.setFont(f);
 
-		URL u2 = this.getClass().getResource("res/abmelden3.gif");
+		URL u2 = this.getClass().getResource("../abmelden3.gif");
 		bg2 = new ImageIcon(u2);
 
 		abmelden = new JButton();
@@ -48,7 +48,7 @@ public class LayoutBottomPanel extends JPanel implements ActionListener {
 		// Rechte für Ldap-Aktualisierung
 		String ldapCn = user.getCn();
 		if (ldapCn.equals("Mayer")) {
-			URL u3 = this.getClass().getResource("res/ldap.gif");
+			URL u3 = this.getClass().getResource("../ldap.gif");
 			bg3 = new ImageIcon(u3);
 
 			ldap = new JButton();

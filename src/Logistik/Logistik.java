@@ -47,19 +47,19 @@ public class Logistik extends JFrame {
 		pAnim.setLayout(new BorderLayout());
 		p_Head = new JPanel(new BorderLayout());
 
-		linkPanel = new LayoutLinkPanel(this, "res/links.gif", 40);
-		linkPanel.addButton("res/user.gif", "Userverwaltung");
-		linkPanel.addButton("res/firma.gif", "Firmenverwaltung");
-		linkPanel.addButton("res/material.gif", "Materialverwaltung");
-		linkPanel.addButton("res/inventur.gif", "InvGruppeverwaltung");
-		linkPanel.addButton("res/bundesgr.gif", "BundesGruppeverwaltung");
-		linkPanel.addButton("res/banf.gif", "BANF");
-		linkPanel.addButton("res/bestellung.gif", "Bestellung");
-		linkPanel.addButton("res/abfragen.gif", "Abfragen");
-		linkPanel.addButton("res/lagerverw.gif", "Lagerverwaltung");
-		linkPanel.addButton("res/datenb.gif", "Datenbank");
-		linkPanel.addButton("res/budget.gif", "Budget");
-		namePanel = new LayoutNamePanel("res/namepanel.gif", 30);
+		linkPanel = new LayoutLinkPanel(this, "../links.gif", 40);
+		linkPanel.addButton("../user.gif", "Userverwaltung");
+		linkPanel.addButton("../firma.gif", "Firmenverwaltung");
+		linkPanel.addButton("../material.gif", "Materialverwaltung");
+		linkPanel.addButton("../inventur.gif", "InvGruppeverwaltung");
+		linkPanel.addButton("../bundesgr.gif", "BundesGruppeverwaltung");
+		linkPanel.addButton("../banf.gif", "BANF");
+		linkPanel.addButton("../bestellung.gif", "Bestellung");
+		linkPanel.addButton("../abfragen.gif", "Abfragen");
+		linkPanel.addButton("../lagerverw.gif", "Lagerverwaltung");
+		linkPanel.addButton("../datenb.gif", "Datenbank");
+		linkPanel.addButton("../budget.gif", "Budget");
+		namePanel = new LayoutNamePanel("../namepanel.gif", 30);
 
 		p_Head.add(linkPanel, BorderLayout.NORTH);
 		p_Head.add(namePanel, BorderLayout.CENTER);
@@ -79,7 +79,7 @@ public class Logistik extends JFrame {
 		addCenter(new VerDatenbank(user), "Datenbank");
 		addCenter(new StartBudget(user), "Budget");
 
-		pBottom = new LayoutBottomPanel("res/navipanel.gif", 30, user, this);
+		pBottom = new LayoutBottomPanel("../navipanel.gif", 30, user, this);
 		pAnim.add(p_Head, BorderLayout.NORTH);
 		pAnim.add(midPanel, BorderLayout.CENTER);
 		pAnim.add(pBottom, BorderLayout.SOUTH);
@@ -106,7 +106,7 @@ public class Logistik extends JFrame {
 				f = new Anmeldung();
 				f.pack();
 				f.setLocationRelativeTo(null);
-				URL u = this.getClass().getResource("res/1cent.jpg");
+				URL u = this.getClass().getResource("../1cent.jpg");
 				Image image = new ImageIcon(u).getImage();
 				f.setIconImage(image);
 				f.setVisible(true);
@@ -171,11 +171,11 @@ public class Logistik extends JFrame {
 		public AnimationPanel() {
 			/*
 			 * runner = new Thread(this); runner.start(); heads = new Image[3];
-			 * URL u = this.getClass().getResource("res/jakob.gif"); heads[0] = new
+			 * URL u = this.getClass().getResource("../jakob.gif"); heads[0] = new
 			 * ImageIcon(u).getImage(); u =
-			 * this.getClass().getResource("res/starek.gif"); heads[1] = new
+			 * this.getClass().getResource("../starek.gif"); heads[1] = new
 			 * ImageIcon(u).getImage(); u =
-			 * this.getClass().getResource("res/zach.gif"); heads[2] = new
+			 * this.getClass().getResource("../zach.gif"); heads[2] = new
 			 * ImageIcon(u).getImage(); addMouseListener(new MouseAdapter() {
 			 * public void mouseClicked(MouseEvent e) { if (e.getX() >
 			 * getWidth() - 10 && e.getY() < 10) new Sudoku(); } });

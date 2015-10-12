@@ -24,7 +24,7 @@ public class EditUsergruppe extends LayoutMainPanel implements ActionListener {
 		ug = new SelectInput(con, new Input(15, ""), "usergroup", new String[] {
 				"id", "name" }, "id", "name", user);
 		ug.setTextEnabled(false);
-		ok = LayoutButtonCreator.createButton("res/ok.gif", "ok");
+		ok = LayoutButtonCreator.createButton("../ok.gif", "ok");
 		ok.addActionListener(this);
 		head.add(new JLabel("Usergruppe:"));
 		head.add(ug);

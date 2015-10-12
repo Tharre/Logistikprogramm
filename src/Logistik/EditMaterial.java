@@ -23,7 +23,7 @@ public class EditMaterial extends LayoutMainPanel implements ActionListener {
 		firma = new SelectInput(con, new Input(16, ""), "material",
 				new String[] { "id", "bezeichnung" }, "id", "bezeichnung", user);
 		firma.setTextEnabled(false);
-		ok = LayoutButtonCreator.createButton("res/ok.gif", "ok");
+		ok = LayoutButtonCreator.createButton("../ok.gif", "ok");
 		ok.addActionListener(this);
 		head.add(new JLabel("Material:"));
 		head.add(firma);

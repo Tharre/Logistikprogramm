@@ -128,7 +128,7 @@ public class LagerAushaendigungN extends LayoutMainPanel implements ActionListen
 
 		p.add(date, "");
 
-		ok = LayoutButtonCreator.createButton("res/ok.gif", "ok");
+		ok = LayoutButtonCreator.createButton("../ok.gif", "ok");
 
 		p.add(ok, "");
 
@@ -181,7 +181,7 @@ public class LagerAushaendigungN extends LayoutMainPanel implements ActionListen
 		Input firma = new Input(10, "");
 		firma.setEditable(false);
 		Input abbuchstk = new Input(10, 10, Input.NUMBER, "");
-		LayoutNaviButton clear = LayoutButtonCreator.createButton("res/del.gif",
+		LayoutNaviButton clear = LayoutButtonCreator.createButton("../del.gif",
 				"löschen");
 		JTextField[] fi = new JTextField[] { mfId, id, mate, lagerst, einheit,
 				preisInkl, firma };

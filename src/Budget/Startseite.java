@@ -27,7 +27,7 @@ public class Startseite extends JPanel {
 	 */
 	public Startseite() {
 		setOpaque(true);
-		u = this.getClass().getResource("res/Hintergrund.png");
+		u = this.getClass().getResource("../Hintergrund.png");
 		image = new ImageIcon(u).getImage();
 
 		namen = new JLabel("Marianne Haupt, Stefanie Liebhart", JLabel.CENTER);

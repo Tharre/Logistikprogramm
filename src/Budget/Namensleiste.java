@@ -29,7 +29,7 @@ public class Namensleiste extends JPanel {
 
 		nameL = new JLabel("Startseite", JLabel.CENTER); // erscheint gleich zu
 		// Beginn
-		u = this.getClass().getResource("res/navipanel.gif");
+		u = this.getClass().getResource("../navipanel.gif");
 		image = new ImageIcon(u).getImage();
 
 		add(nameL); // Label hinzufügen

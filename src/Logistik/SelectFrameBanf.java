@@ -87,7 +87,7 @@ public class SelectFrameBanf extends JDialog {
 					r.add(lbl);
 				}
 
-				JButton btn = LayoutButtonCreator.createButton("res/ok.gif",
+				JButton btn = LayoutButtonCreator.createButton("../ok.gif",
 						"auswählen");
 				r.add(btn);
 				rows.add(r);
