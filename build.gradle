@@ -19,6 +19,7 @@ repositories {
 }
 
 dependencies {
+    compile 'mysql:mysql-connector-java:5.1.16'
     compile 'org.eclipse.birt.runtime.3_7_1:com.lowagie.text:2.1.7'
     compile 'javax.mail:javax.mail-api:1.5.4'
     compile 'org.apache.poi:poi:3.13'
