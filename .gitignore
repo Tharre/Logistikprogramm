@@ -2,6 +2,7 @@
 .gradle/
 bin/
 out/
+gen/
 .classpath
 .project
 .settings/
