@@ -130,7 +130,7 @@ public class Logistik extends JFrame {
 	}
 
 	public static void main(String[] args) {
-		new Logistik("Logistik", new UserImport(".STAREK.VISITORS.HTBL",
+		new Logistik("Logistik", new UserImport(".MAY.TEACHERS.WI.HTBL",
 				new DBConnection("logistik_2", "root", "test"), null));
 	}
 
