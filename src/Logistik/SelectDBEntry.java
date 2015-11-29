@@ -29,14 +29,11 @@ public class SelectDBEntry<E extends Record, T> extends JPanel implements Action
 	private final EventList<T> list;
 	private final LConnection server;
 	private final Table<E> table;
-	private final Class<E> typeParameterClass;
 
-	public SelectDBEntry(final LConnection server, Table<E> table, TableField<E, T> wanted,
-			Class<E> typeParameterClass) {
-		this.table = table;
-		this.typeParameterClass = typeParameterClass;
+	public SelectDBEntry(LConnection server, TableField<E, T> wanted) {
+		this.table = wanted.getTable();
 		this.server = server;
-		list = GlazedLists.eventList(server.getTableField(this.table, wanted));
+		list = GlazedLists.eventList(server.getTableField(table, wanted));
 
 		setLayout(new BorderLayout());
 		box = new JComboBox<String>();
@@ -65,7 +62,7 @@ public class SelectDBEntry<E extends Record, T> extends JPanel implements Action
 			// TODO(Tharre): what should happen if we switch to another window?
 			String[] propertyNames = { "id", "bezeichnung", "erstellungsdatum", "bundesnr", "inventurgruppe", "stueck",
 					"meldebestand", "lagerort", "erfasser", "fixkosten", "gefahr" };
-			SelectDBEntryDialog k = new SelectDBEntryDialog(server, table, typeParameterClass, propertyNames);
+			SelectDBEntryDialog k = new SelectDBEntryDialog(server, table, propertyNames);
 
 			k.addObserver(this);
 			System.out.println("He pressed the button");

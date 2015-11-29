@@ -29,13 +29,14 @@ import ca.odell.glazedlists.swing.AdvancedTableModel;
 import ca.odell.glazedlists.swing.GlazedListsSwing;
 import ca.odell.glazedlists.swing.TableComparatorChooser;
 import ca.odell.glazedlists.swing.TextComponentMatcherEditor;
-import sql.generated.logistik_2.tables.records.MaterialRecord;
 
 public class SelectDBEntryDialog extends Observable {
 
 	// TODO(Tharre): can we do better than passing propertyNames?
-	public <E extends Record> SelectDBEntryDialog(LConnection server, Table<E> table, Class<E> typeParameterClass,
+	public <E extends Record> SelectDBEntryDialog(LConnection server, Table<E> table,
 			String[] propertyNames) {
+		@SuppressWarnings("unchecked")
+		Class<E> typeParameterClass = (Class<E>) table.getRecordType();
 		EventList<E> list = GlazedLists.eventList(server.getTableData(table));
 		SortedList<E> sortedList = new SortedList<>(list);
 
@@ -94,8 +95,7 @@ public class SelectDBEntryDialog extends Observable {
 	public static void main(String[] args) throws Exception {
 		LConnection server = new LConnection();
 
-		new SelectDBEntryDialog(server, MATERIAL, MaterialRecord.class,
-				new String[] { "id", "bezeichnung", "erstellungsdatum", "bundesnr", "inventurgruppe", "stueck",
-						"meldebestand", "lagerort", "erfasser", "fixkosten", "gefahr" });
+		new SelectDBEntryDialog(server, MATERIAL, new String[] { "id", "bezeichnung", "erstellungsdatum", "bundesnr",
+				"inventurgruppe", "stueck", "meldebestand", "lagerort", "erfasser", "fixkosten", "gefahr" });
 	}
 }
