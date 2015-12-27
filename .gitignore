@@ -6,3 +6,5 @@ gen/
 .classpath
 .project
 .settings/
+.idea/
+Logistikprogramm.iml
