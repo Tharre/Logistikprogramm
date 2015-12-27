@@ -37,7 +37,7 @@ public class Logistik extends JFrame {
 		setSize(500, 500);
 		setExtendedState(Frame.MAXIMIZED_BOTH);
 		con = user.getConnection();
-		// setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setLocationRelativeTo(null);
 
 		Container c = getContentPane();
