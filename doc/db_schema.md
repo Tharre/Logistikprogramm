@@ -103,8 +103,8 @@ CREATE TABLE `Bestand` (
 	material_id		INT(11)			NOT NULL,
 	lagerort_id		INT(11)			NOT NULL,
 	einheit_id		INT(11)			NOT NULL,
-	menge			Decimal(11,3)	NOT NULL,
-	meldebestand	Decimal(11,3)	NOT NULL
+	menge			DECIMAL(11,3)	NOT NULL,
+	meldebestand	DECIMAL(11,3)	NOT NULL
 );
 ```
 
@@ -131,7 +131,7 @@ umsNr, araNr
 ```sql
 CREATE TABLE `Firma` (
 	PRIMARY KEY (id),
-	FOREIGN KEY (staat_id) REFERENCES Staat(id),
+	FOREIGN KEY (staat_id)	REFERENCES Staat(id),
 	id				INT(11)			NOT NULL,
 	bezeichnung		VARCHAR(255)	NOT NULL,
 	erstelldatum	DATETIME		NOT NULL,
@@ -287,17 +287,17 @@ CREATE TABLE `Bestbanfpos` (
 	bestbanf_id		INT(11)			NOT NULL,
 	pos				INT(11)			NOT NULL,
 	material_id		INT(11)			NOT NULL,
-	menge			Decimal(11,3)	NOT NULL,
+	menge			DECIMAL(11,3)	NOT NULL,
 	einheit_id		INT(11)			NOT NULL,
 	status			INT(11)			NOT NULL,
 	firma_id		INT(11),
-	preis			Decimal(11,3),
+	preis			DECIMAL(11,3),
 	mwst			INT(11),
 					CONSTRAINT chk_banf
 					CHECK((firma_id IS NOT NULL
 							AND preis IS NOT NULL
 							AND mwst IS NOT NULL) OR status <= 2),
-	bezahlt			Decimal(11,3),
+	bezahlt			DECIMAL(11,3),
 					CONSTRAINT chk_bestellung
 					CHECK(bezahlt IS NULL OR status >= 3),
 	kommentar		VARCHAR(255)
@@ -313,5 +313,27 @@ uid, einkaeufergrp
 CREATE TABLE `Eigendaten` (
 	uid				VARCHAR(255)	NOT NULL,
 	einkaeufergrp	VARCHAR(255)	NOT NULL
+);
+```
+
+Buchungen
+=========
+
+**id**, _user_id_, _kostenstelle_id_, datum, _material_id_, menge, _einheit_id_
+
+```sql
+CREATE TABLE `Buchungen` (
+	PRIMARY KEY (id),
+	FOREIGN KEY (user_id) REFERENCES User(id),
+	FOREIGN KEY (kostenstelle_id) REFERENCES Kostenstelle(id),
+	FOREIGN KEY (material_id)	REFERENCES Material(id),
+	FOREIGN KEY (einheit_id)	REFERENCES Einheit(id),
+	id				INT(11)			NOT NULL,
+	user_id			INT(11)			NOT NULL,
+	kostenstelle_id	INT(11)			NOT NULL,
+	datum			DATETIME		NOT NULL,
+	material_id		INT(11)			NOT NULL,
+	menge			DECIMAL(11,3)	NOT NULL,
+	einheit_id		INT(11)			NOT NULL
 );
 ```
