@@ -1,4 +1,4 @@
-package Logistik;
+package org.htl_hl.Logistikprogramm;
 
 import static sql.generated.logistik_2.Tables.MATERIAL;
 
@@ -33,8 +33,7 @@ import ca.odell.glazedlists.swing.TextComponentMatcherEditor;
 public class SelectDBEntryDialog extends Observable {
 
 	// TODO(Tharre): can we do better than passing propertyNames?
-	public <E extends Record> SelectDBEntryDialog(LConnection server, Table<E> table,
-			String[] propertyNames) {
+	public <E extends Record> SelectDBEntryDialog(LConnection server, Table<E> table, String[] propertyNames) {
 		@SuppressWarnings("unchecked")
 		Class<E> typeParameterClass = (Class<E>) table.getRecordType();
 		EventList<E> list = GlazedLists.eventList(server.getTableData(table));

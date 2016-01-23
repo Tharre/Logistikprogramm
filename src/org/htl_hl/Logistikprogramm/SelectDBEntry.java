@@ -1,4 +1,4 @@
-package Logistik;
+package org.htl_hl.Logistikprogramm;
 
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
