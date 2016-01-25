@@ -5,30 +5,34 @@ import java.awt.*;
 
 
 public class TabHelper {
-	private static int index;
-	private static Color colors[] =
-			{new Color(240, 40, 40), new Color(240, 140, 10), new Color(185, 195, 15), new Color(20, 210, 50),
+	private int index;
+	private Color colors[] =
+			{new Color(240, 40, 40), new Color(240, 140, 10), new Color(195, 195, 5), new Color(20, 195, 35),
 			 new Color(60, 60, 230), new Color(160, 25, 170)};
+	private JTabbedPane tabbedPane;
+	
+	public TabHelper(JTabbedPane tabbedPane){
+		this.tabbedPane = tabbedPane;
+		
+		tabbedPane = new JTabbedPane();
+		tabbedPane.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
+		tabbedPane.setUI(new MyTabbedPaneUI());
+	}
 
-	static void add(JTabbedPane tabbedPane, String label, JPanel panel) {
+	public void add(String label, JPanel panel) {
 		int count = tabbedPane.getTabCount() % colors.length;
 		int tabCount = tabbedPane.getTabCount() - 1;
-		JButton btnTab = new JButton("Neuen Tab öffnen");
 
 		if (label.contains("Neuer Tab")) {
 			index++;
 			label = "Neuer Tab " + index;
 		}
 
-		MyActionHandler actionhandler = new MyActionHandler(tabbedPane, label);
-		btnTab.addActionListener(actionhandler);
-
 		for (int i = 0; i <= tabCount; i++) {
 			if (tabbedPane.getComponentAt(i).getName().equals(label))
 				return;
 		}
 
-		panel.add(btnTab);
 		tabbedPane.addTab(label, panel);
 
 		tabCount = tabbedPane.getTabCount() - 1;
@@ -52,9 +56,13 @@ public class TabHelper {
 
 		tabbedPane.setTabComponentAt(tabCount, pnlTab);
 
-		btnClose.addActionListener(actionhandler);
+		btnClose.addActionListener(new MyActionHandler(this, label));
 
 		tabCount = tabbedPane.getTabCount() - 1;
 		tabbedPane.setSelectedIndex(tabCount);
+	}
+	
+	public JTabbedPane getTabbedPane(){
+		return tabbedPane;
 	}
 }

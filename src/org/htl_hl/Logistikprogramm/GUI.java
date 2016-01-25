@@ -19,7 +19,7 @@ public class GUI extends JFrame implements MouseListener, ActionListener {
 	RootPanel rootpanel;
 	Container c = this;
 	TreePath currentPath;
-	JTabbedPane tabbedPane;
+	TabHelper tabHelper = new TabHelper(new JTabbedPane());
 
 	// Menüleiste
 	JMenuBar menubar;
@@ -78,14 +78,10 @@ public class GUI extends JFrame implements MouseListener, ActionListener {
 
 		rootpanel = new RootPanel();
 		c.add(rootpanel, BorderLayout.WEST);
-		tabbedPane = new JTabbedPane();
-		tabbedPane.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
-		c.add(tabbedPane, BorderLayout.CENTER);
+		c.add(tabHelper.getTabbedPane(), BorderLayout.CENTER);
 
 		rootpanel.tree.addMouseListener(this);
 		setVisible(true);
-
-		tabbedPane.setUI(new MyTabbedPaneUI());
 	}
 
 	private String toString(TreePath path) {
@@ -125,7 +121,7 @@ public class GUI extends JFrame implements MouseListener, ActionListener {
 				String[] propertyNames =
 						{"ID", "Bezeichnung", "Erstelldatum", "Nr", "Inventurgruppe", "Ersteller", "Gefahrstufe"};
 				int[] hyperlinkColumns = {4};
-
+				
 				return new MultiEdit(result, new RecordTableFormat(propertyNames), hyperlinkColumns);
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -155,7 +151,7 @@ public class GUI extends JFrame implements MouseListener, ActionListener {
 		DefaultMutableTreeNode treeNode = (DefaultMutableTreeNode) currentPath.getLastPathComponent();
 		if (treeNode.isLeaf()) {
 			JPanel p = toJPanel(s);
-			TabHelper.add(tabbedPane, s, p);
+			tabHelper.add(s, p);
 		}
 	}
 

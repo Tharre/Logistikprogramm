@@ -8,11 +8,11 @@ import java.awt.event.ActionListener;
 public class MyActionHandler implements ActionListener {
 
 	private String tabName;
-	JTabbedPane tabbedPane;
+	TabHelper tabHelper;
 
-	public MyActionHandler(JTabbedPane tabbedPane, String tabName) {
+	public MyActionHandler(TabHelper tabHelper, String tabName) {
 		this.tabName = tabName;
-		this.tabbedPane = tabbedPane;
+		this.tabHelper = tabHelper;
 	}
 
 	public String getTabName() {
@@ -21,11 +21,11 @@ public class MyActionHandler implements ActionListener {
 
 	public void actionPerformed(ActionEvent e) {
 		if (e.getActionCommand() == "Neuen Tab öffnen") {
-			TabHelper.add(tabbedPane, "Neuer Tab", new JPanel());
+			tabHelper.add("Neuer Tab", new JPanel());
 		} else {
-			int index = tabbedPane.indexOfTab(getTabName());
+			int index = tabHelper.getTabbedPane().indexOfTab(getTabName());
 			if (index >= 0) {
-				tabbedPane.removeTabAt(index);
+				tabHelper.getTabbedPane().removeTabAt(index);
 			}
 		}
 	}
