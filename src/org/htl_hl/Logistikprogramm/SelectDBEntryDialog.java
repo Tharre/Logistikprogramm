@@ -1,23 +1,5 @@
 package org.htl_hl.Logistikprogramm;
 
-import static sql.generated.logistik_2.Tables.MATERIAL;
-
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.Insets;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.util.Observable;
-
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
-import javax.swing.JTextField;
-
-import org.jooq.Record;
-import org.jooq.Table;
-
 import ca.odell.glazedlists.EventList;
 import ca.odell.glazedlists.FilterList;
 import ca.odell.glazedlists.GlazedLists;
@@ -29,6 +11,16 @@ import ca.odell.glazedlists.swing.AdvancedTableModel;
 import ca.odell.glazedlists.swing.GlazedListsSwing;
 import ca.odell.glazedlists.swing.TableComparatorChooser;
 import ca.odell.glazedlists.swing.TextComponentMatcherEditor;
+import org.jooq.Record;
+import org.jooq.Table;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.util.Observable;
+
+import static sql.generated.logistik_2.Tables.MATERIAL;
 
 public class SelectDBEntryDialog extends Observable {
 

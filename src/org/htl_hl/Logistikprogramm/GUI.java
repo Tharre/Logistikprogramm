@@ -1,5 +1,7 @@
 package org.htl_hl.Logistikprogramm;
 
+import org.jooq.Result;
+
 import javax.swing.*;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.TreePath;
@@ -8,6 +10,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+
+import static sql.generated.logistik_test.Tables.*;
 
 
 public class GUI extends JFrame implements MouseListener, ActionListener {
@@ -95,16 +99,43 @@ public class GUI extends JFrame implements MouseListener, ActionListener {
 				break;
 		}
 
-		for (int i = hilfsString.length() - laenge + 1; i < hilfsString.length() - 1; i++)
+		for (int i = hilfsString.length() - laenge + 1; i < hilfsString.length() - 1; i++) {
 			leaf += hilfsString.charAt(i);
+		}
 
 		return leaf;
 	}
 
 	private JPanel toJPanel(String s) {
-		JPanel p = new JPanel();
-		p.add(new JLabel(s));
-		return p;
+		if (s.equals("Materialien anzeigen")) {
+			try {
+				LConnection server = new LConnection();
+				Result<?> result = server.create
+						.select(MATERIAL.ID, MATERIAL.BEZEICHNUNG, MATERIAL.ERSTELLDATUM, BUNDESNR.NR,
+								INVENTURGRUPPE.BEZEICHNUNG, USER.CN, MATERIAL.GEFAHRSTUFE)
+						.from(MATERIAL)
+						.leftOuterJoin(BUNDESNR)
+						.on(MATERIAL.BUNDESNR_ID.equal(BUNDESNR.ID))
+						.leftOuterJoin(INVENTURGRUPPE)
+						.on(MATERIAL.INVENTURGRP_ID.equal(INVENTURGRUPPE.ID))
+						.leftOuterJoin(USER)
+						.on(MATERIAL.ERFASSER_ID.equal(USER.ID))
+						.fetch();
+
+				String[] propertyNames =
+						{"ID", "Bezeichnung", "Erstelldatum", "Nr", "Inventurgruppe", "Ersteller", "Gefahrstufe"};
+				int[] hyperlinkColumns = {4};
+
+				return new MultiEdit(result, new RecordTableFormat(propertyNames), hyperlinkColumns);
+			} catch (Exception e) {
+				e.printStackTrace();
+				return null;
+			}
+		} else {
+			JPanel p = new JPanel();
+			p.add(new JLabel(s));
+			return p;
+		}
 	}
 
 	public static void main(String[] args) {
