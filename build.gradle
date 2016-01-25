@@ -46,13 +46,17 @@ buildscript {
 // Use your favourite XML builder to construct the code generation configuration file
 // ----------------------------------------------------------------------------------
 def writer = new StringWriter()
+
+Properties dbSettings = new Properties()
+dbSettings.load(new FileInputStream("res/sql_auth.properties"))
+
 def xml = new groovy.xml.MarkupBuilder(writer)
 .configuration('xmlns': 'http://www.jooq.org/xsd/jooq-codegen-3.6.0.xsd') {
     jdbc() {
         driver('com.mysql.jdbc.Driver')
-        url('jdbc:mysql://localhost:3306/')
-        user('root')
-        password('test')
+        url('jdbc:mysql://' + dbSettings['server'] + '/')
+        user(dbSettings['username'])
+        password(dbSettings['password'])
     }
     generator() {
         database() {

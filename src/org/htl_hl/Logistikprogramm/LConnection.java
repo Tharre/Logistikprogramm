@@ -3,6 +3,7 @@ package org.htl_hl.Logistikprogramm;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.util.List;
+import java.util.Properties;
 
 import org.jooq.*;
 import org.jooq.impl.DSL;
@@ -16,8 +17,15 @@ public class LConnection {
 		// TODO(Tharre): should connect with the server here
 		// but instead we are going to connect with the DB for now to simulate that
 
-		String url = "jdbc:mysql://127.0.0.1:3306/";
-		connection = DriverManager.getConnection(url, "root", "test");
+		Properties config = new Properties();
+		config.load(Thread.currentThread().getContextClassLoader().getResourceAsStream("sql_auth.properties"));
+
+		String server = config.getProperty("server");
+		String username = config.getProperty("username");
+		String password = config.getProperty("password");
+
+		String url = "jdbc:mysql://" + server + "/";
+		connection = DriverManager.getConnection(url, username, password);
 
 		create = DSL.using(connection, SQLDialect.MYSQL);
 	}
