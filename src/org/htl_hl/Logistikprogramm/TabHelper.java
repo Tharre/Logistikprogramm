@@ -5,7 +5,6 @@ import java.awt.*;
 
 
 public class TabHelper {
-	private int index;
 	private Color colors[] =
 			{new Color(240, 40, 40), new Color(240, 140, 10), new Color(195, 195, 5), new Color(20, 195, 35),
 			 new Color(60, 60, 230), new Color(160, 25, 170)};
@@ -22,11 +21,6 @@ public class TabHelper {
 	public void add(String label, JPanel panel) {
 		int count = tabbedPane.getTabCount() % colors.length;
 		int tabCount = tabbedPane.getTabCount() - 1;
-
-		if (label.contains("Neuer Tab")) {
-			index++;
-			label = "Neuer Tab " + index;
-		}
 
 		for (int i = 0; i <= tabCount; i++) {
 			if (tabbedPane.getComponentAt(i).getName().equals(label))
