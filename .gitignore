@@ -8,3 +8,4 @@ gen/
 .settings/
 .idea/
 Logistikprogramm.iml
+res/sql_auth.properties
