@@ -1,38 +1,39 @@
-Bundesnr
+bundesnr
 ========
 
 **id**, bezeichnung
 
 ```sql
-CREATE TABLE `Bundesnr` (
+CREATE TABLE `bundesnr` (
 	PRIMARY KEY (id),
-	id			INT(11)			NOT NULL,
-	bezeichnung	VARCHAR(255)	NOT NULL
+	id			INT(11)			NOT NULL	AUTO_INCREMENT,
+	bezeichnung	VARCHAR(255)	NOT NULL,
+	nr			VARCHAR(255)	NOT NULL
 );
 ```
 
-Inventurgruppe
+inventurgruppe
 ==============
 
 **id**, bezeichnung
 
 ```sql
-CREATE TABLE `Inventurgruppe` (
+CREATE TABLE `inventurgruppe` (
 	PRIMARY KEY (id),
-	id			INT(11)			NOT NULL,
+	id			INT(11)			NOT NULL	AUTO_INCREMENT,
 	bezeichnung	VARCHAR(255)	NOT NULL
 );
 ```
 
-User
+user
 ====
 
 **id**, vorname, nachname, cn
 
 ```sql
-CREATE TABLE `User` (
+CREATE TABLE `user` (
 	PRIMARY KEY (id),
-	id			INT(11)			NOT NULL,
+	id			INT(11)			NOT NULL	AUTO_INCREMENT,
 	vorname		VARCHAR(255)	NOT NULL,
 	nachname	VARCHAR(255),
 	cn			VARCHAR(255)	NOT NULL,
@@ -40,88 +41,88 @@ CREATE TABLE `User` (
 );
 ```
 
-Material
+material
 ========
 
 **id**, bezeichnung, erstelldatum, _bundesnr_id_, _inventurgrp_id_,
 _lagerort_id_, _erfasser_id_, gefahrstufe
 
 ```sql
-CREATE TABLE `Material` (
+CREATE TABLE `material` (
 	PRIMARY KEY (id),
-	FOREIGN KEY (bundesnr_id)		REFERENCES Bundesnr(id),
-	FOREIGN KEY (inventurgrp_id)	REFERENCES Inventurgruppe(id),
-	FOREIGN KEY (erfasser_id)		REFERENCES User(id),
-	id				INT(11)			NOT NULL,
+	FOREIGN KEY (bundesnr_id)		REFERENCES bundesnr(id),
+	FOREIGN KEY (inventurgrp_id)	REFERENCES inventurgruppe(id),
+	FOREIGN KEY (erfasser_id)		REFERENCES user(id),
+	id				INT(11)			NOT NULL	AUTO_INCREMENT,
 	bezeichnung		VARCHAR(255)	NOT NULL,
 	erstelldatum	DATETIME		NOT NULL,
 	bundesnr_id		INT(11)			NOT NULL,
 	inventurgrp_id	INT(11)			NOT NULL,
-	erfasser_id		INT(11)			NOT NULL,
+	erfasser_id		INT(11),
 	gefahrstufe		INT(11)			NOT NULL
 );
 ```
 
-Lagerort
+lagerort
 ========
 
 **id**, bezeichnung
 
 ```sql
-CREATE TABLE `Lagerort` (
+CREATE TABLE `lagerort` (
 	PRIMARY KEY (id),
-	id			INT(11)			NOT NULL,
+	id			INT(11)			NOT NULL	AUTO_INCREMENT,
 	bezeichnung	VARCHAR(255)	NOT NULL
 );
 ```
 
-Einheit
+einheit
 =======
 
 **id**, bezeichnung
 
 ```sql
-CREATE TABLE `Einheit` (
+CREATE TABLE `einheit` (
 	PRIMARY KEY (id),
-	id			INT(11)		NOT NULL,
+	id			INT(11)		NOT NULL	AUTO_INCREMENT,
 	bezeichnung	VARCHAR(20)	NOT NULL
 );
 ```
 
-Bestand
+bestand
 =======
 
 **id**, _material_id_, _lagerort_id_, menge, meldebestand
 
 ```sql
-CREATE TABLE `Bestand` (
+CREATE TABLE `bestand` (
 	PRIMARY KEY (id),
-	FOREIGN KEY (material_id)	REFERENCES Material(id),
-	FOREIGN KEY (lagerort_id)	REFERENCES Lagerort(id),
-	FOREIGN KEY (einheit_id)	REFERENCES Einheit(id),
-	id				INT(11)			NOT NULL,
+	FOREIGN KEY (material_id)	REFERENCES material(id),
+	FOREIGN KEY (lagerort_id)	REFERENCES lagerort(id),
+	FOREIGN KEY (einheit_id)	REFERENCES einheit(id),
+	id				INT(11)			NOT NULL	AUTO_INCREMENT,
 	material_id		INT(11)			NOT NULL,
 	lagerort_id		INT(11)			NOT NULL,
 	einheit_id		INT(11)			NOT NULL,
-	menge			DECIMAL(11,3)	NOT NULL,
-	meldebestand	DECIMAL(11,3)	NOT NULL
+	menge			DECIMAL(19,4)	NOT NULL,
+	meldebestand	DECIMAL(19,4)	NOT NULL
 );
 ```
 
-Staat
+staat
 =====
 
 **id**, bezeichnung
 
 ```sql
-CREATE TABLE `Staat` (
+CREATE TABLE `staat` (
 	PRIMARY KEY (id),
-	id			INT(11)			NOT NULL,
+	id			INT(11)			NOT NULL	AUTO_INCREMENT,
 	bezeichnung	VARCHAR(255)	NOT NULL
 );
 ```
 
-Firma
+firma
 =====
 
 **id**, bezeichnung, erstelldatum, _staat_id_, ort, plz, strasse, mail,
@@ -129,10 +130,10 @@ kundennr, sachbearbeiter, telefon, fax, homepage, konditionen, kreditorennr,
 umsNr, araNr
 
 ```sql
-CREATE TABLE `Firma` (
+CREATE TABLE `firma` (
 	PRIMARY KEY (id),
-	FOREIGN KEY (staat_id)	REFERENCES Staat(id),
-	id				INT(11)			NOT NULL,
+	FOREIGN KEY (staat_id)	REFERENCES staat(id),
+	id				INT(11)			NOT NULL	AUTO_INCREMENT,
 	bezeichnung		VARCHAR(255)	NOT NULL,
 	erstelldatum	DATETIME		NOT NULL,
 	staat_id		INT(11)			NOT NULL,
@@ -148,100 +149,123 @@ CREATE TABLE `Firma` (
 	konditionen		VARCHAR(255),
 	kreditorennr	VARCHAR(255),
 	umsNr			VARCHAR(255),
-	araNr			VARCHAR(255)
+	araNr			VARCHAR(255),
+	kommentar		VARCHAR(2048)
 );
 ```
 
-Firma_Material
+firma_material
 ==============
 
 **firma_id**, **material_id**, preis, mwst, _einheit_id_, artNr
 
 ```sql
-CREATE TABLE `Firma_Material` (
+CREATE TABLE `firma_material` (
 	PRIMARY KEY (firma_id, material_id),
-	FOREIGN KEY (firma_id)		REFERENCES Firma(id),
-	FOREIGN KEY (material_id)	REFERENCES Material(id),
-	FOREIGN KEY (einheit_id)	REFERENCES Einheit(id),
+	FOREIGN KEY (firma_id)		REFERENCES firma(id),
+	FOREIGN KEY (material_id)	REFERENCES material(id),
+	FOREIGN KEY (einheit_id)	REFERENCES einheit(id),
 	firma_id	INT(11)			NOT NULL,
 	material_id	INT(11)			NOT NULL,
-	preis		DECIMAL(11,3)	NOT NULL,
+	preis		DECIMAL(19,4)	NOT NULL,
 	mwst		INT(11)			NOT NULL,
 	einheit_id	INT(11)			NOT NULL,
 	artNr		VARCHAR(255)
 );
 ```
 
-Kostenstelle
+kostenstelle
 ============
 
 **id**, bezeichnung
 
 ```sql
-CREATE TABLE `Kostenstelle` (
+CREATE TABLE `kostenstelle` (
 	PRIMARY KEY (id),
-	id			INT(11)			NOT NULL,
+	id			INT(11)			NOT NULL	AUTO_INCREMENT,
 	bezeichnung	VARCHAR(255)	NOT NULL
 );
 ```
 
-Budget
+budget
 ======
 
 **id**, bezeichnung
 
 ```sql
-CREATE TABLE `Budget` (
+CREATE TABLE `budget` (
 	PRIMARY KEY (id),
-	id			INT(11)			NOT NULL,
+	id			INT(11)			NOT NULL	AUTO_INCREMENT,
 	bezeichnung	VARCHAR(255)	NOT NULL
 );
 ```
 
-Wnummer
-=======
-
-**id**, bezeichnung
-
-```sql
-CREATE TABLE `Wnummer` (
-	PRIMARY KEY (id),
-	id			INT(11)			NOT NULL,
-	bezeichnung	VARCHAR(255)	NOT NULL
-);
-```
-
-Bestbanf
-========
+banf
+====
 
 **id**, _antragsteller_id_, _kostenstelle_id_, erstelldatum, wunschdatum,
-_budget_id_, _wnummer_id_, kommentar
+kommentar
 
 ```sql
-CREATE TABLE `Bestbanf` (
+CREATE TABLE `banf` (
 	PRIMARY KEY (id),
-	FOREIGN KEY (antragsteller_id)	REFERENCES User(id),
-	FOREIGN KEY (kostenstelle_id)	REFERENCES Kostenstelle(id),
-	FOREIGN KEY (budget_id)			REFERENCES Budget(id),
-	FOREIGN KEY (wnummer_id)		REFERENCES Wnummer(id),
-	id					INT(11)		NOT NULL,
+	FOREIGN KEY (antragsteller_id)	REFERENCES user(id),
+	FOREIGN KEY (kostenstelle_id)	REFERENCES kostenstelle(id),
+	id					INT(11)		NOT NULL	AUTO_INCREMENT,
 	antragsteller_id	INT(11)		NOT NULL,
 	kostenstelle_id		INT(11)		NOT NULL,
 	erstelldatum		DATETIME	NOT NULL,
-	wunschdatum			DATETIME	NOT NULL,
-	budget_id			INT(11),
-	wnummer_id			INT(11),
+	wunschdatum			DATETIME,
 	kommentar			VARCHAR(2048)
 );
 ```
 
-Bestbanfstatus
+anschrift
+=========
+
+**id**, bezeichnung
+
+```sql
+CREATE TABLE `anschrift` (
+	PRIMARY KEY (id),
+	id			INT(11)			NOT NULL	AUTO_INCREMENT,
+	bezeichnung	VARCHAR(255)	NOT NULL
+);
+```
+
+bestellung
+==========
+
+**id**, _firma_id_, _budget_id_, _anschrift_id_, erstelldatum, wnummer,
+kommentar
+
+```sql
+CREATE TABLE `bestellung` (
+	PRIMARY KEY (id),
+	FOREIGN KEY (ersteller_id)		REFERENCES user(id),
+	FOREIGN KEY (firma_id)			REFERENCES firma(id),
+	FOREIGN KEY (budget_id)			REFERENCES budget(id),
+	FOREIGN KEY (anschrift_id)		REFERENCES anschrift(id),
+	id				INT(11)			NOT NULL	AUTO_INCREMENT,
+	ersteller_id	INT(11)			NOT NULL,
+	firma_id		INT(11)			NOT NULL,
+	budget_id		INT(11)			NOT NULL,
+	anschrift_id	INT(11)			NOT NULL,
+	erstelldatum	DATETIME		NOT NULL,
+	wnummer			VARCHAR(255)	NOT NULL,
+	bezahlt			DECIMAL(19,4),
+	-- TODO: field for "deleted"
+	kommentar		VARCHAR(2048)
+);
+```
+
+bestbanfstatus
 ==============
 
 **id**, bezeichnung
 
 ```sql
-CREATE TABLE `Bestbanfstatus` (
+CREATE TABLE `bestbanfstatus` (
 	PRIMARY KEY (id),
 	id			INT(11)			NOT NULL,
 	bezeichnung	VARCHAR(255)	NOT NULL
@@ -251,89 +275,84 @@ CREATE TABLE `Bestbanfstatus` (
 ## Mögliche Werte
 - 1: nicht bestellt
 - 2: abgewiesen
-- 3: bestellt (aber noch nicht versandt)
-- 4: versandt
-- 5: abweichend geliefert
-- 6: nicht lieferbar
-- 7: geliefert
+- 3: angenommen
+- 4: bestellt (aber noch nicht versandt)
+- 5: versandt
+- 6: abweichend geliefert
+- 7: nicht lieferbar
+- 8: geliefert
 
 ## SQL
 
 ```sql
-INSERT INTO Bestbanfstatus (id, bezeichnung) VALUES
-	(1, "nicht bestellt"),
+INSERT INTO bestbanfstatus (id, bezeichnung) VALUES
+	(1, "nicht bearbeitet"),
 	(2, "abgewiesen"),
-	(3, "bestellt"),
-	(4, "versandt"),
-	(5, "abweichend geliefert"),
-	(6, "nicht lieferbar"),
-	(7, "geliefert");
+	(3, "angenommen"),
+	(4, "bestellt"),
+	(5, "versandt"),
+	(6, "abweichend geliefert"),
+	(7, "nicht lieferbar"),
+	(8, "geliefert");
 ```
 
-Bestbanfpos
+bestbanfpos
 ===========
 
-**bestbanf_id**, **pos**, _material_id_, menge, _einheit_id_, _status_,
-_firma_id_, preis, mwst, bezahlt, kommentar
+**id**, _material_id_, menge, _einheit_id_, preis, mwst, _status_, kommentar
 
 ```sql
-CREATE TABLE `Bestbanfpos` (
-	PRIMARY KEY (bestbanf_id, pos),
-	FOREIGN KEY (bestbanf_id)	REFERENCES Bestbanf(id),
-	FOREIGN KEY (material_id)	REFERENCES Material(id),
-	FOREIGN KEY (einheit_id)	REFERENCES Einheit(id),
-	FOREIGN KEY (status)		REFERENCES Bestbanfstatus(id),
-	FOREIGN KEY (firma_id)		REFERENCES Firma(id),
-	bestbanf_id		INT(11)			NOT NULL,
-	pos				INT(11)			NOT NULL,
-	material_id		INT(11)			NOT NULL,
-	menge			DECIMAL(11,3)	NOT NULL,
-	einheit_id		INT(11)			NOT NULL,
-	status			INT(11)			NOT NULL,
-	firma_id		INT(11),
-	preis			DECIMAL(11,3),
-	mwst			INT(11),
-					CONSTRAINT chk_banf
-					CHECK((firma_id IS NOT NULL
-							AND preis IS NOT NULL
-							AND mwst IS NOT NULL) OR status <= 2),
-	bezahlt			DECIMAL(11,3),
-					CONSTRAINT chk_bestellung
-					CHECK(bezahlt IS NULL OR status >= 3),
-	kommentar		VARCHAR(255)
+CREATE TABLE `bestbanfpos` (
+	PRIMARY KEY (id),
+	FOREIGN KEY (material_id)	REFERENCES material(id),
+	FOREIGN KEY (einheit_id)	REFERENCES einheit(id),
+	FOREIGN KEY (status)		REFERENCES bestbanfstatus(id),
+	id			INT(11)			NOT NULL	AUTO_INCREMENT,
+	material_id	INT(11)			NOT NULL,
+	menge		DECIMAL(19,4)	NOT NULL,
+	einheit_id	INT(11)			NOT NULL,
+	preis		DECIMAL(19,4),
+	mwst		INT(11),
+				CONSTRAINT chk_banf
+				CHECK((preis IS NOT NULL
+						AND mwst IS NOT NULL) OR status <= 2),
+	status		INT(11)			NOT NULL,
+	kommentar	VARCHAR(255)
 );
 ```
 
-Eigendaten
+eigendaten
 ==========
 
 uid, einkaeufergrp
 
 ```sql
-CREATE TABLE `Eigendaten` (
+CREATE TABLE `eigendaten` (
 	uid				VARCHAR(255)	NOT NULL,
 	einkaeufergrp	VARCHAR(255)	NOT NULL
 );
 ```
 
-Buchungen
+buchungen
 =========
 
-**id**, _user_id_, _kostenstelle_id_, datum, _material_id_, menge, _einheit_id_
+**id**, _user_id_, _kostenstelle_id_, datum, _material_id_, menge, _einheit_id_, _firma_id_
 
 ```sql
-CREATE TABLE `Buchungen` (
+CREATE TABLE `buchungen` (
 	PRIMARY KEY (id),
-	FOREIGN KEY (user_id) REFERENCES User(id),
-	FOREIGN KEY (kostenstelle_id) REFERENCES Kostenstelle(id),
-	FOREIGN KEY (material_id)	REFERENCES Material(id),
-	FOREIGN KEY (einheit_id)	REFERENCES Einheit(id),
-	id				INT(11)			NOT NULL,
+	FOREIGN KEY (user_id)			REFERENCES user(id),
+	FOREIGN KEY (kostenstelle_id)	REFERENCES kostenstelle(id),
+	FOREIGN KEY (material_id)		REFERENCES material(id),
+	FOREIGN KEY (einheit_id)		REFERENCES einheit(id),
+	FOREIGN KEY (firma_id)			REFERENCES firma(id),
+	id				INT(11)			NOT NULL	AUTO_INCREMENT,
 	user_id			INT(11)			NOT NULL,
-	kostenstelle_id	INT(11)			NOT NULL,
+	kostenstelle_id	INT(11),
 	datum			DATETIME		NOT NULL,
 	material_id		INT(11)			NOT NULL,
-	menge			DECIMAL(11,3)	NOT NULL,
-	einheit_id		INT(11)			NOT NULL
+	menge			DECIMAL(19,4)	NOT NULL,
+	einheit_id		INT(11), -- TODO: this shouldn't be NULL
+	firma_id		INT(11)
 );
 ```
