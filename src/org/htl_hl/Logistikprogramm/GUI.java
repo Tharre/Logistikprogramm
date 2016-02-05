@@ -1,7 +1,5 @@
 package org.htl_hl.Logistikprogramm;
 
-import org.jooq.Result;
-
 import javax.swing.*;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.TreePath;
@@ -10,8 +8,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-
-import static sql.generated.logistik_test.Tables.*;
 
 
 public class GUI extends JFrame implements MouseListener, ActionListener {
@@ -102,38 +98,6 @@ public class GUI extends JFrame implements MouseListener, ActionListener {
 		return leaf;
 	}
 
-	private JPanel toJPanel(String s) {
-		if (s.equals("Materialien anzeigen")) {
-			try {
-				LConnection server = new LConnection();
-				Result<?> result = server.create
-						.select(MATERIAL.ID, MATERIAL.BEZEICHNUNG, MATERIAL.ERSTELLDATUM, BUNDESNR.NR,
-								INVENTURGRUPPE.BEZEICHNUNG, USER.CN, MATERIAL.GEFAHRSTUFE)
-						.from(MATERIAL)
-						.leftOuterJoin(BUNDESNR)
-						.on(MATERIAL.BUNDESNR_ID.equal(BUNDESNR.ID))
-						.leftOuterJoin(INVENTURGRUPPE)
-						.on(MATERIAL.INVENTURGRP_ID.equal(INVENTURGRUPPE.ID))
-						.leftOuterJoin(USER)
-						.on(MATERIAL.ERFASSER_ID.equal(USER.ID))
-						.fetch();
-
-				String[] propertyNames =
-						{"ID", "Bezeichnung", "Erstelldatum", "Nr", "Inventurgruppe", "Ersteller", "Gefahrstufe"};
-				int[] hyperlinkColumns = {4};
-				
-				return new MultiEdit(result, new RecordTableFormat(propertyNames), hyperlinkColumns);
-			} catch (Exception e) {
-				e.printStackTrace();
-				return null;
-			}
-		} else {
-			JPanel p = new JPanel();
-			p.add(new JLabel(s));
-			return p;
-		}
-	}
-
 	public static void main(String[] args) {
 		new GUI();
 	}
@@ -149,10 +113,23 @@ public class GUI extends JFrame implements MouseListener, ActionListener {
 
 		String s = toString(currentPath);
 		DefaultMutableTreeNode treeNode = (DefaultMutableTreeNode) currentPath.getLastPathComponent();
-		if (treeNode.isLeaf()) {
-			JPanel p = toJPanel(s);
-			tabHelper.add(s, p);
-		}
+		if (!treeNode.isLeaf())
+			return;
+
+        if (s.equals("Materialien anzeigen")) {
+            try {
+                LConnection server = new LConnection();
+                TabManager manager = new TabManager(server, tabHelper);
+
+                manager.addTab("ma01", null);
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        } else {
+            JPanel p = new JPanel();
+            p.add(new JLabel(s));
+            tabHelper.add(s, p);
+        }
 	}
 
 	public void actionPerformed(ActionEvent object) {

@@ -18,7 +18,7 @@ import java.util.List;
 
 public class MultiEdit extends JPanel {
 
-	public <E extends Record> MultiEdit(Result<E> result, TableFormat tf, int[] hyperlinkColumns) {
+	public <E extends Record> MultiEdit(Result<E> result, TableFormat tf, int[] hyperlinkColumns, TabManager tm, int scrollToRow) {
 		EventList<E> list = GlazedLists.eventList(result);
 		SortedList<E> sortedList = new SortedList<>(list);
 
@@ -34,12 +34,15 @@ public class MultiEdit extends JPanel {
 		});
 		FilterList<E> textFilteredRecords = new FilterList<>(sortedList, new ThreadedMatcherEditor<>(tmEditor));
 
-		@SuppressWarnings("unchecked") AdvancedTableModel<E> tm =
+		@SuppressWarnings("unchecked") AdvancedTableModel<E> tableModel =
 				GlazedListsSwing.eventTableModelWithThreadProxyList(textFilteredRecords, tf);
 
-		final JTable t = new JTable(tm);
-		HyperlinkRenderer renderer = new HyperlinkRenderer(hyperlinkColumns);
-		t.getColumnModel().getColumn(4).setCellRenderer(renderer);
+		final JTable t = new JTable(tableModel);
+		HyperlinkRenderer renderer = new HyperlinkRenderer(hyperlinkColumns, tm);
+
+		for (int col : hyperlinkColumns)
+			t.getColumnModel().getColumn(col).setCellRenderer(renderer);
+
 		//t.setDefaultRenderer(URL.class, renderer);
 		t.addMouseListener(renderer);
 		t.addMouseMotionListener(renderer);
@@ -64,5 +67,38 @@ public class MultiEdit extends JPanel {
 		add(new JScrollPane(t),
 		    new GridBagConstraints(0, 1, 2, 1, 1.0, 1.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH,
 		                           new Insets(5, 5, 5, 5), 0, 0));
+
+		// scroll to the specified line
+		for (int i = 0; i < sortedList.size(); ++i) {
+			if (Integer.parseInt(sortedList.get(i).getValue(0).toString()) == scrollToRow) {
+				scrollToVisible(t, i, 0);
+				t.setRowSelectionInterval(i, i);
+				break;
+			}
+		}
+	}
+
+	public static void scrollToVisible(JTable table, int rowIndex, int vColIndex) {
+		if (!(table.getParent() instanceof JViewport)) {
+			return;
+		}
+		JViewport viewport = (JViewport)table.getParent();
+
+		// This rectangle is relative to the table where the
+		// northwest corner of cell (0,0) is always (0,0).
+		Rectangle rect = table.getCellRect(rowIndex, vColIndex, true);
+
+		// The location of the viewport relative to the table
+		Point pt = viewport.getViewPosition();
+
+		// Translate the cell location so that it is relative
+		// to the view, assuming the northwest corner of the
+		// view is (0,0)
+		rect.setLocation(rect.x-pt.x, rect.y-pt.y);
+
+		table.scrollRectToVisible(rect);
+
+		// Scroll the area into view
+		//viewport.scrollRectToVisible(rect);
 	}
 }
