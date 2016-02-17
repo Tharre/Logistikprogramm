@@ -8,8 +8,6 @@ import ca.odell.glazedlists.swing.AdvancedTableModel;
 import ca.odell.glazedlists.swing.GlazedListsSwing;
 import ca.odell.glazedlists.swing.TableComparatorChooser;
 import ca.odell.glazedlists.swing.TextComponentMatcherEditor;
-import org.jooq.Record;
-import org.jooq.Result;
 
 import javax.swing.*;
 import java.awt.*;
@@ -18,34 +16,26 @@ import java.util.List;
 
 public class MultiEdit extends JPanel {
 
-	public <E extends Record> MultiEdit(Result<E> result, TableFormat tf, int[] hyperlinkColumns, TabManager tm, int scrollToRow) {
-		EventList<E> list = GlazedLists.eventList(result);
-		SortedList<E> sortedList = new SortedList<>(list);
+	public <E> MultiEdit(List<E> list, TextFilterator<E> textFilterator, TableFormat<E> tf, TabManager tm,
+						 int[] hyperlinkColumns, int scrollToRow) {
+		EventList<E> eventList = GlazedLists.eventList(list);
+		SortedList<E> sortedList = new SortedList<>(eventList);
 
 		JTextField filterEdit = new JTextField();
-		MatcherEditor<E> tmEditor = new TextComponentMatcherEditor<>(filterEdit, new TextFilterator<E>() {
-			@Override
-			public void getFilterStrings(List<String> baseList, E element) {
-				for (int i = 0; i < element.size(); ++i) {
-					if (element.getValue(i) != null) // literal database NULL
-						baseList.add(element.getValue(i).toString());
-				}
-			}
-		});
+		MatcherEditor<E> tmEditor = new TextComponentMatcherEditor<>(filterEdit, textFilterator);
 		FilterList<E> textFilteredRecords = new FilterList<>(sortedList, new ThreadedMatcherEditor<>(tmEditor));
 
-		@SuppressWarnings("unchecked") AdvancedTableModel<E> tableModel =
-				GlazedListsSwing.eventTableModelWithThreadProxyList(textFilteredRecords, tf);
+		AdvancedTableModel<E> tableModel = GlazedListsSwing.eventTableModelWithThreadProxyList(textFilteredRecords, tf);
 
 		final JTable t = new JTable(tableModel);
-		HyperlinkRenderer renderer = new HyperlinkRenderer(hyperlinkColumns, tm);
 
-		for (int col : hyperlinkColumns)
+		for (int col : hyperlinkColumns) {
+			HyperlinkRenderer renderer = new HyperlinkRenderer(col, tm);
 			t.getColumnModel().getColumn(col).setCellRenderer(renderer);
 
-		//t.setDefaultRenderer(URL.class, renderer);
-		t.addMouseListener(renderer);
-		t.addMouseMotionListener(renderer);
+			t.addMouseListener(renderer);
+			t.addMouseMotionListener(renderer);
+		}
 
 		// TODO(Tharre): improve, improve, improve
 		long startTime = System.nanoTime();
@@ -69,8 +59,8 @@ public class MultiEdit extends JPanel {
 		                           new Insets(5, 5, 5, 5), 0, 0));
 
 		// scroll to the specified line
-		for (int i = 0; i < sortedList.size(); ++i) {
-			if (Integer.parseInt(sortedList.get(i).getValue(0).toString()) == scrollToRow) {
+		for (int i = 0; i < tableModel.getRowCount(); ++i) {
+			if (tableModel.getValueAt(i, 0).equals(scrollToRow)) {
 				scrollToVisible(t, i, 0);
 				t.setRowSelectionInterval(i, i);
 				break;

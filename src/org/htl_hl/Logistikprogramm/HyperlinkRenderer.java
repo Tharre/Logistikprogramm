@@ -11,14 +11,14 @@ import java.util.Objects;
 
 public class HyperlinkRenderer extends DefaultTableCellRenderer implements MouseListener, MouseMotionListener {
 
-	private int[] hyperlinkColumns;
+	private int hyperlinkColumn;
 	private TabManager tm;
 	private int row = -1;
 	private int col = -1;
 	private boolean isRollover;
 
-	public HyperlinkRenderer(int[] hyperlinkColumns, TabManager tm) {
-		this.hyperlinkColumns = hyperlinkColumns;
+	public HyperlinkRenderer(int hyperlinkColumn, TabManager tm) {
+		this.hyperlinkColumn = hyperlinkColumn;
 		this.tm = tm;
 	}
 
@@ -40,12 +40,7 @@ public class HyperlinkRenderer extends DefaultTableCellRenderer implements Mouse
 	}
 
 	private boolean isHyperlinkColumn(JTable table, int column) {
-		for (int u : hyperlinkColumns) {
-			if (u == column)
-				return true;
-		}
-
-		return false;
+		return column == hyperlinkColumn;
 		//return column >= 0 && table.getColumnClass(column).equals(String.class);
 	}
 
@@ -94,7 +89,11 @@ public class HyperlinkRenderer extends DefaultTableCellRenderer implements Mouse
 		if (isHyperlinkColumn(table, col)) {
 			int row = table.rowAtPoint(pt);
 			System.out.println(table.getValueAt(row, col));
-			tm.addTab("inv01", new String[] {"89"});
+			Object o = table.getValueAt(row, col);
+			if (o instanceof Viewable) {
+				Viewable t = (Viewable) o;
+				tm.addTab(t.getViewShortcut(), t.getViewArgs());
+			}
 		}
 	}
 

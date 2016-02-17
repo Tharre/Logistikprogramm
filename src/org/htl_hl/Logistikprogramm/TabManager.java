@@ -16,14 +16,12 @@ public class TabManager {
     public TabManager(LConnection server, TabHelper tabHelper) {
         this.tabHelper = tabHelper;
         Query query;
-        String[] columnNames;
         int[] hyperlinkColumns;
-        TableView tv;
 
         // built-in subprograms
         // Material
         query = server.create
-                .select(MATERIAL.ID, MATERIAL.BEZEICHNUNG, MATERIAL.ERSTELLDATUM, BUNDESNR.NR,
+                .select(MATERIAL.ID, MATERIAL.BEZEICHNUNG, MATERIAL.ERSTELLDATUM, BUNDESNR.NR, INVENTURGRUPPE.ID,
                         INVENTURGRUPPE.BEZEICHNUNG, USER.CN, MATERIAL.GEFAHRSTUFE)
                 .from(MATERIAL)
                 .leftOuterJoin(BUNDESNR)
@@ -33,20 +31,20 @@ public class TabManager {
                 .leftOuterJoin(USER)
                 .on(MATERIAL.ERFASSER_ID.equal(USER.ID))
                 .getQuery();
-        columnNames = new String[] {"ID", "Bezeichnung", "Erstelldatum", "Nr", "Inventurgruppe", "Ersteller", "Gefahrstufe"};
         hyperlinkColumns = new int[] {4};
-        tv = new TableView(server, query, columnNames, hyperlinkColumns, this);
-        knownApplications.put("ma01", new SubProgram("Material anzeigen", "ma01", tv));
+        knownApplications.put("ma01", new SubProgram("Material anzeigen", "ma01",
+                new TableView<>(server, query, MatTV.class, MatTV.getTextFilterator(), MatTV.getTableFormat(), this,
+                        hyperlinkColumns)));
 
         // Inventurgruppe
         query = server.create
                 .select(INVENTURGRUPPE.ID, INVENTURGRUPPE.BEZEICHNUNG)
                 .from(INVENTURGRUPPE)
                 .getQuery();
-        columnNames = new String[] {"ID", "Bezeichnung"};
         hyperlinkColumns = new int[] {};
-        tv = new TableView(server, query, columnNames, hyperlinkColumns, this);
-        knownApplications.put("inv01", new SubProgram("Inventurgruppe anzeigen", "inv01", tv));
+        knownApplications.put("inv01", new SubProgram("Inventurgruppe anzeigen", "inv01",
+                new TableView<>(server, query, InvGrpTV.class, InvGrpTV.getTextFilterator(), InvGrpTV.getTableFormat(),
+                        this, hyperlinkColumns)));
 
         // external subprograms
         // load all sorts of external subprograms here as well if you like ...
