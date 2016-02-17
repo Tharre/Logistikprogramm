@@ -26,6 +26,16 @@ public class TabManager {
                 new TableView<>(server, InvGrpTV.getQuery(ctx), InvGrpTV.class, InvGrpTV.getTextFilterator(),
                         InvGrpTV.getTableFormat(), this, new int[] {})));
 
+        // Staat
+        knownApplications.put("sta01", new SubProgram("Staat anzeigen", "sta01",
+                new TableView<>(server, StaatTV.getQuery(ctx), StaatTV.class, StaatTV.getTextFilterator(),
+                        StaatTV.getTableFormat(), this, new int[] {})));
+
+        // Firma
+        knownApplications.put("fma01", new SubProgram("Firma anzeigen", "fma01",
+                new TableView<>(server, FirmaTV.getQuery(ctx), FirmaTV.class, FirmaTV.getTextFilterator(),
+                        FirmaTV.getTableFormat(), this, new int[] {4})));
+
         // external subprograms
         // load all sorts of external subprograms here as well if you like ...
     }
