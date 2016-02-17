@@ -16,8 +16,8 @@ import java.util.List;
 
 public class MultiEdit extends JPanel {
 
-	public <E> MultiEdit(List<E> list, TextFilterator<E> textFilterator, TableFormat<E> tf, TabManager tm,
-						 int[] hyperlinkColumns, int scrollToRow) {
+	public <E> MultiEdit(List<E> list, TextFilterator<E> textFilterator, TableFormat<E> tf,
+										TabManager tm, int[] hyperlinkColumns, int scrollToRow) {
 		EventList<E> eventList = GlazedLists.eventList(list);
 		SortedList<E> sortedList = new SortedList<>(eventList);
 
