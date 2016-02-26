@@ -12,25 +12,23 @@ import java.awt.event.MouseListener;
 
 public class GUI extends JFrame implements MouseListener, ActionListener {
 
-	RootPanel rootpanel;
-	Container c = this;
-	TreePath currentPath;
-	TabHelper tabHelper = new TabHelper(new JTabbedPane());
+	private JTree tree;
+	private TabManager tabManager;
 
 	// Menüleiste
-	JMenuBar menubar;
+	private JMenuBar menubar;
 
 	// Menüleiste Elemente
-	JMenu datei;
-	JMenu hilfe;
+	private JMenu datei;
+	private JMenu hilfe;
 
 	// Datei
-	JMenuItem oeffnen;
-	JMenuItem schliessen;
+	private JMenuItem oeffnen;
+	private JMenuItem schliessen;
 
 	// Hilfe
-	JMenuItem faq;
-	JMenuItem about;
+	private JMenuItem faq;
+	private JMenuItem about;
 
 	public GUI() {
 		super("Login");
@@ -41,7 +39,7 @@ public class GUI extends JFrame implements MouseListener, ActionListener {
 		setExtendedState(JFrame.MAXIMIZED_BOTH);
 		setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 
-		c.setLayout(new BorderLayout());
+		setLayout(new BorderLayout());
 
 		// Menüleiste erzeugen
 		menubar = new JMenuBar();
@@ -70,36 +68,40 @@ public class GUI extends JFrame implements MouseListener, ActionListener {
 		hilfe.add(faq);
 		hilfe.add(about);
 
-		c.add(menubar, BorderLayout.NORTH);
+		add(menubar, BorderLayout.NORTH);
 
-		rootpanel = new RootPanel();
-		c.add(rootpanel, BorderLayout.WEST);
-		c.add(tabHelper.getTabbedPane(), BorderLayout.CENTER);
+		try {
+			tabManager = new TabManager(new LConnection());
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("Failed to create TabManager(). Exiting");
+			System.exit(1);
+		}
 
-		rootpanel.tree.addMouseListener(this);
+		// Auswahlbaum links
+		JPanel auswahlbaum = new JPanel();
+
+		DefaultMutableTreeNode root = new DefaultMutableTreeNode();
+
+		for (SubProgram s : tabManager.getKnownApplications().values())
+			root.add(new DefaultMutableTreeNode(s));
+
+		tree = new JTree(root);
+		tree.setRootVisible(false);
+		tree.setShowsRootHandles(true);
+
+		auswahlbaum.setLayout(new GridLayout());
+		auswahlbaum.add(new JScrollPane(tree));
+
+		Dimension dim2 = new Dimension(280, 1080);
+		auswahlbaum.setPreferredSize(dim2);
+		auswahlbaum.setMaximumSize(dim2);
+
+		add(auswahlbaum, BorderLayout.WEST);
+		add(tabManager.getTabbedPane(), BorderLayout.CENTER);
+
+		tree.addMouseListener(this);
 		setVisible(true);
-	}
-
-	private String toString(TreePath path) {
-		String hilfsString = path.toString();
-		String leaf = "";
-		int laenge = 0;
-		for (int i = hilfsString.length() - 1; i >= 0; i--) {
-			if (hilfsString.charAt(i) != ',')
-				laenge++;
-			else
-				break;
-		}
-
-		for (int i = hilfsString.length() - laenge + 1; i < hilfsString.length() - 1; i++) {
-			leaf += hilfsString.charAt(i);
-		}
-
-		return leaf;
-	}
-
-	public static void main(String[] args) {
-		new GUI();
 	}
 
 	@Override
@@ -107,29 +109,16 @@ public class GUI extends JFrame implements MouseListener, ActionListener {
 		if (e.getClickCount() != 2)
 			return;
 
-		currentPath = rootpanel.tree.getPathForLocation(e.getX(), e.getY());
+		TreePath currentPath = tree.getPathForLocation(e.getX(), e.getY());
 		if (currentPath == null)
 			return;
 
-		String s = toString(currentPath);
 		DefaultMutableTreeNode treeNode = (DefaultMutableTreeNode) currentPath.getLastPathComponent();
 		if (!treeNode.isLeaf())
 			return;
 
-        if (s.equals("Materialien anzeigen")) {
-            try {
-                LConnection server = new LConnection();
-                TabManager manager = new TabManager(server, tabHelper);
-
-                manager.addTab("ma01", null);
-            } catch (Exception ex) {
-                ex.printStackTrace();
-            }
-        } else {
-            JPanel p = new JPanel();
-            p.add(new JLabel(s));
-            tabHelper.add(s, p);
-        }
+		SubProgram sp = (SubProgram) treeNode.getUserObject();
+		tabManager.addTab(sp);
 	}
 
 	public void actionPerformed(ActionEvent object) {
@@ -142,6 +131,10 @@ public class GUI extends JFrame implements MouseListener, ActionListener {
 		} else if (object.getSource() == about) {
 			System.out.println("über wurde angeklickt");
 		}
+	}
+
+	public static void main(String[] args) {
+		new GUI();
 	}
 
 	@Override

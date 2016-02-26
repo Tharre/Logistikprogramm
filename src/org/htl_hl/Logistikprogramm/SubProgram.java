@@ -21,4 +21,8 @@ public class SubProgram {
     public JPanel createJPanel(String[] args) {
         return view.createJPanel(args);
     }
+
+    public String toString() {
+        return identifier;
+    }
 }
