@@ -48,7 +48,7 @@ public class TabManager {
 		knownApplications.put("fma01", new SubProgram("Firma anzeigen", "fma01",
 		                                              new TableView<>(server, FirmaTV.getQuery(ctx), FirmaTV.class,
 		                                                              FirmaTV.getTextFilterator(),
-		                                                              FirmaTV.getTableFormat(), this, new int[]{4})));
+		                                                              FirmaTV.getTableFormat(), this, new int[]{3})));
 
 		// external subprograms
 		// load all sorts of external subprograms here as well if you like ...

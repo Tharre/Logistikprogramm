@@ -1,14 +1,13 @@
 package org.htl_hl.Logistikprogramm;
 
-
 import ca.odell.glazedlists.TextFilterator;
 import ca.odell.glazedlists.gui.TableFormat;
 import org.jooq.DSLContext;
 import org.jooq.Query;
-
 import java.sql.Timestamp;
 
 import static sql.generated.logistik_test.Tables.*;
+
 
 public class FirmaTV extends AbstractTV {
 
@@ -16,7 +15,6 @@ public class FirmaTV extends AbstractTV {
             "E-Mail", "Kunden Nr.", "Sachbearbeiter", "Telefon", "Fax", "Homepage", "Konditionen", "Kreditoren Nr.",
             "UMS", "ARA", "Kommentar"};
 
-    private final int id;
     private final String bezeichnung;
     private final Timestamp erstelldatum;
     private final StaatTV staat;
@@ -41,7 +39,6 @@ public class FirmaTV extends AbstractTV {
                    String kommentar) {
         super(id, columnNames, "fma01");
 
-        this.id = id;
         this.bezeichnung = bezeichnung;
         this.erstelldatum = erstelldatum;
         this.staat = new StaatTV(staatId, staatBezeichnung);
@@ -64,24 +61,24 @@ public class FirmaTV extends AbstractTV {
     @Override
     public Object getValue(int column) {
         switch (column) {
-            case 1: return id;
-            case 2: return bezeichnung;
-            case 3: return erstelldatum;
-            case 4: return staat;
-            case 5: return ort;
-            case 6: return plz;
-            case 7: return strasse;
-            case 8: return mail;
-            case 9: return kundennr;
-            case 10: return sachbearbeiter;
-            case 11: return telefon;
-            case 12: return fax;
-            case 13: return homepage;
-            case 14: return konditionen;
-            case 15: return kreditorennr;
-            case 16: return umsNr;
-            case 17: return araNr;
-            case 18: return kommentar;
+            case 0: return id;
+            case 1: return bezeichnung;
+            case 2: return erstelldatum;
+            case 3: return staat;
+            case 4: return ort;
+            case 5: return plz;
+            case 6: return strasse;
+            case 7: return mail;
+            case 8: return kundennr;
+            case 9: return sachbearbeiter;
+            case 10: return telefon;
+            case 11: return fax;
+            case 12: return homepage;
+            case 13: return konditionen;
+            case 14: return kreditorennr;
+            case 15: return umsNr;
+            case 16: return araNr;
+            case 17: return kommentar;
             default: throw new IllegalStateException();
         }
     }
@@ -95,8 +92,13 @@ public class FirmaTV extends AbstractTV {
     }
 
     public static Query getQuery(DSLContext ctx) {
-        return ctx.select(INVENTURGRUPPE.ID, INVENTURGRUPPE.BEZEICHNUNG)
-                .from(INVENTURGRUPPE)
-                .getQuery();
+        return ctx.select(FIRMA.ID, FIRMA.BEZEICHNUNG, FIRMA.ERSTELLDATUM, STAAT.ID, STAAT.BEZEICHNUNG, FIRMA.ORT,
+                          FIRMA.PLZ, FIRMA.STRASSE, FIRMA.MAIL, FIRMA.KUNDENNR, FIRMA.SACHBEARBEITER, FIRMA.TELEFON,
+                          FIRMA.FAX, FIRMA.HOMEPAGE, FIRMA.KONDITIONEN, FIRMA.KREDITORENNR, FIRMA.UMSNR, FIRMA.ARANR,
+                          FIRMA.KOMMENTAR)
+                  .from(FIRMA)
+                  .leftOuterJoin(STAAT)
+                  .on(FIRMA.STAAT_ID.equal(STAAT.ID))
+                  .getQuery();
     }
 }
