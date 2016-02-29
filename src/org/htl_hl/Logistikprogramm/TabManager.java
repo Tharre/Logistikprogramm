@@ -1,6 +1,11 @@
 package org.htl_hl.Logistikprogramm;
 
+import ca.odell.glazedlists.GlazedLists;
+import ca.odell.glazedlists.TextFilterator;
+import ca.odell.glazedlists.gui.AdvancedTableFormat;
+import ca.odell.glazedlists.impl.beans.BeanTableFormat;
 import org.jooq.DSLContext;
+import sql.generated.logistik_test.tables.Staat;
 
 import javax.swing.*;
 import java.awt.*;
@@ -19,36 +24,26 @@ public class TabManager {
 
 	private Map<String, SubProgram> knownApplications = new HashMap<>();
 
+	public <E extends Viewable> SubProgram helper(LConnection server, String identifier, E obj,
+	                                                     Class<E> typeClass) {
+		DSLContext ctx = server.create;
+		TextFilterator<E> filterator = GlazedLists.textFilterator(obj.getPropertyNames());
+		AdvancedTableFormat<E> tf = new BeanTableFormat<>(typeClass, obj.getPropertyNames(), obj.getColumnNames());
+		TableView<E> tv = new TableView<>(server, obj.getQuery(ctx), typeClass, filterator, tf, this);
+		return new SubProgram(identifier, tv);
+	}
+
 	public TabManager(LConnection server) {
 		tabbedPane = new JTabbedPane();
 		tabbedPane.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
 		tabbedPane.setUI(new MyTabbedPaneUI());
-		DSLContext ctx = server.create;
 
 		// built-in subprograms
-		// Material
-		knownApplications.put("ma01", new SubProgram("Material anzeigen", "ma01",
-		                                             new TableView<>(server, MatTV.getQuery(ctx), MatTV.class,
-		                                                             MatTV.getTextFilterator(), MatTV.getTableFormat(),
-		                                                             this, new int[]{4})));
-
-		// Inventurgruppe
-		knownApplications.put("inv01", new SubProgram("Inventurgruppe anzeigen", "inv01",
-		                                              new TableView<>(server, InvGrpTV.getQuery(ctx), InvGrpTV.class,
-		                                                              InvGrpTV.getTextFilterator(),
-		                                                              InvGrpTV.getTableFormat(), this, new int[]{})));
-
-		// Staat
-		knownApplications.put("sta01", new SubProgram("Staat anzeigen", "sta01",
-		                                              new TableView<>(server, StaatTV.getQuery(ctx), StaatTV.class,
-		                                                              StaatTV.getTextFilterator(),
-		                                                              StaatTV.getTableFormat(), this, new int[]{})));
-
-		// Firma
-		knownApplications.put("fma01", new SubProgram("Firma anzeigen", "fma01",
-		                                              new TableView<>(server, FirmaTV.getQuery(ctx), FirmaTV.class,
-		                                                              FirmaTV.getTextFilterator(),
-		                                                              FirmaTV.getTableFormat(), this, new int[]{3})));
+		// TODO: we are passing -1 here because if the constructor is empty JOOQ uses them instead of the real one
+		knownApplications.put("mat01", helper(server, "Material anzeigen", new MatTV(-1), MatTV.class));
+		knownApplications.put("inv01", helper(server, "Inventurgruppe anzeigen", new InvGrpTV(-1), InvGrpTV.class));
+		knownApplications.put("sta01", helper(server, "Staat anzeigen", new StaatTV(-1), StaatTV.class));
+		knownApplications.put("fma01", helper(server, "Firma anzeigen", new FirmaTV(-1), FirmaTV.class));
 
 		// external subprograms
 		// load all sorts of external subprograms here as well if you like ...

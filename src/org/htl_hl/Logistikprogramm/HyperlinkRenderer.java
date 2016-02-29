@@ -11,14 +11,12 @@ import java.util.Objects;
 
 public class HyperlinkRenderer extends DefaultTableCellRenderer implements MouseListener, MouseMotionListener {
 
-	private int hyperlinkColumn;
 	private TabManager tm;
 	private int row = -1;
 	private int col = -1;
 	private boolean isRollover;
 
-	public HyperlinkRenderer(int hyperlinkColumn, TabManager tm) {
-		this.hyperlinkColumn = hyperlinkColumn;
+	public HyperlinkRenderer(TabManager tm) {
 		this.tm = tm;
 	}
 
@@ -40,8 +38,7 @@ public class HyperlinkRenderer extends DefaultTableCellRenderer implements Mouse
 	}
 
 	private boolean isHyperlinkColumn(JTable table, int column) {
-		return column == hyperlinkColumn;
-		//return column >= 0 && table.getColumnClass(column).equals(String.class);
+		return column >= 0 && table.getColumnClass(column).equals(Reference.class);
 	}
 
 	@Override

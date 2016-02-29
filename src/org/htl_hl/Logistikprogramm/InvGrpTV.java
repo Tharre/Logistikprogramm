@@ -1,45 +1,43 @@
 package org.htl_hl.Logistikprogramm;
 
-import ca.odell.glazedlists.TextFilterator;
-import ca.odell.glazedlists.gui.TableFormat;
 import org.jooq.DSLContext;
 import org.jooq.Query;
 
 import static sql.generated.logistik_test.Tables.*;
 
+
 public class InvGrpTV extends AbstractTV {
 
     private static final String[] columnNames = {"ID", "Bezeichnung"};
+    private static final String[] propertyNames = {"id", "bezeichnung"};
 
-    private final String bezeichnung;
+    private String bezeichnung;
+
+    public InvGrpTV(int id) {
+        super(id, "inv01");
+    }
 
     public InvGrpTV(int id, String bezeichnung) {
-        super(id, columnNames, "inv01");
+        super(id, "inv01");
         this.bezeichnung = bezeichnung;
     }
 
-    @Override
-    public Object getValue(int column) {
-        switch (column) {
-            case 0: return id;
-            case 1: return bezeichnung;
-            default: throw new IllegalStateException();
-        }
-    }
-
-    public String toString() {
+    public String getBezeichnung() {
         return bezeichnung;
     }
 
-    public static TableFormat<InvGrpTV> getTableFormat() {
-        return new ViewTableFormat<>(columnNames);
+    @Override
+    public String[] getColumnNames() {
+        return columnNames;
     }
 
-    public static TextFilterator<InvGrpTV> getTextFilterator() {
-        return new ViewTextFilterator<>();
+    @Override
+    public String[] getPropertyNames() {
+        return propertyNames;
     }
 
-    public static Query getQuery(DSLContext ctx) {
+    @Override
+    public Query getQuery(DSLContext ctx) {
         return ctx.select(INVENTURGRUPPE.ID, INVENTURGRUPPE.BEZEICHNUNG)
                 .from(INVENTURGRUPPE)
                 .getQuery();

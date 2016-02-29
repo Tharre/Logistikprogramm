@@ -1,13 +1,10 @@
 package org.htl_hl.Logistikprogramm;
 
 import ca.odell.glazedlists.*;
-import ca.odell.glazedlists.gui.TableFormat;
+import ca.odell.glazedlists.gui.AdvancedTableFormat;
 import ca.odell.glazedlists.matchers.MatcherEditor;
 import ca.odell.glazedlists.matchers.ThreadedMatcherEditor;
-import ca.odell.glazedlists.swing.AdvancedTableModel;
-import ca.odell.glazedlists.swing.GlazedListsSwing;
-import ca.odell.glazedlists.swing.TableComparatorChooser;
-import ca.odell.glazedlists.swing.TextComponentMatcherEditor;
+import ca.odell.glazedlists.swing.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -16,8 +13,8 @@ import java.util.List;
 
 public class MultiEdit extends JPanel {
 
-	public <E> MultiEdit(List<E> list, TextFilterator<E> textFilterator, TableFormat<E> tf,
-										TabManager tm, int[] hyperlinkColumns, int scrollToRow) {
+	public <E> MultiEdit(List<E> list, TextFilterator<E> textFilterator, AdvancedTableFormat<E> tf,
+										TabManager tm, int scrollToRow) {
 		EventList<E> eventList = GlazedLists.eventList(list);
 		SortedList<E> sortedList = new SortedList<>(eventList);
 
@@ -29,13 +26,10 @@ public class MultiEdit extends JPanel {
 
 		final JTable t = new JTable(tableModel);
 
-		for (int col : hyperlinkColumns) {
-			HyperlinkRenderer renderer = new HyperlinkRenderer(col, tm);
-			t.getColumnModel().getColumn(col).setCellRenderer(renderer);
-
-			t.addMouseListener(renderer);
-			t.addMouseMotionListener(renderer);
-		}
+		HyperlinkRenderer renderer = new HyperlinkRenderer(tm);
+		t.setDefaultRenderer(Reference.class, renderer);
+		t.addMouseListener(renderer);
+		t.addMouseMotionListener(renderer);
 
 		// TODO(Tharre): improve, improve, improve
 		long startTime = System.nanoTime();

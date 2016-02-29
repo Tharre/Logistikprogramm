@@ -2,24 +2,21 @@ package org.htl_hl.Logistikprogramm;
 
 public abstract class AbstractTV<T extends AbstractTV<T>> implements Viewable, Comparable<T> {
 
-    protected final int id;
-    private final String[] columnNames;
+    private final int id;
     private final String shortcut;
 
-    public AbstractTV(int id, String[] columnNames, String shortcut) {
+    public AbstractTV(int id, String shortcut) {
         this.id = id;
-        this.columnNames = columnNames;
         this.shortcut = shortcut;
+    }
+
+    public int getId() {
+        return id;
     }
 
     @Override
     public int compareTo(T o) {
-        return Integer.compare(this.id, o.id);
-    }
-
-    @Override
-    public int getSize() {
-        return columnNames.length;
+        return Integer.compare(id, o.getId());
     }
 
     @Override
