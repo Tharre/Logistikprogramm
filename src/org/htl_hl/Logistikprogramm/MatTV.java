@@ -32,7 +32,7 @@ public class MatTV extends AbstractTV {
 		super(id, "mat01");
 		this.bezeichnung = bezeichnung;
 		this.erstelldatum = erstelldatum;
-		this.bundesnr = new Reference("bna01", bundesnrNr, bundesnrId);
+		this.bundesnr = new Reference("bnr01", bundesnrNr, bundesnrId);
 		this.inventurgruppe = new Reference("inv01", inventurgruppeBezeichnung, inventurgruppeId);
 		this.ersteller = new Reference("usr01", userVorname, userId);
 		this.gefahrstufe = gefahrstufe;

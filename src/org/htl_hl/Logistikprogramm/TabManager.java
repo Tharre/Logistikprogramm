@@ -5,6 +5,7 @@ import ca.odell.glazedlists.TextFilterator;
 import ca.odell.glazedlists.gui.AdvancedTableFormat;
 import ca.odell.glazedlists.impl.beans.BeanTableFormat;
 import org.jooq.DSLContext;
+import sql.generated.logistik_test.tables.Bundesnr;
 import sql.generated.logistik_test.tables.Staat;
 
 import javax.swing.*;
@@ -45,6 +46,7 @@ public class TabManager {
 		knownApplications.put("sta01", helper(server, "Staat anzeigen", new StaatTV(-1), StaatTV.class));
 		knownApplications.put("fma01", helper(server, "Firma anzeigen", new FirmaTV(-1), FirmaTV.class));
 		knownApplications.put("usr01", helper(server, "User anzeigen", new UserTV(-1), UserTV.class));
+		knownApplications.put("bnr01", helper(server, "Bundesnr anzeigen", new BundesnrTV(-1), BundesnrTV.class));
 
 		// external subprograms
 		// load all sorts of external subprograms here as well if you like ...
