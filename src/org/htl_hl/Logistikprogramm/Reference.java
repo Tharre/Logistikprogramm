@@ -1,8 +1,6 @@
 package org.htl_hl.Logistikprogramm;
 
-import org.apache.poi.ss.formula.eval.NotImplementedException;
-import org.jooq.DSLContext;
-import org.jooq.Query;
+import org.jooq.ResultQuery;
 
 
 public class Reference implements Viewable, Comparable<Reference> {
@@ -11,10 +9,10 @@ public class Reference implements Viewable, Comparable<Reference> {
 	private String name;
 	private int id;
 
-	public Reference(String shortcut, String name, int id) {
+	public Reference(String shortcut, int id, String name) {
 		this.shortcut = shortcut;
-		this.name = name;
 		this.id = id;
+		this.name = name;
 	}
 
 	public String getName() {
@@ -32,7 +30,7 @@ public class Reference implements Viewable, Comparable<Reference> {
 
 	@Override
 	public String[] getViewArgs() {
-		return new String[] {String.valueOf(id)};
+		return new String[]{String.valueOf(id)};
 	}
 
 	@Override
@@ -42,16 +40,16 @@ public class Reference implements Viewable, Comparable<Reference> {
 
 	@Override
 	public String[] getColumnNames() {
-		throw new NotImplementedException("Can't supply column names from Reference");
+		throw new UnsupportedOperationException("Can't supply column names from Reference");
 	}
 
 	@Override
 	public String[] getPropertyNames() {
-		throw new NotImplementedException("Can't supply property names from Reference");
+		throw new UnsupportedOperationException("Can't supply property names from Reference");
 	}
 
 	@Override
-	public Query getQuery(DSLContext ctx) {
-		throw new NotImplementedException("Can't supply query from Reference");
+	public ResultQuery getQuery() {
+		throw new UnsupportedOperationException("Can't supply query from Reference");
 	}
 }

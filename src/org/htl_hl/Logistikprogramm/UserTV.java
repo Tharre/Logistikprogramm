@@ -1,9 +1,9 @@
 package org.htl_hl.Logistikprogramm;
 
-import org.jooq.DSLContext;
-import org.jooq.Query;
+import org.jooq.ResultQuery;
+import org.jooq.impl.DSL;
 
-import static sql.generated.logistik_test.Tables.*;
+import static sql.generated.logistik_test.Tables.USER;
 
 
 public class UserTV extends AbstractTV {
@@ -55,9 +55,7 @@ public class UserTV extends AbstractTV {
 	}
 
 	@Override
-	public Query getQuery(DSLContext ctx) {
-		return ctx.select(USER.ID, USER.VORNAME, USER.NACHNAME, USER.CN, USER.PERM_MASK)
-		          .from(USER)
-		          .getQuery();
+	public ResultQuery getQuery() {
+		return DSL.select(USER.ID, USER.VORNAME, USER.NACHNAME, USER.CN, USER.PERM_MASK).from(USER).getQuery();
 	}
 }

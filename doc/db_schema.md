@@ -296,13 +296,13 @@ INSERT INTO bestbanfstatus (id, bezeichnung) VALUES
 	(8, "geliefert");
 ```
 
-bestbanfpos
-===========
+position
+========
 
 **id**, _material_id_, menge, _einheit_id_, preis, mwst, _status_, kommentar
 
 ```sql
-CREATE TABLE `bestbanfpos` (
+CREATE TABLE `position` (
 	PRIMARY KEY (id),
 	FOREIGN KEY (material_id)	REFERENCES material(id),
 	FOREIGN KEY (einheit_id)	REFERENCES einheit(id),
@@ -318,6 +318,36 @@ CREATE TABLE `bestbanfpos` (
 						AND mwst IS NOT NULL) OR status <= 2),
 	status		INT(11)			NOT NULL,
 	kommentar	VARCHAR(255)
+);
+```
+
+banfposition
+============
+
+**banf_id**, **position_id**
+
+```sql
+CREATE TABLE `banfposition` (
+	PRIMARY KEY (banf_id, position_id),
+	FOREIGN KEY (banf_id)		REFERENCES banf(id),
+	FOREIGN KEY (position_id)	REFERENCES `position`(id),
+	banf_id		INT(11)			NOT NULL,
+	position_id	INT(11)			NOT NULL
+);
+```
+
+bestellposition
+===============
+
+**bestell_id**, **position_id**
+
+```sql
+CREATE TABLE `bestellposition` (
+	PRIMARY KEY (bestell_id, position_id),
+	FOREIGN KEY (bestell_id)	REFERENCES bestellung(id),
+	FOREIGN KEY (position_id)	REFERENCES `position`(id),
+	bestell_id	INT(11)			NOT NULL,
+	position_id	INT(11)			NOT NULL
 );
 ```
 

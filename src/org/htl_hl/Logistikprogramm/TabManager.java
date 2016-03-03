@@ -4,9 +4,6 @@ import ca.odell.glazedlists.GlazedLists;
 import ca.odell.glazedlists.TextFilterator;
 import ca.odell.glazedlists.gui.AdvancedTableFormat;
 import ca.odell.glazedlists.impl.beans.BeanTableFormat;
-import org.jooq.DSLContext;
-import sql.generated.logistik_test.tables.Bundesnr;
-import sql.generated.logistik_test.tables.Staat;
 
 import javax.swing.*;
 import java.awt.*;
@@ -25,12 +22,10 @@ public class TabManager {
 
 	private Map<String, SubProgram> knownApplications = new HashMap<>();
 
-	public <E extends Viewable> SubProgram helper(LConnection server, String identifier, E obj,
-	                                                     Class<E> typeClass) {
-		DSLContext ctx = server.create;
+	public <E extends Viewable> SubProgram helper(LConnection server, String identifier, E obj, Class<E> typeClass) {
 		TextFilterator<E> filterator = GlazedLists.textFilterator(obj.getPropertyNames());
 		AdvancedTableFormat<E> tf = new BeanTableFormat<>(typeClass, obj.getPropertyNames(), obj.getColumnNames());
-		TableView<E> tv = new TableView<>(server, obj.getQuery(ctx), typeClass, filterator, tf, this);
+		TableView<E> tv = new TableView<>(server, obj.getQuery(), typeClass, filterator, tf, this);
 		return new SubProgram(identifier, tv);
 	}
 
@@ -47,6 +42,7 @@ public class TabManager {
 		knownApplications.put("fma01", helper(server, "Firma anzeigen", new FirmaTV(-1), FirmaTV.class));
 		knownApplications.put("usr01", helper(server, "User anzeigen", new UserTV(-1), UserTV.class));
 		knownApplications.put("bnr01", helper(server, "Bundesnr anzeigen", new BundesnrTV(-1), BundesnrTV.class));
+		knownApplications.put("bnf01", helper(server, "Banf anzeigen", new BanfTV(-1), BanfTV.class));
 
 		// external subprograms
 		// load all sorts of external subprograms here as well if you like ...

@@ -1,20 +1,20 @@
 package org.htl_hl.Logistikprogramm;
 
-import org.jooq.DSLContext;
-import org.jooq.Query;
+import org.jooq.Record;
+import org.jooq.ResultQuery;
 
 
 // TODO: used by HyperlinkRenderer to open a new tab
-public interface Viewable {
+public interface Viewable<E extends Record> {
 
-    String getViewShortcut();
+	String getViewShortcut();
 
-    String[] getViewArgs();
+	String[] getViewArgs();
 
-    // TODO: These 3 Methods should really be static, however sadly this is only supported in Java >= 8
-    String[] getColumnNames();
+	// TODO: These 3 Methods should really be static, however sadly this is only supported in Java >= 8
+	String[] getColumnNames();
 
-    String[] getPropertyNames();
+	String[] getPropertyNames();
 
-    Query getQuery(DSLContext ctx);
+	ResultQuery<E> getQuery();
 }

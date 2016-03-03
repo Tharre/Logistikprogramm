@@ -1,7 +1,7 @@
 package org.htl_hl.Logistikprogramm;
 
-import org.jooq.DSLContext;
-import org.jooq.Query;
+import org.jooq.ResultQuery;
+import org.jooq.impl.DSL;
 
 import java.sql.Timestamp;
 
@@ -32,9 +32,9 @@ public class MatTV extends AbstractTV {
 		super(id, "mat01");
 		this.bezeichnung = bezeichnung;
 		this.erstelldatum = erstelldatum;
-		this.bundesnr = new Reference("bnr01", bundesnrNr, bundesnrId);
-		this.inventurgruppe = new Reference("inv01", inventurgruppeBezeichnung, inventurgruppeId);
-		this.ersteller = new Reference("usr01", userVorname, userId);
+		this.bundesnr = new Reference("bnr01", bundesnrId, bundesnrNr);
+		this.inventurgruppe = new Reference("inv01", inventurgruppeId, inventurgruppeBezeichnung);
+		this.ersteller = new Reference("usr01", userId, userVorname);
 		this.gefahrstufe = gefahrstufe;
 	}
 
@@ -76,8 +76,8 @@ public class MatTV extends AbstractTV {
 	}
 
 	@Override
-	public Query getQuery(DSLContext ctx) {
-		return ctx.select(MATERIAL.ID, MATERIAL.BEZEICHNUNG, MATERIAL.ERSTELLDATUM, BUNDESNR.ID, BUNDESNR.NR,
+	public ResultQuery getQuery() {
+		return DSL.select(MATERIAL.ID, MATERIAL.BEZEICHNUNG, MATERIAL.ERSTELLDATUM, BUNDESNR.ID, BUNDESNR.NR,
 		                  INVENTURGRUPPE.ID, INVENTURGRUPPE.BEZEICHNUNG, USER.ID, USER.VORNAME, MATERIAL.GEFAHRSTUFE)
 		          .from(MATERIAL)
 		          .leftOuterJoin(BUNDESNR)

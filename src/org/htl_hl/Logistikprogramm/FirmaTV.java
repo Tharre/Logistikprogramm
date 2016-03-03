@@ -1,11 +1,12 @@
 package org.htl_hl.Logistikprogramm;
 
-import org.jooq.DSLContext;
-import org.jooq.Query;
+import org.jooq.ResultQuery;
+import org.jooq.impl.DSL;
 
 import java.sql.Timestamp;
 
-import static sql.generated.logistik_test.Tables.*;
+import static sql.generated.logistik_test.Tables.FIRMA;
+import static sql.generated.logistik_test.Tables.STAAT;
 
 
 public class FirmaTV extends AbstractTV {
@@ -50,7 +51,7 @@ public class FirmaTV extends AbstractTV {
 
 		this.bezeichnung = bezeichnung;
 		this.erstelldatum = erstelldatum;
-		this.staat = new Reference("sta01", staatBezeichnung, staatId);
+		this.staat = new Reference("sta01", staatId, staatBezeichnung);
 		this.ort = ort;
 		this.plz = plz;
 		this.strasse = strasse;
@@ -146,8 +147,8 @@ public class FirmaTV extends AbstractTV {
 	}
 
 	@Override
-	public Query getQuery(DSLContext ctx) {
-		return ctx.select(FIRMA.ID, FIRMA.BEZEICHNUNG, FIRMA.ERSTELLDATUM, STAAT.ID, STAAT.BEZEICHNUNG, FIRMA.ORT,
+	public ResultQuery getQuery() {
+		return DSL.select(FIRMA.ID, FIRMA.BEZEICHNUNG, FIRMA.ERSTELLDATUM, STAAT.ID, STAAT.BEZEICHNUNG, FIRMA.ORT,
 		                  FIRMA.PLZ, FIRMA.STRASSE, FIRMA.MAIL, FIRMA.KUNDENNR, FIRMA.SACHBEARBEITER, FIRMA.TELEFON,
 		                  FIRMA.FAX, FIRMA.HOMEPAGE, FIRMA.KONDITIONEN, FIRMA.KREDITORENNR, FIRMA.UMSNR, FIRMA.ARANR,
 		                  FIRMA.KOMMENTAR)

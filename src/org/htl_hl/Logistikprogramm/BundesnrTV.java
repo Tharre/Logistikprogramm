@@ -1,9 +1,9 @@
 package org.htl_hl.Logistikprogramm;
 
-import org.jooq.DSLContext;
-import org.jooq.Query;
+import org.jooq.ResultQuery;
+import org.jooq.impl.DSL;
 
-import static sql.generated.logistik_test.Tables.*;
+import static sql.generated.logistik_test.Tables.BUNDESNR;
 
 
 public class BundesnrTV extends AbstractTV {
@@ -43,9 +43,7 @@ public class BundesnrTV extends AbstractTV {
 	}
 
 	@Override
-	public Query getQuery(DSLContext ctx) {
-		return ctx.select(BUNDESNR.ID, BUNDESNR.BEZEICHNUNG, BUNDESNR.NR)
-		          .from(BUNDESNR)
-		          .getQuery();
+	public ResultQuery getQuery() {
+		return DSL.select(BUNDESNR.ID, BUNDESNR.BEZEICHNUNG, BUNDESNR.NR).from(BUNDESNR).getQuery();
 	}
 }
