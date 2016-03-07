@@ -1,5 +1,7 @@
 package Logistik;
 
+import org.htl_hl.Logistikprogramm.LConnection;
+
 import java.sql.*;
 
 /**
@@ -9,29 +11,14 @@ import java.sql.*;
 
 public class DBConnection {
 	private Connection con = null;
-	private String url;
-	private String user;
-	private String password;
 
 	public DBConnection(String dbName, String user, String password) {
-		this.user = user;
-		this.password = password;
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
-		} catch (ClassNotFoundException ex) {
-			ex.getMessage();
-		}
-
-		String con_str = "//127.0.0.1:3306/" + dbName;
-		url = "jdbc:mysql:" + con_str;
-		connect();
-	}
-
-	public void connect() {
-		try {
-			con = DriverManager.getConnection(url, user, password);
-		} catch (SQLException ex) {
-			ex.getMessage();
+			LConnection server = new LConnection(dbName);
+			con = server.getConnection();
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.exit(1);
 		}
 	}
 

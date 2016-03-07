@@ -13,7 +13,7 @@ public class LConnection {
 	private Connection connection;
 	public DSLContext create;
 
-	public LConnection() throws Exception {
+	public LConnection(String dbname) throws Exception {
 		// TODO(Tharre): should connect with the server here
 		// but instead we are going to connect with the DB for now to simulate that
 
@@ -24,10 +24,14 @@ public class LConnection {
 		String username = config.getProperty("username");
 		String password = config.getProperty("password");
 
-		String url = "jdbc:mysql://" + server + "/";
+		String url = "jdbc:mysql://" + server + "/" + dbname;
 		connection = DriverManager.getConnection(url, username, password);
 
 		create = DSL.using(connection, SQLDialect.MYSQL);
+	}
+
+	public LConnection() throws Exception {
+		this("");
 	}
 
 	// TODO(Tharre): remove this
