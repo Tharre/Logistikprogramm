@@ -43,6 +43,7 @@ public class TabManager {
 		knownApplications.put("usr01", helper(server, "User anzeigen", new UserTV(-1), UserTV.class));
 		knownApplications.put("bnr01", helper(server, "Bundesnr anzeigen", new BundesnrTV(-1), BundesnrTV.class));
 		knownApplications.put("bnf01", helper(server, "Banf anzeigen", new BanfTV(-1), BanfTV.class));
+		knownApplications.put("kos01", helper(server, "Kostenstelle anzeigen", new KostenstelleTV(-1), KostenstelleTV.class));
 
 		// external subprograms
 		// load all sorts of external subprograms here as well if you like ...
