@@ -74,10 +74,26 @@ public class BanfTV extends AbstractTV {
 
 	@Override
 	public ResultQuery<?> getQuery() {
+		/* CASE
+               WHEN MIN(C.status) = 1 AND MAX(C.status) = 1 THEN "nicht bearbeitet"
+               WHEN MIN(C.status) = 1 AND MAX(C.status) > 1 THEN "teilweise bearbeitet"
+               WHEN MIN(C.status) = 2 AND MAX(C.status) = 2 THEN "abgewiesen"
+               WHEN MIN(C.status) = 2 AND MAX(C.status) > 2 THEN "teilweise angenommen"
+               WHEN MIN(C.status) > 2 AND MAX(C.status) > 2 THEN "vollständig angenommen"
+           END AS "Status"
+		 */
 		return DSL.select(BANF.ID, USER.ID, USER.CN, KOSTENSTELLE.ID, KOSTENSTELLE.BEZEICHNUNG, BANF.ERSTELLDATUM,
-		                  BANF.WUNSCHDATUM, BANF.KOMMENTAR, DSL.when(POSITION.STATUS.equal(1), "nicht bestellt")
-		                                                       .when(POSITION.STATUS.equal(2), "abgewiesen")
-		                                                       .when(POSITION.STATUS.greaterThan(1), "fertig"))
+		                  BANF.WUNSCHDATUM, BANF.KOMMENTAR,
+		                  DSL.when(DSL.min(POSITION.STATUS).equal(1).and(DSL.max(POSITION.STATUS).equal(1)),
+		                           "nicht bearbeitet")
+		                     .when(DSL.min(POSITION.STATUS).equal(1).and(DSL.max(POSITION.STATUS).greaterThan(1)),
+		                           "teilweise bearbeitet")
+		                     .when(DSL.min(POSITION.STATUS).equal(2).and(DSL.max(POSITION.STATUS).equal(2)),
+		                           "abgewiesen")
+		                     .when(DSL.min(POSITION.STATUS).equal(2).and(DSL.max(POSITION.STATUS).greaterThan(2)),
+		                           "teilweise angenommen")
+		                     .when(DSL.min(POSITION.STATUS).greaterThan(2).and(DSL.max(POSITION.STATUS).greaterThan(2)),
+		                           "vollständig angenommen"))
 		          .from(BANF)
 		          .leftOuterJoin(USER)
 		          .on(BANF.ANTRAGSTELLER_ID.equal(USER.ID))
