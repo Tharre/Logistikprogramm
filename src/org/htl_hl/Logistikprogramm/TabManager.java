@@ -48,6 +48,9 @@ public class TabManager {
 		knownApplications.put("pos01", helper(server, "Position anzeigen", new PositionTV(-1), PositionTV.class));
 		knownApplications.put("bbs01", helper(server, "Bestbanfstatus anzeigen", new BestbanfstatusTV(-1), BestbanfstatusTV.class));
 		knownApplications.put("ein01", helper(server, "Einheit anzeigen", new EinheitTV(-1), EinheitTV.class));
+		knownApplications.put("bst01", helper(server, "Bestellung anzeigen", new BestellungTV(-1), BestellungTV.class));
+		knownApplications.put("bug01", helper(server, "Budget anzeigen", new BudgetTV(-1), BudgetTV.class));
+		knownApplications.put("ans01", helper(server, "Anschrift anzeigen", new BudgetTV(-1), BudgetTV.class));
 
 		// external subprograms
 		// load all sorts of external subprograms here as well if you like ...
