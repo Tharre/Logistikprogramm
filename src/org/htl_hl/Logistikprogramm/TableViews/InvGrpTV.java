@@ -1,5 +1,6 @@
-package org.htl_hl.Logistikprogramm;
+package org.htl_hl.Logistikprogramm.TableViews;
 
+import org.htl_hl.Logistikprogramm.TableViews.AbstractTV;
 import org.jooq.ResultQuery;
 import org.jooq.impl.DSL;
 

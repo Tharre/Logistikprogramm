@@ -4,7 +4,7 @@ import ca.odell.glazedlists.GlazedLists;
 import ca.odell.glazedlists.TextFilterator;
 import ca.odell.glazedlists.gui.AdvancedTableFormat;
 import ca.odell.glazedlists.impl.beans.BeanTableFormat;
-import sql.generated.logistik_test.tables.Bestbanfstatus;
+import org.htl_hl.Logistikprogramm.TableViews.*;
 
 import javax.swing.*;
 import java.awt.*;

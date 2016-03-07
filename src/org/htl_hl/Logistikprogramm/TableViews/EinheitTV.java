@@ -1,24 +1,24 @@
-package org.htl_hl.Logistikprogramm;
+package org.htl_hl.Logistikprogramm.TableViews;
 
 import org.jooq.ResultQuery;
 import org.jooq.impl.DSL;
 
-import static sql.generated.logistik_test.Tables.KOSTENSTELLE;
+import static sql.generated.logistik_test.Tables.EINHEIT;
 
 
-public class KostenstelleTV extends AbstractTV {
+public class EinheitTV extends AbstractTV {
 
 	private static final String[] columnNames = {"ID", "Bezeichnung"};
 	private static final String[] propertyNames = {"id", "bezeichnung"};
 
 	private String bezeichnung;
 
-	public KostenstelleTV(int id) {
-		super(id, "kos01");
+	public EinheitTV(int id) {
+		super(id, "ein01");
 	}
 
-	public KostenstelleTV(int id, String bezeichnung) {
-		super(id, "kos01");
+	public EinheitTV(int id, String bezeichnung) {
+		super(id, "ein01");
 		this.bezeichnung = bezeichnung;
 	}
 
@@ -38,6 +38,6 @@ public class KostenstelleTV extends AbstractTV {
 
 	@Override
 	public ResultQuery getQuery() {
-		return DSL.select(KOSTENSTELLE.ID, KOSTENSTELLE.BEZEICHNUNG).from(KOSTENSTELLE).getQuery();
+		return DSL.select(EINHEIT.ID, EINHEIT.BEZEICHNUNG).from(EINHEIT).getQuery();
 	}
 }

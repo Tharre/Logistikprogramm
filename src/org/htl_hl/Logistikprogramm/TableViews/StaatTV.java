@@ -1,24 +1,25 @@
-package org.htl_hl.Logistikprogramm;
+package org.htl_hl.Logistikprogramm.TableViews;
 
+import org.htl_hl.Logistikprogramm.TableViews.AbstractTV;
 import org.jooq.ResultQuery;
 import org.jooq.impl.DSL;
 
-import static sql.generated.logistik_test.Tables.BESTBANFSTATUS;
+import static sql.generated.logistik_test.Tables.STAAT;
 
 
-public class BestbanfstatusTV extends AbstractTV {
+public class StaatTV extends AbstractTV {
 
 	private static final String[] columnNames = {"ID", "Bezeichnung"};
 	private static final String[] propertyNames = {"id", "bezeichnung"};
 
 	private String bezeichnung;
 
-	public BestbanfstatusTV(int id) {
-		super(id, "bbs01");
+	public StaatTV(int id) {
+		super(id, "sta01");
 	}
 
-	public BestbanfstatusTV(int id, String bezeichnung) {
-		super(id, "bbs01");
+	public StaatTV(int id, String bezeichnung) {
+		super(id, "sta01");
 		this.bezeichnung = bezeichnung;
 	}
 
@@ -38,6 +39,6 @@ public class BestbanfstatusTV extends AbstractTV {
 
 	@Override
 	public ResultQuery getQuery() {
-		return DSL.select(BESTBANFSTATUS.ID, BESTBANFSTATUS.BEZEICHNUNG).from(BESTBANFSTATUS).getQuery();
+		return DSL.select(STAAT.ID, STAAT.BEZEICHNUNG).from(STAAT).getQuery();
 	}
 }

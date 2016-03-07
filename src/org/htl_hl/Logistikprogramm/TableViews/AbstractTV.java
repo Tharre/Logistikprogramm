@@ -1,4 +1,7 @@
-package org.htl_hl.Logistikprogramm;
+package org.htl_hl.Logistikprogramm.TableViews;
+
+import org.htl_hl.Logistikprogramm.Viewable;
+
 
 public abstract class AbstractTV<T extends AbstractTV<T>> implements Viewable, Comparable<T> {
 
