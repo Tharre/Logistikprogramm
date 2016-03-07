@@ -4,6 +4,7 @@ import ca.odell.glazedlists.GlazedLists;
 import ca.odell.glazedlists.TextFilterator;
 import ca.odell.glazedlists.gui.AdvancedTableFormat;
 import ca.odell.glazedlists.impl.beans.BeanTableFormat;
+import sql.generated.logistik_test.tables.Bestbanfstatus;
 
 import javax.swing.*;
 import java.awt.*;
@@ -44,6 +45,9 @@ public class TabManager {
 		knownApplications.put("bnr01", helper(server, "Bundesnr anzeigen", new BundesnrTV(-1), BundesnrTV.class));
 		knownApplications.put("bnf01", helper(server, "Banf anzeigen", new BanfTV(-1), BanfTV.class));
 		knownApplications.put("kos01", helper(server, "Kostenstelle anzeigen", new KostenstelleTV(-1), KostenstelleTV.class));
+		knownApplications.put("pos01", helper(server, "Position anzeigen", new PositionTV(-1), PositionTV.class));
+		knownApplications.put("bbs01", helper(server, "Bestbanfstatus anzeigen", new BestbanfstatusTV(-1), BestbanfstatusTV.class));
+		knownApplications.put("ein01", helper(server, "Einheit anzeigen", new EinheitTV(-1), EinheitTV.class));
 
 		// external subprograms
 		// load all sorts of external subprograms here as well if you like ...
