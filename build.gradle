@@ -60,11 +60,6 @@ def xml = new groovy.xml.MarkupBuilder(writer)
     }
     generator() {
         database() {
-            // this is a terrible hack, but unfortunately necessary because JOOQ doesn't
-            // detect primary keys in views
-            //syntheticPrimaryKeys('\\*.id')
-            syntheticPrimaryKeys('logistik_test.fullbanf.id')
-            //overridePrimaryKeys('logistik_test.fullbanf.id')
         }
         generate() {
         }
