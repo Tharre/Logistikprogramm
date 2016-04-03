@@ -1,76 +1,30 @@
 package org.htl_hl.Logistikprogramm;
 
-import ca.odell.glazedlists.GlazedLists;
-import ca.odell.glazedlists.TextFilterator;
-import ca.odell.glazedlists.gui.AdvancedTableFormat;
-import ca.odell.glazedlists.impl.beans.BeanTableFormat;
-import org.htl_hl.Logistikprogramm.TableViews.*;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.HashMap;
-import java.util.Map;
 
 
 public class TabManager {
 
-	private Color colors[] =
+	private static final Color colors[] =
 			{new Color(240, 40, 40), new Color(240, 140, 10), new Color(195, 195, 5), new Color(20, 195, 35),
 			 new Color(60, 60, 230), new Color(160, 25, 170)};
 	private final JTabbedPane tabbedPane;
 
-	private Map<String, SubProgram> knownApplications = new HashMap<>();
-
-	public <E extends Viewable> SubProgram helper(LConnection server, String identifier, E obj, Class<E> typeClass) {
-		TextFilterator<E> filterator = GlazedLists.textFilterator(obj.getPropertyNames());
-		AdvancedTableFormat<E> tf = new BeanTableFormat<>(typeClass, obj.getPropertyNames(), obj.getColumnNames());
-		TableView<E> tv = new TableView<>(server, obj.getQuery(), typeClass, filterator, tf, this);
-		return new SubProgram(identifier, tv);
-	}
-
-	public TabManager(LConnection server) {
+	public TabManager() {
 		tabbedPane = new JTabbedPane();
 		tabbedPane.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
 		tabbedPane.setUI(new MyTabbedPaneUI());
-
-		// built-in subprograms
-		// TODO: we are passing -1 here because if the constructor is empty JOOQ uses them instead of the real one
-		knownApplications.put("mat01", helper(server, "Material anzeigen", new MatTV(-1), MatTV.class));
-		knownApplications.put("inv01", helper(server, "Inventurgruppe anzeigen", new InvGrpTV(-1), InvGrpTV.class));
-		knownApplications.put("sta01", helper(server, "Staat anzeigen", new StaatTV(-1), StaatTV.class));
-		knownApplications.put("fma01", helper(server, "Firma anzeigen", new FirmaTV(-1), FirmaTV.class));
-		knownApplications.put("usr01", helper(server, "User anzeigen", new UserTV(-1), UserTV.class));
-		knownApplications.put("bnr01", helper(server, "Bundesnr anzeigen", new BundesnrTV(-1), BundesnrTV.class));
-		knownApplications.put("bnf01", helper(server, "Banf anzeigen", new BanfTV(-1), BanfTV.class));
-		knownApplications.put("kos01", helper(server, "Kostenstelle anzeigen", new KostenstelleTV(-1), KostenstelleTV.class));
-		knownApplications.put("pos01", helper(server, "Position anzeigen", new PositionTV(-1), PositionTV.class));
-		knownApplications.put("bbs01", helper(server, "Bestbanfstatus anzeigen", new BestbanfstatusTV(-1), BestbanfstatusTV.class));
-		knownApplications.put("ein01", helper(server, "Einheit anzeigen", new EinheitTV(-1), EinheitTV.class));
-		knownApplications.put("bst01", helper(server, "Bestellung anzeigen", new BestellungTV(-1), BestellungTV.class));
-		knownApplications.put("bug01", helper(server, "Budget anzeigen", new BudgetTV(-1), BudgetTV.class));
-		knownApplications.put("ans01", helper(server, "Anschrift anzeigen", new BudgetTV(-1), BudgetTV.class));
-
-		// external subprograms
-		// load all sorts of external subprograms here as well if you like ...
 	}
 
 	public JTabbedPane getTabbedPane() {
 		return tabbedPane;
 	}
 
-	public Map<String, SubProgram> getKnownApplications() {
-		return knownApplications;
-	}
-
-	public void addTab(String shortcut, String[] args) {
-		SubProgram s = knownApplications.get(shortcut);
-		add(s.getIdentifier(), s.createJPanel(args));
-	}
-
-	public void addTab(SubProgram s) {
-		add(s.getIdentifier(), s.createJPanel(null));
+	public void addTab(Tab tab) {
+		add(tab.getName(), tab.getContent());
 	}
 
 	public void add(String label, JPanel panel) {

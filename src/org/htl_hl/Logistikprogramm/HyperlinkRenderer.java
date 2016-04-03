@@ -12,12 +12,14 @@ import java.util.Objects;
 public class HyperlinkRenderer extends DefaultTableCellRenderer implements MouseListener, MouseMotionListener {
 
 	private TabManager tm;
+	private TabFactory tabFactory;
 	private int row = -1;
 	private int col = -1;
 	private boolean isRollover;
 
-	public HyperlinkRenderer(TabManager tm) {
+	public HyperlinkRenderer(TabManager tm, TabFactory tabFactory) {
 		this.tm = tm;
+		this.tabFactory = tabFactory;
 	}
 
 	@Override
@@ -83,13 +85,13 @@ public class HyperlinkRenderer extends DefaultTableCellRenderer implements Mouse
 		JTable table = (JTable) e.getComponent();
 		Point pt = e.getPoint();
 		int col = table.columnAtPoint(pt);
+
 		if (isHyperlinkColumn(table, col)) {
 			int row = table.rowAtPoint(pt);
-			System.out.println(table.getValueAt(row, col));
 			Object o = table.getValueAt(row, col);
-			if (o instanceof Viewable) {
-				Viewable t = (Viewable) o;
-				tm.addTab(t.getViewShortcut(), t.getViewArgs());
+			if (o instanceof Reference) {
+				Reference t = (Reference) o;
+				tm.addTab(tabFactory.getTab(t.getIdentifier()));
 			}
 		}
 	}

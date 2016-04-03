@@ -9,6 +9,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
+import static sql.generated.logistik_test.Tables.*;
+
 
 public class GUI extends JFrame implements MouseListener, ActionListener {
 
@@ -70,21 +72,59 @@ public class GUI extends JFrame implements MouseListener, ActionListener {
 
 		add(menubar, BorderLayout.NORTH);
 
-		try {
-			tabManager = new TabManager(new LConnection());
-		} catch (Exception e) {
-			e.printStackTrace();
-			System.out.println("Failed to create TabManager(). Exiting");
-			System.exit(1);
-		}
-
 		// Auswahlbaum links
 		JPanel auswahlbaum = new JPanel();
 
 		DefaultMutableTreeNode root = new DefaultMutableTreeNode();
 
-		for (SubProgram s : tabManager.getKnownApplications().values())
-			root.add(new DefaultMutableTreeNode(s));
+		tabManager = new TabManager();
+		try {
+			LConnection server = new LConnection();
+			TabFactory tabFactory = new TabFactory(server, tabManager);
+
+			// Firmenverwaltung
+			DefaultMutableTreeNode firmenverwaltung = new DefaultMutableTreeNode("Firmenverwaltung");
+			firmenverwaltung.add(new DefaultMutableTreeNode(tabFactory.getTab(FIRMA)));
+			root.add(firmenverwaltung);
+
+			// Materialverwaltung
+			DefaultMutableTreeNode materialverwaltung = new DefaultMutableTreeNode("Materialverwaltung");
+			materialverwaltung.add(new DefaultMutableTreeNode(tabFactory.getTab(MATERIAL)));
+			root.add(materialverwaltung);
+
+			// Inventurgruppenverwaltung
+			DefaultMutableTreeNode invGrp = new DefaultMutableTreeNode("Inventurgruppenverwaltung");
+			invGrp.add(new DefaultMutableTreeNode(tabFactory.getTab(INVENTURGRUPPE)));
+			root.add(invGrp);
+
+			// Bundesnrverwaltung
+			DefaultMutableTreeNode bundesnrverwaltung = new DefaultMutableTreeNode("Bundesnrverwaltung");
+			bundesnrverwaltung.add(new DefaultMutableTreeNode(tabFactory.getTab(BUNDESNR)));
+			root.add(bundesnrverwaltung);
+
+			// BANF
+			DefaultMutableTreeNode banfverwaltung = new DefaultMutableTreeNode("BANF");
+			banfverwaltung.add(new DefaultMutableTreeNode(tabFactory.getTab(BANF)));
+			//banfverwaltung.add(new DefaultMutableTreeNode(tabFactory.getTab(FULLBANF)));
+			root.add(banfverwaltung);
+
+			// Bestellung
+			DefaultMutableTreeNode bestellung = new DefaultMutableTreeNode("Bestellung");
+			bestellung.add(new DefaultMutableTreeNode(tabFactory.getTab(BESTELLUNG)));
+			root.add(bestellung);
+
+			// Abfragen
+			DefaultMutableTreeNode abfragen = new DefaultMutableTreeNode("Abfragen");
+			abfragen.add(new DefaultMutableTreeNode("Platzhalter"));
+			root.add(abfragen);
+
+			// Lagerverwaltung
+			DefaultMutableTreeNode lagerverwaltung = new DefaultMutableTreeNode("Lagerverwaltung");
+			lagerverwaltung.add(new DefaultMutableTreeNode("Platzhalter"));
+			root.add(lagerverwaltung);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 
 		tree = new JTree(root);
 		tree.setRootVisible(false);
@@ -117,8 +157,8 @@ public class GUI extends JFrame implements MouseListener, ActionListener {
 		if (!treeNode.isLeaf())
 			return;
 
-		SubProgram sp = (SubProgram) treeNode.getUserObject();
-		tabManager.addTab(sp);
+		if (treeNode.getUserObject() instanceof Tab)
+			tabManager.addTab((Tab) treeNode.getUserObject());
 	}
 
 	public void actionPerformed(ActionEvent object) {

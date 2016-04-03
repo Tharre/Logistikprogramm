@@ -1,16 +1,14 @@
 package org.htl_hl.Logistikprogramm;
 
-import org.jooq.ResultQuery;
 
+public class Reference implements Comparable<Reference> {
 
-public class Reference implements Viewable, Comparable<Reference> {
-
-	private String shortcut;
+	private Object identifier;
 	private String name;
-	private int id;
+	private Object id;
 
-	public Reference(String shortcut, int id, String name) {
-		this.shortcut = shortcut;
+	public Reference(Object identifier, Object id, String name) {
+		this.identifier = identifier;
 		this.id = id;
 		this.name = name;
 	}
@@ -23,33 +21,16 @@ public class Reference implements Viewable, Comparable<Reference> {
 		return name;
 	}
 
-	@Override
-	public String getViewShortcut() {
-		return shortcut;
+	public Object getIdentifier() {
+		return identifier;
 	}
 
-	@Override
-	public String[] getViewArgs() {
-		return new String[]{String.valueOf(id)};
+	public Object getId() {
+		return id;
 	}
 
 	@Override
 	public int compareTo(Reference o) {
 		return name.compareTo(o.getName());
-	}
-
-	@Override
-	public String[] getColumnNames() {
-		throw new UnsupportedOperationException("Can't supply column names from Reference");
-	}
-
-	@Override
-	public String[] getPropertyNames() {
-		throw new UnsupportedOperationException("Can't supply property names from Reference");
-	}
-
-	@Override
-	public ResultQuery getQuery() {
-		throw new UnsupportedOperationException("Can't supply query from Reference");
 	}
 }
