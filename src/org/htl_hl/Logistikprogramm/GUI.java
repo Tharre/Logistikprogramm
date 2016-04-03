@@ -105,7 +105,7 @@ public class GUI extends JFrame implements MouseListener, ActionListener {
 			// BANF
 			DefaultMutableTreeNode banfverwaltung = new DefaultMutableTreeNode("BANF");
 			banfverwaltung.add(new DefaultMutableTreeNode(tabFactory.getTab(BANF)));
-			//banfverwaltung.add(new DefaultMutableTreeNode(tabFactory.getTab(FULLBANF)));
+			banfverwaltung.add(new DefaultMutableTreeNode(tabFactory.getTab(FULLBANF)));
 			root.add(banfverwaltung);
 
 			// Bestellung

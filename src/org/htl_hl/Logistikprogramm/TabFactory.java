@@ -67,13 +67,10 @@ public class TabFactory {
 		                  .groupBy(BANF.ID)
 		                  .getQuery(), BANF);
 
-		System.out.println("DEbug:" + BANF.getReferences());
-		/*
 		populateHelper("Test",
 		               new String[]{"ID", "Antragsteller", "Kostenstelle", "Erstelldatum", "Wunschdatum", "Kommentar",
 		                            "Status"},
 		               DSL.selectFrom(FULLBANF).getQuery(), FULLBANF);
-		               */
 
 		populateHelper("Bestellung anzeigen",
 		               new String[]{"ID", "Ersteller", "Firma", "Budget", "Anschrift", "Erstelldatum", "Wnummer",
