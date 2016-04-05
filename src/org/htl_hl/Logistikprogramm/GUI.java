@@ -115,7 +115,7 @@ public class GUI extends JFrame implements MouseListener, ActionListener {
 
 			// Abfragen
 			DefaultMutableTreeNode abfragen = new DefaultMutableTreeNode("Abfragen");
-			abfragen.add(new DefaultMutableTreeNode("Platzhalter"));
+			abfragen.add(new DefaultMutableTreeNode(tabFactory.getTab(AbfragenGUI.class)));
 			root.add(abfragen);
 
 			// Lagerverwaltung

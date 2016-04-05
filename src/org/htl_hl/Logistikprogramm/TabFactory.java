@@ -93,6 +93,9 @@ public class TabFactory {
 
 		populateHelper("Anschrift anzeigen", new String[]{"ID", "Bezeichnung"}, DSL.selectFrom(ANSCHRIFT).getQuery(),
 		               ANSCHRIFT);
+
+
+		tabs.put(AbfragenGUI.class, new AbfragenGUI());
 	}
 
 	public Tab getTab(Object identifier) {
