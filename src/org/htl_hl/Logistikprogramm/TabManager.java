@@ -9,8 +9,10 @@ import java.awt.event.ActionListener;
 public class TabManager {
 
 	private static final Color colors[] =
-			{new Color(240, 40, 40), new Color(240, 140, 10), new Color(195, 195, 5), new Color(20, 195, 35),
-			 new Color(60, 60, 230), new Color(160, 25, 170)};
+			{new Color(27, 18, 191), new Color(5, 170, 6), new Color(210, 18, 28),
+					new Color(27, 184, 182), new Color(173, 45, 171), new Color(229, 141, 3)};
+	private static int iColor = (int)(Math.random()*colors.length);
+	// Für unwahrscheinlicheres Auftreten der gleichen Farbe 2x hintereinander
 	private final JTabbedPane tabbedPane;
 
 	public TabManager() {
@@ -28,12 +30,13 @@ public class TabManager {
 	}
 
 	public void add(String label, JPanel panel) {
-		int count = tabbedPane.getTabCount() % colors.length;
 		int tabCount = tabbedPane.getTabCount() - 1;
 
 		for (int i = 0; i <= tabCount; i++) {
-			if (tabbedPane.getComponentAt(i).getName().equals(label))
+			if (tabbedPane.getComponentAt(i).getName().equals(label)) {
+				tabbedPane.setSelectedComponent(tabbedPane.getComponentAt(i));
 				return;
+			}
 		}
 
 		tabbedPane.addTab(label, panel);
@@ -44,7 +47,9 @@ public class TabManager {
 		final JPanel pnlTab = new JPanel(new BorderLayout());
 		pnlTab.setOpaque(false);
 		JLabel lbllabel = new JLabel(label);
-		lbllabel.setForeground(colors[count]);
+
+		iColor = (iColor+1)%6;
+		lbllabel.setForeground(colors[iColor]);
 		MyButton btnClose = new MyButton("x");
 
 		pnlTab.add(lbllabel, BorderLayout.WEST);

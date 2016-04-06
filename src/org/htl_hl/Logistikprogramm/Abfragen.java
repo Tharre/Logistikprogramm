@@ -125,7 +125,7 @@ public class Abfragen {
 	}
 	
 	// größter / kleinster Preis für Material x (+Firma zu Preis)
-	public static Result selectPriceWhMatsIsX(int x) throws Exception {
+	public static Result selectPriceWhMatIsX(int x) throws Exception {
 		LConnection server = new LConnection();
 		Result r = server.create.select(MATERIAL.ID, MATERIAL.BEZEICHNUNG.as("Material"), FIRMA_MATERIAL.FIRMA_ID, FIRMA.BEZEICHNUNG.as("Firma"),
 										FIRMA_MATERIAL.PREIS.max().as("Preis"), EINHEIT.BEZEICHNUNG.as("Einheit"))
@@ -201,7 +201,7 @@ public class Abfragen {
 	
 	// Banf/Best.
 	// Alle Banfs von User x anzeigen
-	public static Result selectBanfsWhUserIsX(int x) throws Exception {
+	public static Result selectBanfWhUserIsX(int x) throws Exception {
 		LConnection server = new LConnection();
 		Result r = server.create.select(BANF.ID, BANF.ANTRAGSTELLER_ID, BANF.KOSTENSTELLE_ID, 
 										KOSTENSTELLE.BEZEICHNUNG.as("Kostenstelle"), BANF.ERSTELLDATUM, BANF.WUNSCHDATUM)
