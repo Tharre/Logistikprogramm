@@ -95,9 +95,9 @@ public class TabFactory {
 		               ANSCHRIFT);
 
 
-		tabs.put(AbfragenGUI.class, new AbfragenGUI());
+		//tabs.put(AbfragenGUI.class, new AbfragenGUI());
 
-		tabs.put(CreateMaterialTest.class, new CreateMaterialTest(server));
+		tabs.put(CreateMaterial.class, new CreateMaterial(server));
 	}
 
 	public Tab getTab(Object identifier) {

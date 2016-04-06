@@ -115,7 +115,7 @@ public class SelectDBEntry<E extends TableRecord, T> extends JPanel implements A
 
 			JFrame f = new JFrame();
 			//f.add(tabFactory.getTab(table).getContent());
-			f.add(new TestTableView<>(server, "Name", new String[]{"ID", "Nr.", "Bezeichnung"},
+			f.add(new TestTableView<>(server, "Name", new String[]{"ID", "Bezeichnung", "Nr."},
 			                          DSL.selectFrom(BUNDESNR).getQuery(), table).getContent());
 			f.pack();
 			f.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);

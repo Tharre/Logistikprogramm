@@ -6,7 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Timestamp;
 
-
+/*
 public class AbfragenGUI implements Tab, ActionListener {
 	private final String[] SABF =
 			{"selectMats","selectMatsWhDateIsBtwXnY","selectMatsWhBnIsX","selectMatsWhIgIsX","selectPriceWhMatIsX",
@@ -155,3 +155,4 @@ public class AbfragenGUI implements Tab, ActionListener {
 		return new Timestamp(time[0]-1900, time[1], time[2], 0, 0, 0, 0);
 	}
 }
+*/

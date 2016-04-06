@@ -13,7 +13,7 @@ import static sql.generated.logistik_test.Tables.INVENTURGRUPPE;
 import static sql.generated.logistik_test.tables.Material.MATERIAL;
 
 
-class CreateMaterialTest implements Tab {
+public class CreateMaterial implements Tab {
 
 	private LConnection server;
 
@@ -23,7 +23,7 @@ class CreateMaterialTest implements Tab {
 	private final JTextField gefahrstufe;
 	private final JLabel status;
 
-	CreateMaterialTest(LConnection server) {
+	CreateMaterial(LConnection server) {
 		this.server = server;
 
 		bezeichnung = new JTextField();
