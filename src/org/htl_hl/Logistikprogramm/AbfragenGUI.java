@@ -5,6 +5,10 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Timestamp;
+import org.jooq.Table;
+import org.jooq.TableRecord;
+
+import static sql.generated.logistik_test.Tables.*;
 
 
 public class AbfragenGUI implements Tab, ActionListener {
@@ -21,9 +25,18 @@ public class AbfragenGUI implements Tab, ActionListener {
 					"Bei welchen Firmen kann man Material x bestellen?", "Alle Banfs von User x anzeigen",
 					"Banfs zu einer Bestellung", "Bestellung zu einer Banf"
 			}; // AnzeigeText zu den Abfragen
-	private JLabel[][] platzhalter;
 	private final int SPALTEN = 2; // Frei wählbarer Wert, wieviel Spalten man haben möchte
 	private final int GRIDX = SPALTEN * 2 + 1; // Breite des Rasters
+
+	private JLabel[][] platzhalter;
+	private LConnection server;
+	private TabManager tm;
+	private int iTV = 1;
+
+	public AbfragenGUI(LConnection server, TabManager tm) {
+		this.server = server;
+		this.tm = tm;
+	}
 
 	public String toString() {
 		return getName();
@@ -89,7 +102,12 @@ public class AbfragenGUI implements Tab, ActionListener {
 		AbfrageButton bt = (AbfrageButton)e.getSource();
 
 		try {
-			if (bt.getAbfrage().equals(SABF[0])) Abfragen.selectMats();
+			if (bt.getAbfrage().equals(SABF[0])) {
+				ResultWithCn r = Abfragen.selectMats();
+				JOOQTableView tv = new JOOQTableView(server, tm, "Abfrageergebnis " + iTV++, r.getCoullumnNames(),
+						r.getQuery(), MATERIAL);
+				tm.addTab(tv);
+			}
 			else if (bt.getAbfrage().equals(SABF[1])) {
 				String s1 = JOptionPane.showInputDialog(null, "Datum(von-bis):", "2016_11_1-2016_12_31");
 				String s2 = "";
@@ -98,38 +116,101 @@ public class AbfragenGUI implements Tab, ActionListener {
 				}
 				Timestamp t1 = toTimestamp(s1);
 				Timestamp t2 = toTimestamp(s2);
-				Abfragen.selectMatsWhDateIsBtwXnY(t1, t2);
+				ResultWithCn r = Abfragen.selectMatsWhDateIsBtwXnY(t1, t2);
+				JOOQTableView tv = new JOOQTableView(server, tm, "Abfrageergebnis " + iTV++, r.getCoullumnNames(),
+						r.getQuery(), MATERIAL);
+				tm.addTab(tv);
 			}
 			else if (bt.getAbfrage().equals(SABF[2])) {
-				Abfragen.selectMatsWhBnIsX(JOptionPane.showInputDialog(null, "Bundesnummer:"));
+				ResultWithCn r = Abfragen.selectMatsWhBnIsX(JOptionPane.showInputDialog(null, "Bundesnummer:"));
+				JOOQTableView tv = new JOOQTableView(server, tm, "Abfrageergebnis " + iTV++, r.getCoullumnNames(),
+						r.getQuery(), MATERIAL);
+				tm.addTab(tv);
 			}
 			else if (bt.getAbfrage().equals(SABF[3])) {
-				int ig = Integer.parseInt(JOptionPane.showInputDialog(null, "Inventurgruppe:"));
-				Abfragen.selectMatsWhIgIsX(ig);
+				int ig;
+				try {
+				ig = Integer.parseInt(JOptionPane.showInputDialog(null, "Inventurgruppe:"));
+				} catch (NumberFormatException ex) {
+					ig = 1;
+				}
+				ResultWithCn r = Abfragen.selectMatsWhIgIsX(ig);
+				JOOQTableView tv = new JOOQTableView(server, tm, "Abfrageergebnis " + iTV++, r.getCoullumnNames(),
+						r.getQuery(), MATERIAL);
+				tm.addTab(tv);
 			}
 			else if (bt.getAbfrage().equals(SABF[4])) {
-				int mat = Integer.parseInt(JOptionPane.showInputDialog(null, "Material:"));
-				Abfragen.selectPriceWhMatIsX(mat);
+				int mat;
+				try{
+				mat = Integer.parseInt(JOptionPane.showInputDialog(null, "Material:"));
+				} catch (NumberFormatException ex) {
+					mat = 1;
+				}
+				ResultWithCn r = Abfragen.selectPriceWhMatIsX(mat);
+				JOOQTableView tv = new JOOQTableView(server, tm, "Abfrageergebnis " + iTV++, r.getCoullumnNames(),
+						r.getQuery(), FIRMA_MATERIAL);
+				tm.addTab(tv);
 			}
 			else if (bt.getAbfrage().equals(SABF[5])) {
-				int firma = Integer.parseInt(JOptionPane.showInputDialog(null, "Firma:"));
-				Abfragen.selectMatsWhFirmaIsX(firma);
+				int firma;
+				try{
+				firma = Integer.parseInt(JOptionPane.showInputDialog(null, "Firma:"));
+				} catch (NumberFormatException ex) {
+					firma = 1;
+				}
+				ResultWithCn r = Abfragen.selectMatsWhFirmaIsX(firma);
+				JOOQTableView tv = new JOOQTableView(server, tm, "Abfrageergebnis " + iTV++, r.getCoullumnNames(),
+						r.getQuery(), FIRMA_MATERIAL);
+				tm.addTab(tv);
 			}
 			else if (bt.getAbfrage().equals(SABF[6])) {
-				int mat = Integer.parseInt(JOptionPane.showInputDialog(null, "Material:"));
-				Abfragen.selectFirmaWhMatsIsX(mat);
+				int mat;
+				try{
+				mat = Integer.parseInt(JOptionPane.showInputDialog(null, "Material:"));
+				} catch (NumberFormatException ex) {
+					mat = 1;
+				}
+				ResultWithCn r = Abfragen.selectFirmaWhMatsIsX(mat);
+				JOOQTableView tv = new JOOQTableView(server, tm, "Abfrageergebnis " + iTV++, r.getCoullumnNames(),
+						r.getQuery(), FIRMA_MATERIAL);
+				tm.addTab(tv);
 			}
 			else if (bt.getAbfrage().equals(SABF[7])) {
-				int user = Integer.parseInt(JOptionPane.showInputDialog(null, "User:"));
-				Abfragen.selectBanfWhUserIsX(user);
+				int user;
+				try{
+					user = Integer.parseInt(JOptionPane.showInputDialog(null, "User:"));
+				} catch (NumberFormatException ex) {
+					user = 1;
+				}
+				ResultWithCn r = Abfragen.selectBanfWhUserIsX(user);
+				JOOQTableView tv = new JOOQTableView(server, tm, "Abfrageergebnis " + iTV++, r.getCoullumnNames(),
+						r.getQuery(), BANF);
+				tm.addTab(tv);
 			}
 			else if (bt.getAbfrage().equals(SABF[8])) {
-				int best = Integer.parseInt(JOptionPane.showInputDialog(null, "Bestellung:"));
-				Abfragen.selectBanfWhBestIsX(best);
+				int best;
+				try{
+				best = Integer.parseInt(JOptionPane.showInputDialog(null, "Bestellung:"));
+				} catch (NumberFormatException ex) {
+					best = 1;
+				}
+				ResultWithCn r = Abfragen.selectBanfWhBestIsX(best);
+				System.out.println(r.getQuery());
+				JOOQTableView tv = new JOOQTableView(server, tm, "Abfrageergebnis " + iTV++, r.getCoullumnNames(),
+						r.getQuery(), BANFPOSITION);
+				tm.addTab(tv);
 			}
 			else if (bt.getAbfrage().equals(SABF[9])) {
-				int banf = Integer.parseInt(JOptionPane.showInputDialog(null, "Banf:"));
-				Abfragen.selectBestWhBanfIsX(banf);
+				int banf;
+				try{
+				banf = Integer.parseInt(JOptionPane.showInputDialog(null, "Banf:"));
+				} catch (NumberFormatException ex) {
+					banf = 1;
+				}
+				ResultWithCn r = Abfragen.selectBestWhBanfIsX(banf);
+				JOOQTableView tv = new JOOQTableView(server, tm, "Abfrageergebnis " + iTV++, r.getCoullumnNames(),
+						r.getQuery(), BANFPOSITION);
+				tm.addTab(tv);
 			}
 		} catch(Exception ex){
 			ex.printStackTrace();
@@ -149,9 +230,10 @@ public class AbfragenGUI implements Tab, ActionListener {
 			try {
 				time[i] = Integer.parseInt(hs);
 			} catch (NumberFormatException e) {
-				time[i] = 0;
+				if(i == 2)
+				time[i] = 1;
 			}
 		}
-		return new Timestamp(time[0]-1900, time[1], time[2], 0, 0, 0, 0);
+		return new Timestamp(time[0]-1900, time[1]-1, time[2], 0, 0, 0, 0);
 	}
 }
