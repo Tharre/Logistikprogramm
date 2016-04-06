@@ -96,6 +96,8 @@ public class TabFactory {
 
 
 		tabs.put(AbfragenGUI.class, new AbfragenGUI());
+
+		tabs.put(CreateMaterialTest.class, new CreateMaterialTest(server));
 	}
 
 	public Tab getTab(Object identifier) {

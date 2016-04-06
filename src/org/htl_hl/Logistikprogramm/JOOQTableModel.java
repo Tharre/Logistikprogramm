@@ -14,6 +14,7 @@ public class JOOQTableModel<E extends TableRecord> extends AbstractTableModel {
 	private List<ForeignKey<E, ?>> foreignKeys;
 	private String[] columnNames;
 	private Map<Table<?>, Map<?, ? extends Record>> referencedTables = new HashMap<>();
+	private boolean editable = true;
 
 	public JOOQTableModel(LConnection server, String[] columnNames, Result<?> recordResult,
 	                      List<ForeignKey<E, ?>> foreignKeys) {
@@ -92,7 +93,11 @@ public class JOOQTableModel<E extends TableRecord> extends AbstractTableModel {
 	@Override
 	public boolean isCellEditable(int rowIndex, int columnIndex) {
 		// first column is assumed to be the ID and should never be edited because it risks SQL constraint violations
-		return columnIndex != 0 && getColumnClass(columnIndex) != Reference.class;
+		return editable && columnIndex != 0 && getColumnClass(columnIndex) != Reference.class;
+	}
+
+	public void setEditable(boolean editable) {
+		this.editable = editable;
 	}
 
 	@Override

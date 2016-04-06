@@ -90,6 +90,7 @@ public class GUI extends JFrame implements MouseListener, ActionListener {
 			// Materialverwaltung
 			DefaultMutableTreeNode materialverwaltung = new DefaultMutableTreeNode("Materialverwaltung");
 			materialverwaltung.add(new DefaultMutableTreeNode(tabFactory.getTab(MATERIAL)));
+			materialverwaltung.add(new DefaultMutableTreeNode(tabFactory.getTab(CreateMaterialTest.class)));
 			root.add(materialverwaltung);
 
 			// Inventurgruppenverwaltung
