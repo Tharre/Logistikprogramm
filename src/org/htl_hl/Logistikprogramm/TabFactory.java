@@ -96,7 +96,6 @@ public class TabFactory {
 
 
 		tabs.put(AbfragenGUI.class, new AbfragenGUI(server, tm));
-		//tabs.put(AbfragenGUI.class, new AbfragenGUI());
 
 		tabs.put(CreateMaterial.class, new CreateMaterial(server));
 	}

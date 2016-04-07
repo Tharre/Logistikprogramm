@@ -218,22 +218,28 @@ public class AbfragenGUI implements Tab, ActionListener {
 	}
 
 	private Timestamp toTimestamp(String s) {
-		int[] time = new int[3];
+		int[] time = {1900, 1, 1};
 		String hs;
 		int j = 0;
-		for(int i = 0; i < time.length; i++){
+		boolean endeS = false;
+		for(int i = 0; i < time.length && !endeS; i++) {
 			hs = "";
-			for(; j < s.length() && s.charAt(j) != '_' && s.charAt(j) != '-'; j++){
+			for (; j < s.length() && s.charAt(j) != '_' && !endeS; j++) {
 				hs += s.charAt(j);
+				try {
+					if (s.charAt(j + 1) == '-')
+						endeS = true;
+				}catch (StringIndexOutOfBoundsException e){
+					endeS = true;
+				}
 			}
 			j++;
 			try {
 				time[i] = Integer.parseInt(hs);
 			} catch (NumberFormatException e) {
-				if(i == 2)
-				time[i] = 1;
 			}
 		}
+
 		return new Timestamp(time[0]-1900, time[1]-1, time[2], 0, 0, 0, 0);
 	}
 }

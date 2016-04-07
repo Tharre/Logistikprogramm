@@ -18,11 +18,11 @@ public class LConnection {
 		// but instead we are going to connect with the DB for now to simulate that
 
 		Properties config = new Properties();
-		config.load(Thread.currentThread().getContextClassLoader().getResourceAsStream("sql_auth.properties"));
+		//config.load(Thread.currentThread().getContextClassLoader().getResourceAsStream("sql_auth.properties"));
 
-		String server = config.getProperty("server");
-		String username = config.getProperty("username");
-		String password = config.getProperty("password");
+		String server = "81.4.110.166:3306";
+		String username = "root";
+		String password = "YDtm5wBGpECmxFX8bfFR2bQY";
 
 		String url = "jdbc:mysql://" + server + "/" + dbname;
 		connection = DriverManager.getConnection(url, username, password);
